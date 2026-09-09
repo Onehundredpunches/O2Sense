@@ -11,10 +11,11 @@ import {
   Moon, 
   UserCheck, 
   Microscope,
-  Sparkles
+  Sparkles,
+  Compass
 } from 'lucide-react';
 
-export type AppTab = 'home' | 'story' | 'waveforms' | 'knowledge' | 'cases';
+export type AppTab = 'home' | 'story' | 'waveforms' | 'knowledge' | 'cases' | 'help';
 
 interface HeaderProps {
   currentTab: AppTab;
@@ -140,6 +141,18 @@ export const Header: React.FC<HeaderProps> = ({
                 <HelpCircle className="w-3.5 h-3.5" />
                 <span>Hiểu Lầm & Tình Huống</span>
               </button>
+
+              <button
+                onClick={() => onSelectTab('help')}
+                className={`flex items-center space-x-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all ${
+                  currentTab === 'help'
+                    ? 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 shadow-sm'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+              >
+                <Compass className="w-3.5 h-3.5" />
+                <span>Cẩm Nang</span>
+              </button>
             </nav>
 
             {/* Right Utility Buttons */}
@@ -259,6 +272,18 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <HelpCircle className="w-4 h-4" />
           <span className="text-[10px] mt-0.5">Tình huống</span>
+        </button>
+
+        <button
+          onClick={() => onSelectTab('help')}
+          className={`flex flex-col items-center justify-center p-1 rounded-xl transition-all ${
+            currentTab === 'help'
+              ? 'text-teal-600 dark:text-teal-400 font-bold'
+              : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <Compass className="w-4 h-4" />
+          <span className="text-[10px] mt-0.5">Cẩm nang</span>
         </button>
       </nav>
     </>

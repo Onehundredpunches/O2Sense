@@ -7,6 +7,7 @@ import { ModuleCView } from './components/ModuleCView';
 import { WaveformDetectiveView } from './components/WaveformDetectiveView';
 import { KnowledgeHubView } from './components/KnowledgeHubView';
 import { CasesAndTrapsView } from './components/CasesAndTrapsView';
+import { HelpCenterView } from './components/HelpCenterView';
 import { QuickReviewModal } from './components/QuickReviewModal';
 import { GlossaryModal } from './components/GlossaryModal';
 import { 
@@ -83,6 +84,71 @@ export const App: React.FC = () => {
     setProgress(updated);
   };
 
+  // Global Keyboard Shortcuts (Power User Navigation)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't trigger if user is typing in an input or textarea
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
+        return;
+      }
+
+      switch (e.key) {
+        case '1':
+          setCurrentTab('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case '2':
+          setCurrentTab('story');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case '3':
+          setCurrentTab('waveforms');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case '4':
+          setCurrentTab('knowledge');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case '5':
+          setCurrentTab('cases');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case '6':
+        case 'h':
+        case 'H':
+        case '?':
+          setCurrentTab('help');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          break;
+        case 'q':
+        case 'Q':
+          setIsQuickReviewOpen((prev) => !prev);
+          break;
+        case 'g':
+        case 'G':
+          setIsGlossaryOpen((prev) => !prev);
+          break;
+        case 't':
+        case 'T':
+          setIsDarkMode((prev) => !prev);
+          break;
+        case 'm':
+        case 'M':
+          setUserMode((prev) => (prev === 'general' ? 'founder' : 'general'));
+          break;
+        case 'Escape':
+          setIsQuickReviewOpen(false);
+          setIsGlossaryOpen(false);
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 ${
       isDarkMode ? 'bg-[#090d16] text-slate-100' : 'bg-[#f7f6f2] text-slate-800'
@@ -155,6 +221,18 @@ export const App: React.FC = () => {
             onSaveScenario={handleSaveScenario}
             userMode={userMode}
             onOpenGlossary={handleOpenGlossary}
+          />
+        )}
+
+        {currentTab === 'help' && (
+          <HelpCenterView
+            onSelectTab={(tab) => {
+              setCurrentTab(tab);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            userMode={userMode}
+            onOpenGlossary={handleOpenGlossary}
+            onStartQuickReview={() => setIsQuickReviewOpen(true)}
           />
         )}
       </main>
