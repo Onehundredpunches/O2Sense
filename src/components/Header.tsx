@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrandLogo } from './BrandLogo';
 import { 
   ShieldAlert, 
   Zap, 
@@ -55,29 +56,11 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex items-center justify-between h-16">
             {/* Brand Logo & Name */}
             <div 
-              className="flex items-center space-x-3 cursor-pointer select-none" 
+              className="cursor-pointer select-none py-1 transition-opacity hover:opacity-95" 
               onClick={() => onSelectTab('home')}
+              title="Về trang chủ O2Sense"
             >
-              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-teal-600 to-sky-500 flex items-center justify-center shadow-md shadow-teal-500/20 text-white font-black text-lg">
-                O₂
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-lg font-black text-slate-900 dark:text-white tracking-tight">
-                    O2Sense
-                  </span>
-                  <span className={`text-[9px] uppercase font-bold px-2 py-0.5 rounded-full border ${
-                    userMode === 'founder'
-                      ? 'bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300 border-purple-200 dark:border-purple-800'
-                      : 'bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300 border-teal-200 dark:border-teal-800'
-                  }`}>
-                    {userMode === 'founder' ? 'Founder Pro' : 'Đại Chúng'}
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium hidden sm:block">
-                  Thấu hiểu từng nhịp thở • Giải mã SpO2 & Giấc ngủ
-                </p>
-              </div>
+              <BrandLogo userMode={userMode} size="md" />
             </div>
 
             {/* Desktop Navigation Links */}

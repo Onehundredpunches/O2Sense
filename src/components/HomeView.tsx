@@ -58,11 +58,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-            Thấu Hiểu Từng Nhịp Thở Trong Đêm
+            Thấu Hiểu Từng Nhịp Thở
           </h1>
 
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
-            Không cần kiến thức y khoa chuyên sâu. O2Sense giúp bạn tự tin giải thích mọi biểu hiện giấc ngủ (ngáy to, ngạt thở, tụt SpO2, vi thức giấc) cho người thân lớn tuổi bằng lời mộc mạc — và giúp Founder nhận diện ngay lập tức lúc nào mình đang suy diễn sai khi phỏng vấn người dùng thật.
+            {userMode === 'founder'
+              ? 'Nền tảng mô phỏng và phân tích chuyên sâu kết nối dữ liệu cảm biến SpO2 với sinh lý học hô hấp: Giải mã chính xác từng cơn ngưng thở, bóc tách chỉ số ODI và hỗ trợ đội ngũ y tế - công nghệ tối ưu hóa giải pháp chăm sóc giấc ngủ.'
+              : 'O2Sense ra đời với sứ mệnh chuyển hóa các biểu đồ SpO2 và dữ liệu hô hấp phức tạp thành hình ảnh trực quan, sống động và dễ tiếp cận. Giúp bạn và gia đình chủ động lắng nghe cơ thể, nhận diện sớm dấu hiệu ngưng thở khi ngủ và bảo vệ trọn vẹn từng nhịp thở an lành.'}
           </p>
 
           {/* Quick Action Buttons */}
