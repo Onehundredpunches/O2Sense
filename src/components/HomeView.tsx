@@ -63,8 +63,8 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
             {userMode === 'founder'
-              ? 'Nền tảng mô phỏng và phân tích chuyên sâu kết nối dữ liệu cảm biến SpO2 với sinh lý học hô hấp: Giải mã chính xác từng cơn ngưng thở, bóc tách chỉ số ODI và hỗ trợ đội ngũ y tế - công nghệ tối ưu hóa giải pháp chăm sóc giấc ngủ.'
-              : 'O2Sense ra đời với sứ mệnh chuyển hóa các biểu đồ SpO2 và dữ liệu hô hấp phức tạp thành hình ảnh trực quan, sống động và dễ tiếp cận. Giúp bạn và gia đình chủ động lắng nghe cơ thể, nhận diện sớm dấu hiệu ngưng thở khi ngủ và bảo vệ trọn vẹn từng nhịp thở an lành.'}
+              ? 'Cầu nối giữa tín hiệu cảm biến SpO2 và cơ chế sinh lý thực tế. Giúp bạn đối chiếu chuẩn xác từng dạng sóng, hiểu sâu trăn trở của người dùng thật và nâng tầm sản phẩm y tế.'
+              : 'Mỗi nhịp thở trong đêm đều kể một câu chuyện sức khỏe. O2Sense giúp bạn thấu hiểu cơ thể dễ dàng hơn bao giờ hết — vì giấc ngủ an lành của bạn và những người thân yêu.'}
           </p>
 
           {/* Quick Action Buttons */}
