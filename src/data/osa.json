@@ -1,0 +1,1023 @@
+{
+  "diseaseId": "osa",
+  "diseaseName": "Ngưng thở khi ngủ do tắc nghẽn (OSA)",
+  "subtitle": "Thấu hiểu từng nhịp thở • Phân tích đồ thị SpO2 • Bách khoa y học đời thường",
+  "disclaimer": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế.",
+  "sources": [
+    {
+      "id": "aasm-diag-2017",
+      "title": "Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea",
+      "organization": "AASM (American Academy of Sleep Medicine)",
+      "year": 2017,
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5337594/",
+      "citation": "Kapur VK, et al. J Clin Sleep Med. 2017;13(3):479-504.",
+      "keyFinding": "PSG là tiêu chuẩn vàng; Pulse Oximetry đơn thuần hoặc bảng câu hỏi không thể dùng để chẩn đoán xác định OSA do thiếu EEG, cảm biến luồng khí và nỗ lực thở."
+    },
+    {
+      "id": "uspstf-osa-2022",
+      "title": "Screening for Obstructive Sleep Apnea in Adults: US Preventive Services Task Force Recommendation Statement",
+      "organization": "USPSTF (JAMA)",
+      "year": 2022,
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2798481",
+      "citation": "Mangione CM, et al. JAMA. 2022;328(19):1945-1950.",
+      "keyFinding": "Bằng chứng hiện tại chưa đủ để khuyến cáo tầm soát đại trà OSA ở người không có triệu chứng; ngáy đơn thuần có độ nhạy cao nhưng độ đặc hiệu rất thấp."
+    },
+    {
+      "id": "eckert-pathophys-2008",
+      "title": "Pathophysiology of Adult Obstructive Sleep Apnea",
+      "organization": "NHLBI / ATS (PubMed)",
+      "year": 2008,
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2645258/",
+      "citation": "Eckert DJ, Malhotra A. Proc Am Thorac Soc. 2008;5(2):144-153.",
+      "keyFinding": "Xác nhận chiều phản xạ: Thiếu oxy (PaO2 giảm) và tăng CO2 (PaCO2 tăng) kích thích chemoreceptor kích hoạt EEG Micro-arousal (vi tỉnh giấc) để phục hồi trương lực cơ cằm-lưỡi (Genioglossus) mở lại đường thở."
+    },
+    {
+      "id": "nhlbi-osa-topics",
+      "title": "What Is Sleep Apnea? Causes, Symptoms, and Diagnosis",
+      "organization": "NHLBI (National Heart, Lung, and Blood Institute)",
+      "year": 2023,
+      "url": "https://www.nhlbi.nih.gov/health/sleep-apnea",
+      "citation": "NHLBI Health Topics, National Institutes of Health, USA.",
+      "keyFinding": "Đường thở bị tắc lặp lại dù nỗ lực cơ ngực vẫn tiếp diễn; giải thích chi tiết tác động của thiếu oxy ngắt quãng lên huyết áp và bệnh tim mạch."
+    },
+    {
+      "id": "mosaic-trial-2014",
+      "title": "Continuous positive airway pressure for minimally symptomatic obstructive sleep apnea (MOSAIC): a multicentre randomised controlled trial",
+      "organization": "The Lancet Respiratory Medicine",
+      "year": 2014,
+      "url": "https://www.thelancet.com/journals/lanres/article/PIIS2213-2600(14)70129-8/fulltext",
+      "citation": "Kohler M, et al. Lancet Respir Med. 2014;2(9):699-708.",
+      "keyFinding": "Xác định rõ nhóm bệnh nhân 'Minimally Symptomatic OSA': người có chỉ số AHI cao nhưng hoàn toàn không phàn nàn buồn ngủ ban ngày (ESS < 10)."
+    },
+    {
+      "id": "women-osa-2016",
+      "title": "Obstructive sleep apnea in women: specific issues and interventions",
+      "organization": "Sleep Medicine Reviews",
+      "year": 2016,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27592476/",
+      "citation": "Wimms A, et al. Sleep Med Rev. 2016;30:60-70.",
+      "keyFinding": "Phụ nữ mắc OSA thường biểu hiện không điển hình: mất ngủ, đau đầu sáng sớm, mệt mỏi, trầm cảm hơn là ngáy to kinh điển, dẫn đến tỷ lệ bỏ sót chẩn đoán rất cao."
+    },
+    {
+      "id": "night-variability-2017",
+      "title": "Night-to-Night Variability of Obstructive Sleep Apnea in a Large Clinical Cohort",
+      "organization": "Annals of the American Thoracic Society",
+      "year": 2017,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28876930/",
+      "citation": "Stöberl AS, et al. Ann Am Thorac Soc. 2017;14(11):1687-1694.",
+      "keyFinding": "20% đến 50% bệnh nhân có sự thay đổi phân loại độ nặng hoặc âm tính giả nếu chỉ đo 1 đêm duy nhất do ảnh hưởng của tư thế ngủ, rượu, và độ sâu giấc ngủ."
+    },
+    {
+      "id": "diff-hypoxemia-2014",
+      "title": "Sleep-Disordered Breathing and Nocturnal Hypoxemia: Differential Diagnosis Beyond OSA",
+      "organization": "Clinics in Chest Medicine (PubMed)",
+      "year": 2014,
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4318538/",
+      "citation": "Owens RL, Malhotra A. Clin Chest Med. 2014;35(3):559-570.",
+      "keyFinding": "Tụt oxy ban đêm không đặc hiệu cho OSA: chẩn đoán phân biệt rộng gồm COPD, béo phì giảm thông khí (OHS), ngưng thở trung ương (CSA), và bệnh phổi mô kẽ."
+    },
+    {
+      "id": "somers-sympathetic-1995",
+      "title": "Sympathetic neural mechanisms in obstructive sleep apnea",
+      "organization": "Journal of Clinical Investigation",
+      "year": 1995,
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC296068/",
+      "citation": "Somers VK, et al. J Clin Invest. 1995;96(4):1897-1904.",
+      "keyFinding": "Cơn bão giao cảm: Mỗi đợt vi thức giấc giải phóng đường thở đi kèm phóng thích ồ ạt noradrenaline, làm huyết áp và nhịp tim tăng vọt ngay sau đợt ngưng thở."
+    },
+    {
+      "id": "craniofacial-osa-2012",
+      "title": "Craniofacial Phenotyping in Obstructive Sleep Apnea",
+      "organization": "Sleep (Oxford Academic)",
+      "year": 2012,
+      "url": "https://academic.oup.com/sleep/article/35/6/789/2458732",
+      "citation": "Lee RW, et al. Sleep. 2012;35(6):789-798.",
+      "keyFinding": "Người gầy, trẻ tuổi, thể thao vẫn có thể bị OSA do cấu trúc xương hàm dưới lùi (retrognathia), vòm họng hẹp, cuống lưỡi to bất thường, đặc biệt phổ biến ở người gốc Á."
+    }
+  ],
+  "traps": [
+    {
+      "id": "trap-1",
+      "title": "Đồ thị SpO2 có nhiều vệt tụt oxy ban đêm",
+      "category": "spo2",
+      "observation": "App O2Ring hiển thị đồ thị ban đêm có 15 lần chỉ số SpO2 tụt xuống dưới 90% (ODI = 15 lần/giờ).",
+      "fallacy": "Chắc chắn người dùng này đã bị bệnh Ngưng thở khi ngủ do tắc nghẽn (OSA) mức độ trung bình.",
+      "why": "Tụt SpO2 ban đêm (Nocturnal Hypoxemia) không hề đặc hiệu cho OSA. Nó có thể xuất phát từ COPD (bất tương xứng thông khí/tưới máu), Hội chứng béo phì giảm thông khí (OHS), Ngưng thở trung ương (CSA do suy tim), hoặc đơn giản là nhiễu cử động cơ học khi người dùng nằm đè lên cánh tay làm giảm tưới máu mao mạch ngón tay.",
+      "interviewRisk": "Gán nhãn bệnh vội vã khiến người dùng hoảng sợ, phòng thủ, hoặc bỏ qua việc tầm soát các bệnh lý phổi/tim mạch tiềm ẩn khác.",
+      "betterQuestion": "Khi xem lại đồ thị giấc ngủ đêm qua, anh/chị cảm nhận thế nào về giấc ngủ đó? Đêm qua anh/chị có nằm ở tư thế nào đặc biệt, hoặc có tiền sử về vấn đề hô hấp nào khác từ trước đến nay không?",
+      "sourceIds": [
+        "aasm-diag-2017",
+        "diff-hypoxemia-2014"
+      ]
+    },
+    {
+      "id": "trap-2",
+      "title": "Tiếng ngáy to 'rung nhà'",
+      "category": "snoring",
+      "observation": "Vợ người dùng phàn nàn chồng ngáy rất to mỗi đêm, tiếng ngáy vang dội sang tận phòng bên cạnh.",
+      "fallacy": "Người này chắc chắn bị hẹp đường thở bệnh lý và cần can thiệp điều trị OSA.",
+      "why": "Ngáy có độ nhạy cao (~80-90%) nhưng độ đặc hiệu rất thấp (~30-40%). Gần 50% nam giới trưởng thành ngáy là 'ngáy nguyên phát' (Primary Snoring) — mô mềm rung tạo tiếng ồn nhưng lòng đường thở vẫn mở, không tụt oxy, không làm nát cấu trúc giấc ngủ. Ngược lại, người OSA nặng lúc tắc thở hoàn toàn lại hoàn toàn im lặng.",
+      "interviewRisk": "Nhầm lẫn giữa vấn đề âm thanh xã hội (phiền người ngủ cùng) với rối loạn huyết động và ngạt thở bệnh lý.",
+      "betterQuestion": "Ngoài tiếng ngáy mà chị nhà nghe thấy, anh có bao giờ tự cảm thấy mình bị hụt hơi, khô rát họng khi thức dậy, hay người nhà có thấy những lúc anh im bặt một lúc rồi giật mình hít mạnh không?",
+      "sourceIds": [
+        "uspstf-osa-2022",
+        "aasm-diag-2017"
+      ]
+    },
+    {
+      "id": "trap-3",
+      "title": "Sáng dậy mệt mỏi, người uể oải đờ đẫn",
+      "category": "fatigue",
+      "observation": "Khách hàng chia sẻ: 'Dạo này sáng nào tôi thức dậy cũng thấy người nặng trĩu, uể oải, không có năng lượng làm việc.'",
+      "fallacy": "Đây là triệu chứng điển hình của giấc ngủ bị gián đoạn do thiếu oxy não của bệnh nhân OSA.",
+      "why": "Y học giấc ngủ phân biệt rất nghiêm ngặt giữa Mệt mỏi kiệt sức (Fatigue - thiếu năng lượng) và Buồn ngủ quá mức (Excessive Daytime Sleepiness - EDS - xu hướng ngủ gật). Mệt mỏi có vô số nguyên nhân: thiếu ngủ mạn tính do lối sống, stress, trầm cảm, thiếu máu, suy giáp, hoặc uống rượu bia trước khi ngủ.",
+      "interviewRisk": "Dễ bị gán nhầm mọi cảm giác mệt mỏi ban ngày vào bệnh ngưng thở, làm lệch hướng bài toán sản phẩm.",
+      "betterQuestion": "Anh có thể mô tả cụ thể cảm giác mệt mỏi đó diễn ra như thế nào trong ngày không? Nó giống như cảm giác cơ thể kiệt sức thiếu năng lượng, hay là anh cảm thấy mí mắt trĩu xuống và có thể ngủ thiếp đi bất cứ lúc nào?",
+      "sourceIds": [
+        "nhlbi-osa-topics"
+      ]
+    },
+    {
+      "id": "trap-4",
+      "title": "User khẳng định: 'Ban ngày tôi không hề buồn ngủ, rất tỉnh táo'",
+      "category": "asymptomatic",
+      "observation": "Người dùng trả lời: 'Tôi chẳng bao giờ ngủ gật ban ngày cả, làm việc năng suất bình thường, chắc chắn tôi không có vấn đề gì.'",
+      "fallacy": "Người dùng này không thuộc nhóm đối tượng có nguy cơ mắc OSA.",
+      "why": "Tồn tại một phân nhóm lâm sàng lớn gọi là 'Minimally Symptomatic OSA' (hoặc Asymptomatic OSA): bệnh nhân có chỉ số AHI > 30 (rất nặng) nhưng điểm Epworth Sleepiness Scale (ESS) < 10 (tỉnh táo hoàn toàn). Nhóm này thích nghi với việc mệt mỏi hoặc duy trì trương lực giao cảm cao, nhưng vẫn chịu đầy đủ nguy cơ xơ vữa mạch máu, đột quỵ và cao huyết áp.",
+      "interviewRisk": "Loại trừ oan uổng một phân khúc khách hàng quan trọng chỉ vì tin vào câu trả lời 'tôi không buồn ngủ'.",
+      "betterQuestion": "Thật tuyệt khi anh luôn tỉnh táo ban ngày! Khi đi khám sức khỏe định kỳ, bác sĩ có bao giờ lưu ý với anh về chỉ số huyết áp, tim mạch, hoặc anh có thói quen thức dậy đi tiểu đêm không?",
+      "sourceIds": [
+        "mosaic-trial-2014"
+      ]
+    },
+    {
+      "id": "trap-5",
+      "title": "Phụ nữ trung niên mất ngủ giữa đêm và đau đầu sáng",
+      "category": "gender",
+      "observation": "Khách hàng nữ 45 tuổi chia sẻ: 'Tôi không ngáy, nhưng tôi hay bị mất ngủ lúc 2-3h sáng, thức dậy đau ê ẩm hai thái dương.'",
+      "fallacy": "Không ngáy thì không phải bệnh lý ngưng thở; đây chỉ là stress tâm lý hoặc mất ngủ tiền mãn kinh thông thường.",
+      "why": "Phụ nữ mắc OSA biểu hiện phi điển hình (Atypical presentation): ít khi ngáy to như sấm, mà hay bị tăng trở kháng đường thở trên (UARS) gây mất ngủ, thức giấc giữa đêm kèm tim đập nhanh, đau đầu sáng sớm (do ứ đọng CO2 gây giãn mạch não). Phụ nữ bị OSA thường bị chẩn đoán nhầm thành trầm cảm và kê thuốc an thần làm hầu họng sụp nặng hơn.",
+      "interviewRisk": "Bỏ sót nhóm người dùng nữ — phân khúc thường chịu gánh nặng chất lượng sống rất lớn nhưng bị định kiến nam giới che lấp.",
+      "betterQuestion": "Cảm giác đau đầu buổi sáng của chị thường kéo dài trong bao lâu sau khi rời giường? Khi giật mình thức giấc lúc 2-3h sáng, chị có cảm giác tim đập thình thịch, hụt hơi hay miệng bị khô rát không?",
+      "sourceIds": [
+        "women-osa-2016"
+      ]
+    },
+    {
+      "id": "trap-6",
+      "title": "Đeo O2Ring 1 đêm thấy SpO2 đẹp 97%, không vệt tụt oxy",
+      "category": "wearable",
+      "observation": "Người dùng đeo nhẫn thử nghiệm 1 đêm, sáng hôm sau app hiển thị SpO2 trung bình 97%, đồ thị phẳng đẹp.",
+      "fallacy": "Hệ hô hấp của người này khi ngủ hoàn toàn bình thường, không có bất kỳ rối loạn thở nào.",
+      "why": "Có 2 lý do y học lớn: (1) Biến thiên đêm này qua đêm khác (Night-to-night variability): 20-50% bệnh nhân đổi mức độ nặng nhẹ tùy tư thế nằm (nghiêng vs ngửa), uống rượu bia, nghẹt mũi; (2) Giới hạn cảm biến oxy: Người bị vi thức giấc (micro-arousal) do hẹp đường thở nhưng oxy chưa kịp tụt quá 3-4% thì máy đo SpO2 sẽ không phát hiện được dù giấc ngủ đã bị nát vụn.",
+      "interviewRisk": "Tạo cảm giác an tâm giả tạo (false reassurance) cho khách hàng chỉ sau 1 đêm thử nghiệm.",
+      "betterQuestion": "Đêm qua anh/chị cảm thấy giấc ngủ của mình có giống với những đêm thông thường không? Thường ngày anh/chị ngủ ở tư thế nào (nằm ngửa hay nằm nghiêng)?",
+      "sourceIds": [
+        "night-variability-2017",
+        "aasm-diag-2017"
+      ]
+    },
+    {
+      "id": "trap-7",
+      "title": "SpO2 tụt kèm theo nhịp tim đột ngột vọt lên 95 bpm",
+      "category": "heart_rate",
+      "observation": "Trên biểu đồ O2Ring, cứ mỗi khi SpO2 rơi xuống đáy 85% thì ngay sau đó nhịp tim vọt từ 60 lên 95 bpm.",
+      "fallacy": "Khách hàng bị bệnh lý rối loạn nhịp tim hoặc suy tim nguyên phát lúc ngủ.",
+      "why": "Đây là dấu ấn sinh lý chuẩn mực của Phản xạ Tỉnh giấc ngắn (Micro-arousal) và Cơn bão Giao cảm. Khi ngạt thở → thiếu oxy và tăng CO2 → não giật mình thức giấc chớp nhoáng để mở đường thở, kích hoạt tuyến thượng thận phóng adrenaline làm tim đập dồn dập tống máu đi nuôi cơ thể. Đây là phản xạ bảo tồn sự sống trước ngạt thở.",
+      "interviewRisk": "Chẩn đoán bậy bệnh tim mạch gây khủng hoảng tâm lý nghiêm trọng cho người dùng.",
+      "betterQuestion": "Thiết bị ghi nhận một số thời điểm nhịp tim dao động nhanh kèm theo dao động oxy. Anh/chị có nhớ những lúc đó mình có giật mình tỉnh giấc, đi vệ sinh, hay mơ thấy ác mộng ngạt thở không?",
+      "sourceIds": [
+        "eckert-pathophys-2008",
+        "somers-sympathetic-1995"
+      ]
+    },
+    {
+      "id": "trap-8",
+      "title": "Gymer trẻ tuổi, cơ bắp 6 múi không thể bị OSA",
+      "category": "anatomy",
+      "observation": "Khách hàng là nam thanh niên 26 tuổi, thể hình săn chắc (BMI 21), tập gym tuần 6 buổi.",
+      "fallacy": "Người này thể trạng khỏe mạnh, không béo bụng nên chắc chắn không thể mắc chứng ngưng thở khi ngủ.",
+      "why": "Béo phì chỉ là yếu tố nguy cơ, không phải điều kiện tiên quyết. Rất nhiều người trẻ, gầy bị OSA do giải phẫu sọ mặt (Craniofacial morphology): xương hàm dưới lùi (retrognathia), vòm họng hẹp, cuống lưỡi to, amidan quá phát. Ngoài ra, gymer tập cổ dày (chu vi vòng cổ > 43cm) tạo áp lực cơ ép trực tiếp vào thành hầu khi ngủ.",
+      "interviewRisk": "Bỏ sót nhóm đối tượng trẻ tuổi có bất thường giải phẫu hoặc thể hình cơ bắp đặc thù.",
+      "betterQuestion": "Khi đi khám răng hàm mặt hoặc tai mũi họng, nha sĩ hay bác sĩ có từng nhận xét gì về cấu trúc vòm họng, amidan hay khớp cắn của bạn không?",
+      "sourceIds": [
+        "craniofacial-osa-2012"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "scenario-1",
+      "title": "Dân công nghệ thức khuya chạy sprint",
+      "difficulty": "cơ bản",
+      "userProfile": {
+        "name": "Tuấn",
+        "age": 32,
+        "gender": "Nam",
+        "occupation": "Kỹ sư phần mềm (IT)",
+        "deviceUsed": "Smartwatch đo SpO2"
+      },
+      "context": "Tuấn mua đồng hồ thông minh theo dõi sức khỏe, thấy báo SpO2 rớt 88% và than phiền mệt mỏi.",
+      "userStatement": "Dạo này sáng nào tôi thức dậy cũng thấy đau đầu nhẹ, người đờ đẫn mất tập trung. Cái đồng hồ của tôi báo điểm số giấc ngủ chỉ được 62/100, thấy bảo SpO2 có lúc rớt xuống 88%. Tôi nghĩ chắc do đợt này công ty đang chạy sprint nên thức khuya nhiều quá.",
+      "options": [
+        {
+          "id": "opt-1a",
+          "text": "SpO2 xuống 88% là tụt oxy máu nguy hiểm rồi anh ơi. Triệu chứng đau đầu sáng sớm với đờ đẫn là dấu hiệu kinh điển của OSA đấy, anh phải đi khám gấp đi.",
+          "type": "labeling",
+          "typeLabel": "Bẫy gán nhãn bệnh & Kết luận sớm",
+          "isSafe": false,
+          "feedback": "❌ SAI LẦM NGHIÊM TRỌNG!",
+          "explanation": "Bạn vừa đóng vai bác sĩ chẩn đoán bệnh cho user chỉ dựa trên 1 chỉ số smartwatch. Điều này gây hoang mang và khiến user chuyển sang trạng thái phòng thủ thay vì cởi mở chia sẻ trải nghiệm thực tế."
+        },
+        {
+          "id": "opt-1b",
+          "text": "Anh có thấy mình hay ngáy to rung nhà không? Có bao giờ nửa đêm anh giật mình thở hổn hển không?",
+          "type": "leading",
+          "typeLabel": "Bẫy dẫn dắt câu hỏi (Mớm cung)",
+          "isSafe": false,
+          "feedback": "⚠️ CÂU HỎI MỚM CUNG!",
+          "explanation": "Bạn đang áp đặt các triệu chứng kinh điển của nam giới lớn tuổi. Nếu Tuấn không ngáy to, bạn sẽ bỏ sót thông tin, hoặc Tuấn sẽ cố gượng ép trả lời theo kỳ vọng của bạn."
+        },
+        {
+          "id": "opt-1c",
+          "text": "Cảm ơn anh Tuấn đã chia sẻ. Ngoài những hôm chạy sprint thức khuya ra, những hôm anh đi ngủ sớm đủ giấc thì cảm giác buổi sáng thức dậy có khác đi không? Và cảm giác đau đầu đó thường diễn ra như thế nào trong ngày?",
+          "type": "safe",
+          "typeLabel": "An toàn (Mở rộng trải nghiệm)",
+          "isSafe": true,
+          "feedback": " TUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+          "explanation": "Bạn đang tách bạch giữa yếu tố 'thiếu ngủ do lối sống' và 'chất lượng giấc ngủ nội tại', đồng thời đào sâu vào đặc điểm cơn đau đầu một cách khách quan không định kiến."
+        }
+      ],
+      "reflectionPrompt": "Từ phản hồi của anh Tuấn, bạn nhận ra điều gì về việc phân biệt giữa thiếu ngủ do làm việc và rối loạn hô hấp khi ngủ?"
+    },
+    {
+      "id": "scenario-2",
+      "title": "Người đàn ông bị vợ phàn nàn tiếng ngáy",
+      "difficulty": "cơ bản",
+      "userProfile": {
+        "name": "Anh Hùng",
+        "age": 48,
+        "gender": "Nam",
+        "occupation": "Quản lý kinh doanh",
+        "deviceUsed": "O2Ring do vợ mua tặng"
+      },
+      "context": "Anh Hùng tự tin mình ngủ rất ngon, chỉ đeo nhẫn vì bị vợ ép.",
+      "userStatement": "Vợ tôi cứ làm ầm lên, bảo tôi ngáy to như máy cày, bắt tôi phải đeo cái nhẫn đo oxy này xem sao. Tôi thấy mình đặt lưng xuống 2 phút là ngáy o o tới sáng, ngủ sâu như chết, thức dậy vẫn khỏe re thì bệnh tật nỗi gì!",
+      "options": [
+        {
+          "id": "opt-2a",
+          "text": "Anh ngủ 'sâu như chết' thực ra là do não anh bị thiếu oxy làm ngất lịm đi đấy. Anh đeo nhẫn đi, nếu thấy SpO2 tụt thì chắc chắn là ngưng thở khi ngủ rồi!",
+          "type": "labeling",
+          "typeLabel": "Bẫy suy diễn sai sinh lý & Tranh cãi",
+          "isSafe": false,
+          "feedback": "❌ SAI LỆCH SINH LÝ HỌC!",
+          "explanation": "Thiếu oxy và tăng CO2 không làm người ta 'ngất lịm ngủ sâu', mà ngược lại kích hoạt phản xạ vi tỉnh thức (arousal) khiến giấc ngủ bị xé nát. Hơn nữa, tranh cãi với user là điều tối kỵ trong phỏng vấn."
+        },
+        {
+          "id": "opt-2b",
+          "text": "Anh có hay buồn ngủ gật gù khi lái xe hay khi ngồi họp không? Nếu không có thì vợ anh lo quá thôi.",
+          "type": "premature_conclusion",
+          "typeLabel": "Bẫy dựa trên kiểu hình đơn lẻ",
+          "isSafe": false,
+          "feedback": "⚠️ BẪY CHỦ QUAN NGUY HIỂM!",
+          "explanation": "Rất nhiều người bị OSA nặng nhưng thuộc nhóm Minimally Symptomatic (ít triệu chứng), họ hoàn toàn không buồn ngủ ban ngày. Hỏi như vậy sẽ khiến bạn và user cùng bỏ qua rủi ro tim mạch tiềm ẩn."
+        },
+        {
+          "id": "opt-2c",
+          "text": "Rất thú vị khi anh cảm thấy mình ngủ rất nhanh và sâu! Cho em hỏi thêm, vợ anh phàn nàn tiếng ngáy của anh đều đặn cả đêm, hay có những khoảng im bặt một lúc rồi anh mới ngáy giật mình trở lại? Và buổi sáng thức dậy họng anh có bị khô rát không?",
+          "type": "safe",
+          "typeLabel": "An toàn (Khai thác triệu chứng khách quan)",
+          "isSafe": true,
+          "feedback": " RẤT SẮC SẢO VÀ TINH TẾ!",
+          "explanation": "Bạn khai thác điểm mấu chốt để phân biệt giữa 'Ngáy nguyên phát' (đều đặn) và 'Ngưng thở tắc nghẽn' (im lặng rồi thở giật), đồng thời hỏi dấu hiệu khô họng (do thở miệng) mà không hề phán xét."
+        }
+      ],
+      "reflectionPrompt": "Tại sao một người tự thấy mình 'ngủ say như chết' lại vẫn có thể có nguy cơ cao về rối loạn hô hấp khi ngủ?"
+    },
+    {
+      "id": "scenario-3",
+      "title": "Phụ nữ trung niên mất ngủ & đau đầu",
+      "difficulty": "nâng cao",
+      "userProfile": {
+        "name": "Chị Mai",
+        "age": 46,
+        "gender": "Nữ",
+        "occupation": "Kế toán trưởng",
+        "deviceUsed": "O2Ring"
+      },
+      "context": "Chị Mai mất ngủ giữa đêm, tim đập nhanh, đang được điều trị rối loạn lo âu bằng thuốc an thần.",
+      "userStatement": "Tôi mua nhẫn O2Ring này chủ yếu vì hay bị mất ngủ. Đêm tôi ngủ rất chập chờn, cứ khoảng 2-3 giờ sáng là giật mình tỉnh giấc, tim đập thình thịch, sau đó trằn trọc mãi không ngủ lại được. Bác sĩ bảo tôi bị rối loạn lo âu và tiền mãn kinh, kê thuốc an thần nhưng tôi uống vào thấy người càng nặng trĩu.",
+      "options": [
+        {
+          "id": "opt-3a",
+          "text": "Chị là phụ nữ, lại mất ngủ và lo âu thì rõ ràng là bệnh mất ngủ tâm căn rồi, thiết bị SpO2 chỉ dành cho người ngáy to ngưng thở thôi chị ơi.",
+          "type": "labeling",
+          "typeLabel": "Bẫy định kiến giới (Gender Bias)",
+          "isSafe": false,
+          "feedback": "❌ ĐỊNH KIẾN NGUY HẠI!",
+          "explanation": "Bạn vừa phạm một sai lầm phổ biến nhất trong y học giấc ngủ: nghĩ rằng OSA chỉ có ở đàn ông béo ngáy to. Phụ nữ bị OSA thường biểu hiện chính là mất ngủ giữa đêm và tim đập nhanh!"
+        },
+        {
+          "id": "opt-3b",
+          "text": "Cảm ơn chị Mai. Khi chị giật mình tỉnh dậy lúc 2-3 giờ sáng với cảm giác tim đập thình thịch, lúc đó chị có cảm thấy mình đang bị hụt hơi, ngột ngạt hay miệng bị khô khát nước không? Và những hôm uống thuốc an thần, sáng hôm sau chị cảm thấy thế nào?",
+          "type": "safe",
+          "typeLabel": "An toàn (Truy tìm dấu vết vi thức giấc)",
+          "isSafe": true,
+          "feedback": " XUẤT SẮC! CỰC KỲ THẤU CẢM VÀ CHUẨN XÁC.",
+          "explanation": "Tim đập thình thịch lúc nửa đêm thường là hậu quả của cơn bão giao cảm sau cơn ngạt thở. Thuốc an thần làm giãn cơ hầu họng khiến các cơn ngưng thở dài hơn, giải thích tại sao sáng dậy người càng nặng trĩu."
+        },
+        {
+          "id": "opt-3c",
+          "text": "Chị bị ngưng thở tắc nghẽn ở nữ rồi. Thuốc an thần làm tê liệt đường thở đấy, chị dừng uống ngay đi!",
+          "type": "dangerous_advice",
+          "typeLabel": "Bẫy can thiệp y khoa trái thẩm quyền",
+          "isSafe": false,
+          "feedback": "❌ CỰC KỲ NGUY HIỂM VỀ PHÁP LÝ & Y TẾ!",
+          "explanation": "Là founder công nghệ, bạn TUYỆT ĐỐI KHÔNG ĐƯỢC PHÉP khuyên người dùng dừng thuốc do bác sĩ điều trị kê đơn. Điều này vi phạm nghiêm trọng nguyên tắc đạo đức và an toàn."
+        }
+      ],
+      "reflectionPrompt": "Nêu 2 điểm khác biệt cơ bản giữa triệu chứng OSA ở nữ giới so với nam giới mà bạn rút ra từ trường hợp chị Mai?"
+    },
+    {
+      "id": "scenario-4",
+      "title": "Gymer trẻ tuổi huyết áp cao kháng trị",
+      "difficulty": "nâng cao",
+      "userProfile": {
+        "name": "Hoàng",
+        "age": 29,
+        "gender": "Nam",
+        "occupation": "Huấn luyện viên thể hình (PT)",
+        "deviceUsed": "Wearable SpO2"
+      },
+      "context": "Hoàng có cơ thể 6 múi hoàn hảo, ăn uống lành mạnh nhưng huyết áp đo được 145/95 mmHg.",
+      "userStatement": "Em ăn uống cực kỳ sạch (eat clean), tập gym tuần 6 buổi, cơ bụng 6 múi không một giọt mỡ thừa. Nhưng đợt khám sức khỏe vừa rồi bác sĩ bảo huyết áp của em lên tận 145/95, uống thuốc nhẹ không xuống. Bạn gái em bảo thi thoảng thấy em ngủ thở dốc. Em không tin mình có bệnh gì về hô hấp!",
+      "options": [
+        {
+          "id": "opt-4a",
+          "text": "Cơ bắp cuồn cuộn thế này thì phổi khỏe lắm, chắc do em uống nhiều thực phẩm bổ sung Pre-workout chứa nhiều caffein nên huyết áp mới tăng thôi.",
+          "type": "premature_conclusion",
+          "typeLabel": "Bẫy hiệu ứng hào quang (Halo Effect)",
+          "isSafe": false,
+          "feedback": "❌ SAI LẦM DO VẺ NGOÀI KHỎE MẠNH!",
+          "explanation": "Nhiều gymer tập tạ có cơ cổ rất dày (vòng cổ > 43cm) hoặc có cấu trúc hàm nhỏ, lưỡi to. Khối cơ cổ phì đại ép trực tiếp vào thành hầu khi ngủ làm hẹp đường thở. Tăng huyết áp kháng trị ở người trẻ là một dấu hiệu báo động (red flag) của OSA."
+        },
+        {
+          "id": "opt-4b",
+          "text": "Chào Hoàng, thể lực của bạn thật đáng nể. Bạn gái bạn có kể rõ hơn là những lúc bạn 'thở dốc' thường xuất hiện vào thời điểm nào trong đêm không? Và bạn có từng đo chu vi vòng cổ của mình, hoặc bác sĩ tai mũi họng có nhận xét gì về cấu trúc vòm họng của bạn không?",
+          "type": "safe",
+          "typeLabel": "An toàn (Khai thác cơ địa vòng cổ & giải phẫu)",
+          "isSafe": true,
+          "feedback": " CHUẨN XÁC BẬC THẦY!",
+          "explanation": "Vòng cổ lớn (kể cả do cơ bắp chứ không phải mỡ) và cấu trúc sọ mặt hẹp là các yếu tố nguy cơ độc lập đã được chứng minh trong y học giấc ngủ."
+        },
+        {
+          "id": "opt-4c",
+          "text": "145/95 là tăng huyết áp do ngưng thở khi ngủ rồi em. Em lấy O2Ring đeo ngay, nếu SpO2 dưới 90% là đi làm nội soi vòm họng nhé.",
+          "type": "labeling",
+          "typeLabel": "Bẫy kết luận sớm & chỉ định chuyên môn",
+          "isSafe": false,
+          "feedback": "⚠️ KẾT LUẬN QUÁ VỘI VÀNG!",
+          "explanation": "Bạn lại hấp tấp kết luận nguyên nhân - kết quả và đưa ra chỉ định nội soi trước khi thu thập đủ dữ kiện lâm sàng."
+        }
+      ],
+      "reflectionPrompt": "Tại sao một người có chỉ số BMI hoàn hảo và tập luyện cường độ cao vẫn có thể mắc hội chứng ngưng thở khi ngủ?"
+    },
+    {
+      "id": "scenario-5",
+      "title": "Bác lớn tuổi đi tiểu đêm nhiều lần",
+      "difficulty": "tinh tế",
+      "userProfile": {
+        "name": "Bác Bình",
+        "age": 66,
+        "gender": "Nam",
+        "occupation": "Cán bộ hưu trí",
+        "deviceUsed": "O2Ring do con mua"
+      },
+      "context": "Bác Bình đêm nào cũng dậy 3-4 lần đi tiểu, tưởng do thận hoặc tiền liệt tuyến tuổi già.",
+      "userStatement": "Con tôi mua cho tôi chiếc nhẫn này để theo dõi sức khỏe. Tôi già rồi, đêm nào cũng lục đục dậy đi tiểu 3 đến 4 lần. Bác sĩ bảo thận với tiền liệt tuyến hơi phì đại nhẹ của tuổi già thôi. Sáng dậy họng khô khốc, miệng đắng ngắt.",
+      "options": [
+        {
+          "id": "opt-5a",
+          "text": "Bác đi tiểu đêm 3-4 lần là do bệnh tiền liệt tuyến rồi bác ạ, chiếc nhẫn này đo tim với oxy thôi chứ không phát hiện được bệnh thận đâu.",
+          "type": "premature_conclusion",
+          "typeLabel": "Bẫy điểm mù sinh lý học",
+          "isSafe": false,
+          "feedback": "❌ BỎ SÓT CƠ CHẾ SINH LÝ QUAN TRỌNG!",
+          "explanation": "Tiểu đêm (Nocturia) là triệu chứng cực kỳ phổ biến của OSA nặng ở người cao tuổi. Khi lồng ngực gồng ép tạo áp lực âm cực đại, tim bị kéo căng khiến tâm nhĩ tiết ra hormone ANP (Atrial Natriuretic Peptide) kích thích thận thải nước tiểu dồn dập."
+        },
+        {
+          "id": "opt-5b",
+          "text": "Cháu chào bác Bình. Bác cho cháu hỏi, mỗi lần thức dậy đi tiểu, bác cảm thấy bàng quang căng tức thực sự phải dậy, hay là bác tự nhiên tỉnh giấc lơ mơ rồi tiện thể đi vệ sinh luôn? Và cảm giác khô đắng họng buổi sáng bác bị lâu chưa ạ?",
+          "type": "safe",
+          "typeLabel": "An toàn (Phân biệt tiểu đêm vs thức giấc ngạt thở)",
+          "isSafe": true,
+          "feedback": " CÂU HỎI LÂM SÀNG CỰC KỲ TINH TẾ!",
+          "explanation": "Giúp bóc tách bản chất: Người bệnh thức giấc vì ngạt thở kích hoạt vi tỉnh thức, khi đã tỉnh rồi mới nhận biết buồn tiểu; hoàn toàn khác với việc thức giấc vì bàng quang căng tức thực thụ."
+        },
+        {
+          "id": "opt-5c",
+          "text": "Khô họng với tiểu đêm nhiều là dấu hiệu đường thở bị tắc nghẽn 100% rồi bác. Bác đeo nhẫn xem SpO2 tụt bao nhiêu để con bảo con bác mua máy thở CPAP cho bác nhé.",
+          "type": "dangerous_advice",
+          "typeLabel": "Bẫy tư vấn máy thở không có chỉ định",
+          "isSafe": false,
+          "feedback": "❌ VI PHẠM NGUYÊN TẮC AN TOÀN!",
+          "explanation": "Máy thở CPAP là thiết bị y tế điều trị theo toa, cần có kết quả đa ký giấc ngủ và chỉ định của bác sĩ chuyên khoa hô hấp/giấc ngủ."
+        }
+      ],
+      "reflectionPrompt": "Mối liên hệ giữa áp lực âm trong lồng ngực khi ngưng thở tắc nghẽn và hiện tượng tiểu đêm ở người lớn tuổi là gì?"
+    },
+    {
+      "id": "scenario-6",
+      "title": "User hoảng loạn vì app báo tụt SpO2 xuống 78%",
+      "difficulty": "tinh tế",
+      "userProfile": {
+        "name": "Lan",
+        "age": 27,
+        "gender": "Nữ",
+        "occupation": "Nhân viên văn phòng",
+        "deviceUsed": "O2Ring"
+      },
+      "context": "Lan thức dậy mở app thấy vạch đỏ tụt SpO2 xuống 78% lúc 4h sáng, vô cùng hoảng sợ.",
+      "userStatement": "Trời ơi app của bạn làm tôi mất ăn mất ngủ! Sáng nay mở app ra thấy biểu đồ SpO2 tụt dốc không phanh xuống 78% lúc 4 giờ sáng, có vạch cảnh báo đỏ chót. Tôi sợ quá, có phải tôi sắp bị đột tử trong lúc ngủ không? Nhưng đêm qua tôi thấy mình ngủ một mạch rất êm mà!",
+      "options": [
+        {
+          "id": "opt-6a",
+          "text": "78% là thiếu oxy não cấp tính rồi bạn ơi! Bạn ngủ một mạch êm là do não bạn bị hôn mê thiếu oxy đấy, bạn đi cấp cứu ngay đi!",
+          "type": "labeling",
+          "typeLabel": "Bẫy thổi phồng dữ liệu & Gây hoảng sợ",
+          "isSafe": false,
+          "feedback": "❌ TAI HẠI VÀ THIẾU KIẾN THỨC KỸ THUẬT!",
+          "explanation": "Tụt SpO2 đơn độc xuống 78% trên wearable ở người trẻ khỏe mạnh không triệu chứng có xác suất cực cao là nhiễu cơ học (đè tay làm co mạch ngoại vi, lệch vị trí cảm biến quang học). Nói như vậy có thể gây khủng hoảng tâm lý và kiện tụng."
+        },
+        {
+          "id": "opt-6b",
+          "text": "Bạn Lan bình tĩnh nhé, chỉ số SpO2 trên thiết bị đeo tay có thể bị ảnh hưởng rất nhiều bởi các yếu tố bên ngoài. Cho mình hỏi đêm qua lúc 4h sáng bạn có nằm đè lên cánh tay đeo nhẫn không? Ngón tay đeo nhẫn có bị lỏng hay chật quá không, và khi thức dậy bàn tay bạn có cảm giác bị tê buốt hay lạnh không?",
+          "type": "safe",
+          "typeLabel": "An toàn (Kiểm tra nhiễu kỹ thuật & Giải tỏa lo âu)",
+          "isSafe": true,
+          "feedback": " CHUYÊN NGHIỆP VÀ BẢN LĨNH FOUNDER!",
+          "explanation": "Bạn xử lý khủng hoảng mẫu mực: trấn an tâm lý ngay lập tức, kiểm tra các yếu tố nhiễu vật lý (đè ép mao mạch, kích cỡ nhẫn, co mạch ngoại vi) trước khi bàn về bệnh lý."
+        },
+        {
+          "id": "opt-6c",
+          "text": "App báo đỏ thì chắc chắn máy ghi nhận đúng rồi. Bạn tải dữ liệu ra đem đi khám chuyên khoa hô hấp đi.",
+          "type": "sensor_blindness",
+          "typeLabel": "Bẫy mù quáng tin vào cảm biến",
+          "isSafe": false,
+          "feedback": "⚠️ MÙ QUÁNG TIN VÀO CẢM BIẾN!",
+          "explanation": "Là founder làm sản phẩm phần cứng/wearable, bạn phải thấu hiểu giới hạn vật lý của cảm biến PPG. Không có cảm biến đeo tay nào là không có tỷ lệ dương tính giả (false positives)."
+        }
+      ],
+      "reflectionPrompt": "Nêu 3 nguyên nhân kỹ thuật phổ biến nhất có thể khiến thiết bị đo SpO2 dạng nhẫn báo tụt oxy giả tạo trong đêm?"
+    }
+  ],
+  "mechanismSteps": [
+    {
+      "step": 1,
+      "title": "Hít thở bình thường & Thông khí phế nang",
+      "shortSummary": "Đường thở mở thông thoáng, không khí lưu thông êm ả vào phổi.",
+      "laymanExplanation": "Bình thường khi ngủ say, cổ họng của mình giống như một đường hầm thông thoáng. Không khí chứa đầy oxy đi vào mũi, chui qua họng rồi xuống phổi nhẹ nhàng êm ru, không có vật gì cản trở.",
+      "physiologicalDetail": "Cơ hoành co bóp tạo áp lực âm nhẹ trong lồng ngực (-1 đến -2 cmH2O). Trương lực cơ giãn đường thở trên (cơ cằm-lưỡi Genioglossus, cơ căng màn hầu) duy trì độ mở pharynx vượt qua áp lực đóng tới hạn (Pcrit < -4 cmH2O). Thông khí phế nang (VA) ổn định đảm bảo cấp đủ oxy cho mao mạch phổi.",
+      "metrics": {
+        "airflowPercent": 100,
+        "spo2Percent": 98,
+        "paco2Status": "bình thường (40 mmHg)",
+        "heartRateBpm": 62,
+        "arousalStatus": "Ngủ êm"
+      },
+      "visualState": {
+        "airwayStatus": "open",
+        "chestEffort": "normal",
+        "bloodColor": "bright_red",
+        "brainArousal": false,
+        "sympatheticSurge": false
+      },
+      "sourceIds": [
+        "eckert-pathophys-2008",
+        "nhlbi-osa-topics"
+      ],
+      "metaphor": {
+        "name": "Đường Hầm Thông Suốt",
+        "icon": "Wind",
+        "analogy": "Ống thông khí rộng mở, không khí tự do vào nạp oxy cho các túi phổi như xe chạy trên cao tốc thông thoáng."
+      }
+    },
+    {
+      "step": 2,
+      "title": "Trao đổi khí phế nang & Hemoglobin vận chuyển oxy",
+      "shortSummary": "O2 khuếch tán vào máu gắn kết với Hemoglobin (Hb), tạo SpO2 98%.",
+      "laymanExplanation": "Ở đáy phổi có hàng triệu túi bóng nhỏ xíu gọi là phế nang. Oxy từ túi bóng nhảy vào các chiếc xe tải tí hon trong máu gọi là Hemoglobin. Chiếc nhẫn O2Ring mình đeo chiếu tia sáng qua da để đếm xem xe tải đã chở đầy khách oxy chưa. 98% nghĩa là cứ 100 ghế xe tải thì có 98 ghế đã có oxy ngồi.",
+      "physiologicalDetail": "Phân áp oxy phế nang (PAO2 ≈ 100 mmHg) cao hơn phân áp oxy máu tĩnh mạch đưa tới phổi (PvO2 ≈ 40 mmHg), thúc đẩy khuếch tán thụ động qua màng phế nang - mao mạch (dày chỉ 0.5 µm) tuân theo Định luật Fick. O2 gắn thuận nghịch vào 4 nhân Hem của Hemoglobin tạo Oxyhemoglobin (Hb(O2)4). CO2 khuếch tán ngược lại để thở ra ngoài.",
+      "metrics": {
+        "airflowPercent": 100,
+        "spo2Percent": 98,
+        "paco2Status": "bình thường (40 mmHg)",
+        "heartRateBpm": 60,
+        "arousalStatus": "Ngủ êm"
+      },
+      "visualState": {
+        "airwayStatus": "open",
+        "chestEffort": "normal",
+        "bloodColor": "bright_red",
+        "brainArousal": false,
+        "sympatheticSurge": false
+      },
+      "sourceIds": [
+        "diff-hypoxemia-2014"
+      ],
+      "metaphor": {
+        "name": "Cánh Cửa Rung Lắc",
+        "icon": "Activity",
+        "analogy": "Khẩu cái mềm thả lỏng như lá cờ gặp gió lớn, rung bần bật 30-50 lần mỗi giây tạo nên âm thanh ngáy."
+      }
+    },
+    {
+      "step": 3,
+      "title": "Sập cơ học đường thở trên trong OSA",
+      "shortSummary": "Thành hầu xẹp bẹp dí dù cơ ngực/bụng vẫn gắng sức hít vào.",
+      "laymanExplanation": "Cổ họng con người không có xương cứng đỡ xung quanh mà toàn là mô mềm. Khi ngủ say, các thớ thịt này nhão ra, cuống lưỡi thụt xuống làm bẹp dí cổ họng — giống hệt như khi mình lấy ống hút giấy mỏng mà ráng sức hút thật mạnh thì ống hút bị bẹp dí lại. Phổi bên dưới thì gồng mình hít nhưng bên trên cửa đã khóa chặt, không một hạt khí nào lọt qua được.",
+      "physiologicalDetail": "Tắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (Pluminal < Pcrit). Điểm mấu chốt của OSA: nỗ lực hô hấp (respiratory effort) vẫn tiếp diễn và ngày càng mãnh liệt (thể hiện qua chuyển động ngược chiều nghịch thường giữa ngực và bụng). Áp lực âm màng phổi tụt sâu (-30 đến -60 cmH2O) tạo gánh nặng huyết động lớn lên buồng tim.",
+      "metrics": {
+        "airflowPercent": 0,
+        "spo2Percent": 94,
+        "paco2Status": "tăng dần (46 mmHg)",
+        "heartRateBpm": 55,
+        "arousalStatus": "Gắng sức thở"
+      },
+      "visualState": {
+        "airwayStatus": "collapsed",
+        "chestEffort": "straining",
+        "bloodColor": "darkening",
+        "brainArousal": false,
+        "sympatheticSurge": false
+      },
+      "sourceIds": [
+        "eckert-pathophys-2008",
+        "craniofacial-osa-2012"
+      ],
+      "metaphor": {
+        "name": "Ống Hút Bẹp Dí",
+        "icon": "AlertTriangle",
+        "analogy": "Khi hút sữa bằng ống hút quá mạnh hoặc ống bị mềm, thành ống họng sập dính chặt vào nhau, luồng khí tắt lịm 0%."
+      }
+    },
+    {
+      "step": 4,
+      "title": "Chuỗi thiếu O2, tích CO2 & Phản xạ vi tỉnh thức (Arousal)",
+      "shortSummary": "Thiếu oxy & ứ CO2 kích thích não giật mình ngắn 3-15s để co cơ mở đường thở.",
+      "laymanExplanation": "Vì cửa họng bị tắc, oxy trong máu cạn dần, còn khói độc CO2 thì tích tụ lại nghẹt thở. Cơ thể mình có hệ thống báo cháy cực kỳ thông minh: Khi nồng độ CO2 trong máu tăng quá cao, chuông báo cháy trong não réo vang. Não bắt buộc phải 'giật mình thức giấc chớp nhoáng' (chỉ vài giây thôi, sáng dậy không nhớ được) để ra lệnh cho các cơ ở cổ họng gồng cứng trở lại để cứu mạng!",
+      "physiologicalDetail": "XÁC MINH CHIỀU PHẢN XẠ: Thiếu oxy (PaO2 giảm) và tăng CO2 (PaCO2 tăng, toan hô hấp) kích thích trực tiếp thụ thể hóa học ngoại vi (Carotid bodies) và trung ương (Hành não) + thụ thể cơ học cảm nhận sức căng áp lực âm cực đại. Khi kích thích vượt qua Ngưỡng thức tỉnh (Arousal Threshold), tín hiệu truyền lên Hệ lưới ARAS gây ra vi thức giấc vỏ não (EEG Micro-arousal kéo dài 3-15s). Phản xạ này là cơ chế sinh tồn giúp tái kích hoạt nơ-ron vận động thần kinh số XII, khôi phục trương lực cơ cằm-lưỡi để mở đường thở.",
+      "metrics": {
+        "airflowPercent": 0,
+        "spo2Percent": 82,
+        "paco2Status": "ứ đọng nặng (>50 mmHg)",
+        "heartRateBpm": 58,
+        "arousalStatus": "KÍCH HOẠT VI TỈNH THỨC"
+      },
+      "visualState": {
+        "airwayStatus": "collapsed",
+        "chestEffort": "straining",
+        "bloodColor": "cyanotic",
+        "brainArousal": true,
+        "sympatheticSurge": false
+      },
+      "sourceIds": [
+        "eckert-pathophys-2008",
+        "aasm-diag-2017"
+      ],
+      "metaphor": {
+        "name": "Chuông Báo Cháy Não Bộ",
+        "icon": "Sparkles",
+        "analogy": "Cảm biến khói (thụ thể xoang cảnh) phát hiện oxy tụt, lập tức rung chuông báo động đánh thức vỏ não 3-5 giây."
+      }
+    },
+    {
+      "step": 5,
+      "title": "Mở lại đường thở, thông khí bù & Vòng lặp phá vỡ giấc ngủ",
+      "shortSummary": "Thở dốc bù oxy, tim đập nhanh vọt (bão giao cảm), ngủ lại và tái diễn 20-60 lần/đêm.",
+      "laymanExplanation": "Khi não giật mình đánh thức cơ họng dậy, miệng mở bung ra kèm một tiếng hít sâu thật mạnh — người nằm cạnh nghe như tiếng ngáy giật mình hoảng hốt. Sau đó người bệnh thở dồn dập vài hơi để nạp lại oxy. Lúc này tim đập thình thịch, huyết áp tăng vọt lên. Nhưng vừa thở lại được tí xíu thì người bệnh lại thiếp ngủ tiếp, cổ họng lại nhão ra và bẹp dí tiếp... Cứ như thế, cả đêm tim và não phải đánh vật hàng trăm lần mà sáng ra không hề hay biết!",
+      "physiologicalDetail": "Gốc lưỡi co mạnh ra trước giải phóng họng. Hiện tượng thở bù sau ngưng thở (post-apneic hyperventilation) thải nhanh CO2 và kéo SpO2 tăng lại 96%. Tuyến thượng thận phóng thích ồ ạt Adrenaline/Noradrenaline kích hoạt hệ giao cảm, làm nhịp tim vọt từ 60 lên 95-100 bpm và co thắt mạch gây tăng huyết áp. Khi CO2 hạ xuống, ổ kích thích hô hấp suy giảm (loop gain bất ổn), người bệnh ngủ thiếp lại và đường thở chuẩn bị sập ở chu kỳ tiếp theo.",
+      "metrics": {
+        "airflowPercent": 150,
+        "spo2Percent": 96,
+        "paco2Status": "giảm nhẹ do thở bù",
+        "heartRateBpm": 96,
+        "arousalStatus": "Hồi phục thở"
+      },
+      "visualState": {
+        "airwayStatus": "reopening",
+        "chestEffort": "recovery",
+        "bloodColor": "reoxygenating",
+        "brainArousal": true,
+        "sympatheticSurge": true
+      },
+      "sourceIds": [
+        "somers-sympathetic-1995",
+        "eckert-pathophys-2008"
+      ],
+      "metaphor": {
+        "name": "Bàn Đạp Ga Cứu Hộ",
+        "icon": "Zap",
+        "analogy": "Xung thần kinh số XII giật mạnh cơ lưỡi bung ra phía trước, kèm tiếng thở hít giật mình (gasp) cứu sống cơ thể."
+      }
+    }
+  ],
+  "waveformPatterns": [
+    {
+      "id": "pattern_sawtooth",
+      "name": "Dạng Răng Cưa Dao Động (Sawtooth Waves)",
+      "shapeTitle": "Tụt dốc nhọn rồi vọt nảy lên lặp lại liên tục",
+      "frequency": "Lặp lại mỗi 30 - 90 giây trong cơn ngưng thở",
+      "typicalDipDuration": "Mỗi đợt tụt kéo dài 15 - 45 giây, phục hồi nhanh",
+      "primaryCause": "Ngưng thở khi ngủ do tắc nghẽn (OSA kinh điển)",
+      "category": "airway_osa",
+      "badgeColor": "rose",
+      "isArtifact": false,
+      "analogy": "Giống như chiếc phao bị sóng kéo dìm xuống nước rồi lại bật trồi lên mặt nước khi giật mình thở lại.",
+      "mechanismWhy": "Khi ngủ say, cơ họng xẹp làm tắc khí → SpO2 tụt dần → Não giật mình kích hoạt cơ cằm-lưỡi kéo mở họng → Người bệnh hít mạnh thở dốc làm SpO2 vọt trở lại 98%. Vòng lặp này tạo ra hình răng cưa.",
+      "reassuringMessage": "Cơ thể bạn đang tự bảo vệ rất tốt bằng phản xạ vi thức giấc. Tình trạng này rất phổ biến và có thể cải thiện rõ rệt bằng các biện pháp không xâm lấn.",
+      "exclusionChecklist": [
+        "Bạn hoặc người thân có nghe thấy tiếng ngáy ngắt quãng, thỉnh thoảng ậm ừ thở dốc không?",
+        "Hiện tượng này có xảy ra nhiều hơn rõ rệt khi bạn nằm ngửa so với khi nằm nghiêng không?",
+        "Sáng dậy bạn có cảm giác khô khốc miệng hoặc hơi ê đầu không?"
+      ],
+      "actionSteps": {
+        "immediate": "Thử ngủ nghiêng một bên (Positional Therapy) bằng cách ôm gối ôm hoặc kê gối chống lật; tránh uống bia rượu hoặc thuốc an thần trước giờ ngủ ít nhất 4 tiếng.",
+        "monitoring": "Đeo nhẫn O2Ring liên tục 3-5 đêm ở cùng một ngón tay để kiểm tra xem dạng răng cưa này có xuất hiện đều đặn mỗi đêm hay chỉ đêm nào nằm ngửa/mệt mỏi.",
+        "clinical": "Nếu đồ thị răng cưa xuất hiện trên 3 đêm liên tiếp kèm mệt mỏi ban ngày, hãy mang hình ảnh này đến khám bác sĩ chuyên khoa Tai Mũi Họng hoặc Hô hấp để được chỉ định đo đa ký giấc ngủ (PSG)."
+      },
+      "sampleSvgWave": "M0,20 Q15,20 25,22 L35,55 L40,22 Q50,22 60,23 L70,60 L75,20 Q85,20 95,22 L105,52 L110,21 L130,20"
+    },
+    {
+      "id": "pattern_sustained_plateau",
+      "name": "Dạng Trũng Sâu Kéo Dài (Sustained Low Plateau)",
+      "shapeTitle": "Tụt xuống thấp và nằm bẹp dí 15-45 phút không nhịp bật",
+      "frequency": "Kéo dài thành từng mảng rộng, thường vào nửa sau đêm (pha giấc ngủ REM)",
+      "typicalDipDuration": "Kéo dài liên tục > 10-30 phút dưới 90%",
+      "primaryCause": "Giảm thông khí phổi (COPD thể tụt oxy đêm, Béo phì OHS, hoặc Hen đêm)",
+      "category": "pulmonary",
+      "badgeColor": "amber",
+      "isArtifact": false,
+      "analogy": "Giống như căn phòng kín thiếu dưỡng khí kéo dài, không có chu kỳ đóng-mở cửa đột ngột như dạng răng cưa.",
+      "mechanismWhy": "Không phải do họng bị sập cơ học đóng mở liên tục, mà do dung tích phổi hoặc trao đổi khí tại phế nang bị suy giảm trường diễn (bất xứng thông khí/tưới máu V/Q) khi các cơ hô hấp phụ nghỉ ngơi trong giấc ngủ.",
+      "reassuringMessage": "Đừng hoảng hốt. Hiện tượng này thường liên quan đến đường hô hấp dưới (phổi/phế quản) hoặc cân nặng, cần thăm khám bài bản thay vì tự ý mua máy thở CPAP.",
+      "exclusionChecklist": [
+        "Bạn có tiền sử hút thuốc lá lâu năm hoặc từng được chẩn đoán viêm phế quản/hen suyễn không?",
+        "Bạn có chỉ số khối cơ thể (BMI) cao (>28-30) hoặc có vòng cổ lớn không?",
+        "Ban ngày khi đi bộ nhanh hay leo cầu thang bạn có cảm thấy hụt hơi không?"
+      ],
+      "actionSteps": {
+        "immediate": "Kê cao đầu giường 15-20 độ (dùng gối nêm chống trào ngược) để giảm áp lực ổ bụng đè lên cơ hoành; giữ phòng ngủ thông thoáng, không ẩm mốc.",
+        "monitoring": "Ghi chép lại các triệu chứng ban ngày (ho có đờm, khò khè, khó thở khi gắng sức) kèm dữ liệu SpO2 xuất từ nhẫn.",
+        "clinical": "Cần đến bệnh viện đo chức năng hô hấp (Hô hấp ký - Spirometry) và kiểm tra khí máu động mạch, vì nguyên nhân nằm ở phổi hoặc thông khí chứ không đơn thuần ở vòm họng."
+      },
+      "sampleSvgWave": "M0,20 L30,22 Q40,25 45,55 L85,58 Q90,56 95,25 L130,22"
+    },
+    {
+      "id": "pattern_isolated_spike",
+      "name": "Dạng Đáy Nhọn Đơn Lẻ (Isolated Deep Spike)",
+      "shapeTitle": "Đang 98% bất ngờ rơi thẳng đứng 1 điểm rồi lại phẳng lỳ",
+      "frequency": "Chỉ xuất hiện 1 hoặc 2 lần cá biệt trong cả đêm ngủ 7-8 tiếng",
+      "typicalDipDuration": "Thời gian cực ngắn (10-20 giây) hoặc ngắt quãng tín hiệu",
+      "primaryCause": "Nhiễu cảm biến do NẰM ĐÈ TAY hoặc Cựa mình (Positional Compression Artifact)",
+      "category": "sensor_artifact",
+      "badgeColor": "emerald",
+      "isArtifact": true,
+      "analogy": "Giống như chiếc vòi nước tưới cây đang chảy bình thường, bỗng nhiên ai đó dẫm chân lên ống trong 5 giây rồi nhấc ra ngay.",
+      "mechanismWhy": "Khi bạn trở mình nằm nghiêng, thân người hoặc gối đè ép lên cánh tay/ngón tay mang nhẫn. Mạch máu bị chèn ép tạm thời khiến lưu lượng máu (Perfusion Index) sụt giảm đột ngột. Cảm biến quang học thiếu tín hiệu sẽ tính toán sai lệch tạo ra một vết tụt giả tạo!",
+      "reassuringMessage": "Tin vui là 90% trường hợp này HOÀN TOÀN KHÔNG PHẢI BỆNH! Cơ thể bạn hoàn toàn khỏe mạnh, đây chỉ là giới hạn vật lý của cảm biến khi bị đè nén.",
+      "exclusionChecklist": [
+        "Bạn chỉ bị 1-2 lần tụt đơn độc trong suốt 8 tiếng, các khoảng thời gian còn lại đường SpO2 rất thẳng đẹp không?",
+        "Sáng thức dậy cánh tay đeo nhẫn có cảm giác hơi tê bì hoặc ấm lại sau khi cựa mình không?",
+        "Bạn không hề ngáy to, không giật mình thức giấc thở dốc?"
+      ],
+      "actionSteps": {
+        "immediate": "Hoàn toàn an tâm, không cần lo lắng! Hãy thử đổi nhẫn sang ngón tay cái hoặc ngón trỏ của bàn tay không thuận (ít bị nằm đè hơn) hoặc chọn size vòng silicon vừa vặn hơn.",
+        "monitoring": "Quan sát biểu đồ đêm hôm sau. Nếu đổi tay hoặc đổi tư thế mà vết nhọn biến mất, bạn có thể khẳng định 100% đó là nhiễu tư thế.",
+        "clinical": "Không cần đi khám chuyên khoa nếu chỉ có 1-2 vạch nhọn đơn lẻ và ban ngày bạn hoàn toàn khỏe khoắn, tỉnh táo."
+      },
+      "sampleSvgWave": "M0,20 L50,21 L55,62 L60,20 L130,21"
+    },
+    {
+      "id": "pattern_periodic_cheyne_stokes",
+      "name": "Dạng Hình Sin Chu Kỳ Đều Đặn (Periodic Cheyne-Stokes Waves)",
+      "shapeTitle": "Lên xuống thoai thoải nhịp nhàng hình sin kéo dài",
+      "frequency": "Chu kỳ lặp lại rất đều đặn 60 - 120 giây",
+      "typicalDipDuration": "Tụt êm dịu, không giật cục như tắc nghẽn",
+      "primaryCause": "Ngưng thở trung ương (CSA) hoặc Kiểu thở Cheyne-Stokes (Liên quan Tim mạch / Suy tim)",
+      "category": "cardiac_central",
+      "badgeColor": "purple",
+      "isArtifact": false,
+      "analogy": "Giống như con lắc đồng hồ đu đưa chậm rãi: não điều khiển thở phập phồng chậm lại rồi nhanh dần, lặp đi lặp lại nhịp nhàng.",
+      "mechanismWhy": "Không có tắc nghẽn ở cổ họng. Do trung tâm điều khiển hô hấp ở hành não bị giảm độ nhạy hoặc tuần hoàn từ tim lên não bị trễ (trong suy tim), dẫn đến việc não phát lệnh thở bù quá mức rồi lại ngừng thở luân phiên.",
+      "reassuringMessage": "Dạng sóng này đòi hỏi sự cẩn trọng khoa học. Nó giúp phát hiện sớm các vấn đề về tuần hoàn tim mạch để bác sĩ tối ưu hóa phác đồ điều trị kịp thời.",
+      "exclusionChecklist": [
+        "Bạn có tiền sử cao huyết áp lâu năm, suy tim, bệnh mạch vành hoặc rung nhĩ không?",
+        "Người nhà quan sát thấy bạn thở êm dịu dần rồi dừng lại, sau đó thở mạnh dần lên mà không kèm tiếng ngáy sặc sụa?",
+        "Khi nằm đầu bằng bạn có cảm thấy tức ngực hoặc khó thở hơn so với khi kê cao gối không?"
+      ],
+      "actionSteps": {
+        "immediate": "Kê gối cao hoặc nâng đầu giường khi ngủ để giảm lượng máu dồn về tim; uống thuốc tim mạch đều đặn theo đúng đơn bác sĩ.",
+        "monitoring": "Lưu lại toàn bộ file biểu đồ đêm có nhịp hình sin này để xuất file báo cáo.",
+        "clinical": "Cần đặt lịch hẹn khám chuyên khoa Tim mạch và Hô hấp. Bác sĩ sẽ siêu âm tim, đo điện tim và làm đa ký giấc ngủ để phân biệt ngưng thở trung ương và tối ưu thuốc tim mạch."
+      },
+      "sampleSvgWave": "M0,35 Q15,18 30,35 Q45,55 60,35 Q75,18 90,35 Q105,55 120,35 L130,35"
+    }
+  ],
+  "knowledgeHub": {
+    "definitionSection": {
+      "whatIsOSA": "Ngưng thở khi ngủ do tắc nghẽn (OSA) là tình trạng đường thở ở vùng hầu họng bị sụp đổ cơ học lặp đi lặp lại trong giấc ngủ, làm giảm hoặc ngưng hoàn toàn luồng không khí đi vào phổi, dù lồng ngực và cơ hoành vẫn nỗ lực co bóp thở.",
+      "laymanAnalogy": "Tưởng tượng cổ họng của bạn giống như một chiếc ống nước mềm. Ban ngày bạn thức, cơ bắp căng giữ cho ống luôn nở rộng. Khi bạn ngủ say, cơ thả lỏng ra, cộng thêm sức hút của luồng khí hít vào khiến hai thành ống dính bẹp vào nhau như chiếc ống hút bị bẹp.",
+      "ahiStandards": {
+        "metric": "AHI (Apnea-Hypopnea Index) — Số cơn ngưng/giảm thở trong mỗi giờ ngủ thực tế",
+        "ranges": [
+          {
+            "label": "Bình thường",
+            "range": "AHI < 5 lần/giờ",
+            "meaning": "Đường thở thông suốt, thỉnh thoảng có vài đợt cựa mình sinh lý bình thường.",
+            "severityColor": "emerald"
+          },
+          {
+            "label": "Mức độ Nhẹ",
+            "range": "AHI từ 5 đến 14 lần/giờ",
+            "meaning": "Bắt đầu có tình trạng tắc nghẽn gián đoạn, thường chỉ cần cải thiện tư thế ngủ và giảm cân.",
+            "severityColor": "sky"
+          },
+          {
+            "label": "Mức độ Vừa",
+            "range": "AHI từ 15 đến 29 lần/giờ",
+            "meaning": "Não bộ bị vi thức giấc hàng chục lần mỗi giờ, ảnh hưởng rõ đến độ sâu giấc ngủ và tim mạch.",
+            "severityColor": "amber"
+          },
+          {
+            "label": "Mức độ Nặng",
+            "range": "AHI >= 30 lần/giờ",
+            "meaning": "Cứ 2 phút đường thở lại tắc 1 lần; oxy máu tụt triền miên, cần can thiệp y tế chính quy (máy thở CPAP).",
+            "severityColor": "rose"
+          }
+        ]
+      },
+      "underlyingCauses": [
+        {
+          "title": "Hẹp Cấu Trúc Giải Phẫu",
+          "desc": "Xương hàm dưới lẹm/nhỏ, amidan hoặc lưỡi gà phì đại quá phát, mô mỡ tích tụ dày quanh vùng hầu họng.",
+          "icon": "Layers"
+        },
+        {
+          "title": "Mất Trương Lực Cơ Hầu Họng",
+          "desc": "Cơ cằm-lưỡi (Genioglossus) bị chùng nhão quá mức trong giấc ngủ sâu hoặc bị ức chế bởi rượu bia, thuốc ngủ.",
+          "icon": "Activity"
+        },
+        {
+          "title": "Ngưỡng Vi Tỉnh Giấc Quá Thấp (Low Arousal Threshold)",
+          "desc": "Não bộ quá nhạy cảm, vừa tắc nhẹ đã giật mình thức giấc làm đứt gãy cấu trúc giấc ngủ sâu.",
+          "icon": "Sparkles"
+        },
+        {
+          "title": "Mất Ổn Định Điều Hòa Hô Hấp (High Loop Gain)",
+          "desc": "Trung tâm hô hấp phản ứng thái quá: thở gấp bù oxy rồi lại rơi vào pha ngừng thở luân phiên.",
+          "icon": "RotateCw"
+        }
+      ]
+    },
+    "symptomSection": {
+      "nighttime": [
+        {
+          "symptom": "Ngáy to ngắt quãng & Thở dốc giật mình (Choking/Gasping)",
+          "why": "Âm thanh ngáy biến mất khi đường thở tắc hoàn toàn (im ắng 10-30s), sau đó bùng nổ bằng tiếng khịt mũi thở dốc khi não thức giấc.",
+          "icon": "Wind"
+        },
+        {
+          "symptom": "Tiểu đêm nhiều lần (Nocturia)",
+          "why": "Khi họng tắc, lồng ngực gồng hút tạo áp lực âm cực lớn, kéo căng buồng tim. Tâm nhĩ bị căng sẽ tiết ra hormone ANP (Atrial Natriuretic Peptide) truyền lệnh cho thận thải nước tiểu liên tục.",
+          "icon": "Droplet"
+        },
+        {
+          "symptom": "Vã mồ hôi đêm & Giấc ngủ chập chờn",
+          "why": "Hệ thần kinh giao cảm bị kích thích liên tục bởi tình trạng ngạt thở, giải phóng Adrenaline làm vã mồ hôi và tim đập nhanh.",
+          "icon": "Zap"
+        }
+      ],
+      "daytime": [
+        {
+          "symptom": "Đau đầu sau khi thức dậy (Morning Headache)",
+          "why": "Suốt đêm bị giữ lại khí CO2 (Hypercapnia). Nồng độ CO2 trong máu cao làm giãn các mạch máu não, gây ra cảm giác đau đầu âm ỉ vùng trán khi vừa tỉnh dậy.",
+          "icon": "Brain"
+        },
+        {
+          "symptom": "Buồn ngủ ban ngày quá mức (Excessive Daytime Sleepiness - EDS)",
+          "why": "Hàng trăm lần vi thức giấc (Micro-arousal 3-15 giây) cắt vụn giấc ngủ sóng chậm và giấc ngủ REM, dù ngủ đủ 8 tiếng nhưng não vẫn chưa từng được nghỉ ngơi.",
+          "icon": "Moon"
+        },
+        {
+          "symptom": "Mất tập trung, giảm trí nhớ & Dễ cáu gắt",
+          "why": "Thiếu oxy ngắt quãng làm suy giảm tạm thời chức năng vỏ não trước trán (Prefrontal Cortex) — trung tâm điều hành cảm xúc và trí nhớ làm việc.",
+          "icon": "AlertCircle"
+        }
+      ]
+    },
+    "differentialDiagnosis": [
+      {
+        "disease": "OSA (Ngưng thở tắc nghẽn)",
+        "mechanism": "Đường thở hầu họng bị xẹp cơ học; cơ ngực và cơ hoành vẫn gắng sức co bóp liên tục.",
+        "spO2DayVsNight": "Ban ngày SpO2 97-99% hoàn toàn bình thường; Ban đêm tụt dạng răng cưa dao động.",
+        "keyDistinction": "Ngáy to ngắt quãng, thở dốc khi tỉnh, tiểu đêm nhiều lần, đáp ứng rất tốt với thở nghiêng hoặc máy CPAP."
+      },
+      {
+        "disease": "CSA (Ngưng thở trung ương)",
+        "mechanism": "Não bộ tạm thời 'quên' phát lệnh thở; không có nỗ lực co bóp của lồng ngực hay cơ hoành.",
+        "spO2DayVsNight": "Ban ngày có thể bình thường; Ban đêm tụt dạng sóng hình sin mềm mại (Cheyne-Stokes).",
+        "keyDistinction": "Thường gặp ở người suy tim, đột quỵ não; người bệnh không ngáy ầm ĩ mà thở phập phồng chu kỳ êm ái."
+      },
+      {
+        "disease": "COPD (Phổi tắc nghẽn mạn tính)",
+        "mechanism": "Phế quản và phế nang ở phổi bị tổn thương không hồi phục do thuốc lá/khói bụi.",
+        "spO2DayVsNight": "Ban ngày SpO2 đã thường xuyên ở mức thấp (88-94%); Ban đêm tụt sâu dạng trũng kéo dài.",
+        "keyDistinction": "Ho khạc đờm mạn tính, khó thở khi gắng sức cả ban ngày, lồng ngực hình thùng, đo hô hấp ký có FEV1/FVC giảm."
+      },
+      {
+        "disease": "OHS (Béo phì giảm thông khí)",
+        "mechanism": "Mô mỡ dày ở thành ngực và ổ bụng đè ép hạn chế giãn nở phổi suốt ngày đêm.",
+        "spO2DayVsNight": "Khí máu ban ngày đã có PaCO2 > 45 mmHg; Ban đêm tụt SpO2 sâu trầm trọng.",
+        "keyDistinction": "BMI thường > 30-35 kg/m², ngủ gật ban ngày liên tục, môi tím tái nhẹ, SpO2 giảm cả khi ngồi nghỉ."
+      }
+    ],
+    "ppgSensorScience": {
+      "howItWorks": "Cảm biến Photoplethysmography (PPG) chiếu hai bước sóng ánh sáng đặc biệt xuyên qua giường mao mạch ngón tay để đo độ hấp thụ ánh sáng của Hemoglobin trong máu.",
+      "twoWavelengths": [
+        {
+          "wave": "Ánh sáng Đỏ (Red Light)",
+          "nanometers": "Bước sóng ~ 660 nm",
+          "role": "Được Hemoglobin đã mất oxy (Deoxyhemoglobin - Hb) hấp thụ rất mạnh."
+        },
+        {
+          "wave": "Ánh sáng Hồng ngoại (Infrared Light)",
+          "nanometers": "Bước sóng ~ 940 nm",
+          "role": "Được Hemoglobin ngậm oxy (Oxyhemoglobin - HbO2) hấp thụ rất mạnh."
+        }
+      ],
+      "circulationDelay": "Thời gian trễ tuần hoàn (Circulation Delay): Khi đường thở bị tắc ở cổ họng, phải mất 15 đến 30 giây để lượng máu thiếu oxy từ phổi được tim bơm tới mao mạch đầu ngón tay. Do đó, đồ thị SpO2 trên nhẫn sẽ tụt chậm hơn thời điểm ngưng thở thực tế 15-30 giây.",
+      "whyRingBetterThanWrist": "Đầu ngón tay có hệ thống mao mạch cực kỳ đậm đặc và gần như không có cơ vân dày che chắn như ở cổ tay, giúp nhẫn đo SpO2 với độ chính xác cao hơn đồng hồ đeo tay và ít bị nhiễu do dịch chuyển hơn.",
+      "commonArtifacts": [
+        "Tư thế ngủ tì đè cánh tay hoặc ngón tay làm giảm lưu lượng máu tưới (Low Perfusion)",
+        "Nhiệt độ phòng ngủ quá lạnh làm co thắt tiểu động mạch ngoại vi",
+        "Sơn móng tay màu đậm hoặc móng tay giả làm cản trở tia sáng xuyên thấu",
+        "Cử động mạnh, cựa quậy hoặc run tay sinh lý khi trở mình"
+      ]
+    },
+    "cardiovascularComplications": [
+      {
+        "name": "Tăng Huyết Áp Ban Đêm Kháng Trị",
+        "mechanism": "Bão Adrenaline từ hệ thần kinh giao cảm bùng phát sau mỗi cơn ngạt làm mạch máu co thắt liên tục suốt đêm.",
+        "reversibleWithTreatment": "Huyết áp ban đêm có thể giảm rõ rệt sau 4-8 tuần kiểm soát thông khí tốt."
+      },
+      {
+        "name": "Rung Nhĩ & Rối Loạn Nhịp Tim",
+        "mechanism": "Áp lực âm lồng ngực kéo giãn buồng tâm nhĩ, kết hợp tình trạng thiếu oxy cơ tim kích hoạt các ổ phát nhịp bất thường.",
+        "reversibleWithTreatment": "Giảm tỷ lệ tái phát rung nhĩ sau khi can thiệp mở đường thở."
+      },
+      {
+        "name": "Đề Kháng Insulin & Đái Tháo Đường Type 2",
+        "mechanism": "Tình trạng thiếu oxy ngắt quãng kích hoạt phản xạ stress mạn tính, tăng giải phóng Cortisol làm tế bào kháng insulin.",
+        "reversibleWithTreatment": "Cải thiện chỉ số đường huyết HbA1c khi giấc ngủ sâu được phục hồi."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "id": "term_genioglossus",
+      "term": "Genioglossus",
+      "vietnameseName": "Cơ Cằm - Lưỡi",
+      "metaphor": "Chiếc phanh cơ học mở họng",
+      "plainDefinition": "Khối cơ chính gắn từ cằm vào cuống lưỡi. Khi cơ này co thắt, nó kéo lưỡi nhô ra trước giúp họng rộng mở.",
+      "clinicalDetail": "Được chi phối bởi dây thần kinh sọ số XII (Hypoglossal nerve). Trong giấc ngủ, trương lực cơ này suy giảm khiến lưỡi tụt lùi.",
+      "whyItMatters": "Hiểu cơ này giúp bạn biết tại sao ngưng thở chỉ xảy ra khi ngủ say chứ ban ngày thức không bao giờ bị nghẽn."
+    },
+    {
+      "id": "term_arousal",
+      "term": "Micro-Arousal",
+      "vietnameseName": "Vi Tỉnh Thức (Vi Thức Giấc)",
+      "metaphor": "Chuông báo thức 3 giây của não",
+      "plainDefinition": "Não bộ giật mình thức giấc trong 3 đến 15 giây để gồng cơ họng thở lại, sau đó ngủ tiếp mà sáng ra bạn không nhớ gì.",
+      "clinicalDetail": "Ghi nhận trên điện não đồ (EEG) khi có sự chuyển dịch tần số sóng não từ delta/theta sang alpha/beta kéo dài 3-15s.",
+      "whyItMatters": "Vi thức giấc cứu mạng bạn khỏi ngạt thở, nhưng hàng trăm lần vi thức giấc sẽ băm nát giấc ngủ khiến bạn mệt mỏi cả ngày."
+    },
+    {
+      "id": "term_chemoreceptors",
+      "term": "Chemoreceptors",
+      "vietnameseName": "Thụ Thể Hóa Học (Xoang Cảnh)",
+      "metaphor": "Đầu dò khói báo cháy trong máu",
+      "plainDefinition": "Các cảm biến tí hon nằm ở động mạch cổ và cuống não, liên tục nếm máu để phát hiện khi nào oxy tụt hoặc khí CO2 tăng cao.",
+      "clinicalDetail": "Gồm thụ thể ngoại vi (Carotid & Aortic bodies) nhạy cảm với PaO2 tụt, và thụ thể trung ương ở hành não nhạy với H+/PaCO2 tăng.",
+      "whyItMatters": "Đây là mắt xích kích hoạt phản xạ vi tỉnh thức để kéo mở đường thở khi bạn bị tắc nghẽn."
+    },
+    {
+      "id": "term_ahi",
+      "term": "AHI",
+      "vietnameseName": "Chỉ Số Ngưng Giảm Thở",
+      "metaphor": "Thước đo mức độ kẹt xe đường thở",
+      "plainDefinition": "Số lần đường thở của bạn bị tắc hoàn toàn (ngưng thở) hoặc tắc một nửa (giảm thở) trung bình trong 1 giờ ngủ.",
+      "clinicalDetail": "Apnea-Hypopnea Index = (Tổng số cơn Apnea + Hypopnea) / Tổng số giờ ngủ ghi nhận được bằng đa ký giấc ngủ (PSG).",
+      "whyItMatters": "Là con số tiêu chuẩn quốc tế mà bác sĩ dùng để xếp hạng bạn bị nhẹ (5-14), vừa (15-29) hay nặng (>=30)."
+    },
+    {
+      "id": "term_spo2",
+      "term": "SpO2",
+      "vietnameseName": "Độ Bão Hòa Oxy Trong Máu Ngoại Vi",
+      "metaphor": "Tỷ lệ xe chở đầy hàng trên cao tốc",
+      "plainDefinition": "Tỷ lệ phần trăm các phân tử Hemoglobin trong hồng cầu đang ngậm đầy khí oxy. Người khỏe mạnh bình thường từ 95% đến 99%.",
+      "clinicalDetail": "Đo bằng phương pháp quang học PPG không xâm lấn. Dưới 90% được xem là tụt oxy máu có ý nghĩa lâm sàng.",
+      "whyItMatters": "Nhẫn O2Ring theo dõi chỉ số này suốt đêm để phát hiện các đợt thiếu oxy ngắt quãng."
+    },
+    {
+      "id": "term_ppg",
+      "term": "Photoplethysmography (PPG)",
+      "vietnameseName": "Quang Phổ Thể Tích Mạch",
+      "metaphor": "Chiếc đèn pin soi mạch máu",
+      "plainDefinition": "Công nghệ dùng ánh sáng đỏ và hồng ngoại soi qua ngón tay để nhìn thấy mạch máu phập phồng theo từng nhịp đập của tim.",
+      "clinicalDetail": "Tận dụng hệ số hấp thụ quang học khác nhau của oxyhemoglobin và deoxyhemoglobin ở 660nm và 940nm.",
+      "whyItMatters": "Là nguyên lý cốt lõi của nhẫn thông minh O2Ring và các thiết bị đo oxy đeo tay."
+    },
+    {
+      "id": "term_soft_palate",
+      "term": "Soft Palate & Uvula",
+      "vietnameseName": "Khẩu Cái Mềm & Lưỡi Gà",
+      "metaphor": "Cánh buồm đón gió ở vòm họng",
+      "plainDefinition": "Phần mô mềm ở nóc họng phía sau răng. Khi ngủ thả lỏng, nó dễ bị rung lắc tạo tiếng ngáy và bị hút sập vào thành họng.",
+      "clinicalDetail": "Cấu tạo từ các sợi cơ vân và niêm mạc. Áp lực âm tạo ra bởi cơ hoành khi hít vào dễ kéo khẩu cái mềm áp sát thành hầu sau.",
+      "whyItMatters": "Là một trong hai vị trí sập cơ học phổ biến nhất trong ngưng thở khi ngủ."
+    },
+    {
+      "id": "term_anp",
+      "term": "ANP (Atrial Natriuretic Peptide)",
+      "vietnameseName": "Peptide Lợi Niệu Tâm Nhĩ",
+      "metaphor": "Lệnh xả nước cứu tim",
+      "plainDefinition": "Chất hóa học do tim tiết ra khi tim bị kéo căng quá mức, ra lệnh cho thận thải bớt nước tiểu ra ngoài.",
+      "clinicalDetail": "Khi tắc họng, lồng ngực hít gồng tạo áp lực âm kéo giãn buồng nhĩ tim, kích thích giải phóng ANP gây tiểu đêm nhiều lần (Nocturia).",
+      "whyItMatters": "Giúp giải thích tại sao người bị ngưng thở thường xuyên phải dậy đi tiểu đêm 2-4 lần dù không bị bệnh thận hay tiền liệt tuyến."
+    },
+    {
+      "id": "term_hypercapnia",
+      "term": "Hypercapnia",
+      "vietnameseName": "Tăng Khí Carbonic Trong Máu",
+      "metaphor": "Khói ngạt tích tụ trong phòng kín",
+      "plainDefinition": "Khí thải CO2 không được thở ra ngoài nên bị ứ lại trong máu, làm máu bị chua (nhiễm toan hô hấp).",
+      "clinicalDetail": "Áp lực riêng phần khí CO2 trong máu động mạch (PaCO2) tăng vượt ngưỡng bình thường (> 45 mmHg).",
+      "whyItMatters": "CO2 tích tụ làm giãn mạch máu não, chính là thủ phạm gây ra cơn đau đầu ê ẩm vùng trán mỗi sáng ngủ dậy."
+    },
+    {
+      "id": "term_circulation_delay",
+      "term": "Circulation Delay",
+      "vietnameseName": "Thời Gian Trễ Tuần Hoàn",
+      "metaphor": "Độ trễ truyền tín hiệu từ nguồn",
+      "plainDefinition": "Mất khoảng 15 đến 30 giây để lượng máu thiếu oxy từ phổi và tim chảy đến được đầu ngón tay nơi bạn đeo nhẫn.",
+      "clinicalDetail": "Tốc độ dòng máu chảy từ phế nang qua tim trái rồi theo cây động mạch tới mao mạch ngón tay mất 15-30 giây tùy cung lượng tim.",
+      "whyItMatters": "Khi nhẫn của bạn báo SpO2 tụt, thực tế cơn ngưng thở đã bắt đầu trước đó khoảng nửa phút."
+    },
+    {
+      "id": "term_positional_therapy",
+      "term": "Positional Therapy",
+      "vietnameseName": "Liệu Pháp Tư Thế Ngủ (Ngủ Nghiêng)",
+      "metaphor": "Chiêu né trọng lực tự nhiên",
+      "plainDefinition": "Tập thói quen ngủ nghiêng một bên để trọng lực không kéo lưỡi và vòm họng tụt lùi ra sau đè bẹp đường thở.",
+      "clinicalDetail": "Nhiều bệnh nhân có AHI khi nằm ngửa cao gấp 3-5 lần khi nằm nghiêng (Positional OSA). Ngủ nghiêng có thể giảm tới 50% số cơn tắc.",
+      "whyItMatters": "Là hành động tự nhiên, không tốn tiền và hiệu quả nhất mà người dùng có thể áp dụng ngay tối nay."
+    },
+    {
+      "id": "term_perfusion_index",
+      "term": "Perfusion Index (PI)",
+      "vietnameseName": "Chỉ Số Tưới Máu Ngoại Vi",
+      "metaphor": "Áp lực nước trong đường ống",
+      "plainDefinition": "Độ mạnh yếu của mạch máu đập ở đầu ngón tay. Nếu tay bị đè hoặc bị lạnh, chỉ số này tụt thấp làm máy đo sai.",
+      "clinicalDetail": "Tỷ lệ giữa tín hiệu ánh sáng xung động theo nhịp tim (AC) so với tín hiệu nền không đổi (DC) tại vị trí đo.",
+      "whyItMatters": "Chỉ số PI quá thấp là manh mối hàng đầu để phát hiện vết tụt SpO2 là do nằm đè tay chứ không phải do bệnh lý."
+    },
+    {
+      "id": "term_psg",
+      "term": "Polysomnography (PSG)",
+      "vietnameseName": "Đa Ký Giấc Ngủ",
+      "metaphor": "Máy kiểm định toàn diện phòng thí nghiệm",
+      "plainDefinition": "Thử nghiệm đo giấc ngủ qua đêm tại bệnh viện với hàng chục cảm biến gắn từ đầu đến chân (điện não, nhịp tim, luồng khí mũi, đai ngực).",
+      "clinicalDetail": "Tiêu chuẩn vàng (Gold Standard) để chẩn đoán xác định OSA, phân biệt chính xác ngưng thở tắc nghẽn, trung ương hay hỗn hợp.",
+      "whyItMatters": "Nhẫn O2Ring là thiết bị sàng lọc cá nhân, không thể thay thế việc đo PSG chính quy khi cần chẩn đoán y tế."
+    },
+    {
+      "id": "term_cpap",
+      "term": "CPAP (Continuous Positive Airway Pressure)",
+      "vietnameseName": "Máy Thở Áp Lực Dương Liên Tục",
+      "metaphor": "Chiếc nẹp không khí vô hình",
+      "plainDefinition": "Chiếc máy thổi một luồng khí êm dịu qua mặt nạ mũi, giữ cho các vách cổ họng luôn căng phồng không thể sập lại.",
+      "clinicalDetail": "Phương pháp điều trị chuẩn mực hàng đầu cho OSA mức độ vừa đến nặng, ngăn chặn triệt để tình trạng sập họng và tụt SpO2.",
+      "whyItMatters": "Giúp người bệnh hiểu giải pháp y khoa chính thống nếu bệnh ở mức độ cần can thiệp."
+    },
+    {
+      "id": "term_eds",
+      "term": "Excessive Daytime Sleepiness (EDS)",
+      "vietnameseName": "Buồn Ngủ Ban Ngày Quá Mức",
+      "metaphor": "Cơn sập nguồn của bộ não",
+      "plainDefinition": "Cảm giác mí mắt nặng trĩu, ngủ gật không thể cưỡng lại khi đang ngồi họp, lái xe, hoặc xem tivi ban ngày.",
+      "clinicalDetail": "Đo lường bằng thang điểm buồn ngủ Epworth (ESS > 10). Khác với sự mệt mỏi thể xác đơn thuần do lao động nặng.",
+      "whyItMatters": "Là triệu chứng cảnh báo quan trọng nhất dẫn đến nguy cơ tai nạn giao thông và suy giảm chất lượng cuộc sống ở người OSA."
+    }
+  ]
+}
