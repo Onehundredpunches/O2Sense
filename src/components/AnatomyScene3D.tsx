@@ -28,7 +28,6 @@ function createBrainGyriTexture(): THREE.CanvasTexture {
   ctx.fillStyle = '#1e1b4b';
   ctx.fillRect(0, 0, 512, 512);
 
-  // Multi-frequency sinusoidal interference pattern simulating cerebral convolutions
   for (let y = 0; y < 512; y += 4) {
     for (let x = 0; x < 512; x += 4) {
       const v =
@@ -58,8 +57,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
   const mountRef = useRef<HTMLDivElement>(null);
   const controlsRef = useRef<OrbitControls | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const targetCamPosRef = useRef<THREE.Vector3>(new THREE.Vector3(0, 7, 14));
-  const targetLookAtRef = useRef<THREE.Vector3>(new THREE.Vector3(0, 1.8, 0));
+  const targetCamPosRef = useRef<THREE.Vector3>(new THREE.Vector3(0, 6.5, 13.5));
+  const targetLookAtRef = useRef<THREE.Vector3>(new THREE.Vector3(0.5, 2.2, 0));
 
   const [activeCameraView, setActiveCameraView] = useState<'profile' | 'airway' | 'endoscopy' | 'brain' | 'chest'>('profile');
   const [isSagittalClipped, setIsSagittalClipped] = useState<boolean>(false);
@@ -81,68 +80,81 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     if (!mountRef.current) return;
     const container = mountRef.current;
     const width = container.clientWidth;
-    const height = container.clientHeight || 460;
+    const height = container.clientHeight || 480;
 
-    // 1. Scene Setup with Medical Deep Slate Atmosphere
+    // 1. Scene Setup with Deep Medical Slate Atmosphere
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x040814);
-    scene.fog = new THREE.FogExp2(0x040814, 0.022);
+    scene.background = new THREE.Color(0x030712);
+    scene.fog = new THREE.FogExp2(0x030712, 0.022);
 
-    // 2. Camera Setup (Horizontal Supine Sleep Angle)
+    // 2. Camera Setup (Horizontal Supine Sleep Posture)
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.set(0, 7, 14);
+    camera.position.set(0, 6.5, 13.5);
     cameraRef.current = camera;
 
-    // 3. WebGL Renderer with High-Fidelity Tone Mapping & Local Clipping Enabled!
+    // 3. WebGL Renderer with High-Fidelity Tone Mapping & Local Clipping Enabled
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.25;
-    renderer.localClippingEnabled = true; // Enables BioDigital Human-style Sagittal Clipping Plane
+    renderer.toneMappingExposure = 1.3;
+    renderer.localClippingEnabled = true;
     container.appendChild(renderer.domElement);
 
     // 4. OrbitControls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.06;
-    controls.maxDistance = 28;
-    controls.minDistance = 2.5;
-    controls.target.set(0, 1.8, 0);
+    controls.maxDistance = 26;
+    controls.minDistance = 2.2;
+    controls.target.set(0.5, 2.2, 0);
     controlsRef.current = controls;
 
-    // 5. Lighting: Holographic Medical X-Ray Aesthetic
-    const ambientLight = new THREE.AmbientLight(0x0c1b33, 1.4);
+    // 5. Lighting: Holographic Medical Studio Lighting
+    const ambientLight = new THREE.AmbientLight(0x0f172a, 1.8);
     scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.0);
+    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.2);
     keyLight.position.set(6, 12, 10);
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x818cf8, 1.5);
+    const rimLight = new THREE.DirectionalLight(0x818cf8, 1.6);
     rimLight.position.set(-10, -5, -8);
     scene.add(rimLight);
 
-    const fillLight = new THREE.DirectionalLight(0x0284c7, 1.2);
-    fillLight.position.set(2, 6, -8);
-    scene.add(fillLight);
+    const warmFillLight = new THREE.DirectionalLight(0xf43f5e, 0.9);
+    warmFillLight.position.set(2, 6, 8);
+    scene.add(warmFillLight);
 
     // Brain Arousal Point Light
     const arousalPointLight = new THREE.PointLight(0xf59e0b, 0, 18);
-    arousalPointLight.position.set(3.4, 2.7, 0);
+    arousalPointLight.position.set(3.4, 2.8, 0);
     scene.add(arousalPointLight);
 
     // Occlusion Warning Point Light
-    const occlusionPointLight = new THREE.PointLight(0xef4444, 0, 10);
-    occlusionPointLight.position.set(1.6, 2.0, 0);
+    const occlusionPointLight = new THREE.PointLight(0xef4444, 0, 12);
+    occlusionPointLight.position.set(1.5, 2.2, 0);
     scene.add(occlusionPointLight);
+
+    // Acoustic Snoring Sound Wave Mesh (Pulsing Rings)
+    const soundWaveGeo = new THREE.RingGeometry(0.2, 0.4, 32);
+    const soundWaveMat = new THREE.MeshBasicMaterial({
+      color: 0xf59e0b,
+      transparent: true,
+      opacity: 0,
+      side: THREE.DoubleSide,
+    });
+    const soundWaveMesh = new THREE.Mesh(soundWaveGeo, soundWaveMat);
+    soundWaveMesh.position.set(2.0, 2.7, 0);
+    soundWaveMesh.rotation.y = Math.PI / 2;
+    scene.add(soundWaveMesh);
 
     // 6. MAIN BODY GROUP (Supine Sleep Posture)
     const bodyGroup = new THREE.Group();
     scene.add(bodyGroup);
 
-    // --- A. Hospital Bed & Pillow ---
-    const pillowGeo = new THREE.BoxGeometry(5.0, 1.1, 5.2);
+    // --- A. Hospital Bed & Ergonomic Pillow ---
+    const pillowGeo = new THREE.BoxGeometry(5.2, 1.2, 5.4);
     const pillowMat = new THREE.MeshStandardMaterial({
       color: 0x1e293b,
       roughness: 0.85,
@@ -152,7 +164,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     pillowMesh.position.set(3.2, 0.45, 0);
     bodyGroup.add(pillowMesh);
 
-    const mattressGeo = new THREE.BoxGeometry(17, 1.0, 7.5);
+    const mattressGeo = new THREE.BoxGeometry(18, 1.0, 7.8);
     const mattressMat = new THREE.MeshStandardMaterial({
       color: 0x0f172a,
       roughness: 0.9,
@@ -162,7 +174,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     mattressMesh.position.set(-2.5, -0.6, 0);
     bodyGroup.add(mattressMesh);
 
-    // --- B. Sculpted Translucent 3D Human Body Envelope ---
+    // --- B. Sculpted Translucent 3D Human Silhouette (Head, Neck, Torso) ---
     const bodyProfileShape = new THREE.Shape();
     bodyProfileShape.moveTo(-7.5, 0.3);
     bodyProfileShape.lineTo(-3.5, 0.4);
@@ -170,19 +182,19 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     bodyProfileShape.lineTo(1.5, 0.8);
     bodyProfileShape.quadraticCurveTo(3.2, 1.0, 4.8, 1.5);
     bodyProfileShape.quadraticCurveTo(5.4, 2.4, 5.0, 3.4);
-    bodyProfileShape.quadraticCurveTo(4.4, 4.3, 3.4, 4.3);
-    bodyProfileShape.lineTo(2.7, 4.2);
-    bodyProfileShape.lineTo(2.3, 5.0); // Nose tip
-    bodyProfileShape.lineTo(2.0, 4.5);
-    bodyProfileShape.lineTo(1.9, 4.2);
-    bodyProfileShape.lineTo(1.8, 4.15);
-    bodyProfileShape.lineTo(1.65, 3.75);
-    bodyProfileShape.lineTo(1.55, 3.85);
-    bodyProfileShape.lineTo(1.25, 3.25);
-    bodyProfileShape.quadraticCurveTo(0.7, 2.5, 0.0, 2.2);
-    bodyProfileShape.lineTo(-0.6, 2.1);
-    bodyProfileShape.quadraticCurveTo(-1.8, 2.6, -3.5, 2.75);
-    bodyProfileShape.quadraticCurveTo(-5.5, 2.6, -7.5, 2.2);
+    bodyProfileShape.quadraticCurveTo(4.4, 4.4, 3.4, 4.4); // Forehead
+    bodyProfileShape.lineTo(2.7, 4.3);
+    bodyProfileShape.lineTo(2.35, 5.15); // Nose tip
+    bodyProfileShape.lineTo(2.0, 4.65);  // Philtrum
+    bodyProfileShape.lineTo(1.9, 4.35);  // Upper lip
+    bodyProfileShape.lineTo(1.8, 4.3);
+    bodyProfileShape.lineTo(1.68, 3.9);  // Lower lip
+    bodyProfileShape.lineTo(1.58, 4.0);  // Mentolabial sulcus
+    bodyProfileShape.lineTo(1.25, 3.35); // Mental protuberance (Chin)
+    bodyProfileShape.quadraticCurveTo(0.7, 2.6, 0.0, 2.3); // Submental throat
+    bodyProfileShape.lineTo(-0.6, 2.2);  // Thyroid notch (Adam's apple)
+    bodyProfileShape.quadraticCurveTo(-1.8, 2.7, -3.5, 2.85); // Chest contour
+    bodyProfileShape.quadraticCurveTo(-5.5, 2.7, -7.5, 2.3);
     bodyProfileShape.lineTo(-7.5, 0.3);
 
     const extrudeSettings = {
@@ -196,54 +208,80 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     const bodySkinGeo = new THREE.ExtrudeGeometry(bodyProfileShape, extrudeSettings);
     bodySkinGeo.translate(0, 0, -1.7);
 
-    // Holographic Medical Glass Shader with distinct silhouette
     const skinGlassMat = new THREE.MeshPhysicalMaterial({
       color: 0x0284c7,
       transparent: true,
-      opacity: 0.32,
-      roughness: 0.25,
+      opacity: 0.28,
+      roughness: 0.3,
       metalness: 0.1,
-      transmission: 0.65,
-      thickness: 2.0,
+      transmission: 0.7,
+      thickness: 2.2,
       ior: 1.35,
       side: THREE.DoubleSide,
     });
     const bodySkinMesh = new THREE.Mesh(bodySkinGeo, skinGlassMat);
     bodyGroup.add(bodySkinMesh);
 
-    // --- C. Anatomical Upper Airway Lumen Spline ---
+    // --- C. Anatomical Mandible & Hard Palate (Cortical Bone) ---
+    const mandibleShape = new THREE.Shape();
+    mandibleShape.moveTo(1.2, 3.3);
+    mandibleShape.lineTo(1.4, 3.2);
+    mandibleShape.quadraticCurveTo(0.6, 2.4, 0.2, 2.5);
+    mandibleShape.lineTo(0.0, 2.65);
+    mandibleShape.quadraticCurveTo(0.5, 2.8, 1.2, 3.3);
+
+    const mandibleGeo = new THREE.ExtrudeGeometry(mandibleShape, { depth: 2.0, bevelEnabled: true, bevelThickness: 0.15, bevelSize: 0.1, bevelSegments: 3 });
+    mandibleGeo.translate(0, 0, -1.0);
+    const boneMat = new THREE.MeshStandardMaterial({
+      color: 0xe2e8f0,
+      roughness: 0.5,
+      metalness: 0.15,
+      emissive: 0x64748b,
+      emissiveIntensity: 0.15,
+    });
+    const mandibleMesh = new THREE.Mesh(mandibleGeo, boneMat);
+    bodyGroup.add(mandibleMesh);
+
+    // Hard Palate (Bony roof of mouth)
+    const hardPalateGeo = new THREE.BoxGeometry(0.8, 0.18, 1.8);
+    const hardPalateMesh = new THREE.Mesh(hardPalateGeo, boneMat);
+    hardPalateMesh.position.set(2.4, 3.55, 0);
+    hardPalateMesh.rotation.z = -Math.PI / 16;
+    bodyGroup.add(hardPalateMesh);
+
+    // --- D. Upper Airway Lumen Tunnel (Translucent Mucosal Air Path) ---
     const airwaySpline = new THREE.CatmullRomCurve3([
-      new THREE.Vector3(2.1, 4.5, 0),
-      new THREE.Vector3(2.5, 3.9, 0),
-      new THREE.Vector3(2.8, 3.1, 0),
-      new THREE.Vector3(2.1, 2.3, 0),
-      new THREE.Vector3(1.4, 1.8, 0),
-      new THREE.Vector3(0.4, 1.6, 0),
-      new THREE.Vector3(-1.2, 1.5, 0),
-      new THREE.Vector3(-3.2, 1.4, 0),
+      new THREE.Vector3(2.1, 4.65, 0), // Nostril opening
+      new THREE.Vector3(2.6, 4.0, 0),  // Nasal cavity
+      new THREE.Vector3(2.8, 3.2, 0),  // Nasopharynx
+      new THREE.Vector3(2.0, 2.4, 0),  // Oropharynx / Retroglossal space
+      new THREE.Vector3(1.3, 1.9, 0),  // Hypopharynx
+      new THREE.Vector3(0.4, 1.65, 0), // Laryngeal inlet
+      new THREE.Vector3(-1.2, 1.5, 0), // Upper Trachea
+      new THREE.Vector3(-3.2, 1.4, 0), // Mid Trachea to Carina
     ]);
 
-    const airwayTubeGeo = new THREE.TubeGeometry(airwaySpline, 60, 0.42, 18, false);
+    const airwayTubeGeo = new THREE.TubeGeometry(airwaySpline, 64, 0.42, 20, false);
     const airwayTubeMat = new THREE.MeshStandardMaterial({
       color: 0x38bdf8,
       transparent: true,
-      opacity: 0.85,
-      roughness: 0.15,
+      opacity: 0.78,
+      roughness: 0.2,
       emissive: 0x0284c7,
-      emissiveIntensity: 0.5,
+      emissiveIntensity: 0.45,
       side: THREE.DoubleSide,
     });
     const airwayTubeMesh = new THREE.Mesh(airwayTubeGeo, airwayTubeMat);
     bodyGroup.add(airwayTubeMesh);
 
-    // --- D. Trachea Cartilage Rings ---
+    // --- E. Trachea Cartilage Rings ---
     const ringsGroup = new THREE.Group();
     const ringMat = new THREE.MeshStandardMaterial({
       color: 0x38bdf8,
-      roughness: 0.3,
+      roughness: 0.35,
       metalness: 0.2,
       emissive: 0x0ea5e9,
-      emissiveIntensity: 0.5,
+      emissiveIntensity: 0.4,
     });
     for (let r = 0; r < 9; r++) {
       const rx = -0.3 - r * 0.34;
@@ -255,43 +293,73 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     }
     bodyGroup.add(ringsGroup);
 
-    // --- E. Anatomical Tongue & Genioglossus Muscle ---
-    const tongueGeo = new THREE.SphereGeometry(0.85, 24, 20);
-    tongueGeo.scale(1.4, 0.85, 0.85);
+    // --- F. Anatomical Tongue & Genioglossus Muscle (Realistic Lingual Volume) ---
+    const tongueShape = new THREE.Shape();
+    tongueShape.moveTo(1.4, 3.25); // Tip behind lower incisors
+    tongueShape.quadraticCurveTo(2.1, 3.3, 2.0, 2.7); // Dorsum arch
+    tongueShape.quadraticCurveTo(1.8, 2.2, 1.1, 2.3); // Base of tongue sloping to hyoid
+    tongueShape.lineTo(0.9, 2.6);  // Genioglossus origin at inner mandible
+    tongueShape.quadraticCurveTo(1.1, 3.0, 1.4, 3.25);
+
+    const tongueGeo = new THREE.ExtrudeGeometry(tongueShape, {
+      depth: 1.6,
+      bevelEnabled: true,
+      bevelThickness: 0.35,
+      bevelSize: 0.3,
+      bevelSegments: 5,
+    });
+    tongueGeo.translate(0, 0, -0.8);
+
     const tongueMat = new THREE.MeshStandardMaterial({
       color: 0xe11d48,
       transparent: true,
       opacity: 0.88,
-      roughness: 0.35,
-      metalness: 0.1,
+      roughness: 0.4,
+      metalness: 0.08,
       emissive: 0x9f1239,
       emissiveIntensity: 0.4,
     });
     const tongueMesh = new THREE.Mesh(tongueGeo, tongueMat);
-    tongueMesh.position.set(1.45, 2.6, 0);
     bodyGroup.add(tongueMesh);
 
-    // --- F. Soft Palate & Uvula ---
-    const palateGeo = new THREE.CylinderGeometry(0.16, 0.28, 1.3, 16);
-    palateGeo.rotateZ(Math.PI / 3.8);
+    // --- G. Anatomical Soft Palate & Uvula (Curved Velum draping downward) ---
+    const palateCurve = new THREE.CatmullRomCurve3([
+      new THREE.Vector3(2.1, 3.45, 0), // Junction with hard palate
+      new THREE.Vector3(2.35, 3.15, 0), // Velar curve
+      new THREE.Vector3(2.25, 2.65, 0), // Free margin & Uvula tip
+    ]);
+    const palateGeo = new THREE.TubeGeometry(palateCurve, 24, 0.22, 14, false);
     const palateMat = new THREE.MeshStandardMaterial({
       color: 0xf43f5e,
       transparent: true,
-      opacity: 0.88,
+      opacity: 0.9,
       roughness: 0.35,
       emissive: 0xbe123c,
-      emissiveIntensity: 0.4,
+      emissiveIntensity: 0.45,
     });
     const palateMesh = new THREE.Mesh(palateGeo, palateMat);
-    palateMesh.position.set(2.2, 2.75, 0);
     bodyGroup.add(palateMesh);
 
-    clippableMaterialsRef.current = [skinGlassMat, tongueMat, palateMat];
+    // --- H. Epiglottis Cartilage Leaf ---
+    const epiglottisGeo = new THREE.CylinderGeometry(0.08, 0.16, 0.75, 12);
+    epiglottisGeo.rotateZ(Math.PI / 4.5);
+    const epiglottisMat = new THREE.MeshStandardMaterial({
+      color: 0xfb7185,
+      roughness: 0.5,
+      emissive: 0xe11d48,
+      emissiveIntensity: 0.3,
+    });
+    const epiglottisMesh = new THREE.Mesh(epiglottisGeo, epiglottisMat);
+    epiglottisMesh.position.set(1.15, 2.05, 0);
+    bodyGroup.add(epiglottisMesh);
 
-    // --- G. Cervical Spine C1-C6 ---
+    // Register all clippable materials for Sagittal Cut
+    clippableMaterialsRef.current = [skinGlassMat, boneMat, tongueMat, palateMat, epiglottisMat];
+
+    // --- I. Cervical Spine C1-C6 with Intervertebral Discs ---
     const spineGroup = new THREE.Group();
-    const vertMat = new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.6, metalness: 0.2 });
-    const discMat = new THREE.MeshStandardMaterial({ color: 0x06b6d4, emissive: 0x0891b2, emissiveIntensity: 0.6 });
+    const vertMat = new THREE.MeshStandardMaterial({ color: 0x64748b, roughness: 0.6, metalness: 0.2 });
+    const discMat = new THREE.MeshStandardMaterial({ color: 0x06b6d4, emissive: 0x0891b2, emissiveIntensity: 0.65 });
 
     for (let c = 0; c < 6; c++) {
       const cx = 1.0 - c * 0.6;
@@ -312,14 +380,14 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     }
     bodyGroup.add(spineGroup);
 
-    // --- H. Anatomical Brain ---
+    // --- J. Anatomical Brain & Brainstem ---
     const brainGroup = new THREE.Group();
     const brainGyriTexture = createBrainGyriTexture();
     const brainMat = new THREE.MeshStandardMaterial({
       color: 0xa855f7,
       map: brainGyriTexture,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.58,
       roughness: 0.4,
       metalness: 0.15,
       emissive: 0x7c3aed,
@@ -336,9 +404,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     rightHemi.position.set(3.4, 2.7, -0.65);
     brainGroup.add(rightHemi);
 
-    clippableMaterialsRef.current = [skinGlassMat, tongueMat, palateMat, brainMat];
+    clippableMaterialsRef.current.push(brainMat);
 
-    // Brainstem & ARAS reticular core
+    // Brainstem & ARAS Reticular Activation Center
     const stemGeo = new THREE.CylinderGeometry(0.32, 0.45, 1.8, 16);
     stemGeo.rotateZ(Math.PI / 3.5);
     const stemMat = new THREE.MeshStandardMaterial({
@@ -351,7 +419,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     brainGroup.add(brainstem);
     bodyGroup.add(brainGroup);
 
-    // --- I. Anatomical Lungs & Bronchial Tree ---
+    // --- K. Lungs & Pulsating Heart ---
     const lungsGroup = new THREE.Group();
     const lungTranslucentMat = new THREE.MeshPhysicalMaterial({
       color: 0x0284c7,
@@ -360,7 +428,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       transmission: 0.5,
       roughness: 0.3,
       emissive: 0x0369a1,
-      emissiveIntensity: 0.2,
+      emissiveIntensity: 0.25,
       side: THREE.DoubleSide,
     });
 
@@ -375,7 +443,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     rightLungMesh.position.set(-0.6, 0, -1.4);
     lungsGroup.add(rightLungMesh);
 
-    // Pulsating Heart between lungs
+    // Pulsating Heart
     const heartGeo = new THREE.SphereGeometry(0.85, 20, 20);
     heartGeo.scale(1.15, 0.9, 0.9);
     const heartMat = new THREE.MeshStandardMaterial({
@@ -389,8 +457,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     bodyGroup.add(heartMesh);
     bodyGroup.add(lungsGroup);
 
-    // --- J. Airflow Particles ---
-    const particleCount = 90;
+    // --- L. Airflow Particles (Bioluminescent O2 Molecules) ---
+    const particleCount = 100;
     const particleGeo = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
     const particleProgress = new Float32Array(particleCount);
@@ -406,9 +474,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
 
     const particleMat = new THREE.PointsMaterial({
       color: 0x38bdf8,
-      size: 0.38,
+      size: 0.36,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.95,
       blending: THREE.AdditiveBlending,
     });
     const particlePoints = new THREE.Points(particleGeo, particleMat);
@@ -422,7 +490,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       animationFrameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      // Camera lerp
+      // Smooth Camera Lerp
       camera.position.lerp(targetCamPosRef.current, 0.05);
       controls.target.lerp(targetLookAtRef.current, 0.05);
       controls.update();
@@ -431,64 +499,77 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       const isNarrowed = airwayStatus === 'narrowed';
       const isReopening = airwayStatus === 'reopening';
 
-      // 1. Airway & Tongue Dynamics
+      // 1. Biological Tissue Motion & Realistic Pharyngeal Dynamics
       if (isCollapsed) {
-        tongueMesh.position.set(1.65, 1.95, 0);
-        tongueMesh.scale.set(1.5, 0.72, 1.15);
+        // Step 3 & 4: Severe Apnea - Base of tongue falls backwards against posterior wall
+        tongueMesh.position.set(0.35, -0.4, 0);
+        tongueMesh.scale.set(1.05, 0.88, 1.15);
         (tongueMesh.material as THREE.MeshStandardMaterial).color.setHex(0x9f1239);
         (tongueMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x881337);
 
-        palateMesh.position.set(1.95, 2.1, 0);
-        palateMesh.rotation.z = Math.PI / 2.8;
+        palateMesh.position.set(-0.25, -0.45, 0);
+        palateMesh.rotation.z = -Math.PI / 7;
 
         occlusionPointLight.intensity = 3.5 + Math.sin(elapsedTime * 6) * 1.5;
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).color.setHex(0xef4444);
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0xb91c1c);
 
-        // PARADOXICAL BREATHING STRAIN: Chest pulls inward with desperate effort
-        const chestRetraction = Math.sin(elapsedTime * 4.5) * 0.12;
+        // Sound wave invisible during complete silence apnea
+        soundWaveMat.opacity = 0;
+
+        // Paradoxical chest retraction (respiratory struggle against closed throat)
+        const chestRetraction = Math.sin(elapsedTime * 4.8) * 0.14;
         leftLungMesh.position.y = chestRetraction;
         rightLungMesh.position.y = chestRetraction;
       } else if (isNarrowed) {
-        // Snoring vibration flutter in 3D
-        const uvula3DFlutter = Math.sin(elapsedTime * 32) * 0.08;
-        palateMesh.position.set(2.1 + uvula3DFlutter, 2.6, 0);
+        // Step 2: Snoring - Uvula rapid acoustic flutter + sound ripple
+        const flutter = Math.sin(elapsedTime * 36) * 0.09;
+        palateMesh.position.set(flutter, flutter * 0.5, 0);
 
-        tongueMesh.position.set(1.55, 2.3, 0);
-        tongueMesh.scale.set(1.48, 0.8, 0.95);
+        tongueMesh.position.set(0.12, -0.15, 0);
+        tongueMesh.scale.set(1.02, 0.95, 1.05);
         (tongueMesh.material as THREE.MeshStandardMaterial).color.setHex(0xe11d48);
         (tongueMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x9f1239);
 
         occlusionPointLight.intensity = 1.0;
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).color.setHex(0xf59e0b);
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0xd97706);
+
+        // Expanding acoustic snoring ripples
+        const waveScale = ((elapsedTime * 2.5) % 1.0);
+        soundWaveMesh.scale.setScalar(1 + waveScale * 2.5);
+        soundWaveMat.opacity = (1 - waveScale) * 0.75;
       } else if (isReopening) {
-        tongueMesh.position.set(1.3, 2.8, 0);
-        tongueMesh.scale.set(1.38, 0.92, 0.8);
+        // Step 5: Micro-arousal & Gasp - Genioglossus contracts forward
+        tongueMesh.position.set(-0.15, 0.1, 0);
+        tongueMesh.scale.set(0.96, 1.02, 0.92);
         (tongueMesh.material as THREE.MeshStandardMaterial).color.setHex(0x38bdf8);
         (tongueMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x0284c7);
 
-        palateMesh.position.set(2.25, 2.85, 0);
-        palateMesh.rotation.z = Math.PI / 4.2;
+        palateMesh.position.set(0.1, 0.1, 0);
+        palateMesh.rotation.z = 0;
 
         occlusionPointLight.intensity = 0;
+        soundWaveMat.opacity = 0;
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).color.setHex(0x34d399);
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x059669);
       } else {
-        tongueMesh.position.set(1.45, 2.6, 0);
-        tongueMesh.scale.set(1.45, 0.85, 0.85);
+        // Step 1: Normal open airway
+        tongueMesh.position.set(0, 0, 0);
+        tongueMesh.scale.set(1, 1, 1);
         (tongueMesh.material as THREE.MeshStandardMaterial).color.setHex(0xe11d48);
         (tongueMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x9f1239);
 
-        palateMesh.position.set(2.2, 2.75, 0);
-        palateMesh.rotation.z = Math.PI / 3.8;
+        palateMesh.position.set(0, 0, 0);
+        palateMesh.rotation.z = 0;
 
         occlusionPointLight.intensity = 0;
+        soundWaveMat.opacity = 0;
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).color.setHex(0x38bdf8);
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0x0284c7);
       }
 
-      // 2. Brain Arousal Lightning in 3D
+      // 2. Brain Arousal Neural Flash
       if (isBrainArousal) {
         arousalPointLight.intensity = 5.0 + Math.sin(elapsedTime * 12) * 2.5;
         (brainMat as THREE.MeshStandardMaterial).color.setHex(0xfbbf24);
@@ -501,18 +582,21 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         (brainMat as THREE.MeshStandardMaterial).emissiveIntensity = 0.35;
       }
 
-      // 3. Heart rhythm
+      // 3. Cardiac Rhythm
       const heartSpeed = isSympathetic ? 12 : 3.5;
       const heartPulse = 1.0 + Math.sin(elapsedTime * heartSpeed) * (isSympathetic ? 0.22 : 0.08);
       heartMesh.scale.set(1.15 * heartPulse, 0.9 * heartPulse, 0.9 * heartPulse);
 
-      // 4. Moving Airflow Particles in 3D
+      // 4. Bioluminescent O2 Flow Particles
       const positions = particleGeo.attributes.position.array as Float32Array;
       const speedMultiplier = isCollapsed ? 0.0 : (airflowPercent / 100) * 0.012;
 
       for (let i = 0; i < particleCount; i++) {
         if (!isCollapsed) {
           particleProgress[i] = (particleProgress[i] + speedMultiplier) % 1.0;
+        } else {
+          // Blocked: Particles cannot pass the blockage (limit to nasopharynx entrance)
+          particleProgress[i] = Math.min(particleProgress[i], 0.38);
         }
         const pt = airwaySpline.getPoint(particleProgress[i]);
         positions[i * 3] = pt.x;
@@ -521,7 +605,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       }
       particleGeo.attributes.position.needsUpdate = true;
 
-      // Render
+      // Render Scene
       renderer.render(scene, camera);
     };
 
@@ -530,7 +614,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     const handleResize = () => {
       if (!container) return;
       const w = container.clientWidth;
-      const h = container.clientHeight || 460;
+      const h = container.clientHeight || 480;
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h);
@@ -550,7 +634,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
 
   // Update Sagittal Clipping Plane dynamically
   useEffect(() => {
-    const sagittalPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.05);
+    const sagittalPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0.02);
     clippableMaterialsRef.current.forEach((mat) => {
       mat.clippingPlanes = isSagittalClipped ? [sagittalPlane] : [];
       mat.needsUpdate = true;
@@ -563,19 +647,20 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     setActivePin(null);
 
     if (view === 'profile') {
-      targetCamPosRef.current.set(0, 6.5, 14);
-      targetLookAtRef.current.set(0, 1.8, 0);
+      targetCamPosRef.current.set(0, 6.5, 13.5);
+      targetLookAtRef.current.set(0.5, 2.2, 0);
     } else if (view === 'airway') {
-      targetCamPosRef.current.set(1.5, 4.2, 9.0);
-      targetLookAtRef.current.set(1.4, 2.2, 0);
+      targetCamPosRef.current.set(1.5, 4.2, 9.2);
+      targetLookAtRef.current.set(1.4, 2.3, 0);
     } else if (view === 'endoscopy') {
-      targetCamPosRef.current.set(3.2, 5.2, 5.0);
+      // Look down into the pharynx from the nasopharynx
+      targetCamPosRef.current.set(3.2, 5.0, 4.8);
       targetLookAtRef.current.set(1.5, 2.0, 0);
     } else if (view === 'brain') {
-      targetCamPosRef.current.set(4.0, 5.0, 7.5);
+      targetCamPosRef.current.set(3.8, 4.8, 7.8);
       targetLookAtRef.current.set(3.4, 2.7, 0);
     } else if (view === 'chest') {
-      targetCamPosRef.current.set(-3.5, 5.0, 9.5);
+      targetCamPosRef.current.set(-3.2, 4.8, 9.5);
       targetLookAtRef.current.set(-3.0, 1.2, 0);
     }
   };
@@ -594,21 +679,21 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
   }, [step]);
 
   return (
-    <div className="relative w-full h-[440px] sm:h-[500px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl select-none">
+    <div className="relative w-full h-[450px] sm:h-[510px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl select-none">
       {/* 3D WebGL Canvas */}
       <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
-      {/* Top Floating Control Bar: Presets & Sagittal Clip Toggle */}
-      <div className="absolute top-3 left-3 right-3 z-10 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-        {/* Left: Camera Presets */}
-        <div className="flex flex-wrap items-center gap-1 bg-slate-900/90 backdrop-blur-md p-1.5 rounded-xl border border-slate-700/80 shadow-lg pointer-events-auto">
-          <span className="text-[10px] text-slate-400 font-bold px-1 uppercase flex items-center gap-1">
+      {/* TOP ZONE: Unified Sleek Glassmorphic Toolbar (Z-Index 20) */}
+      <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
+        {/* Left: Camera Presets (Horizontal Scroll without wrapping) */}
+        <div className="flex items-center gap-1 bg-slate-900/90 backdrop-blur-md p-1 rounded-xl border border-slate-700/80 shadow-lg pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100%-120px)] sm:max-w-none">
+          <div className="px-1.5 py-0.5 text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 flex-shrink-0">
             <Eye className="w-3.5 h-3.5 text-teal-400" />
-            <span className="hidden sm:inline">Góc 3D:</span>
-          </span>
+            <span className="hidden md:inline">Góc 3D:</span>
+          </div>
           <button
             onClick={() => setCameraPreset('profile')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+            className={`px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
               activeCameraView === 'profile'
                 ? 'bg-teal-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
@@ -618,17 +703,17 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
           </button>
           <button
             onClick={() => setCameraPreset('airway')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+            className={`px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
               activeCameraView === 'airway'
                 ? 'bg-teal-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            Hầu họng & Lưỡi
+            Họng & Lưỡi
           </button>
           <button
             onClick={() => setCameraPreset('endoscopy')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all flex items-center gap-1 ${
+            className={`px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all flex items-center gap-1 ${
               activeCameraView === 'endoscopy'
                 ? 'bg-sky-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
@@ -636,35 +721,35 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
             title="Góc nhìn nội soi tai mũi họng từ trên nhìn xuống"
           >
             <Video className="w-3 h-3 text-sky-400" />
-            <span>Nội soi họng</span>
+            <span>Nội soi</span>
           </button>
           <button
             onClick={() => setCameraPreset('brain')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+            className={`px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
               activeCameraView === 'brain'
                 ? 'bg-amber-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            Não bộ
+            Não
           </button>
           <button
             onClick={() => setCameraPreset('chest')}
-            className={`px-2.5 py-1 rounded-lg text-xs font-semibold transition-all ${
+            className={`px-2 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
               activeCameraView === 'chest'
                 ? 'bg-purple-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
           >
-            Phổi & Tim
+            Phổi
           </button>
         </div>
 
-        {/* Right: Sagittal Clipping Plane Toggle (BioDigital Human Style!) */}
-        <div className="flex items-center gap-2 pointer-events-auto">
+        {/* Right: Sagittal Clipping Plane Toggle */}
+        <div className="flex items-center gap-1.5 pointer-events-auto flex-shrink-0">
           <button
             onClick={() => setIsSagittalClipped(!isSagittalClipped)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-lg backdrop-blur-md ${
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-lg backdrop-blur-md ${
               isSagittalClipped
                 ? 'bg-teal-500/30 border-teal-400 text-teal-200'
                 : 'bg-slate-900/90 border-slate-700/80 text-slate-300 hover:text-white hover:bg-slate-800'
@@ -672,16 +757,23 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
             title="Cắt đôi khuôn mặt theo mặt phẳng đứng dọc để nhìn vào lòng họng"
           >
             <Scissors className="w-3.5 h-3.5 text-teal-400" />
-            <span>{isSagittalClipped ? 'Bỏ cắt mặt phẳng' : 'Mặt cắt dọc 3D (Sagittal)'}</span>
+            <span className="hidden sm:inline">{isSagittalClipped ? 'Bỏ cắt 3D' : 'Mặt cắt 3D (Sagittal)'}</span>
+            <span className="sm:hidden">{isSagittalClipped ? 'Hủy cắt' : 'Mặt cắt'}</span>
           </button>
         </div>
       </div>
 
-      {/* Real-time 3D Airway Caliber Gauge (Top Left below camera bar) */}
-      <div className="absolute top-14 left-3 z-10 pointer-events-auto">
-        <div className="bg-slate-900/90 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2.5 sm:gap-3">
-          <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
-            <Gauge className="w-4 h-4" />
+      {/* TOP-CENTER: Mouse & Touch Gesture Hint (Below toolbar, Never Collides with any button) */}
+      <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10 pointer-events-none hidden lg:flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl border border-slate-700/60 text-[10px] text-slate-400 shadow-md">
+        <RotateCw className="w-3 h-3 text-teal-400 animate-spin-slow" />
+        <span>Kéo chuột xoay 360° • Cuộn phóng to/thu nhỏ</span>
+      </div>
+
+      {/* BOTTOM-LEFT ZONE: Real-time 3D Airway Caliber Gauge (Z-Index 10) */}
+      <div className="absolute bottom-3 left-3 z-10 pointer-events-auto">
+        <div className="bg-slate-900/95 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2 sm:gap-2.5">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
+            <Gauge className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
@@ -710,53 +802,50 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         </div>
       </div>
 
-      {/* Floating Organ Labels Overlay (Clickable 3D Highlights) */}
-      <div className="absolute bottom-11 sm:bottom-3 right-3 z-10 flex flex-col sm:flex-row items-end sm:items-center gap-1 pointer-events-auto">
+      {/* BOTTOM-RIGHT ZONE: Quick Organ Focus Buttons (Hidden on mobile to ensure 0 overlap with caliber gauge, visible on sm+) */}
+      <div className="absolute bottom-3 right-3 z-10 hidden sm:flex items-center gap-1 sm:gap-1.5 pointer-events-auto">
         <button
           onClick={() => {
             setActivePin(activePin === 'tongue' ? null : 'tongue');
             setCameraPreset('airway');
           }}
-          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all ${
+          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
             activePin === 'tongue'
-              ? 'bg-rose-500/30 border-rose-400 text-rose-200 shadow-lg'
-              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white'
+              ? 'bg-rose-500/30 border-rose-400 text-rose-200'
+              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Tập trung vào Gốc lưỡi và Cơ cằm-lưỡi"
         >
-          👅 Gốc lưỡi & Cơ cằm-lưỡi
+          👅 Gốc lưỡi
         </button>
         <button
           onClick={() => {
             setActivePin(activePin === 'brain' ? null : 'brain');
             setCameraPreset('brain');
           }}
-          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all ${
+          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
             activePin === 'brain'
-              ? 'bg-amber-500/30 border-amber-400 text-amber-200 shadow-lg'
-              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white'
+              ? 'bg-amber-500/30 border-amber-400 text-amber-200'
+              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Tập trung vào Não bộ & Thần kinh hạ thiệt XII"
         >
-          🧠 Não & Thần kinh XII
+          🧠 Não bộ
         </button>
         <button
           onClick={() => {
             setActivePin(activePin === 'lungs' ? null : 'lungs');
             setCameraPreset('chest');
           }}
-          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all ${
+          className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
             activePin === 'lungs'
-              ? 'bg-sky-500/30 border-sky-400 text-sky-200 shadow-lg'
-              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white'
+              ? 'bg-sky-500/30 border-sky-400 text-sky-200'
+              : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
+          title="Tập trung vào Phổi & Nhịp tim"
         >
-          🫁 Phổi & Nhịp tim
+          🫁 Phổi & Tim
         </button>
-      </div>
-
-      {/* Touch & Mouse Gesture Hint */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 pointer-events-none hidden md:flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl border border-slate-700/60 text-[10px] text-slate-400 shadow-md">
-        <RotateCw className="w-3 h-3 text-teal-400 animate-spin-slow" />
-        <span>Kéo chuột để xoay 360° • Cuộn để phóng to/thu nhỏ</span>
       </div>
     </div>
   );

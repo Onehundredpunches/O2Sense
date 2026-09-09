@@ -105,8 +105,8 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
       id: 'lungs',
       name: 'Phổi & Cơ hoành gắng sức (Lungs & Diaphragm)',
       role: 'Khi họng bị tắc, ngực và cơ hoành vẫn co bóp gồng gắng sức nghịch thường tạo áp lực âm lớn.',
-      x: 0.35,
-      y: 0.85,
+      x: 0.52,
+      y: 0.78,
     },
   ];
 
@@ -540,7 +540,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
   }, [step, airwayStatus, airflowPercent, spo2Percent, isBrainArousal, isSympathetic, zoomLevel, airwayCaliber]);
 
   return (
-    <div className="relative w-full h-[430px] sm:h-[500px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col justify-between select-none">
+    <div className="relative w-full h-[450px] sm:h-[510px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col justify-between select-none">
       {/* Simulation Canvas */}
       <canvas
         ref={canvasRef}
@@ -606,11 +606,11 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
         </div>
       </div>
 
-      {/* LIVE AIRWAY CALIBER GAUGE (Benchmark từ Complete Anatomy & BioDigital Human) */}
-      <div className="absolute top-14 left-3 z-10 pointer-events-auto">
-        <div className="bg-slate-900/90 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2.5 sm:gap-3">
-          <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
-            <Gauge className="w-4 h-4" />
+      {/* LIVE AIRWAY CALIBER GAUGE (Bottom Left - Matching 3D Scene, 0 Overlaps) */}
+      <div className="absolute bottom-3 left-3 z-10 pointer-events-auto">
+        <div className="bg-slate-900/95 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2 sm:gap-2.5">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
+            <Gauge className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
