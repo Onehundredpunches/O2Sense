@@ -10,7 +10,6 @@ import {
   ExternalLink, 
   CheckCircle2, 
   AlertTriangle, 
-  Code2, 
   Layers, 
   Lightbulb, 
   Maximize2, 
@@ -54,7 +53,9 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
         t.category.toLowerCase().includes(q) ||
         t.badges.some((b) => b.toLowerCase().includes(q)) ||
         t.hotspots.some((h) => h.label.toLowerCase().includes(q) || h.description.toLowerCase().includes(q)) ||
-        t.logicExplanations.some((l) => l.title.toLowerCase().includes(q) || l.content.toLowerCase().includes(q))
+        t.actionSteps.some((s) => s.action.toLowerCase().includes(q) || s.detail.toLowerCase().includes(q)) ||
+        t.proTips.some((p) => p.toLowerCase().includes(q)) ||
+        t.commonMistakes.some((m) => m.toLowerCase().includes(q))
     );
   }, [searchQuery]);
 
@@ -96,13 +97,13 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
         <div className="relative z-10 max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-4 border border-teal-500/30">
             <Compass className="w-3.5 h-3.5" />
-            <span>Cẩm Nang Vận Hành & Kiến Trúc Chi Tiết</span>
+            <span>Cẩm Nang Vận Hành & Hướng Dẫn Trực Quan</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white mb-3">
             Cẩm Nang Vận Hành & Hướng Dẫn Sử Dụng
           </h1>
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Tài liệu hướng dẫn trực quan đối chiếu chuẩn xác từng module: Vừa có <strong>ảnh chụp thực tế</strong> với các điểm ghim tương tác, vừa <strong>đóng gói tường tận logic thuật toán & sinh lý học</strong> đằng sau.
+            Tài liệu hướng dẫn trực quan đối chiếu chuẩn xác từng module: <strong>Ảnh chụp giao diện thực tế</strong> kết hợp <strong>các điểm ghim tương tác</strong>, quy trình thao tác lâm sàng và lưu ý cốt lõi.
           </p>
 
           {/* Quick Metrics Bar */}
@@ -116,8 +117,8 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
               <span><strong>24</strong> Điểm ghim tương tác UI</span>
             </div>
             <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700">
-              <Code2 className="w-4 h-4 text-amber-400" />
-              <span><strong>100%</strong> Đóng gói logic & công thức</span>
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              <span><strong>100%</strong> Trực quan thực chiến</span>
             </div>
             <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700 text-teal-300">
               {userMode === 'founder' ? (
@@ -208,7 +209,7 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
                       <div className="mt-2 flex items-center gap-2 text-[10px] text-slate-400 font-medium">
                         <span>{topic.hotspots.length} điểm ghim UI</span>
                         <span>•</span>
-                        <span>{topic.logicExplanations.length} cơ chế</span>
+                        <span>{topic.actionSteps.length} bước thao tác</span>
                       </div>
                     </div>
                   </button>
@@ -533,35 +534,6 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
                         {step.detail}
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Under-The-Hood Logic & Physiology Encapsulation */}
-            <div className="mt-10 pt-8 border-t border-stone-200/70 dark:border-slate-800">
-              <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-2 mb-4">
-                <Code2 className="w-4 h-4 text-sky-500" />
-                <span>Đóng gói Logic Thuật toán & Cơ chế Sinh lý</span>
-              </h3>
-              <div className="space-y-4">
-                {currentTopic.logicExplanations.map((logic, idx) => (
-                  <div
-                    key={idx}
-                    className="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 text-slate-200 border border-slate-800 shadow-md"
-                  >
-                    <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-teal-300 mb-2">
-                      <Microscope className="w-4 h-4 text-teal-400" />
-                      <span>{logic.title}</span>
-                    </div>
-                    <p className="text-xs text-slate-300 leading-relaxed">
-                      {logic.content}
-                    </p>
-                    {logic.formulaOrCode && (
-                      <div className="mt-3 p-3 rounded-xl bg-slate-950 border border-slate-800 font-mono text-[11px] text-sky-300 whitespace-pre-wrap leading-relaxed overflow-x-auto">
-                        {logic.formulaOrCode}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
