@@ -52,7 +52,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 2,
-        label: 'Chuyển Đổi Persona: Đại Chúng vs Founder Pro',
+        label: 'Chuyển Đổi Góc Nhìn: Đại Chúng vs Chuyên Sâu',
         xPercent: 76,
         yPercent: 7,
         description: 'Chế độ Đại chúng dùng ngôn ngữ đời thường, ẩn dụ trực quan. Chế độ Founder Pro mở rộng cơ chế sinh lý vi mô, tham chiếu AASM và tư duy hệ thống.',
@@ -60,7 +60,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 3,
-        label: 'Giao Diện Sáng Dịu Mắt (Eye-Care) & Midnight Navy',
+        label: 'Giao Diện Sáng Dịu Mắt & Ban Đêm',
         xPercent: 88,
         yPercent: 7,
         description: 'Theme Sáng sử dụng tông nền be ngà dịu mắt (#f7f6f2) chống mỏi điều tiết khi đọc lâu. Theme Tối tối ưu quan sát đồ thị huỳnh quang ban đêm.',
@@ -68,7 +68,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 4,
-        label: 'Từ Điển Ẩn Dụ Y Khoa (Glossary 1-Touch)',
+        label: 'Từ Điển Ẩn Dụ Y Khoa Một Chạm',
         xPercent: 85,
         yPercent: 7,
         description: 'Mở nhanh bộ giải nghĩa các thuật ngữ khó (OSA, AHI, ODI, PEEP, FiO2, SpO2) kèm hình ảnh so sánh đời thường.',
@@ -130,7 +130,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     hotspots: [
       {
         id: 1,
-        label: 'Mô Hình Giải Phẫu Đường Thở 3D WebGL',
+        label: 'Mô Hình Giải Phẫu Đường Thở 3D',
         xPercent: 50,
         yPercent: 35,
         description: 'Mô phỏng không gian 3 chiều vòm họng, lưỡi gà và khí quản chuyển động co thắt theo từng nhịp thở.',
@@ -138,7 +138,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 2,
-        label: 'Chuyển Đổi Chế Độ 3D Mesh / 2.5D Minh Họa Phẳng',
+        label: 'Chuyển Đổi Góc Nhìn 3D / 2.5D',
         xPercent: 88,
         yPercent: 18,
         description: 'Nếu thiết bị yếu hoặc muốn nhìn rõ sơ đồ giải phẫu dạng lát cắt phẳng dễ hiểu, bạn có thể chuyển sang chế độ 2.5D.',
@@ -154,7 +154,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 4,
-        label: 'Bảng Đồng Hồ Sinh Hiệu Thời Gian Thực (Live Vitals)',
+        label: 'Bảng Đồng Hồ Sinh Hiệu Thời Gian Thực',
         xPercent: 18,
         yPercent: 40,
         description: 'Phản ánh trực tiếp các chỉ số sinh lý tương ứng với từng giai đoạn: Nồng độ SpO2 (%), Áp lực lồng ngực (cmH2O), và Nhịp tim (bpm).',
@@ -229,7 +229,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 3,
-        label: 'Thanh Công Cụ Kính Lúp (Zoom Lens) & Thước Đo Chu Kỳ',
+        label: 'Kính Lúp Phóng Đại & Thước Đo Chu Kỳ',
         xPercent: 78,
         yPercent: 22,
         description: 'Cho phép phóng to vào 1 cụm sóng cụ thể để đo thời gian tụt dốc (Desaturation Time) và thời gian phục hồi (Resaturation Time).',
@@ -299,7 +299,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 2,
-        label: 'Thẻ Tri Thức Đa Tầng (Interactive Accordions)',
+        label: 'Thẻ Tri Thức Mở Rộng Đa Tầng',
         xPercent: 50,
         yPercent: 45,
         description: 'Mỗi thẻ chứa tóm tắt ngắn cho đại chúng và phần "Cơ chế sâu cho Founder Pro" mở rộng khi click.',

@@ -112,7 +112,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
         </div>
 
         {/* Step Progression Pills (Balanced 5-column grid on mobile, flex on desktop) */}
-        <div className="mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800 grid grid-cols-5 gap-1 sm:flex sm:items-center sm:gap-2">
+        <div className="mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-5 gap-2">
           {steps.map((st, idx) => {
             const isCurrent = idx === currentStepIndex;
             return (
