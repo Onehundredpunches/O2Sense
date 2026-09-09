@@ -6,7 +6,10 @@ import {
   Eye, 
   Scissors, 
   Gauge, 
-  Video
+  Video,
+  Tag,
+  Info,
+  X
 } from 'lucide-react';
 
 interface AnatomyScene3DProps {
@@ -16,6 +19,14 @@ interface AnatomyScene3DProps {
   spo2Percent: number;
   isBrainArousal: boolean;
   isSympathetic: boolean;
+}
+
+interface AnatomicalPin3D {
+  id: string;
+  name: string;
+  role: string;
+  pos: THREE.Vector3;
+  color: string;
 }
 
 // Procedural texture for realistic brain gyri & sulci folds (0 external assets, 0ms load)
@@ -62,7 +73,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
 
   const [activeCameraView, setActiveCameraView] = useState<'profile' | 'airway' | 'endoscopy' | 'brain' | 'chest'>('profile');
   const [isSagittalClipped, setIsSagittalClipped] = useState<boolean>(false);
-  const [activePin, setActivePin] = useState<string | null>(null);
+  const [show3DLabels, setShow3DLabels] = useState<boolean>(true);
+  const [selectedPin, setSelectedPin] = useState<AnatomicalPin3D | null>(null);
 
   // Live airway caliber calculation
   const airwayCaliber = {
@@ -73,8 +85,68 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     5: 11.5,
   }[step] ?? (airwayStatus === 'collapsed' ? 0.0 : airwayStatus === 'narrowed' ? 3.5 : 12.0);
 
+  // 3D Anatomical Landmark Pins with directional fanning to avoid any overlap
+  const landmarkPins: (AnatomicalPin3D & { shortName: string; align: 'left' | 'right' | 'center' })[] = [
+    {
+      id: 'nose',
+      name: 'Khoang mũi (Đường khí vào)',
+      shortName: '👃 Mũi',
+      role: 'Cửa ngõ hít thở chính khi ngủ, làm ấm và bão hòa ẩm không khí trước khi vào họng.',
+      pos: new THREE.Vector3(2.5, 5.2, 0),
+      color: '#38bdf8',
+      align: 'right',
+    },
+    {
+      id: 'palate',
+      name: 'Khẩu cái mềm & Lưỡi gà',
+      shortName: '🔴 Lưỡi gà',
+      role: 'Mô mềm rủ xuống vòm miệng. Khi ngủ hẹp sẽ rung bần bật tạo tiếng ngáy; khi nghẽn sẽ bị hút dính vào thành họng.',
+      pos: new THREE.Vector3(2.75, 3.4, 0),
+      color: '#f43f5e',
+      align: 'right',
+    },
+    {
+      id: 'tongue',
+      name: 'Gốc lưỡi & Cơ cằm-lưỡi',
+      shortName: '👅 Gốc lưỡi',
+      role: 'Thủ phạm chính của ngưng thở khi ngủ. Khi ngủ say mất trương lực sẽ tụt lùi ra sau đè bẹp đường thở.',
+      pos: new THREE.Vector3(1.25, 2.6, 0),
+      color: '#fb7185',
+      align: 'left',
+    },
+    {
+      id: 'airway',
+      name: 'Vùng bít tắc hầu họng',
+      shortName: '💨 Vùng nghẽn (0mm)',
+      role: 'Khoảng hở đường kính họng. Bình thường mở 12mm; khi ngưng thở tắc nghẽn (OSA) bị bóp nghẹt về 0.0mm.',
+      pos: new THREE.Vector3(2.25, 2.0, 0),
+      color: '#34d399',
+      align: 'right',
+    },
+    {
+      id: 'mandible',
+      name: 'Xương hàm dưới & Cằm',
+      shortName: '🦴 Xương hàm',
+      role: 'Khung xương giữ vị trí của cơ cằm lưỡi. Người có hàm dưới lùi hoặc cằm nhỏ rất dễ bị ngưng thở.',
+      pos: new THREE.Vector3(0.65, 3.4, 0),
+      color: '#e2e8f0',
+      align: 'left',
+    },
+    {
+      id: 'trachea',
+      name: 'Khí quản & Vòng sụn',
+      shortName: '🫁 Khí quản',
+      role: 'Ống dẫn khí chính có các vòng sụn cứng giữ không bị xẹp, dẫn oxy thẳng xuống hai lá phổi.',
+      pos: new THREE.Vector3(-0.9, 1.5, 0),
+      color: '#0ea5e9',
+      align: 'left',
+    },
+  ];
+
   // Ref to materials that support sagittal clipping plane
   const clippableMaterialsRef = useRef<THREE.Material[]>([]);
+  // Ref to store pin 2D screen positions
+  const pinRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -97,7 +169,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.3;
+    renderer.toneMappingExposure = 1.35;
     renderer.localClippingEnabled = true;
     container.appendChild(renderer.domElement);
 
@@ -110,19 +182,22 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     controls.target.set(0.5, 2.2, 0);
     controlsRef.current = controls;
 
-    // 5. Lighting: Holographic Medical Studio Lighting
-    const ambientLight = new THREE.AmbientLight(0x0f172a, 1.8);
+    // 5. Lighting: Medical Holographic Studio Lighting
+    const ambientLight = new THREE.AmbientLight(0x0f172a, 2.0);
     scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.2);
+    // Key Light from front-top
+    const keyLight = new THREE.DirectionalLight(0x38bdf8, 2.4);
     keyLight.position.set(6, 12, 10);
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x818cf8, 1.6);
-    rimLight.position.set(-10, -5, -8);
+    // Rim Backlight (Fresnel effect making facial silhouette stand out brilliantly!)
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, 2.2);
+    rimLight.position.set(-8, 8, -8);
     scene.add(rimLight);
 
-    const warmFillLight = new THREE.DirectionalLight(0xf43f5e, 0.9);
+    // Warm mucosal fill light
+    const warmFillLight = new THREE.DirectionalLight(0xf43f5e, 1.1);
     warmFillLight.position.set(2, 6, 8);
     scene.add(warmFillLight);
 
@@ -132,12 +207,12 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     scene.add(arousalPointLight);
 
     // Occlusion Warning Point Light
-    const occlusionPointLight = new THREE.PointLight(0xef4444, 0, 12);
-    occlusionPointLight.position.set(1.5, 2.2, 0);
+    const occlusionPointLight = new THREE.PointLight(0xef4444, 0, 14);
+    occlusionPointLight.position.set(1.6, 2.1, 0);
     scene.add(occlusionPointLight);
 
     // Acoustic Snoring Sound Wave Mesh (Pulsing Rings)
-    const soundWaveGeo = new THREE.RingGeometry(0.2, 0.4, 32);
+    const soundWaveGeo = new THREE.RingGeometry(0.2, 0.45, 32);
     const soundWaveMat = new THREE.MeshBasicMaterial({
       color: 0xf59e0b,
       transparent: true,
@@ -153,7 +228,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     const bodyGroup = new THREE.Group();
     scene.add(bodyGroup);
 
-    // --- A. Hospital Bed & Ergonomic Pillow ---
+    // --- A. Hospital Bed & Ergonomic Medical Pillow ---
     const pillowGeo = new THREE.BoxGeometry(5.2, 1.2, 5.4);
     const pillowMat = new THREE.MeshStandardMaterial({
       color: 0x1e293b,
@@ -174,7 +249,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     mattressMesh.position.set(-2.5, -0.6, 0);
     bodyGroup.add(mattressMesh);
 
-    // --- B. Sculpted Translucent 3D Human Silhouette (Head, Neck, Torso) ---
+    // --- B. Sculpted Translucent 3D Human Silhouette (Head, Nose, Lips, Chin, Neck) ---
+    // True human midsagittal anatomical silhouette
     const bodyProfileShape = new THREE.Shape();
     bodyProfileShape.moveTo(-7.5, 0.3);
     bodyProfileShape.lineTo(-3.5, 0.4);
@@ -182,18 +258,18 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     bodyProfileShape.lineTo(1.5, 0.8);
     bodyProfileShape.quadraticCurveTo(3.2, 1.0, 4.8, 1.5);
     bodyProfileShape.quadraticCurveTo(5.4, 2.4, 5.0, 3.4);
-    bodyProfileShape.quadraticCurveTo(4.4, 4.4, 3.4, 4.4); // Forehead
-    bodyProfileShape.lineTo(2.7, 4.3);
-    bodyProfileShape.lineTo(2.35, 5.15); // Nose tip
-    bodyProfileShape.lineTo(2.0, 4.65);  // Philtrum
-    bodyProfileShape.lineTo(1.9, 4.35);  // Upper lip
-    bodyProfileShape.lineTo(1.8, 4.3);
-    bodyProfileShape.lineTo(1.68, 3.9);  // Lower lip
-    bodyProfileShape.lineTo(1.58, 4.0);  // Mentolabial sulcus
-    bodyProfileShape.lineTo(1.25, 3.35); // Mental protuberance (Chin)
-    bodyProfileShape.quadraticCurveTo(0.7, 2.6, 0.0, 2.3); // Submental throat
-    bodyProfileShape.lineTo(-0.6, 2.2);  // Thyroid notch (Adam's apple)
-    bodyProfileShape.quadraticCurveTo(-1.8, 2.7, -3.5, 2.85); // Chest contour
+    bodyProfileShape.quadraticCurveTo(4.4, 4.4, 3.4, 4.4); // Forehead / Glabella
+    bodyProfileShape.lineTo(2.7, 4.3);                    // Nose bridge
+    bodyProfileShape.lineTo(2.35, 5.15);                  // Tip of nose (Nostril)
+    bodyProfileShape.lineTo(2.0, 4.65);                   // Philtrum
+    bodyProfileShape.lineTo(1.9, 4.35);                   // Upper lip
+    bodyProfileShape.lineTo(1.8, 4.3);                    // Mouth fissure
+    bodyProfileShape.lineTo(1.68, 3.9);                   // Lower lip
+    bodyProfileShape.lineTo(1.58, 4.0);                   // Mentolabial sulcus
+    bodyProfileShape.lineTo(1.25, 3.35);                  // Mental protuberance (Chin)
+    bodyProfileShape.quadraticCurveTo(0.7, 2.6, 0.0, 2.3);// Submental throat
+    bodyProfileShape.lineTo(-0.6, 2.2);                   // Thyroid notch (Adam's apple)
+    bodyProfileShape.quadraticCurveTo(-1.8, 2.7, -3.5, 2.85); // Thoracic chest contour
     bodyProfileShape.quadraticCurveTo(-5.5, 2.7, -7.5, 2.3);
     bodyProfileShape.lineTo(-7.5, 0.3);
 
@@ -212,9 +288,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       color: 0x0284c7,
       transparent: true,
       opacity: 0.28,
-      roughness: 0.3,
+      roughness: 0.28,
       metalness: 0.1,
-      transmission: 0.7,
+      transmission: 0.72,
       thickness: 2.2,
       ior: 1.35,
       side: THREE.DoubleSide,
@@ -222,34 +298,35 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
     const bodySkinMesh = new THREE.Mesh(bodySkinGeo, skinGlassMat);
     bodyGroup.add(bodySkinMesh);
 
-    // --- C. Anatomical Mandible & Hard Palate (Cortical Bone) ---
+    // --- C. Anatomical Mandible (Xương hàm dưới) & Hard Palate ---
+    // Jawbone gives instant orientation of chin, mouth and tongue base
     const mandibleShape = new THREE.Shape();
-    mandibleShape.moveTo(1.2, 3.3);
-    mandibleShape.lineTo(1.4, 3.2);
-    mandibleShape.quadraticCurveTo(0.6, 2.4, 0.2, 2.5);
-    mandibleShape.lineTo(0.0, 2.65);
-    mandibleShape.quadraticCurveTo(0.5, 2.8, 1.2, 3.3);
+    mandibleShape.moveTo(1.25, 3.35); // Chin
+    mandibleShape.lineTo(1.45, 3.25); // Lower teeth alveolar crest
+    mandibleShape.quadraticCurveTo(0.6, 2.4, 0.2, 2.5); // Body to angle of jaw
+    mandibleShape.lineTo(0.0, 2.65);  // Ramus
+    mandibleShape.quadraticCurveTo(0.5, 2.8, 1.25, 3.35);
 
     const mandibleGeo = new THREE.ExtrudeGeometry(mandibleShape, { depth: 2.0, bevelEnabled: true, bevelThickness: 0.15, bevelSize: 0.1, bevelSegments: 3 });
     mandibleGeo.translate(0, 0, -1.0);
     const boneMat = new THREE.MeshStandardMaterial({
       color: 0xe2e8f0,
-      roughness: 0.5,
+      roughness: 0.45,
       metalness: 0.15,
       emissive: 0x64748b,
-      emissiveIntensity: 0.15,
+      emissiveIntensity: 0.18,
     });
     const mandibleMesh = new THREE.Mesh(mandibleGeo, boneMat);
     bodyGroup.add(mandibleMesh);
 
-    // Hard Palate (Bony roof of mouth)
-    const hardPalateGeo = new THREE.BoxGeometry(0.8, 0.18, 1.8);
+    // Hard Palate (Bony roof of mouth separating oral & nasal cavity)
+    const hardPalateGeo = new THREE.BoxGeometry(0.85, 0.16, 1.8);
     const hardPalateMesh = new THREE.Mesh(hardPalateGeo, boneMat);
     hardPalateMesh.position.set(2.4, 3.55, 0);
     hardPalateMesh.rotation.z = -Math.PI / 16;
     bodyGroup.add(hardPalateMesh);
 
-    // --- D. Upper Airway Lumen Tunnel (Translucent Mucosal Air Path) ---
+    // --- D. Upper Airway Lumen Tunnel (Translucent Mucosal Air Pathway) ---
     const airwaySpline = new THREE.CatmullRomCurve3([
       new THREE.Vector3(2.1, 4.65, 0), // Nostril opening
       new THREE.Vector3(2.6, 4.0, 0),  // Nasal cavity
@@ -514,10 +591,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).color.setHex(0xef4444);
         (airwayTubeMesh.material as THREE.MeshStandardMaterial).emissive.setHex(0xb91c1c);
 
-        // Sound wave invisible during complete silence apnea
         soundWaveMat.opacity = 0;
 
-        // Paradoxical chest retraction (respiratory struggle against closed throat)
+        // Paradoxical chest retraction
         const chestRetraction = Math.sin(elapsedTime * 4.8) * 0.14;
         leftLungMesh.position.y = chestRetraction;
         rightLungMesh.position.y = chestRetraction;
@@ -595,7 +671,6 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         if (!isCollapsed) {
           particleProgress[i] = (particleProgress[i] + speedMultiplier) % 1.0;
         } else {
-          // Blocked: Particles cannot pass the blockage (limit to nasopharynx entrance)
           particleProgress[i] = Math.min(particleProgress[i], 0.38);
         }
         const pt = airwaySpline.getPoint(particleProgress[i]);
@@ -604,6 +679,28 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         positions[i * 3 + 2] = pt.z;
       }
       particleGeo.attributes.position.needsUpdate = true;
+
+      // 5. UPDATE 3D FLOATING PINS SCREEN POSITIONS (60 FPS Smooth projection)
+      const curW = container.clientWidth;
+      const curH = container.clientHeight || 480;
+
+      landmarkPins.forEach((pin) => {
+        const domEl = pinRefs.current[pin.id];
+        if (!domEl) return;
+
+        // Clone world pos and project to screen coordinates
+        const projected = pin.pos.clone().project(camera);
+
+        // Check if point is in front of camera (-1 <= z <= 1)
+        if (projected.z > 1.0) {
+          domEl.style.display = 'none';
+        } else {
+          const px = (projected.x * 0.5 + 0.5) * curW;
+          const py = (-(projected.y * 0.5) + 0.5) * curH;
+          domEl.style.display = 'flex';
+          domEl.style.transform = `translate3d(${px}px, ${py}px, 0)`;
+        }
+      });
 
       // Render Scene
       renderer.render(scene, camera);
@@ -644,7 +741,6 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
   // Smooth Camera Preset Controller
   const setCameraPreset = (view: 'profile' | 'airway' | 'endoscopy' | 'brain' | 'chest') => {
     setActiveCameraView(view);
-    setActivePin(null);
 
     if (view === 'profile') {
       targetCamPosRef.current.set(0, 6.5, 13.5);
@@ -653,7 +749,6 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       targetCamPosRef.current.set(1.5, 4.2, 9.2);
       targetLookAtRef.current.set(1.4, 2.3, 0);
     } else if (view === 'endoscopy') {
-      // Look down into the pharynx from the nasopharynx
       targetCamPosRef.current.set(3.2, 5.0, 4.8);
       targetLookAtRef.current.set(1.5, 2.0, 0);
     } else if (view === 'brain') {
@@ -686,7 +781,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       {/* TOP ZONE: Unified Sleek Glassmorphic Toolbar (Z-Index 20) */}
       <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between gap-2 pointer-events-none">
         {/* Left: Camera Presets (Horizontal Scroll without wrapping) */}
-        <div className="flex items-center gap-1 bg-slate-900/90 backdrop-blur-md p-1 rounded-xl border border-slate-700/80 shadow-lg pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100%-120px)] sm:max-w-none">
+        <div className="flex items-center gap-1 bg-slate-900/90 backdrop-blur-md p-1 rounded-xl border border-slate-700/80 shadow-lg pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100%-190px)] sm:max-w-none">
           <div className="px-1.5 py-0.5 text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1 flex-shrink-0">
             <Eye className="w-3.5 h-3.5 text-teal-400" />
             <span className="hidden md:inline">Góc 3D:</span>
@@ -745,8 +840,21 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
           </button>
         </div>
 
-        {/* Right: Sagittal Clipping Plane Toggle */}
+        {/* Right: Controls (Toggle 3D Labels + Sagittal Clipping Plane) */}
         <div className="flex items-center gap-1.5 pointer-events-auto flex-shrink-0">
+          <button
+            onClick={() => setShow3DLabels(!show3DLabels)}
+            className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-lg backdrop-blur-md ${
+              show3DLabels
+                ? 'bg-teal-600 text-white border-teal-500'
+                : 'bg-slate-900/90 border-slate-700/80 text-slate-400 hover:text-white hover:bg-slate-800'
+            }`}
+            title="Bật/Tắt chú thích tên các bộ phận trên mô hình 3D"
+          >
+            <Tag className="w-3.5 h-3.5 text-teal-300" />
+            <span className="hidden sm:inline">{show3DLabels ? 'Ẩn chú thích' : 'Hiện chú thích'}</span>
+          </button>
+
           <button
             onClick={() => setIsSagittalClipped(!isSagittalClipped)}
             className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition-all shadow-lg backdrop-blur-md ${
@@ -757,17 +865,70 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
             title="Cắt đôi khuôn mặt theo mặt phẳng đứng dọc để nhìn vào lòng họng"
           >
             <Scissors className="w-3.5 h-3.5 text-teal-400" />
-            <span className="hidden sm:inline">{isSagittalClipped ? 'Bỏ cắt 3D' : 'Mặt cắt 3D (Sagittal)'}</span>
+            <span className="hidden sm:inline">{isSagittalClipped ? 'Bỏ cắt 3D' : 'Mặt cắt 3D'}</span>
             <span className="sm:hidden">{isSagittalClipped ? 'Hủy cắt' : 'Mặt cắt'}</span>
           </button>
         </div>
       </div>
 
-      {/* TOP-CENTER: Mouse & Touch Gesture Hint (Below toolbar, Never Collides with any button) */}
+      {/* TOP-CENTER: Mouse & Touch Gesture Hint */}
       <div className="absolute top-14 left-1/2 -translate-x-1/2 z-10 pointer-events-none hidden lg:flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-xl border border-slate-700/60 text-[10px] text-slate-400 shadow-md">
         <RotateCw className="w-3 h-3 text-teal-400 animate-spin-slow" />
         <span>Kéo chuột xoay 360° • Cuộn phóng to/thu nhỏ</span>
       </div>
+
+      {/* INTERACTIVE 3D FLOATING LANDMARK PINS (Anchored to Organs in 3D Space) */}
+      {show3DLabels && (
+        <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+          {landmarkPins.map((pin) => (
+            <div
+              key={pin.id}
+              ref={(el) => { pinRefs.current[pin.id] = el; }}
+              style={{ position: 'absolute', top: 0, left: 0, willChange: 'transform' }}
+              className={`pointer-events-auto cursor-pointer group flex items-center transition-transform hover:scale-110 ${
+                pin.align === 'left'
+                  ? '-translate-x-full -translate-y-1/2 pr-2'
+                  : pin.align === 'right'
+                  ? 'translate-x-2 -translate-y-1/2'
+                  : '-translate-x-1/2 -translate-y-1/2'
+              }`}
+              onClick={() => setSelectedPin(pin)}
+            >
+              <div className="flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-xl border border-slate-700/90 shadow-2xl hover:border-teal-400">
+                <div
+                  className="w-2 h-2 rounded-full animate-pulse flex-shrink-0"
+                  style={{ backgroundColor: pin.color }}
+                />
+                <span className="text-[11px] font-bold text-slate-100 whitespace-nowrap">
+                  {pin.shortName}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* SELECTED 3D PIN DETAIL MODAL CARD */}
+      {selectedPin && (
+        <div className="absolute bottom-3 left-3 right-3 z-30 bg-slate-900/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-teal-500/60 shadow-2xl flex items-start justify-between gap-3 animate-fadeIn pointer-events-auto">
+          <div className="space-y-1">
+            <h4 className="text-xs sm:text-sm font-bold text-teal-400 flex items-center gap-1.5">
+              <Info className="w-4 h-4 text-teal-400" />
+              <span>{selectedPin.name}</span>
+            </h4>
+            <p className="text-xs text-slate-200 leading-relaxed">
+              {selectedPin.role}
+            </p>
+          </div>
+          <button
+            onClick={() => setSelectedPin(null)}
+            className="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg transition-colors flex-shrink-0"
+            title="Đóng thông tin"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* BOTTOM-LEFT ZONE: Real-time 3D Airway Caliber Gauge (Z-Index 10) */}
       <div className="absolute bottom-3 left-3 z-10 pointer-events-auto">
@@ -802,15 +963,12 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         </div>
       </div>
 
-      {/* BOTTOM-RIGHT ZONE: Quick Organ Focus Buttons (Hidden on mobile to ensure 0 overlap with caliber gauge, visible on sm+) */}
+      {/* BOTTOM-RIGHT ZONE: Quick Organ Focus Buttons */}
       <div className="absolute bottom-3 right-3 z-10 hidden sm:flex items-center gap-1 sm:gap-1.5 pointer-events-auto">
         <button
-          onClick={() => {
-            setActivePin(activePin === 'tongue' ? null : 'tongue');
-            setCameraPreset('airway');
-          }}
+          onClick={() => setCameraPreset('airway')}
           className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
-            activePin === 'tongue'
+            activeCameraView === 'airway'
               ? 'bg-rose-500/30 border-rose-400 text-rose-200'
               : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
@@ -819,12 +977,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
           👅 Gốc lưỡi
         </button>
         <button
-          onClick={() => {
-            setActivePin(activePin === 'brain' ? null : 'brain');
-            setCameraPreset('brain');
-          }}
+          onClick={() => setCameraPreset('brain')}
           className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
-            activePin === 'brain'
+            activeCameraView === 'brain'
               ? 'bg-amber-500/30 border-amber-400 text-amber-200'
               : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
@@ -833,12 +988,9 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
           🧠 Não bộ
         </button>
         <button
-          onClick={() => {
-            setActivePin(activePin === 'lungs' ? null : 'lungs');
-            setCameraPreset('chest');
-          }}
+          onClick={() => setCameraPreset('chest')}
           className={`px-2 py-1 rounded-lg text-[11px] font-medium border backdrop-blur-md transition-all shadow-md ${
-            activePin === 'lungs'
+            activeCameraView === 'chest'
               ? 'bg-sky-500/30 border-sky-400 text-sky-200'
               : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
