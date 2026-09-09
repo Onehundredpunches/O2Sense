@@ -92,7 +92,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       name: 'Khoang mũi (Đường khí vào)',
       shortName: '👃 Mũi',
       role: 'Cửa ngõ hít thở chính khi ngủ, làm ấm và bão hòa ẩm không khí trước khi vào họng.',
-      pos: new THREE.Vector3(2.5, 5.2, 0),
+      pos: new THREE.Vector3(2.35, 5.2, 0),
       color: '#38bdf8',
       align: 'right',
     },
@@ -101,7 +101,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       name: 'Khẩu cái mềm & Lưỡi gà',
       shortName: '🔴 Lưỡi gà',
       role: 'Mô mềm rủ xuống vòm miệng. Khi ngủ hẹp sẽ rung bần bật tạo tiếng ngáy; khi nghẽn sẽ bị hút dính vào thành họng.',
-      pos: new THREE.Vector3(2.75, 3.4, 0),
+      pos: new THREE.Vector3(2.5, 3.3, 0),
       color: '#f43f5e',
       align: 'right',
     },
@@ -110,17 +110,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       name: 'Gốc lưỡi & Cơ cằm-lưỡi',
       shortName: '👅 Gốc lưỡi',
       role: 'Thủ phạm chính của ngưng thở khi ngủ. Khi ngủ say mất trương lực sẽ tụt lùi ra sau đè bẹp đường thở.',
-      pos: new THREE.Vector3(1.25, 2.6, 0),
+      pos: new THREE.Vector3(1.6, 2.3, 0),
       color: '#fb7185',
-      align: 'left',
-    },
-    {
-      id: 'airway',
-      name: 'Vùng bít tắc hầu họng',
-      shortName: '💨 Vùng nghẽn (0mm)',
-      role: 'Khoảng hở đường kính họng. Bình thường mở 12mm; khi ngưng thở tắc nghẽn (OSA) bị bóp nghẹt về 0.0mm.',
-      pos: new THREE.Vector3(2.25, 2.0, 0),
-      color: '#34d399',
       align: 'right',
     },
     {
@@ -128,8 +119,17 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       name: 'Xương hàm dưới & Cằm',
       shortName: '🦴 Xương hàm',
       role: 'Khung xương giữ vị trí của cơ cằm lưỡi. Người có hàm dưới lùi hoặc cằm nhỏ rất dễ bị ngưng thở.',
-      pos: new THREE.Vector3(0.65, 3.4, 0),
+      pos: new THREE.Vector3(1.25, 3.7, 0),
       color: '#e2e8f0',
+      align: 'left',
+    },
+    {
+      id: 'airway',
+      name: 'Vùng bít tắc hầu họng',
+      shortName: '💨 Vùng nghẽn',
+      role: 'Khoảng hở đường kính họng. Bình thường mở 12mm; khi ngưng thở tắc nghẽn (OSA) bị bóp nghẹt về 0.0mm.',
+      pos: new THREE.Vector3(0.5, 1.85, 0),
+      color: '#34d399',
       align: 'left',
     },
     {
@@ -137,7 +137,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       name: 'Khí quản & Vòng sụn',
       shortName: '🫁 Khí quản',
       role: 'Ống dẫn khí chính có các vòng sụn cứng giữ không bị xẹp, dẫn oxy thẳng xuống hai lá phổi.',
-      pos: new THREE.Vector3(-0.9, 1.5, 0),
+      pos: new THREE.Vector3(-2.6, 1.15, 0),
       color: '#0ea5e9',
       align: 'left',
     },
@@ -885,23 +885,27 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
               key={pin.id}
               ref={(el) => { pinRefs.current[pin.id] = el; }}
               style={{ position: 'absolute', top: 0, left: 0, willChange: 'transform' }}
-              className={`pointer-events-auto cursor-pointer group flex items-center transition-transform hover:scale-110 ${
-                pin.align === 'left'
-                  ? '-translate-x-full -translate-y-1/2 pr-2'
-                  : pin.align === 'right'
-                  ? 'translate-x-2 -translate-y-1/2'
-                  : '-translate-x-1/2 -translate-y-1/2'
-              }`}
+              className="pointer-events-auto cursor-pointer group"
               onClick={() => setSelectedPin(pin)}
             >
-              <div className="flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-xl border border-slate-700/90 shadow-2xl hover:border-teal-400">
-                <div
-                  className="w-2 h-2 rounded-full animate-pulse flex-shrink-0"
-                  style={{ backgroundColor: pin.color }}
-                />
-                <span className="text-[11px] font-bold text-slate-100 whitespace-nowrap">
-                  {pin.shortName}
-                </span>
+              <div
+                className={`transition-transform duration-150 group-hover:scale-105 flex items-center ${
+                  pin.align === 'left'
+                    ? '-translate-x-full -translate-y-1/2 pr-2'
+                    : pin.align === 'right'
+                    ? 'translate-x-2 -translate-y-1/2'
+                    : '-translate-x-1/2 -translate-y-1/2'
+                }`}
+              >
+                <div className="flex items-center gap-1.5 bg-slate-900/90 backdrop-blur-md px-2.5 py-1 rounded-xl border border-slate-700/90 shadow-2xl group-hover:border-teal-400">
+                  <div
+                    className="w-2 h-2 rounded-full animate-pulse flex-shrink-0"
+                    style={{ backgroundColor: pin.color }}
+                  />
+                  <span className="text-[11px] font-bold text-slate-100 whitespace-nowrap">
+                    {pin.shortName}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
