@@ -40,7 +40,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     category: 'Cơ bản',
     targetTab: 'home',
     imageSrc: './help_guide/desktop_1_home.png',
-    badges: ['Giao diện', 'Dịu mắt', 'Founder Pro', 'Tiến độ học'],
+    badges: ['Giao diện', 'Dịu mắt', 'Bản Chuyên Sâu', 'Tiến độ học'],
     hotspots: [
       {
         id: 1,
@@ -52,11 +52,11 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 2,
-        label: 'Chuyển Đổi Góc Nhìn: Đại Chúng vs Chuyên Sâu',
+        label: 'Chuyển Đổi Góc Nhìn: Phổ Thông vs Chuyên Sâu',
         xPercent: 78,
         yPercent: 8,
-        description: 'Chế độ Đại chúng dùng ngôn ngữ đời thường, ẩn dụ trực quan. Chế độ Founder Pro mở rộng cơ chế sinh lý vi mô, tham chiếu AASM và tư duy hệ thống.',
-        actionHint: 'Bấm nút "Mode: Đại chúng" trên góc phải hoặc nhấn phím M'
+        description: 'Chế độ Phổ thông dùng ngôn ngữ đời thường, ẩn dụ trực quan. Chế độ Chuyên sâu mở rộng cơ chế sinh lý vi mô, tham chiếu AASM và tư duy hệ thống.',
+        actionHint: 'Bấm nút "Chế độ: Phổ thông" trên thanh công cụ hoặc nhấn phím M'
       },
       {
         id: 3,
@@ -87,7 +87,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         stepNumber: 1,
         action: 'Chọn chế độ học phù hợp với bạn',
-        detail: 'Nếu bạn là người mới tìm hiểu hoặc muốn hiểu bệnh để chăm sóc người thân, chọn "Chế độ Đại chúng". Nếu bạn là nhân viên y tế hoặc muốn đào sâu thuật toán, bật "Chế độ Founder Pro".'
+        detail: 'Nếu bạn là người mới tìm hiểu hoặc muốn hiểu bệnh để chăm sóc người thân, chọn "Chế độ Phổ thông". Nếu bạn là nhân viên y tế hoặc muốn đào sâu thuật toán, bật "Chế độ Chuyên sâu".'
       },
       {
         stepNumber: 2,
@@ -103,7 +103,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     logicExplanations: [
       {
         title: 'Cơ chế lưu trữ trạng thái cục bộ (Client-side Persistence)',
-        content: 'Toàn bộ tùy chọn cá nhân hóa (Giao diện Sáng/Tối, Chế độ Founder, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài quiz) được tự động mã hóa và lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
+        content: 'Toàn bộ tùy chọn cá nhân hóa (Giao diện Sáng/Tối, Chế độ Chuyên sâu, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài quiz) được tự động mã hóa và lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
         formulaOrCode: 'localStorage.setItem("o2sense_theme", "light");\nlocalStorage.setItem("o2sense_mode", "founder");'
       },
       {
@@ -116,7 +116,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       'Khi gặp bất kỳ thuật ngữ y khoa lạ lẫm nào có dấu gạch chân, bạn chỉ cần click trực tiếp vào chữ đó để xem ngay giải thích ngắn.'
     ],
     commonMistakes: [
-      'Nhiều người bỏ qua Chế độ Founder Pro vì nghĩ quá khó: Thực tế ở chế độ này, bạn sẽ thấy thêm các thông số kỹ thuật lâm sàng rất giá trị cho việc đối chiếu đơn thuốc và kết quả đo đa ký giấc ngủ.'
+      'Nhiều người bỏ qua Chế độ Chuyên sâu vì nghĩ quá khó: Thực tế ở chế độ này, bạn sẽ thấy thêm các thông số kỹ thuật lâm sàng rất giá trị cho việc đối chiếu đơn thuốc và kết quả đo đa ký giấc ngủ.'
     ]
   },
   {
@@ -188,23 +188,23 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         stepNumber: 4,
         action: 'Bước 4: Tụt oxy máu & ứ CO₂',
-        detail: 'Thông khí ngừng trệ làm biến động khí máu, kích thích thụ thể hóa học làm tăng dần tín hiệu điều khiển hô hấp (respiratory drive). (Các chỉ số SpO₂ và nhịp tim hiển thị là giá trị mô phỏng minh họa, không phải ngưỡng cố định).'
+        detail: 'Thông khí ngừng trệ làm biến động khí máu, kích thích thụ thể hóa học làm tăng dần tín hiệu điều khiển hô hấp. (Các chỉ số SpO₂ và nhịp tim hiển thị là giá trị mô phỏng minh họa, không phải ngưỡng cố định).'
       },
       {
         stepNumber: 5,
         action: 'Bước 5: Tái mở đường thở & thông khí bù',
-        detail: 'Luồng khí có thể phục hồi nhờ thay đổi respiratory drive và huy động các cơ giãn đường thở trên; cortical arousal có thể đi kèm và làm tăng đáp ứng nhưng không bắt buộc trong mọi biến cố.'
+        detail: 'Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên; vi thức giấc vỏ não có thể đi kèm và làm tăng đáp ứng nhưng không bắt buộc trong mọi biến cố.'
       }
     ],
     logicExplanations: [
       {
-        title: 'Cơ chế trễ đáp ứng SpO₂ ngoại vi (Circulation Delay)',
+        title: 'Cơ chế trễ đáp ứng SpO₂ ngoại vi (Thời gian trễ tuần hoàn)',
         content: 'SpO₂ ở ngón tay phản ứng trễ so với thay đổi hô hấp do thời gian tuần hoàn từ phổi đến ngoại vi và quá trình lọc tín hiệu. Sau khi luồng khí phục hồi, SpO₂ ngoại vi vẫn có thể tiếp tục giảm trước khi chạm đáy rồi mới tăng trở lại. Khoảng trễ thay đổi theo từng cá thể và thiết bị.',
         formulaOrCode: 'Lung-to-finger circulation time (LFCT) ~ Transit time + Sensor signal processing'
       },
       {
         title: 'Đáp ứng tim mạch và thần kinh tự chủ quanh biến cố ngưng thở',
-        content: 'Khi đường thở bị tắc nghẽn, nỗ lực hô hấp và biến động khí máu có thể gây dao động nhịp tim. Khi đường thở mở lại và luồng khí phục hồi, tăng hoạt tính giao cảm có thể làm nhịp tim và huyết áp tăng thoáng qua. Luồng khí có thể phục hồi nhờ thay đổi respiratory drive và huy động các cơ giãn đường thở trên; cortical arousal có thể đi kèm và làm tăng đáp ứng nhưng không bắt buộc trong mọi biến cố. Mức biến thiên sinh hiệu trên mô phỏng chỉ mang tính minh họa, thực tế thay đổi đáng kể giữa các cá thể và từng đêm.'
+        content: 'Khi đường thở bị tắc nghẽn, nỗ lực hô hấp và biến động khí máu có thể gây dao động nhịp tim. Khi đường thở mở lại và luồng khí phục hồi, tăng hoạt tính giao cảm có thể làm nhịp tim và huyết áp tăng thoáng qua. Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên; vi thức giấc vỏ não có thể đi kèm và làm tăng đáp ứng nhưng không bắt buộc trong mọi biến cố. Mức biến thiên sinh hiệu trên mô phỏng chỉ mang tính minh họa, thực tế thay đổi đáng kể giữa các cá thể và từng đêm.'
       }
     ],
     proTips: [
@@ -490,7 +490,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         title: 'Bảng Tổng Hợp Phím Tắt Toàn Ứng Dụng (Global Keyboard Shortcuts)',
         content: 'Hệ thống hỗ trợ phím tắt toàn cục cho người dùng chuyên nghiệp (Power Users):',
-        formulaOrCode: '• Phím [1]: Chuyển tab Tổng Quan\n• Phím [2]: Chuyển tab 1 Đêm Thở Nghẽn 3D\n• Phím [3]: Chuyển tab Giải Mã Đồ Thị SpO2\n• Phím [4]: Chuyển tab Bách Khoa Y Học\n• Phím [5]: Chuyển tab 6 Tình Huống Thực Tế\n• Phím [H] hoặc [?]: Mở Help Center (Cẩm nang hướng dẫn)\n• Phím [Q]: Mở Ôn tập nhanh 5 phút\n• Phím [G]: Mở Từ điển Ẩn dụ Y khoa\n• Phím [T]: Chuyển đổi Giao diện Sáng / Tối\n• Phím [M]: Chuyển đổi Chế độ Đại chúng / Founder Pro\n• Phím [ESC]: Đóng tất cả các bảng sổ / Modal'
+        formulaOrCode: '• Phím [1]: Chuyển tab Tổng Quan\n• Phím [2]: Chuyển tab 1 Đêm Thở Nghẽn 3D\n• Phím [3]: Chuyển tab Giải Mã Đồ Thị SpO2\n• Phím [4]: Chuyển tab Bách Khoa Y Học\n• Phím [5]: Chuyển tab 6 Tình Huống Thực Tế\n• Phím [H] hoặc [?]: Mở Help Center (Cẩm nang hướng dẫn)\n• Phím [Q]: Mở Ôn tập nhanh 5 phút\n• Phím [G]: Mở Từ điển Ẩn dụ Y khoa\n• Phím [T]: Chuyển đổi Giao diện Sáng / Tối\n• Phím [M]: Chuyển đổi Chế độ Phổ thông / Chuyên sâu\n• Phím [ESC]: Đóng tất cả các bảng sổ / Modal'
       }
     ],
     proTips: [

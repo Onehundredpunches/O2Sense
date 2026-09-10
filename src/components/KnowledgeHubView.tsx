@@ -42,7 +42,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
               </div>
               {userMode === 'founder' && (
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100/90 dark:bg-purple-950 text-purple-800 dark:text-purple-300 text-xs font-bold border border-purple-200 dark:border-purple-800">
-                  <span>Chế độ Founder Pro</span>
+                  <span>Chế độ: Chuyên sâu</span>
                 </div>
               )}
             </div>
@@ -268,7 +268,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
               <span className="p-2 rounded-xl bg-indigo-50 dark:bg-indigo-950/80">🌙</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  Triệu Chứng Ban Đêm (Nighttime)
+                  Triệu Chứng Ban Đêm
                 </h3>
                 <p className="text-[11px] text-slate-500">Những dấu hiệu xảy ra trong khi ngủ</p>
               </div>
@@ -289,7 +289,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                   </p>
                   {s.whyPro && (
                     <div className="mt-2 p-2.5 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 text-[11px] text-indigo-950 dark:text-indigo-200 leading-relaxed">
-                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Founder Pro / Chuyên sâu: </span>
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Góc nhìn chuyên sâu: </span>
                       {s.whyPro}
                     </div>
                   )}
@@ -304,7 +304,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
               <span className="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/80">☀️</span>
               <div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  Triệu Chứng Ban Ngày (Daytime)
+                  Triệu Chứng Ban Ngày
                 </h3>
                 <p className="text-[11px] text-slate-500">Biểu hiện trong ngày có thể liên quan đến rối loạn hô hấp khi ngủ</p>
               </div>
@@ -325,7 +325,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                   </p>
                   {s.whyPro && (
                     <div className="mt-2 p-2.5 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 text-[11px] text-indigo-950 dark:text-indigo-200 leading-relaxed">
-                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Founder Pro / Chuyên sâu: </span>
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Góc nhìn chuyên sâu: </span>
                       {s.whyPro}
                     </div>
                   )}

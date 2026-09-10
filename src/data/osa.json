@@ -258,7 +258,7 @@
       "observation": "Người dùng đeo nhẫn thử nghiệm 1 đêm, sáng hôm sau app hiển thị SpO2 trung bình 97%, đồ thị phẳng đẹp.",
       "fallacy": "Hệ hô hấp của người này khi ngủ hoàn toàn bình thường, không có bất kỳ rối loạn thở nào.",
       "why": "Có 2 lý do y học quan trọng: (1) Mức độ nặng của OSA có thể thay đổi giữa các đêm; tỷ lệ 20% đến 50% là xác suất phân loại sai của một đêm đơn lẻ được báo cáo trong các nghiên cứu lâm sàng (do tư thế ngủ, rượu bia, độ sâu giấc ngủ), không phải biến thiên sinh lý cố định; (2) Giới hạn cảm biến oxy: nếu biến cố hẹp đường thở gây vi thức giấc nhưng oxy chưa kịp tụt đủ ngưỡng phát hiện thì SpO₂ đơn thuần sẽ bỏ sót dù giấc ngủ đã bị phân mảnh. Ngoài ra, đo SpO₂ bình thường lúc thức hay một đêm lẻ không đủ để loại trừ bệnh.",
-      "interviewRisk": "Tạo cảm giác an tâm giả tạo (false reassurance) cho khách hàng chỉ sau 1 đêm thử nghiệm.",
+      "interviewRisk": "Tạo cảm giác an tâm giả tạo cho khách hàng chỉ sau 1 đêm thử nghiệm.",
       "betterQuestion": "Đêm qua anh/chị cảm thấy giấc ngủ của mình có giống với những đêm thông thường không? Thường ngày anh/chị ngủ ở tư thế nào (nằm ngửa hay nằm nghiêng)?",
       "sourceIds": [
         "night-variability-2017",
@@ -359,7 +359,7 @@
           "typeLabel": "Bẫy suy diễn sai sinh lý & Tranh cãi",
           "isSafe": false,
           "feedback": "❌ SAI LỆCH SINH LÝ HỌC!",
-          "explanation": "Thiếu oxy và tăng CO2 không làm người ta 'ngất lịm ngủ sâu', mà ngược lại kích hoạt phản xạ vi tỉnh thức (arousal) khiến giấc ngủ bị xé nát. Hơn nữa, tranh cãi với user là điều tối kỵ trong phỏng vấn."
+          "explanation": "Thiếu oxy và tăng CO2 không làm người ta 'ngất lịm ngủ sâu', mà ngược lại kích hoạt phản xạ vi thức giấc khiến giấc ngủ bị xé nát. Hơn nữa, tranh cãi với khách hàng là điều tối kỵ trong phỏng vấn."
         },
         {
           "id": "opt-2b",
@@ -368,7 +368,7 @@
           "typeLabel": "Bẫy dựa trên kiểu hình đơn lẻ",
           "isSafe": false,
           "feedback": "⚠️ BẪY CHỦ QUAN NGUY HIỂM!",
-          "explanation": "Rất nhiều người bị OSA nặng nhưng thuộc nhóm Minimally Symptomatic (ít triệu chứng), họ hoàn toàn không buồn ngủ ban ngày. Hỏi như vậy sẽ khiến bạn và user cùng bỏ qua rủi ro tim mạch tiềm ẩn."
+          "explanation": "Rất nhiều người bị OSA nặng nhưng thuộc nhóm ít triệu chứng (Minimally Symptomatic), họ hoàn toàn không buồn ngủ ban ngày. Hỏi như vậy sẽ khiến bạn và người dùng cùng bỏ qua rủi ro tim mạch tiềm ẩn."
         },
         {
           "id": "opt-2c",
@@ -447,7 +447,7 @@
           "typeLabel": "Bẫy hiệu ứng hào quang",
           "isSafe": false,
           "feedback": "❌ SAI LẦM DO VẺ NGOÀI KHỎE MẠNH!",
-          "explanation": "Nhiều gymer tập tạ có cơ cổ rất dày (vòng cổ > 43cm) hoặc có cấu trúc hàm nhỏ, lưỡi to. Khối cơ cổ phì đại ép trực tiếp vào thành hầu khi ngủ làm hẹp đường thở. Tăng huyết áp kháng trị ở người trẻ là một dấu hiệu báo động (red flag) của OSA."
+          "explanation": "Nhiều gymer tập tạ có cơ cổ rất dày (vòng cổ > 43cm) hoặc có cấu trúc hàm nhỏ, lưỡi to. Khối cơ cổ phì đại ép trực tiếp vào thành hầu khi ngủ làm hẹp đường thở. Tăng huyết áp kháng trị ở người trẻ là một dấu hiệu cảnh báo giải phẫu và hô hấp của OSA."
         },
         {
           "id": "opt-4b",
@@ -553,7 +553,7 @@
           "typeLabel": "Bẫy mù quáng tin vào cảm biến",
           "isSafe": false,
           "feedback": "⚠️ MÙ QUÁNG TIN VÀO CẢM BIẾN!",
-          "explanation": "Là founder làm sản phẩm phần cứng/wearable, bạn phải thấu hiểu giới hạn vật lý của cảm biến PPG. Không có cảm biến đeo tay nào là không có tỷ lệ dương tính giả (false positives)."
+          "explanation": "Là người làm sản phẩm thiết bị đeo, bạn phải thấu hiểu giới hạn vật lý của cảm biến PPG. Không có cảm biến đeo tay nào là không có tỷ lệ dương tính giả (báo động giả do tư thế tì đè)."
         }
       ],
       "reflectionPrompt": "Nêu 3 nguyên nhân kỹ thuật phổ biến nhất có thể khiến thiết bị đo SpO2 dạng nhẫn báo tụt oxy giả tạo trong đêm?"
@@ -565,7 +565,7 @@
       "title": "Hít thở bình thường & Thông khí phế nang",
       "shortSummary": "Đường thở mở thông thoáng, không khí lưu thông êm ả vào phổi.",
       "laymanExplanation": "Bình thường khi chuyển sang trạng thái ngủ, cổ họng giống như một đường hầm thông thoáng. Không khí chứa đầy oxy đi vào mũi, chui qua họng rồi xuống phổi nhẹ nhàng êm ru, không có vật gì cản trở.",
-      "physiologicalDetail": "Cơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trương lực cơ giãn đường thở trên (cơ cằm-lưỡi Genioglossus, cơ căng màn hầu) duy trì độ mở pharynx vượt qua áp lực đóng tới hạn. Áp lực đóng đường thở tới hạn (Pcrit) là một chỉ số nghiên cứu phản ánh mức độ dễ xẹp của đường thở trên; áp lực càng âm thường phản ánh đường thở ít dễ xẹp hơn. Giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Thông khí phế nang ổn định đảm bảo cấp đủ oxy cho mao mạch phổi.",
+      "physiologicalDetail": "Cơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng biến cố và từng người. Trương lực cơ giãn đường thở trên (cơ cằm - lưỡi, cơ căng màn hầu) duy trì độ mở vùng hầu họng vượt qua áp lực đóng tới hạn. Áp lực đóng đường thở tới hạn (Pcrit) là một chỉ số nghiên cứu phản ánh mức độ dễ xẹp của đường thở trên; áp lực càng âm thường phản ánh đường thở ít dễ xẹp hơn. Giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Thông khí phế nang ổn định đảm bảo cấp đủ oxy cho mao mạch phổi.",
       "metrics": {
         "airflowPercent": 100,
         "spo2Percent": 98,
@@ -624,7 +624,7 @@
       "title": "Xẹp và tắc nghẽn cơ học đường thở trên",
       "shortSummary": "Mô mềm đường thở xẹp nhiều làm luồng khí giảm mạnh hoặc ngừng, dù cơ hô hấp vẫn gắng sức.",
       "laymanExplanation": "Ở một số người, mô mềm vùng hầu có thể xẹp nhiều làm luồng khí giảm mạnh hoặc gần như ngừng, trong khi cơ hô hấp vẫn tiếp tục cố gắng thở. Vị trí tắc nghẽn có thể xảy ra ở một hoặc nhiều mức đường thở trên: màn hầu, thành bên hầu, cuống lưỡi hoặc vùng nắp thanh quản.",
-      "physiologicalDetail": "Tắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (áp lực lòng ống < áp lực đóng tới hạn Pcrit). Chỉ số Pcrit phản ánh mức độ dễ xẹp của đường thở trên; giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trong ngưng thở tắc nghẽn, nỗ lực hô hấp vẫn tiếp diễn và có thể kèm chuyển động ngực–bụng nghịch thường. Tắc nghẽn đường thở trên có tính chất đa tầng; sập cuống lưỡi là một kiểu hình có thể gặp chứ không phải cơ chế phổ quát duy nhất.",
+      "physiologicalDetail": "Tắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (áp lực lòng ống < áp lực đóng tới hạn). Chỉ số áp lực đóng tới hạn (Pcrit) phản ánh mức độ dễ xẹp của đường thở trên; giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng biến cố và từng người. Trong ngưng thở tắc nghẽn, nỗ lực hô hấp vẫn tiếp diễn và có thể kèm chuyển động ngực–bụng nghịch thường. Tắc nghẽn đường thở trên có tính chất đa tầng; sập cuống lưỡi là một kiểu hình có thể gặp chứ không phải cơ chế phổ quát duy nhất.",
       "metrics": {
         "airflowPercent": 0,
         "spo2Percent": 94,
@@ -654,7 +654,7 @@
       "title": "Thiếu oxy, tăng CO2 & Tăng tín hiệu điều khiển hô hấp",
       "shortSummary": "Thông khí giảm khiến oxy tụt và CO2 tăng tạm thời; tín hiệu hô hấp tăng dần để tái mở đường thở.",
       "laymanExplanation": "Khi thông khí giảm, oxy có thể giảm và CO₂ có thể tăng tạm thời trong máu. Nỗ lực hô hấp và tín hiệu điều khiển hô hấp từ não bộ tăng dần. Một vi thức giấc ngắn có thể xuất hiện khi biến cố kết thúc, nhưng đường thở cũng có thể phục hồi mà không cần vi thức giấc rõ trên điện não (EEG).",
-      "physiologicalDetail": "Giảm thông khí trong một đợt tắc nghẽn có thể gây rối loạn khí máu thoáng qua, với PaO₂ giảm và PaCO₂ tăng ở mức độ khác nhau, kích thích thể cảnh (carotid bodies - thụ thể hóa học ngoại biên) và thụ thể trung ương ở hành não cùng thụ thể cơ học áp lực âm. Tín hiệu thần kinh điều khiển hô hấp tăng dần kích hoạt các cơ mở đường thở. Vi thức giấc vỏ não (cortical arousal) là một thành phần quan trọng nhưng không bắt buộc để kết thúc biến cố.",
+      "physiologicalDetail": "Giảm thông khí trong một đợt tắc nghẽn có thể gây rối loạn khí máu thoáng qua, với PaO₂ giảm và PaCO₂ tăng ở mức độ khác nhau, kích thích thể cảnh (thụ thể hóa học ngoại biên) và thụ thể trung ương ở hành não cùng thụ thể cơ học áp lực âm. Tín hiệu thần kinh điều khiển hô hấp tăng dần kích hoạt các cơ mở đường thở. Vi thức giấc vỏ não là một thành phần quan trọng nhưng không bắt buộc để kết thúc biến cố.",
       "metrics": {
         "airflowPercent": 0,
         "spo2Percent": 82,
@@ -684,7 +684,7 @@
       "title": "Tái mở đường thở & Phục hồi thông khí",
       "shortSummary": "Các cơ mở đường thở tăng hoạt động giúp luồng khí phục hồi; nhịp tim và huyết áp có thể tăng thoáng qua.",
       "laymanExplanation": "Các cơ giúp giữ đường thở mở tăng hoạt động, trong đó có cơ cằm–lưỡi, giúp luồng khí được phục hồi. Một tiếng thở mạnh hoặc hắt hơi thở có thể xuất hiện khi thông khí trở lại. Nhịp tim và huyết áp có thể tăng vọt thoáng qua do phản ứng giao cảm. Nếu chu kỳ này lặp đi lặp lại nhiều lần trong đêm, giấc ngủ sẽ bị phân mảnh khiến bạn mệt mỏi vào ban ngày.",
-      "physiologicalDetail": "Luồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên; cortical arousal có thể xuất hiện và tăng cường đáp ứng nhưng không bắt buộc ở mọi sự kiện. Huy động mạng lưới cơ giãn đường thở trên (bao gồm tăng hoạt tính cơ cằm-lưỡi qua chi phối dây thần kinh sọ số XII) giúp khôi phục khẩu kính và dòng khí, là đáp ứng thần kinh cơ tích hợp chứ không phải công tắc bật tắt đơn độc. Thông khí bù sau ngưng thở thải CO2 và hồi phục dần SpO2 (SpO2 ngón tay phản ứng trễ hơn luồng khí). Hoạt hóa giao cảm gây tăng nhịp tim và huyết áp thoáng qua gần hoặc sau kết thúc biến cố.",
+      "physiologicalDetail": "Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên; vi thức giấc vỏ não có thể xuất hiện và tăng cường đáp ứng nhưng không bắt buộc ở mọi sự kiện. Huy động mạng lưới cơ giãn đường thở trên (bao gồm tăng hoạt tính cơ cằm - lưỡi qua chi phối dây thần kinh sọ số XII) giúp khôi phục khẩu kính và dòng khí, là đáp ứng thần kinh cơ tích hợp chứ không phải công tắc bật tắt đơn độc. Thông khí bù sau ngưng thở thải CO2 và hồi phục dần SpO2 (SpO2 ngón tay phản ứng trễ hơn luồng khí). Hoạt hóa giao cảm gây tăng nhịp tim và huyết áp thoáng qua gần hoặc sau kết thúc biến cố.",
       "metrics": {
         "airflowPercent": 140,
         "spo2Percent": 96,
@@ -937,7 +937,7 @@
         "condition": "OHS / Giảm thông khí (Hội chứng béo phì giảm thông khí)",
         "mainMechanism": "Giảm thông khí có thể gây tăng CO2 và giảm oxy kéo dài, đặc biệt trong lúc ngủ.",
         "observableSpO2": "Có thể có giảm oxy kéo dài hoặc nền thấp, nhưng SpO2 không đo trực tiếp CO2 và không xác nhận OHS.",
-        "additionalDataNeeded": "PaCO2 hoặc chỉ số CO2 phù hợp, BMI/bối cảnh lâm sàng, đo đa ký giấc ngủ (sleep study) khi có chỉ định.",
+        "additionalDataNeeded": "PaCO2 hoặc chỉ số CO2 phù hợp, BMI/bối cảnh lâm sàng, đo đa ký giấc ngủ (PSG hoặc HSAT) khi có chỉ định.",
         "doNotInfer": "SpO2 đơn thuần không phân biệt OHS với các nguyên nhân giảm oxy khác."
       }
     ],
@@ -945,20 +945,20 @@
       "howItWorks": "Đo oxy xung (Pulse oximetry) sử dụng các tín hiệu quang học để ước tính độ bão hòa oxy trong máu động mạch. Bước sóng ánh sáng cụ thể, cấu trúc quang học, tần số lấy mẫu và phương pháp xử lý tín hiệu phụ thuộc vào từng thiết bị cụ thể.",
       "twoWavelengths": [
         {
-          "wave": "Ánh sáng dải Đỏ (Red)",
+          "wave": "Ánh sáng dải Đỏ",
           "nanometers": "Dải ánh sáng đỏ quang học",
           "role": "Thường được Deoxyhemoglobin (Hb) hấp thụ nhiều hơn so với ánh sáng hồng ngoại."
         },
         {
-          "wave": "Ánh sáng dải Hồng ngoại (Infrared)",
+          "wave": "Ánh sáng dải Hồng ngoại",
           "nanometers": "Dải ánh sáng hồng ngoại quang học",
           "role": "Thường được Oxyhemoglobin (HbO2) hấp thụ nhiều hơn so với ánh sáng đỏ."
         }
       ],
-      "circulationDelay": "Thời gian trễ tuần hoàn (Circulation Delay): SpO₂ ở ngón tay phản ứng trễ so với thay đổi hô hấp. Vì vậy, sau khi một đợt rối loạn hô hấp kết thúc và luồng khí đã phục hồi, SpO₂ ngoại vi vẫn có thể tiếp tục giảm một lúc trước khi chạm đáy rồi mới tăng trở lại. Khoảng trễ thay đổi giữa từng người và thiết bị.",
+      "circulationDelay": "Thời gian trễ tuần hoàn: SpO₂ ở ngón tay phản ứng trễ so với thay đổi hô hấp. Vì vậy, sau khi một đợt rối loạn hô hấp kết thúc và luồng khí đã phục hồi, SpO₂ ngoại vi vẫn có thể tiếp tục giảm một lúc trước khi chạm đáy rồi mới tăng trở lại. Khoảng trễ thay đổi giữa từng người và thiết bị.",
       "whyRingBetterThanWrist": "Độ chính xác phụ thuộc vào thiết bị cụ thể, cách thiết kế cảm biến, vị trí đeo, chuyển động, tưới máu và thuật toán xử lý. Không nên kết luận một dạng thiết bị luôn chính xác hơn dạng khác nếu chưa có nghiên cứu so sánh trực tiếp.",
       "commonArtifacts": [
-        "Tư thế ngủ tì đè cánh tay hoặc ngón tay làm giảm lưu lượng máu tưới (Low Perfusion)",
+        "Tư thế ngủ tì đè cánh tay hoặc ngón tay làm giảm lưu lượng máu tưới (giảm tưới máu ngoại vi)",
         "Nhiệt độ phòng ngủ quá lạnh làm co thắt tiểu động mạch ngoại vi",
         "Sơn móng tay màu đậm hoặc móng tay giả làm cản trở tia sáng xuyên thấu",
         "Cử động mạnh, cựa quậy hoặc run tay sinh lý khi trở mình"

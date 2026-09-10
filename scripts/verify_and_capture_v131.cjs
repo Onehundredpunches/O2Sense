@@ -136,7 +136,7 @@ async function run() {
     if (!isExpertVisible) {
       console.log('Toggling userMode to Founder...');
       await page.evaluate(() => {
-        const modeBtn = Array.from(document.querySelectorAll('button')).find((b) => b.textContent.includes('Mode:'));
+        const modeBtn = Array.from(document.querySelectorAll('button')).find((b) => b.textContent.includes('Mode:') || b.textContent.includes('Chế độ:'));
         if (modeBtn) modeBtn.click();
       });
       await sleep(600);
@@ -304,7 +304,7 @@ async function run() {
     await sleep(500);
     let step5Text = await page.$eval('[data-testid="expert-mechanism-panel"]', (el) => el.innerText);
     console.log('Step 5 Text Snippet:', step5Text);
-    if (!step5Text.includes('Luồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên; cortical arousal có thể xuất hiện và tăng cường đáp ứng nhưng không bắt buộc ở mọi sự kiện.')) {
+    if (!step5Text.includes('Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên; vi thức giấc vỏ não có thể xuất hiện và tăng cường đáp ứng nhưng không bắt buộc ở mọi sự kiện.')) {
       throw new Error('Step 5 missing approved non-deterministic ARAS/airway reopening copy!');
     }
     let step5Box = await page.$eval('[data-testid="expert-mechanism-panel"]', (el) => {
@@ -316,7 +316,7 @@ async function run() {
       stateId: 'founder_pro_step5',
       v131Id: 'V131-P1-008',
       userAction: 'Click Step 5 in Founder Pro mode',
-      expectedVisibleState: 'Approved copy: Luồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên...',
+      expectedVisibleState: 'Approved copy: Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên...',
       observedVisibleState: step5Text.slice(0, 120) + '...',
       boundingBoxAssertion: step5Box,
       screenshotFile: 'app_screenshots_v131/founder_pro_step5.png',

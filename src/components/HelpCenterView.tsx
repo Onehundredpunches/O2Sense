@@ -124,12 +124,12 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
               {userMode === 'founder' ? (
                 <>
                   <Microscope className="w-4 h-4 text-purple-400" />
-                  <span>Chế độ: <strong>Founder Pro</strong></span>
+                  <span>Chế độ: <strong>Bản Chuyên Sâu</strong></span>
                 </>
               ) : (
                 <>
                   <UserCheck className="w-4 h-4 text-teal-400" />
-                  <span>Chế độ: <strong>Đại chúng</strong></span>
+                  <span>Chế độ: <strong>Bản Phổ Thông</strong></span>
                 </>
               )}
             </div>

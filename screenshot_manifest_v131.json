@@ -43,7 +43,7 @@
     "observedVisibleState": "CƠ CHẾ Y SINH CHUYÊN SÂU:\n\nTắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (áp lực lòng ống...",
     "selectedActiveAssertion": true,
     "visibilityAssertion": true,
-    "boundingBoxAssertion": "width: 396px, height: 228px",
+    "boundingBoxAssertion": "width: 396px, height: 248px",
     "screenshotFile": "app_screenshots_v131/founder_pro_step3.png",
     "status": "PASS"
   },
@@ -67,7 +67,7 @@
     "observedVisibleState": "CƠ CHẾ Y SINH CHUYÊN SÂU:\n\nGiảm thông khí trong một đợt tắc nghẽn có thể gây rối loạn khí máu thoáng qua, với PaO₂ giảm ...",
     "selectedActiveAssertion": true,
     "visibilityAssertion": true,
-    "boundingBoxAssertion": "width: 396px, height: 188px",
+    "boundingBoxAssertion": "width: 396px, height: 168px",
     "screenshotFile": "app_screenshots_v131/founder_pro_step4.png",
     "status": "PASS"
   },
@@ -87,11 +87,11 @@
     "stateId": "founder_pro_step5",
     "v131Id": "V131-P1-008",
     "userAction": "Click Step 5 in Founder Pro mode",
-    "expectedVisibleState": "Approved copy: Luồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên...",
-    "observedVisibleState": "CƠ CHẾ Y SINH CHUYÊN SÂU:\n\nLuồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên; ...",
+    "expectedVisibleState": "Approved copy: Luồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đường thở trên...",
+    "observedVisibleState": "CƠ CHẾ Y SINH CHUYÊN SÂU:\n\nLuồng khí có thể phục hồi nhờ gia tăng tín hiệu điều khiển hô hấp và huy động các cơ giãn đườ...",
     "selectedActiveAssertion": true,
     "visibilityAssertion": true,
-    "boundingBoxAssertion": "width: 396px, height: 228px",
+    "boundingBoxAssertion": "width: 396px, height: 248px",
     "screenshotFile": "app_screenshots_v131/founder_pro_step5.png",
     "status": "PASS"
   },

@@ -41,7 +41,7 @@ export const SourceModal: React.FC<SourceModalProps> = ({
         {/* Content */}
         <div className="p-6 overflow-y-auto space-y-4">
           <div className="p-3.5 bg-sky-950/40 border border-sky-800/40 rounded-xl text-xs text-sky-200/90 leading-relaxed">
-            <span className="font-semibold text-sky-300">Phân cấp nguồn chứng cứ:</span> Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ cơ quan và hiệp hội chuyên môn; nghiên cứu bình duyệt trên các tạp chí khoa học; và cơ sở dữ liệu dùng để truy xuất tài liệu.
+            <span className="font-semibold text-sky-300">Phân cấp nguồn chứng cứ:</span> Nguồn được ưu tiên theo loại bằng chứng: hướng dẫn điều trị và đồng thuận từ các hiệp hội chuyên môn; nghiên cứu bình duyệt trên các tạp chí khoa học; và cơ sở dữ liệu dùng để truy xuất tài liệu.
           </div>
 
           {sources.map((src) => {
