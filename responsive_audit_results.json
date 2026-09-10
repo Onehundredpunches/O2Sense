@@ -1,0 +1,218 @@
+[
+  {
+    "viewport": "desktop_1366",
+    "view": "Home",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Module C",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Waveform Detective",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Knowledge Hub",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Module A",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Module B",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Help Center",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "desktop_1366",
+    "view": "Quick Review Modal",
+    "pass": true,
+    "scrollWidth": 1366,
+    "clientWidth": 1366,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Home",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Module C",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Waveform Detective",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Knowledge Hub",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Module A",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Module B",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Help Center",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "tablet_768",
+    "view": "Quick Review Modal",
+    "pass": true,
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Home",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Module C",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Waveform Detective",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Knowledge Hub",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Module A",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Module B",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Help Center",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  {
+    "viewport": "mobile_375",
+    "view": "Quick Review Modal",
+    "pass": true,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  }
+]

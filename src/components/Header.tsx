@@ -148,17 +148,17 @@ export const Header: React.FC<HeaderProps> = ({
                     ? 'bg-purple-100/70 border-purple-300 text-purple-900 dark:bg-purple-950/80 dark:border-purple-800 dark:text-purple-300'
                     : 'bg-slate-100 border-slate-200 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-300'
                 }`}
-                title={userMode === 'founder' ? 'Đang ở Chế độ Founder' : 'Đang ở Chế độ Đại chúng'}
+                title={userMode === 'founder' ? 'Chế độ: Chuyên sâu' : 'Chế độ: Phổ thông'}
               >
                 {userMode === 'founder' ? (
                   <>
                     <Microscope className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-                    <span>Mode: Founder</span>
+                    <span>Chế độ: Chuyên sâu</span>
                   </>
                 ) : (
                   <>
                     <UserCheck className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                    <span>Mode: Đại chúng</span>
+                    <span>Chế độ: Phổ thông</span>
                   </>
                 )}
               </button>
@@ -176,7 +176,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={onToggleTheme}
                 className="p-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-stone-200/60 dark:hover:bg-slate-800 transition-colors"
-                title={isDarkMode ? 'Chuyển sang Chế độ Dịu Mắt (Eye-Care Light)' : 'Chuyển sang Chế độ Ban Đêm (Midnight Navy)'}
+                title={isDarkMode ? 'Chuyển sang Giao diện Dịu Mắt' : 'Chuyển sang Giao diện Ban Đêm'}
               >
                 {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
               </button>

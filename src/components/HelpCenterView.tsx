@@ -242,7 +242,7 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
                 <Zap className="w-4 h-4 text-amber-600 dark:text-amber-400" />
                 <span>Ôn Nhanh 5 Phút Phản Xạ</span>
               </div>
-              <span className="text-[10px] bg-amber-200 dark:bg-amber-800 px-2 py-0.5 rounded-full">Test</span>
+              <span className="text-[10px] bg-amber-200 dark:bg-amber-800 px-2 py-0.5 rounded-full">Luyện tập</span>
             </button>
           </div>
 
@@ -266,7 +266,7 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
                 <kbd className="bg-slate-900 px-1.5 py-0.5 rounded font-mono font-bold text-sky-400">G</kbd>
               </div>
               <div className="bg-slate-800/80 px-2.5 py-1.5 rounded-xl flex items-center justify-between border border-slate-700">
-                <span className="text-slate-400">Đổi Theme:</span>
+                <span className="text-slate-400">Giao diện:</span>
                 <kbd className="bg-slate-900 px-1.5 py-0.5 rounded font-mono font-bold text-slate-200">T</kbd>
               </div>
             </div>

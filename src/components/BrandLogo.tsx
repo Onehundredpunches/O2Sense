@@ -92,7 +92,7 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
                   ? 'bg-purple-50 text-purple-700 dark:bg-purple-950/80 dark:text-purple-300 border-purple-200 dark:border-purple-800/80'
                   : 'bg-teal-50 text-teal-700 dark:bg-teal-950/80 dark:text-teal-300 border-teal-200 dark:border-teal-800/80'
               }`}>
-                {userMode === 'founder' ? 'Founder Pro' : 'Đại Chúng'}
+                {userMode === 'founder' ? 'Bản Chuyên Sâu' : 'Bản Phổ Thông'}
               </span>
             )}
           </div>

@@ -47,7 +47,7 @@ export const CasesAndTrapsView: React.FC<CasesAndTrapsViewProps> = ({
             }`}
           >
             <HelpCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-            <span>8 Hiểu Lầm Kinh Điển (MythBusters)</span>
+            <span>8 Hiểu Lầm Kinh Điển (Giải mã sự thật)</span>
           </button>
 
           <button

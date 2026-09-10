@@ -40,7 +40,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     category: 'Cơ bản',
     targetTab: 'home',
     imageSrc: './help_guide/desktop_1_home.png',
-    badges: ['Giao diện', 'Eye-Care', 'Founder Pro', 'Tiến độ học'],
+    badges: ['Giao diện', 'Dịu mắt', 'Founder Pro', 'Tiến độ học'],
     hotspots: [
       {
         id: 1,
@@ -63,7 +63,7 @@ export const HELP_TOPICS: HelpTopic[] = [
         label: 'Giao Diện Sáng Dịu Mắt & Ban Đêm',
         xPercent: 86,
         yPercent: 8,
-        description: 'Theme Sáng sử dụng tông nền be ngà dịu mắt (#f7f6f2) chống mỏi điều tiết khi đọc lâu. Theme Tối tối ưu quan sát đồ thị huỳnh quang ban đêm.',
+        description: 'Giao diện Sáng sử dụng tông nền be ngà dịu mắt (#f7f6f2) chống mỏi điều tiết khi đọc lâu. Giao diện Tối tối ưu quan sát đồ thị huỳnh quang ban đêm.',
         actionHint: 'Bấm icon Mặt trời / Mặt trăng hoặc nhấn phím T'
       },
       {
@@ -92,7 +92,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         stepNumber: 2,
         action: 'Điều chỉnh ánh sáng đọc tài liệu',
-        detail: 'Bấm nút đổi theme ở góc trên cùng bên phải. App sẽ lưu sở thích của bạn và duy trì trong các lần truy cập tiếp theo.'
+        detail: 'Bấm nút đổi giao diện ở góc trên cùng bên phải. App sẽ lưu sở thích của bạn và duy trì trong các lần truy cập tiếp theo.'
       },
       {
         stepNumber: 3,
@@ -103,12 +103,12 @@ export const HELP_TOPICS: HelpTopic[] = [
     logicExplanations: [
       {
         title: 'Cơ chế lưu trữ trạng thái cục bộ (Client-side Persistence)',
-        content: 'Toàn bộ tùy chọn cá nhân hóa (Theme Sáng/Tối, Chế độ Founder, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài quiz) được tự động mã hóa và lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
+        content: 'Toàn bộ tùy chọn cá nhân hóa (Giao diện Sáng/Tối, Chế độ Founder, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài quiz) được tự động mã hóa và lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
         formulaOrCode: 'localStorage.setItem("o2sense_theme", "light");\nlocalStorage.setItem("o2sense_mode", "founder");'
       },
       {
         title: 'Triết lý Giảm tải nhận thức (Cognitive Load Reduction)',
-        content: 'Giao diện áp dụng tỷ lệ tương phản chuẩn WCAG AAA với bảng màu Eye-Care warm palette (#f7f6f2 kết hợp slate-800) giúp võng mạc không bị chói lóa ánh sáng xanh như các website nền trắng tinh (#ffffff) thông thường.'
+        content: 'Giao diện áp dụng tỷ lệ tương phản chuẩn WCAG AAA với bảng màu dịu mắt (Eye-Care warm palette, #f7f6f2 kết hợp slate-800) giúp võng mạc không bị chói lóa ánh sáng xanh như các website nền trắng tinh (#ffffff) thông thường.'
       }
     ],
     proTips: [
@@ -126,7 +126,7 @@ export const HELP_TOPICS: HelpTopic[] = [
     category: 'Mô phỏng',
     targetTab: 'story',
     imageSrc: './help_guide/desktop_2_story_3d.png',
-    badges: ['WebGL 3D', 'Sinh lý học', 'Cơ chế FRC', 'Tương tác 360°'],
+    badges: ['WebGL 3D', 'Sinh lý học', 'Dự trữ oxy (FRC)', 'Tương tác 360°'],
     hotspots: [
       {
         id: 1,
@@ -234,11 +234,11 @@ export const HELP_TOPICS: HelpTopic[] = [
       },
       {
         id: 2,
-        label: 'Quy Tắc Nội Bộ O2Sense CMC-09 & Pattern ≠ Diagnosis',
+        label: 'Quy Tắc Nội Bộ O2Sense CMC-09 & Dạng sóng ≠ Chẩn đoán bệnh',
         xPercent: 82,
         yPercent: 78,
         description: 'Nguyên tắc an toàn cốt lõi: Dạng sóng SpO₂ giúp quan sát hình thái dao động nhưng không đủ để tự chẩn đoán hoặc loại trừ bệnh lý hô hấp.',
-        actionHint: 'Ghi nhớ nguyên tắc Pattern ≠ Diagnosis khi đối chiếu dữ liệu'
+        actionHint: 'Ghi nhớ nguyên tắc Dạng sóng ≠ Chẩn đoán bệnh khi đối chiếu dữ liệu'
       },
       {
         id: 3,
@@ -341,13 +341,13 @@ export const HELP_TOPICS: HelpTopic[] = [
     ],
     logicExplanations: [
       {
-        title: 'Cơ chế Co mạch phổi do thiếu oxy (Hypoxic Pulmonary Vasoconstriction - HPV)',
-        content: 'Ở các cơ quan khác, thiếu oxy làm mạch máu giãn ra để đón máu. Nhưng ở phổi thì ngược lại: phế nang nào thiếu oxy sẽ co mạch lại để chuyển máu sang vùng phổi thông khí tốt hơn (phản xạ Euler-Liljestrand). Thiếu oxy và/hoặc tăng CO₂, đặc biệt khi kéo dài hoặc lặp lại trong bối cảnh phù hợp, có thể góp phần gây co mạch phổi và tăng gánh cho thất phải. Hiện tượng này không tự động xảy ra tức thì ở mọi biến cố ngưng thở đơn lẻ mà phụ thuộc vào thời lượng, độ sâu và bệnh nền tim phổi kèm theo.',
-        formulaOrCode: 'Kéo dài/lặp lại: Thiếu oxy + Tăng CO₂ ➔ Có thể góp phần tăng sức cản mạch phổi (PVR) & gánh thất phải'
+        title: 'Cơ chế Co mạch phổi do thiếu oxy (HPV - Phản xạ co mạch bảo vệ)',
+        content: 'HPV (Hypoxic Pulmonary Vasoconstriction - Co mạch phổi do thiếu oxy): Ở các cơ quan khác, thiếu oxy làm mạch máu giãn ra để đón máu. Nhưng ở phổi thì ngược lại: phế nang nào thiếu oxy sẽ co mạch lại để chuyển dòng máu sang vùng phổi thông khí tốt hơn (phản xạ Euler-Liljestrand). Thiếu oxy và/hoặc tăng CO₂, đặc biệt khi kéo dài hoặc lặp lại trong bối cảnh phù hợp, có thể góp phần gây co mạch phổi và tăng gánh cho tâm thất phải. Hiện tượng này không tự động xảy ra tức thì ở mọi biến cố ngưng thở đơn lẻ mà phụ thuộc vào thời lượng, độ sâu và bệnh nền tim phổi kèm theo.',
+        formulaOrCode: 'Kéo dài/lặp lại: Thiếu oxy + Tăng CO₂ ➔ Có thể góp phần tăng sức cản mạch phổi (PVR - Pulmonary Vascular Resistance) & gánh tâm thất phải'
       },
       {
         title: 'Tại sao ngưng thở lúc ngủ lại gây Đái tháo đường & Béo phì kháng trị?',
-        content: 'Mỗi cơn ngạt đêm kích hoạt giải phóng Cortisol và Catecholamine (hormone stress). Cortisol kéo dài làm kháng Insulin ở gan và cơ, đồng thời phá hủy cấu trúc giấc ngủ sâu (SWS - Slow Wave Sleep), làm giảm hormone Leptin (tạo cảm giác no) và tăng Ghrelin (gây thèm ăn tinh bột và đường vào ban ngày).'
+        content: 'Mỗi cơn ngạt đêm kích hoạt giải phóng Cortisol và Catecholamine (hormone stress). Cortisol kéo dài làm kháng Insulin ở gan và cơ, đồng thời phá hủy cấu trúc giấc ngủ sâu sóng chậm (SWS - Slow Wave Sleep, giai đoạn ngủ sâu phục hồi thể chất), làm giảm hormone Leptin (tạo cảm giác no) và tăng Ghrelin (gây thèm ăn tinh bột và đường vào ban ngày).'
       }
     ],
     proTips: [
@@ -428,8 +428,8 @@ export const HELP_TOPICS: HelpTopic[] = [
     logicExplanations: [
       {
         title: 'Bẫy tử vong: Cho thở oxy liều cao ở bệnh nhân Hội chứng chồng lấp (Overlap Syndrome: COPD + OSA)',
-        content: 'Ở người bình thường, kích thích thở chính là nồng độ CO2 trong máu tăng. Nhưng ở bệnh nhân COPD nặng, não đã quen với CO2 cao liên tục, nên phản xạ thở chuyển sang phụ thuộc hoàn toàn vào Tình trạng thiếu oxy (Hypoxic Drive). Nếu bác sĩ thấy SpO2 thấp vội vàng cho thở oxy dòng cao, nồng độ oxy máu tăng vọt sẽ triệt tiêu trung tâm hô hấp ➔ Bệnh nhân ngưng thở hoàn toàn và hôn mê do ngộ độc CO2!',
-        formulaOrCode: 'High FiO2 (without CPAP) ➔ Hypoxic Drive Abolished ➔ Hypoventilation ↑ ➔ Severe Hypercapnia ➔ CO2 Narcosis & Death'
+        content: 'Ở người bình thường, kích thích thở chính là nồng độ CO₂ trong máu tăng. Nhưng ở bệnh nhân COPD nặng, não đã quen với CO₂ cao liên tục, nên phản xạ thở chuyển sang phụ thuộc hoàn toàn vào Tình trạng kích thích thở do thiếu oxy (Hypoxic Drive - phản xạ hô hấp dự phòng kích hoạt khi oxy máu giảm sâu). Nếu thấy SpO₂ thấp mà vội vàng cho thở oxy liều cao không kiểm soát, nồng độ oxy máu tăng vọt sẽ triệt tiêu phản xạ kích thích thở này ➔ Bệnh nhân ngưng thở hoàn toàn và hôn mê do ngộ độc khí carbonic (CO₂ Narcosis - toan hô hấp cấp gây ức chế não bộ)!',
+        formulaOrCode: 'FiO₂ cao không kiểm soát (không dùng CPAP) ➔ Triệt tiêu phản xạ kích thích thở do thiếu oxy (Hypoxic Drive Abolished) ➔ Giảm thông khí phế nang ➔ Ứ đọng CO₂ nặng ➔ Hôn mê do ngộ độc CO₂ (CO₂ Narcosis) & Tử vong'
       }
     ],
     proTips: [
@@ -454,7 +454,7 @@ export const HELP_TOPICS: HelpTopic[] = [
         label: 'Bảng Danh Sách 15 Thuật Ngữ & Ẩn Dụ Đời Thường',
         xPercent: 34,
         yPercent: 55,
-        description: 'Tập hợp 15 thuật ngữ y học hô hấp then chốt được chuyển hóa thành các hình ảnh đời thường: Khí đạo xẹp = Ống hút giấy bị bẹp khi hút mạnh; FRC = Bình dưỡng khí dự trữ lặn biển; Chu kỳ răng cưa = Nhịp phanh xe khẩn cấp.',
+        description: 'Tập hợp 15 thuật ngữ y học hô hấp then chốt được chuyển hóa thành các hình ảnh đời thường: Khí đạo xẹp = Ống hút giấy bị bẹp khi hút mạnh; FRC (Dung tích cặn chức năng) = Bình dưỡng khí dự trữ oxy lặn biển; Chu kỳ răng cưa = Nhịp phanh xe khẩn cấp.',
         actionHint: 'Click vào từng thuật ngữ để đọc giải thích chi tiết'
       },
       {
@@ -490,7 +490,7 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         title: 'Bảng Tổng Hợp Phím Tắt Toàn Ứng Dụng (Global Keyboard Shortcuts)',
         content: 'Hệ thống hỗ trợ phím tắt toàn cục cho người dùng chuyên nghiệp (Power Users):',
-        formulaOrCode: '• Phím [1]: Chuyển tab Tổng Quan\n• Phím [2]: Chuyển tab 1 Đêm Thở Nghẽn 3D\n• Phím [3]: Chuyển tab Giải Mã Đồ Thị SpO2\n• Phím [4]: Chuyển tab Bách Khoa Y Học\n• Phím [5]: Chuyển tab 6 Tình Huống Thực Tế\n• Phím [H] hoặc [?]: Mở Help Center (Cẩm nang hướng dẫn)\n• Phím [Q]: Mở Ôn tập nhanh 5 phút\n• Phím [G]: Mở Từ điển Ẩn dụ Y khoa\n• Phím [T]: Chuyển đổi Theme Sáng / Tối\n• Phím [M]: Chuyển đổi Chế độ Đại chúng / Founder Pro\n• Phím [ESC]: Đóng tất cả các bảng sổ / Modal'
+        formulaOrCode: '• Phím [1]: Chuyển tab Tổng Quan\n• Phím [2]: Chuyển tab 1 Đêm Thở Nghẽn 3D\n• Phím [3]: Chuyển tab Giải Mã Đồ Thị SpO2\n• Phím [4]: Chuyển tab Bách Khoa Y Học\n• Phím [5]: Chuyển tab 6 Tình Huống Thực Tế\n• Phím [H] hoặc [?]: Mở Help Center (Cẩm nang hướng dẫn)\n• Phím [Q]: Mở Ôn tập nhanh 5 phút\n• Phím [G]: Mở Từ điển Ẩn dụ Y khoa\n• Phím [T]: Chuyển đổi Giao diện Sáng / Tối\n• Phím [M]: Chuyển đổi Chế độ Đại chúng / Founder Pro\n• Phím [ESC]: Đóng tất cả các bảng sổ / Modal'
       }
     ],
     proTips: [

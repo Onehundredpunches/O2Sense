@@ -22,6 +22,17 @@ interface ModuleAViewProps {
   onOpenGlossary: (termId?: string) => void;
 }
 
+const CATEGORY_MAP: Record<string, string> = {
+  spo2: 'CHỈ SỐ SPO2',
+  snoring: 'TIẾNG NGÁY',
+  fatigue: 'MỆT MỎI',
+  asymptomatic: 'KHÔNG TRIỆU CHỨNG',
+  gender: 'GIỚI TÍNH',
+  wearable: 'THIẾT BỊ ĐEO TAY',
+  heart_rate: 'NHỊP TIM & HUYẾT ÁP',
+  anatomy: 'GIẢI PHẪU & THỂ TRẠNG',
+};
+
 export const ModuleAView: React.FC<ModuleAViewProps> = ({
   traps,
   sources,
@@ -160,7 +171,7 @@ export const ModuleAView: React.FC<ModuleAViewProps> = ({
               {/* Card Header & Status Badges */}
               <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  {trap.category.toUpperCase()}
+                  {CATEGORY_MAP[trap.category] || trap.category.toUpperCase()}
                 </span>
                 <div className="flex items-center gap-1.5">
                   {isUnderstood && (

@@ -64,7 +64,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
           </h1>
 
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            Sáng thức dậy thấy nhẫn O2Ring báo tụt SpO2? <strong className="text-teal-700 dark:text-teal-300">Khoan hoảng hốt!</strong> Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ để tự chẩn đoán hoặc loại trừ ngưng thở khi ngủ. Tụt SpO₂ đêm có nhiều nguyên nhân khác nhau (từ tư thế tì đè ngón tay, đến rượu bia, ngáy to hoặc bệnh hô hấp/tim mạch). Hãy hiểu đúng nguyên tắc <strong className="text-rose-600 dark:text-rose-400">Pattern ≠ Diagnosis</strong>.
+            Sáng thức dậy thấy nhẫn O2Ring báo tụt SpO2? <strong className="text-teal-700 dark:text-teal-300">Khoan hoảng hốt!</strong> Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ để tự chẩn đoán hoặc loại trừ ngưng thở khi ngủ. Tụt SpO₂ đêm có nhiều nguyên nhân khác nhau (từ tư thế tì đè ngón tay, đến rượu bia, ngáy to hoặc bệnh hô hấp/tim mạch). Hãy hiểu đúng nguyên tắc <strong className="text-rose-600 dark:text-rose-400">Dạng sóng ≠ Chẩn đoán bệnh</strong>.
           </p>
         </div>
       </div>
@@ -116,7 +116,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
         <div className="flex items-center gap-2.5">
           <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0" />
           <div>
-            <span className="font-extrabold text-amber-800 dark:text-amber-300 uppercase tracking-wider">NGUYÊN TẮC Y KHOA: Pattern ≠ Diagnosis</span>
+            <span className="font-extrabold text-amber-800 dark:text-amber-300 uppercase tracking-wider">NGUYÊN TẮC Y KHOA: Dạng sóng ≠ Chẩn đoán bệnh</span>
             <p className="text-slate-600 dark:text-slate-300 text-[11px] mt-0.5">
               Dạng sóng SpO₂ giúp quan sát hình thái dao động nhưng không đủ để xác định nguyên nhân hoặc chẩn đoán xác định bệnh lý hô hấp.
             </p>
@@ -124,7 +124,10 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
         </div>
         <div className="flex flex-col sm:items-end gap-0.5 self-start sm:self-center flex-shrink-0">
           <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 font-bold">
-            Quy tắc nội bộ O2Sense CMC-09
+            O2Sense Medical Rule CMC-09
+          </span>
+          <span className="text-[9px] text-amber-700/80 dark:text-amber-400/80 font-medium">
+            Aligned with AASM diagnostic guidance
           </span>
         </div>
       </div>
@@ -326,7 +329,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-sm space-y-4">
             <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
               <Stethoscope className="w-4 h-4 text-sky-600 dark:text-sky-400" />
-              <span>Kế Hoạch Hành Động Thực Tế (Action Plan)</span>
+              <span>Kế Hoạch Hành Động Thực Tế</span>
             </h3>
 
             <div className="space-y-3 text-xs sm:text-sm">

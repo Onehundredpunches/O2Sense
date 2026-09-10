@@ -46,7 +46,7 @@ export const SourceModal: React.FC<SourceModalProps> = ({
 
           {sources.map((src) => {
             const orgType = src.organization.includes('AASM')
-              ? 'Hiệp hội chuyên môn / Guideline'
+              ? 'Hướng dẫn điều trị / Đồng thuận chuyên gia'
               : src.organization.includes('NHLBI')
               ? 'Viện nghiên cứu y tế công'
               : src.organization.includes('USPSTF')
@@ -104,9 +104,9 @@ export const SourceModal: React.FC<SourceModalProps> = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-shrink-0 p-2 text-sky-400 hover:text-sky-300 bg-sky-950/40 hover:bg-sky-900/50 rounded-lg border border-sky-800/50 transition-colors flex items-center gap-1 text-xs"
-                    title="Mở bài báo gốc"
+                    title="Xem bài báo gốc"
                   >
-                    <span>Xem link</span>
+                    <span>Xem bài báo gốc</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 </div>

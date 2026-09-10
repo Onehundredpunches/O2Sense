@@ -210,7 +210,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-              Đối chiếu 4 dạng sóng SpO₂: Giảm–phục hồi lặp lại, Trũng sâu kéo dài, Đường oxy ổn định / biến cố đơn lẻ, và Dao động chu kỳ. Hiểu rõ nguyên lý Pattern ≠ Diagnosis.
+              Đối chiếu 4 dạng sóng SpO₂: Giảm–phục hồi lặp lại, Trũng sâu kéo dài, Đường oxy ổn định / biến cố đơn lẻ, và Dao động chu kỳ. Hiểu rõ nguyên lý Dạng sóng ≠ Chẩn đoán bệnh.
             </p>
           </div>
           <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-sky-600 dark:text-sky-400">

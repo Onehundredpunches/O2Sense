@@ -344,7 +344,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
               Bảng Phân Biệt Các Bệnh Lý Gây Dao Động & Hạ SpO2 Đêm
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Phân định rõ cơ chế, SpO₂ quan sát được, dữ liệu cần thêm để phân biệt và giới hạn không được suy diễn (Quy tắc nội bộ O2Sense CMC-09):
+              Phân định rõ cơ chế, SpO₂ quan sát được, dữ liệu cần thêm để phân biệt và giới hạn không được suy diễn (O2Sense Medical Rule CMC-09 • Aligned with AASM diagnostic guidance):
             </p>
           </div>
 

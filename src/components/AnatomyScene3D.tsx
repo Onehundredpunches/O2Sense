@@ -99,7 +99,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'tongue',
       name: 'Gốc lưỡi & Cơ cằm-lưỡi',
       shortName: '👅 Gốc lưỡi',
-      role: 'Gốc lưỡi và cơ cằm-lưỡi (genioglossus) là khối cơ quan trọng nâng đỡ đường thở. Khi ngủ, hoạt động điều khiển thần kinh-cơ thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ.',
+      role: 'Gốc lưỡi và cơ cằm - lưỡi là khối cơ quan trọng nâng đỡ đường thở. Khi ngủ, hoạt động điều khiển thần kinh - cơ thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ.',
       pos: new THREE.Vector3(1.6, 2.3, 0),
       color: '#fb7185',
       align: 'right',
@@ -942,7 +942,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
               ? 'bg-rose-500/30 border-rose-400 text-rose-200'
               : 'bg-slate-900/80 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800'
           }`}
-          title="Tập trung vào Gốc lưỡi và Cơ cằm-lưỡi"
+          title="Tập trung vào Gốc lưỡi và Cơ cằm - lưỡi"
         >
           👅 Gốc lưỡi
         </button>

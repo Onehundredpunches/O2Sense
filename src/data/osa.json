@@ -17,7 +17,7 @@
       "doi": "10.5664/jcsm.6506",
       "url": "https://pubmed.ncbi.nlm.nih.gov/28162150/",
       "citation": "Kapur VK, et al. J Clin Sleep Med. 2017;13(3):479-504.",
-      "evidenceType": "Clinical Practice Guideline",
+      "evidenceType": "Hướng Dẫn Thực Hành Lâm Sàng",
       "supportedClaims": "Chẩn đoán OSA cần được thực hiện cùng đánh giá giấc ngủ toàn diện qua PSG hoặc HSAT phù hợp; SpO₂ từ wearable đơn thuần không thể tự chẩn đoán hoặc loại trừ OSA",
       "keyFinding": "Đánh giá chẩn đoán OSA cần thực hiện cùng quy trình lượng giá giấc ngủ toàn diện bằng PSG hoặc HSAT phù hợp; thiết bị đo SpO2 đơn thuần không thể tự chẩn đoán hoặc loại trừ OSA."
     },
@@ -33,7 +33,7 @@
       "doi": "10.1001/jama.2022.20304",
       "url": "https://pubmed.ncbi.nlm.nih.gov/36378232/",
       "citation": "Mangione CM, et al. JAMA. 2022;328(19):1945-1950.",
-      "evidenceType": "Task Force Recommendation Statement",
+      "evidenceType": "Khuyến Cáo Nhóm Chuyên Gia (Task Force)",
       "supportedClaims": "Chưa đủ bằng chứng tầm soát đại trà OSA ở người không triệu chứng; ngáy đơn thuần không đủ để kết luận OSA",
       "keyFinding": "Bằng chứng hiện tại chưa đủ để khuyến cáo tầm soát đại trà OSA ở người không có triệu chứng; ngáy đơn thuần có độ nhạy cao nhưng độ đặc hiệu rất thấp."
     },
@@ -50,7 +50,7 @@
       "doi": "10.1513/pats.200707-114MG",
       "url": "https://pubmed.ncbi.nlm.nih.gov/18250206/",
       "citation": "Eckert DJ, Malhotra A. Proc Am Thorac Soc. 2008;5(2):144-153.",
-      "evidenceType": "Narrative Review / Pathophysiology",
+      "evidenceType": "Tổng Quan Sinh Lý Bệnh",
       "supportedClaims": "Cơ chế bệnh sinh đa yếu tố (giải phẫu, cơ mở đường thở, ngưỡng thức tỉnh, loop gain)",
       "keyFinding": "Căn nguyên bệnh sinh OSA mang tính đa yếu tố. Giải phẫu đường thở, độ đáp ứng cơ mở đường thở, kiểm soát thông khí (loop gain) và ngưỡng thức tỉnh tương tác với nhau. Biến cố tắc nghẽn gây rối loạn khí máu và kích hoạt giao cảm; luồng khí có thể phục hồi có hoặc không kèm vi thức giấc trên EEG."
     },
@@ -63,7 +63,7 @@
       "year": 2023,
       "url": "https://www.nhlbi.nih.gov/health/sleep-apnea",
       "citation": "NHLBI Health Topics, National Institutes of Health, USA. 2023.",
-      "evidenceType": "Official Health Educational Authority",
+      "evidenceType": "Tài Liệu Y Tế Chính Thống (NHLBI/NIH)",
       "supportedClaims": "Khái niệm bệnh lý ngưng thở khi ngủ và tác động tim mạch lâu dài",
       "keyFinding": "Đường thở trên có thể bị tắc nghẽn lặp lại dù nỗ lực hô hấp vẫn tiếp diễn; giải thích tác động của thiếu oxy ngắt quãng lên hệ tim mạch."
     },
@@ -79,9 +79,9 @@
       "doi": "10.1136/thoraxjnl-2012-202178",
       "url": "https://pubmed.ncbi.nlm.nih.gov/23111478/",
       "citation": "Craig SE, et al. Thorax. 2012;67(12):1090-1096.",
-      "evidenceType": "Multicentre Randomised Controlled Trial",
+      "evidenceType": "Thử Nghiệm Đối Chứng Ngẫu Nhiên Đa Trung Tâm (RCT)",
       "supportedClaims": "Minimally symptomatic OSA: CPAP cải thiện triệu chứng buồn ngủ và chất lượng sống nhưng không làm thay đổi điểm nguy cơ tim mạch 5 năm tính toán qua 6 tháng",
-      "keyFinding": "In this trial population with minimally symptomatic OSA, CPAP improved subjective/objective sleepiness and self-assessed health status but did not improve the calculated 5-year vascular-risk score over six months."
+      "keyFinding": "Trong quần thể thử nghiệm với OSA ít triệu chứng, thở CPAP giúp cải thiện tình trạng buồn ngủ chủ quan/khách quan và chất lượng sức khỏe tự đánh giá, nhưng không làm thay đổi điểm nguy cơ tim mạch 5 năm tính toán qua 6 tháng theo dõi."
     },
     {
       "id": "women-osa-2016",
@@ -96,9 +96,9 @@
       "doi": "10.1155/2016/1764837",
       "url": "https://pubmed.ncbi.nlm.nih.gov/27699167/",
       "citation": "Wimms AJ, et al. BioMed Res Int. 2016;2016:1764837.",
-      "evidenceType": "Review Article",
+      "evidenceType": "Bài Báo Tổng Quan Y Khoa",
       "supportedClaims": "Phụ nữ mắc OSA có thể biểu hiện triệu chứng không điển hình (mất ngủ, mệt mỏi, đau đầu, khí sắc) dẫn đến dưới chẩn đoán",
-      "keyFinding": "Women with OSA may have classic symptoms, but insomnia, fatigue, headache, mood symptoms and other less stereotypical presentations can contribute to under-recognition."
+      "keyFinding": "Phụ nữ mắc OSA có thể xuất hiện các triệu chứng kinh điển, tuy nhiên mất ngủ, mệt mỏi, đau đầu, triệu chứng khí sắc và các biểu hiện không điển hình khác có thể góp phần làm chậm nhận diện bệnh."
     },
     {
       "id": "night-variability-2017",
@@ -112,7 +112,7 @@
       "doi": "10.1513/AnnalsATS.201704-350OC",
       "url": "https://pubmed.ncbi.nlm.nih.gov/28876930/",
       "citation": "Stöberl AS, et al. Ann Am Thorac Soc. 2017;14(11):1687-1694.",
-      "evidenceType": "Clinical Cohort Study",
+      "evidenceType": "Nghiên Cứu Đoàn Hệ Lâm Sàng",
       "supportedClaims": "Độ nặng của OSA có thể thay đổi giữa các đêm; một đêm đơn lẻ có thể phân loại sai mức độ nặng",
       "keyFinding": "Mức độ nặng của OSA có thể thay đổi giữa các đêm. Tỷ lệ 20% đến 50% được báo cáo là xác suất phân loại sai độ nặng của một đêm đơn lẻ trong các nghiên cứu lâm sàng cụ thể do ảnh hưởng của tư thế ngủ, rượu và độ sâu giấc ngủ, không phải biến thiên sinh lý cố định."
     },
@@ -128,9 +128,9 @@
       "pmcid": "PMC3387564",
       "url": "https://pubmed.ncbi.nlm.nih.gov/20875160/",
       "citation": "Owens RL, Malhotra A. Respir Care. 2010;55(10):1333-1346.",
-      "evidenceType": "State of the Art Review",
+      "evidenceType": "Tổng Quan Chuyên Sâu Cập Nhật",
       "supportedClaims": "Hội chứng chồng lấp COPD và OSA kết hợp gây tụt oxy nặng hơn từng bệnh đơn lẻ; hình thái SpO₂ không tự phân định nguyên nhân",
-      "keyFinding": "Coexisting COPD and OSA (“overlap syndrome”) is associated with more severe nocturnal hypoxemia than either condition alone and requires diagnostic context beyond oximetry pattern shape."
+      "keyFinding": "Bệnh phổi tắc nghẽn mạn tính (COPD) đồng mắc cùng OSA (gọi là 'hội chứng chồng lấp') đi kèm với tình trạng thiếu oxy ban đêm trầm trọng hơn so với từng bệnh đơn lẻ; việc đánh giá đòi hỏi bối cảnh chẩn đoán toàn diện thay vì chỉ dựa vào hình thái đồ thị đo oxy xung."
     },
     {
       "id": "somers-sympathetic-1995",
@@ -145,9 +145,9 @@
       "doi": "10.1172/JCI118235",
       "url": "https://pubmed.ncbi.nlm.nih.gov/7560081/",
       "citation": "Somers VK, et al. J Clin Invest. 1995;96(4):1897-1904.",
-      "evidenceType": "Physiological Study in Humans",
+      "evidenceType": "Nghiên Cứu Sinh Lý Học Trên Người",
       "supportedClaims": "Hoạt tính giao cảm tăng trong cơn ngưng thở và huyết áp tăng vọt quanh thời điểm kết thúc biến cố",
-      "keyFinding": "The study demonstrated marked sympathetic nerve-activity and blood-pressure responses associated with obstructive apneas, with sympathetic activity increasing during apnea and blood pressure rising markedly around event termination."
+      "keyFinding": "Nghiên cứu chứng minh sự gia tăng rõ rệt của hoạt tính thần kinh giao cảm và đáp ứng huyết áp liên quan đến các cơn ngưng thở tắc nghẽn: hoạt tính giao cảm tăng cao trong cơn ngưng thở và huyết áp tăng vọt quanh thời điểm kết thúc biến cố."
     },
     {
       "id": "craniofacial-osa-2009",
@@ -162,9 +162,9 @@
       "doi": "10.5665/sleep/32.1.37",
       "url": "https://pubmed.ncbi.nlm.nih.gov/19189777/",
       "citation": "Lee RWW, et al. Sleep. 2009;32(1):37-45.",
-      "evidenceType": "Case-Control Photographic Phenotyping Study",
+      "evidenceType": "Nghiên Cứu Bệnh - Chứng Định Kiểu Hình",
       "supportedClaims": "Khác biệt giải phẫu sọ mặt định lượng đóng góp vào nguy cơ OSA (nghiên cứu trên quần thể đa số da trắng; không dùng riêng để suy rộng cho người châu Á)",
-      "keyFinding": "Quantitative craniofacial differences were identified between the studied OSA and control groups, supporting craniofacial anatomy as one contributor to OSA susceptibility. (Lưu ý: Quần thể nghiên cứu chủ yếu là người da trắng; không dùng riêng nghiên cứu này để đưa ra kết luận toàn thể về nguy cơ sọ mặt người châu Á)."
+      "keyFinding": "Các khác biệt định lượng về giải phẫu sọ mặt đã được xác định giữa nhóm mắc OSA và nhóm chứng, củng cố nhận định giải phẫu sọ mặt là một yếu tố đóng góp vào nguy cơ mắc OSA. (Lưu ý: Quần thể nghiên cứu chủ yếu là người da trắng; không dùng riêng nghiên cứu này để đưa ra kết luận toàn thể về nguy cơ sọ mặt ở người châu Á)."
     },
     {
       "id": "pevernagie-snoring-2010",
@@ -178,7 +178,7 @@
       "doi": "10.1016/j.smrv.2009.06.002",
       "url": "https://pubmed.ncbi.nlm.nih.gov/19665907/",
       "citation": "Pevernagie D, Aarts RM, De Meyer M. Sleep Med Rev. 2010;14(2):131-144.",
-      "evidenceType": "State of the Art Review",
+      "evidenceType": "Tổng Quan Chuyên Sâu Cập Nhật",
       "supportedClaims": "Tiếng ngáy phát sinh do sự rung động của các mô mềm đường hô hấp trên khi luồng khí đi qua chỗ hẹp; cơ chế âm học mang tính đa yếu tố và không do một cấu trúc đơn lẻ quyết định",
       "keyFinding": "Âm thanh tiếng ngáy phát sinh do sự rung động của các cấu trúc mô mềm đường hô hấp trên trong điều kiện giới hạn lưu lượng khí; các cơ chế âm học mang tính đa yếu tố, liên quan đến khẩu cái mềm, thành hầu và tương tác phức tạp giữa luồng khí và mô mềm, thay vì do một cấu trúc đơn lẻ duy nhất."
     }
@@ -400,7 +400,7 @@
           "id": "opt-3a",
           "text": "Chị là phụ nữ, lại mất ngủ và lo âu thì rõ ràng là bệnh mất ngủ tâm căn rồi, thiết bị SpO2 chỉ dành cho người ngáy to ngưng thở thôi chị ơi.",
           "type": "labeling",
-          "typeLabel": "Bẫy định kiến giới (Gender Bias)",
+          "typeLabel": "Bẫy định kiến giới",
           "isSafe": false,
           "feedback": "❌ ĐỊNH KIẾN NGUY HẠI!",
           "explanation": "Bạn vừa phạm một sai lầm phổ biến nhất trong y học giấc ngủ: nghĩ rằng OSA chỉ có ở đàn ông béo ngáy to. Phụ nữ bị OSA thường biểu hiện chính là mất ngủ giữa đêm và tim đập nhanh!"
@@ -444,7 +444,7 @@
           "id": "opt-4a",
           "text": "Cơ bắp cuồn cuộn thế này thì phổi khỏe lắm, chắc do em uống nhiều thực phẩm bổ sung Pre-workout chứa nhiều caffein nên huyết áp mới tăng thôi.",
           "type": "premature_conclusion",
-          "typeLabel": "Bẫy hiệu ứng hào quang (Halo Effect)",
+          "typeLabel": "Bẫy hiệu ứng hào quang",
           "isSafe": false,
           "feedback": "❌ SAI LẦM DO VẺ NGOÀI KHỎE MẠNH!",
           "explanation": "Nhiều gymer tập tạ có cơ cổ rất dày (vòng cổ > 43cm) hoặc có cấu trúc hàm nhỏ, lưỡi to. Khối cơ cổ phì đại ép trực tiếp vào thành hầu khi ngủ làm hẹp đường thở. Tăng huyết áp kháng trị ở người trẻ là một dấu hiệu báo động (red flag) của OSA."
@@ -565,7 +565,7 @@
       "title": "Hít thở bình thường & Thông khí phế nang",
       "shortSummary": "Đường thở mở thông thoáng, không khí lưu thông êm ả vào phổi.",
       "laymanExplanation": "Bình thường khi chuyển sang trạng thái ngủ, cổ họng giống như một đường hầm thông thoáng. Không khí chứa đầy oxy đi vào mũi, chui qua họng rồi xuống phổi nhẹ nhàng êm ru, không có vật gì cản trở.",
-      "physiologicalDetail": "Cơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trương lực cơ giãn đường thở trên (cơ cằm-lưỡi Genioglossus, cơ căng màn hầu) duy trì độ mở pharynx vượt qua áp lực đóng tới hạn. Pcrit là một chỉ số nghiên cứu phản ánh mức độ dễ xẹp của đường thở trên; Pcrit càng âm thường phản ánh đường thở ít dễ xẹp hơn. Giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Thông khí phế nang ổn định đảm bảo cấp đủ oxy cho mao mạch phổi.",
+      "physiologicalDetail": "Cơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trương lực cơ giãn đường thở trên (cơ cằm-lưỡi Genioglossus, cơ căng màn hầu) duy trì độ mở pharynx vượt qua áp lực đóng tới hạn. Áp lực đóng đường thở tới hạn (Pcrit) là một chỉ số nghiên cứu phản ánh mức độ dễ xẹp của đường thở trên; áp lực càng âm thường phản ánh đường thở ít dễ xẹp hơn. Giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Thông khí phế nang ổn định đảm bảo cấp đủ oxy cho mao mạch phổi.",
       "metrics": {
         "airflowPercent": 100,
         "spo2Percent": 98,
@@ -624,7 +624,7 @@
       "title": "Xẹp và tắc nghẽn cơ học đường thở trên",
       "shortSummary": "Mô mềm đường thở xẹp nhiều làm luồng khí giảm mạnh hoặc ngừng, dù cơ hô hấp vẫn gắng sức.",
       "laymanExplanation": "Ở một số người, mô mềm vùng hầu có thể xẹp nhiều làm luồng khí giảm mạnh hoặc gần như ngừng, trong khi cơ hô hấp vẫn tiếp tục cố gắng thở. Vị trí tắc nghẽn có thể xảy ra ở một hoặc nhiều mức đường thở trên: màn hầu, thành bên hầu, cuống lưỡi hoặc vùng nắp thanh quản.",
-      "physiologicalDetail": "Tắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (Pluminal < Pcrit). Pcrit là một chỉ số nghiên cứu phản ánh mức độ dễ xẹp của đường thở trên; giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trong ngưng thở tắc nghẽn, nỗ lực hô hấp vẫn tiếp diễn và có thể kèm chuyển động ngực–bụng nghịch thường. Tắc nghẽn đường thở trên có tính chất đa tầng; sập cuống lưỡi là một kiểu hình có thể gặp chứ không phải cơ chế phổ quát duy nhất.",
+      "physiologicalDetail": "Tắc nghẽn xảy ra khi áp lực trong lòng hầu họng thấp hơn áp lực đóng tới hạn (áp lực lòng ống < áp lực đóng tới hạn Pcrit). Chỉ số Pcrit phản ánh mức độ dễ xẹp của đường thở trên; giá trị phụ thuộc phương pháp đo và điều kiện sinh lý. Nỗ lực hít vào chống lại tắc nghẽn có thể tạo áp lực âm trong lồng ngực; mức độ thay đổi đáng kể giữa từng event và từng người. Trong ngưng thở tắc nghẽn, nỗ lực hô hấp vẫn tiếp diễn và có thể kèm chuyển động ngực–bụng nghịch thường. Tắc nghẽn đường thở trên có tính chất đa tầng; sập cuống lưỡi là một kiểu hình có thể gặp chứ không phải cơ chế phổ quát duy nhất.",
       "metrics": {
         "airflowPercent": 0,
         "spo2Percent": 94,
@@ -713,7 +713,7 @@
   "waveformPatterns": [
     {
       "id": "pattern_sawtooth",
-      "name": "Dạng giảm–phục hồi SpO₂ lặp lại (Repeated Desaturation–Resaturation)",
+      "name": "Dạng giảm–phục hồi SpO₂ lặp lại",
       "shapeTitle": "Tụt dốc nhọn rồi nảy lên lặp lại có chu kỳ",
       "frequency": "Lặp lại mỗi 30 - 90 giây trong chu kỳ hô hấp gián đoạn",
       "typicalDipDuration": "Ví dụ mô phỏng — thời gian và độ sâu thực tế thay đổi (biến cố hô hấp ≥10 giây theo tiêu chuẩn chấm điểm AASM)",
@@ -722,7 +722,7 @@
       "badgeColor": "rose",
       "isArtifact": false,
       "analogy": "Giống như chiếc phao bị sóng kéo dìm xuống nước rồi lại bật trồi lên mặt nước khi giật mình thở lại.",
-      "mechanismWhy": "Dạng tụt rồi hồi phục lặp lại có thể gặp trong rối loạn hô hấp khi ngủ, bao gồm OSA. Tuy nhiên, riêng đồ thị SpO₂ không đủ để xác định nguyên nhân hoặc chẩn đoán OSA. Confirmation đòi hỏi tín hiệu hô hấp chuẩn và đánh giá lâm sàng.",
+      "mechanismWhy": "Dạng tụt rồi hồi phục lặp lại có thể gặp trong rối loạn hô hấp khi ngủ, bao gồm OSA. Tuy nhiên, riêng đồ thị SpO₂ không đủ để xác định nguyên nhân hoặc chẩn đoán OSA. Xác nhận chẩn đoán đòi hỏi tín hiệu hô hấp chuẩn và đánh giá lâm sàng.",
       "reassuringMessage": "Các đợt giảm–phục hồi lặp lại có thể đi kèm phản ứng hô hấp và vi thức giấc. Nếu xảy ra thường xuyên, chúng có thể làm giấc ngủ bị phân mảnh và cần được đánh giá trong bối cảnh phù hợp.",
       "exclusionChecklist": [
         "Bạn hoặc người thân có nghe thấy tiếng ngáy ngắt quãng, thỉnh thoảng ậm ừ thở dốc không?",
@@ -730,7 +730,7 @@
         "Sáng dậy bạn có cảm giác khô khốc miệng hoặc hơi ê đầu không?"
       ],
       "actionSteps": {
-        "immediate": "Nếu nghi ngờ có hiện tượng ngưng thở phụ thuộc tư thế nằm ngửa, có thể thử ngủ nghiêng một bên (Positional Therapy). Hạn chế rượu gần giờ ngủ. Nếu đang sử dụng thuốc ngủ, thuốc an thần hoặc thuốc có thể gây buồn ngủ, không tự ý ngừng hay thay đổi liều/thời điểm dùng; hãy trao đổi với bác sĩ hoặc dược sĩ nếu lo ngại thuốc ảnh hưởng đến hô hấp khi ngủ.",
+        "immediate": "Nếu nghi ngờ có hiện tượng ngưng thở phụ thuộc tư thế nằm ngửa, có thể thử ngủ nghiêng một bên (liệu pháp tư thế). Hạn chế rượu gần giờ ngủ. Nếu đang sử dụng thuốc ngủ, thuốc an thần hoặc thuốc có thể gây buồn ngủ, không tự ý ngừng hay thay đổi liều/thời điểm dùng; hãy trao đổi với bác sĩ hoặc dược sĩ nếu lo ngại thuốc ảnh hưởng đến hô hấp khi ngủ.",
         "monitoring": "Nếu theo dõi xu hướng tại nhà, nhiều đêm có thể cung cấp bối cảnh tốt hơn một đêm đơn lẻ vì chỉ số hô hấp/SpO₂ có thể thay đổi giữa các đêm. Dữ liệu wearable không tự xác nhận hoặc loại trừ OSA.",
         "clinical": "Nếu dữ liệu hoặc triệu chứng khiến bạn lo ngại, hãy trao đổi với nhân viên y tế để được đánh giá phù hợp."
       },
@@ -738,7 +738,7 @@
     },
     {
       "id": "pattern_sustained_plateau",
-      "name": "Dạng trũng sâu kéo dài (Sustained Low-Saturation Pattern)",
+      "name": "Dạng trũng sâu kéo dài",
       "shapeTitle": "Mức oxy nền hạ thấp kéo dài dưới 90%",
       "frequency": "Kéo dài thành từng mảng rộng, thường vào nửa sau đêm",
       "typicalDipDuration": "Ví dụ mô phỏng — mức oxy nền hạ thấp; thời gian và mức độ thực tế thay đổi tùy nguyên nhân",
@@ -748,7 +748,7 @@
       "isArtifact": false,
       "analogy": "Giống như căn phòng kín thiếu dưỡng khí kéo dài, không có chu kỳ đóng-mở cửa đột ngột như dạng răng cưa.",
       "mechanismWhy": "Mức SpO₂ nền thấp kéo dài có thể phản ánh bất tương xứng thông khí/tưới máu hoặc giảm thông khí phế nang, gặp trong nhiều bệnh cảnh hô hấp, tim mạch hoặc béo phì. Riêng hình dạng đồ thị không đặc hiệu cho COPD hay bất kỳ bệnh đơn lẻ nào.",
-      "reassuringMessage": "Pattern ≠ Diagnosis: Dạng sóng không đồng nghĩa với chẩn đoán bệnh. Cần đánh giá tổng thể chức năng hô hấp và tuần hoàn bởi bác sĩ chuyên khoa.",
+      "reassuringMessage": "Dạng sóng ≠ Chẩn đoán bệnh: Hình thái sóng không đồng nghĩa với chẩn đoán bệnh lý. Cần đánh giá tổng thể chức năng hô hấp và tuần hoàn bởi bác sĩ chuyên khoa.",
       "exclusionChecklist": [
         "Bạn có tiền sử hút thuốc lá lâu năm hoặc từng được chẩn đoán viêm phế quản/hen suyễn không?",
         "Bạn có chỉ số khối cơ thể (BMI) cao (>28-30) hoặc có vòng cổ lớn không?",
@@ -763,7 +763,7 @@
     },
     {
       "id": "pattern_isolated_spike",
-      "name": "Dạng đường oxy tương đối ổn định (Relatively Stable Oxygen Trace)",
+      "name": "Dạng đường oxy tương đối ổn định",
       "shapeTitle": "Đường nền tương đối phẳng, thỉnh thoảng có dao động ngắn",
       "frequency": "Đường biểu diễn duy trì ổn định trong phần lớn thời gian ngủ",
       "typicalDipDuration": "Ví dụ mô phỏng — dao động ngắn thoáng qua; thời gian thực tế thay đổi",
@@ -773,7 +773,7 @@
       "isArtifact": true,
       "analogy": "Giống như chiếc vòi nước tưới cây đang chảy bình thường, bỗng nhiên ai đó dẫm chân lên ống trong 5 giây rồi nhấc ra ngay.",
       "mechanismWhy": "Một điểm giảm SpO2 đơn lẻ có thể do nhiễu cảm biến, chuyển động hoặc tưới máu kém, nhưng cũng có thể là số đo thật. Cần xem chất lượng tín hiệu, xu hướng lặp lại và bối cảnh lâm sàng. Đường SpO₂ ổn định không chứng minh là ngáy đơn thuần và không loại trừ hoàn toàn OSA (đặc biệt khi có vi thức giấc mà SpO₂ chưa kịp tụt).",
-      "reassuringMessage": "Pattern ≠ Diagnosis: Một điểm giảm SpO2 đơn lẻ là không đặc hiệu. Cần xem xét chất lượng tín hiệu, khả năng nhiễu do vận động/tưới máu và tính lặp lại trước khi đưa ra diễn giải sinh lý hay kết luận lâm sàng.",
+      "reassuringMessage": "Dạng sóng ≠ Chẩn đoán bệnh: Một điểm giảm SpO2 đơn lẻ là không đặc hiệu. Cần xem xét chất lượng tín hiệu, khả năng nhiễu do vận động/tưới máu và tính lặp lại trước khi đưa ra diễn giải sinh lý hay kết luận lâm sàng.",
       "exclusionChecklist": [
         "Bạn chỉ bị 1-2 lần tụt đơn độc trong suốt 8 tiếng, các khoảng thời gian còn lại đường SpO2 rất thẳng đẹp không?",
         "Sáng thức dậy cánh tay đeo nhẫn có cảm giác hơi tê bì hoặc ấm lại sau khi cựa mình không?",
@@ -788,7 +788,7 @@
     },
     {
       "id": "pattern_periodic_cheyne_stokes",
-      "name": "Dạng dao động chu kỳ (Periodic Oscillation Pattern)",
+      "name": "Dạng dao động chu kỳ",
       "shapeTitle": "Lên xuống thoai thoải nhịp nhàng hình sin kéo dài",
       "frequency": "Chu kỳ lặp lại đều đặn 60 - 120 giây",
       "typicalDipDuration": "Ví dụ mô phỏng — dao động theo chu kỳ; chu kỳ và biên độ thực tế thay đổi",
@@ -798,7 +798,7 @@
       "isArtifact": false,
       "analogy": "Giống như con lắc đồng hồ đu đưa chậm rãi: não điều khiển thở phập phồng chậm lại rồi nhanh dần, lặp đi lặp lại nhịp nhàng.",
       "mechanismWhy": "Dao động tuần hoàn hình sin của SpO₂ có thể tương ứng với kiểu thở tăng dần - giảm dần (crescendo-decrescendo). Tuy nhiên, riêng đồ thị SpO₂ không thể chẩn đoán Cheyne-Stokes hay ngưng thở trung ương (CSA); cần đo đa ký giấc ngủ và đánh giá tim mạch toàn diện.",
-      "reassuringMessage": "Pattern ≠ Diagnosis: Dạng dao động chu kỳ cần được bác sĩ chuyên khoa đánh giá trong bối cảnh tiền sử tim mạch và hô hấp của bạn.",
+      "reassuringMessage": "Dạng sóng ≠ Chẩn đoán bệnh: Dạng dao động chu kỳ cần được bác sĩ chuyên khoa đánh giá trong bối cảnh tiền sử tim mạch và hô hấp của bạn.",
       "exclusionChecklist": [
         "Bạn có tiền sử cao huyết áp lâu năm, suy tim, bệnh mạch vành hoặc rung nhĩ không?",
         "Người nhà quan sát thấy bạn thở êm dịu dần rồi dừng lại, sau đó thở mạnh dần lên mà không kèm tiếng ngáy sặc sụa?",
@@ -858,12 +858,12 @@
           "icon": "Activity"
         },
         {
-          "title": "Ngưỡng Vi Tỉnh Giấc Thấp (Low Arousal Threshold)",
+          "title": "Ngưỡng Vi Tỉnh Giấc Thấp",
           "desc": "Ngưỡng thức tỉnh thấp khiến vi thức giấc xuất hiện sớm trước khi cơ mở đường thở kịp huy động tối đa, làm phân mảnh giấc ngủ.",
           "icon": "Sparkles"
         },
         {
-          "title": "Mất Ổn Định Điều Hòa Hô Hấp (High Loop Gain)",
+          "title": "Mất Ổn Định Điều Hòa Hô Hấp",
           "desc": "Hệ thống điều hòa hô hấp phản ứng bù quá mức: tăng thông khí sau ngưng thở làm CO2 hạ sâu, dẫn đến ức chế nhịp thở kế tiếp.",
           "icon": "RotateCw"
         }
@@ -872,41 +872,41 @@
     "symptomSection": {
       "nighttime": [
         {
-          "symptom": "Ngáy, ngừng thở được quan sát & Thở dốc/nghẹn (Snoring, Witnessed Apneas & Gasping)",
+          "symptom": "Ngáy, ngưng thở được chứng kiến & Thở dốc nghẹn",
           "why": "Ngáy, được người khác quan sát thấy ngừng thở, hoặc thức dậy với cảm giác nghẹn/hụt hơi có thể gặp ở OSA. Các biểu hiện này liên quan đến hẹp hoặc tắc nghẽn đường thở trên trong lúc ngủ, nhưng riêng một triệu chứng không đủ để chẩn đoán OSA.",
-          "whyPro": "Snoring, witnessed apneas and nocturnal choking/gasping are common OSA-associated features. Event termination may involve increasing respiratory drive, upper-airway dilator recruitment and sometimes cortical arousal; no single termination mechanism is obligatory for every event.",
+          "whyPro": "Ngáy, ngưng thở được chứng kiến và thở nghẹn/thở dốc ban đêm là các dấu hiệu thường gặp ở OSA. Quá trình kết thúc biến cố có thể bao gồm tăng tín hiệu điều khiển hô hấp, huy động cơ giãn đường thở trên và đôi khi có vi thức giấc vỏ não; không có cơ chế kết thúc đơn lẻ nào mang tính bắt buộc cho mọi biến cố.",
           "icon": "Wind"
         },
         {
-          "symptom": "Tiểu đêm nhiều lần (Nocturia)",
+          "symptom": "Tiểu đêm nhiều lần",
           "why": "Tiểu đêm có thể gặp ở người bị OSA, nhưng có nhiều nguyên nhân khác. Thay đổi áp lực trong lồng ngực, căng thành nhĩ, peptide lợi niệu, gián đoạn giấc ngủ và bệnh đi kèm đều có thể góp phần.",
-          "whyPro": "Nocturia in OSA is multifactorial. Negative intrathoracic pressure, atrial stretch/natriuretic-peptide signaling, sleep fragmentation and comorbid conditions may contribute; ANP is not a universal or exclusive mechanism.",
+          "whyPro": "Tiểu đêm ở bệnh nhân OSA mang tính đa yếu tố. Áp lực âm lồng ngực, tín hiệu căng thành nhĩ giải phóng peptide lợi niệu (ANP), phân mảnh giấc ngủ và các bệnh lý đồng mắc đều có thể đóng góp; ANP không phải là cơ chế duy nhất hay phổ quát.",
           "icon": "Droplet"
         },
         {
-          "symptom": "Đổ mồ hôi ban đêm & Kích hoạt tự chủ (Night Sweats & Autonomic Symptoms)",
+          "symptom": "Đổ mồ hôi ban đêm & Kích hoạt giao cảm",
           "why": "Đổ mồ hôi ban đêm có thể xuất hiện ở một số người, nhưng không đặc hiệu cho OSA. Hoạt động thần kinh tự chủ tăng quanh các đợt rối loạn hô hấp là một cơ chế có thể góp phần.",
-          "whyPro": "Autonomic activation and sympathetic surges can accompany obstructive respiratory events, but nocturnal sweating is nonspecific and should not be presented as a direct readout of catecholamine release.",
+          "whyPro": "Hoạt hóa thần kinh tự chủ và cơn vọt giao cảm có thể đi kèm các biến cố tắc nghẽn hô hấp, nhưng đổ mồ hôi đêm là dấu hiệu không đặc hiệu và không nên xem là biểu hiện đo đạc trực tiếp nồng độ phóng thích catecholamine.",
           "icon": "Zap"
         }
       ],
       "daytime": [
         {
-          "symptom": "Đau đầu sau khi thức dậy (Morning Headache)",
+          "symptom": "Đau đầu sau khi thức dậy",
           "why": "Đau đầu buổi sáng có thể gặp ở OSA nhưng không đặc hiệu. Rối loạn trao đổi khí, giấc ngủ bị phân mảnh và các yếu tố khác có thể góp phần; triệu chứng này không cho biết mức CO₂ của một người.",
-          "whyPro": "Morning headache is reported in OSA, but its mechanism is not uniquely established. Sleep fragmentation and nocturnal gas-exchange disturbance are proposed contributors; wearable SpO₂ does not measure PaCO₂.",
+          "whyPro": "Đau đầu buổi sáng được ghi nhận ở người mắc OSA, nhưng cơ chế chưa được xác định đơn nhất. Phân mảnh giấc ngủ và rối loạn trao đổi khí ban đêm là các yếu tố được giả định đóng góp; SpO₂ từ thiết bị đeo không đo được PaCO₂.",
           "icon": "Brain"
         },
         {
-          "symptom": "Buồn ngủ ban ngày quá mức & Mệt mỏi (EDS vs Fatigue)",
+          "symptom": "Buồn ngủ ban ngày quá mức & Mệt mỏi",
           "why": "Buồn ngủ ban ngày quá mức là xu hướng dễ ngủ gật khi đáng lẽ phải tỉnh; mệt mỏi là cảm giác thiếu năng lượng và không hoàn toàn giống nhau. OSA có thể gây buồn ngủ hoặc mệt mỏi, nhưng không phải người bị OSA nào cũng có triệu chứng rõ.",
-          "whyPro": "Excessive daytime sleepiness and fatigue are related but distinct constructs. Sleep fragmentation and other OSA-related physiological disturbances can contribute, but symptom burden varies substantially and does not map linearly to AHI.",
+          "whyPro": "Buồn ngủ ban ngày quá mức và mệt mỏi là hai khái niệm liên quan nhưng riêng biệt. Phân mảnh giấc ngủ và các rối loạn sinh lý liên quan đến OSA có thể góp phần, tuy nhiên gánh nặng triệu chứng rất khác nhau và không tương quan tuyến tính với chỉ số AHI.",
           "icon": "Moon"
         },
         {
-          "symptom": "Khó tập trung, giảm trí nhớ & Khí sắc (Cognition & Mood)",
+          "symptom": "Khó tập trung, giảm trí nhớ & Thay đổi khí sắc",
           "why": "Một số người bị OSA báo cáo khó tập trung, giảm trí nhớ hoặc thay đổi tâm trạng. Đây là các triệu chứng không đặc hiệu và có thể liên quan đến nhiều yếu tố, trong đó có giấc ngủ bị phân mảnh và rối loạn hô hấp khi ngủ.",
-          "whyPro": "Cognitive and mood symptoms in OSA are multifactorial. Intermittent hypoxemia, sleep fragmentation, autonomic/inflammatory and vascular pathways may contribute; do not reduce cognitive impairment to a single direct hypoxia → prefrontal-cortex mechanism.",
+          "whyPro": "Các triệu chứng nhận thức và khí sắc trong OSA mang tính đa yếu tố. Thiếu oxy ngắt quãng, phân mảnh giấc ngủ, các con đường thần kinh tự chủ/viêm và mạch máu đều có thể tham gia; không nên đơn giản hóa suy giảm nhận thức thành một cơ chế duy nhất từ thiếu oxy trực tiếp đến vỏ não trước trán.",
           "icon": "AlertCircle"
         }
       ]
@@ -931,13 +931,13 @@
         "mainMechanism": "Bệnh phổi mạn có thể gây bất thường trao đổi khí hoặc giảm dự trữ oxy, làm SpO2 thấp hơn hoặc giảm kéo dài trong một số trường hợp.",
         "observableSpO2": "Có thể thấy nền SpO2 thấp hoặc giảm kéo dài, nhưng hình dạng không đặc hiệu.",
         "additionalDataNeeded": "Triệu chứng, tiền sử, chức năng hô hấp, khí máu khi phù hợp và đánh giá lâm sàng.",
-        "doNotInfer": "Sustained low SpO2 không tự chẩn đoán COPD."
+        "doNotInfer": "Mức SpO₂ nền thấp kéo dài không tự chẩn đoán COPD."
       },
       {
         "condition": "OHS / Giảm thông khí (Hội chứng béo phì giảm thông khí)",
         "mainMechanism": "Giảm thông khí có thể gây tăng CO2 và giảm oxy kéo dài, đặc biệt trong lúc ngủ.",
         "observableSpO2": "Có thể có giảm oxy kéo dài hoặc nền thấp, nhưng SpO2 không đo trực tiếp CO2 và không xác nhận OHS.",
-        "additionalDataNeeded": "PaCO2 hoặc chỉ số CO2 phù hợp, BMI/bối cảnh lâm sàng, sleep study khi có chỉ định.",
+        "additionalDataNeeded": "PaCO2 hoặc chỉ số CO2 phù hợp, BMI/bối cảnh lâm sàng, đo đa ký giấc ngủ (sleep study) khi có chỉ định.",
         "doNotInfer": "SpO2 đơn thuần không phân biệt OHS với các nguyên nhân giảm oxy khác."
       }
     ],
@@ -989,7 +989,7 @@
       "vietnameseName": "Cơ Cằm - Lưỡi",
       "metaphor": "Chiếc phanh cơ học mở họng",
       "plainDefinition": "Genioglossus là một trong các cơ quan trọng giúp giữ đường thở vùng hầu mở. Khi ngủ, cách hệ thần kinh điều khiển cơ này thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ trong một số thời điểm của giấc ngủ.",
-      "clinicalDetail": "Genioglossus is a major upper-airway dilator. Its tonic and phasic activity changes across wakefulness, sleep stage and respiratory loading. In OSA, effective neuromuscular compensation may be insufficient relative to pharyngeal collapsibility. Được chi phối bởi dây thần kinh hạ thiệt (dây thần kinh sọ số XII).",
+      "clinicalDetail": "Cơ cằm - lưỡi là cơ giãn đường thở trên chủ đạo. Hoạt tính trương lực và theo pha của cơ thay đổi theo trạng thái thức/ngủ, giai đoạn giấc ngủ và tải trọng hô hấp. Trong OSA, sự bù trừ thần kinh cơ có thể không đủ so với độ dễ xẹp của vùng hầu họng. Cơ được chi phối bởi dây thần kinh hạ thiệt (dây thần kinh sọ số XII).",
       "whyItMatters": "Khi ngủ, cách hệ thần kinh điều khiển cơ này thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ trong một số thời điểm của giấc ngủ."
     },
     {
@@ -998,7 +998,7 @@
       "vietnameseName": "Vi Tỉnh Thức (Vi Thức Giấc)",
       "metaphor": "Chuông báo thức chớp nhoáng của não",
       "plainDefinition": "Vi thức giấc là một thay đổi ngắn trên điện não trong lúc ngủ. Người bệnh thường không nhận biết hoặc nhớ sự kiện này. Đây là tín hiệu được chấm trên EEG trong nghiên cứu giấc ngủ, không thể quan sát trực tiếp chỉ từ SpO₂ của wearable.",
-      "clinicalDetail": "An EEG arousal is scored when there is an abrupt shift in EEG frequency lasting at least 3 seconds, with at least 10 seconds of stable sleep preceding the change, according to AASM scoring conventions. It is not synonymous with full conscious awakening and is not directly measured by pulse oximetry.",
+      "clinicalDetail": "Vi thức giấc trên điện não (EEG arousal) được tính khi có sự chuyển dịch đột ngột về tần số sóng não kéo dài ít nhất 3 giây, xuất hiện sau ít nhất 10 giây giấc ngủ ổn định theo quy ước chấm điểm của AASM. Vi thức giấc không đồng nghĩa với thức tỉnh hoàn toàn trong ý thức và không thể đo trực tiếp bằng máy đo oxy xung.",
       "whyItMatters": "Vi thức giấc là một cơ chế giúp phục hồi lưu thông khí, nhưng hàng trăm lần vi thức giấc sẽ làm đứt gãy cấu trúc giấc ngủ sâu, gây buồn ngủ và mệt mỏi ban ngày."
     },
     {
@@ -1007,7 +1007,7 @@
       "vietnameseName": "Thể Cảnh & Xoang Cảnh",
       "metaphor": "Cảm biến hóa học và cảm biến áp lực",
       "plainDefinition": "Thể cảnh (carotid body) chứa các thụ thể hóa học ngoại biên, nhạy với thay đổi O₂ và góp phần đáp ứng với CO₂/pH. Xoang cảnh (carotid sinus) là vùng thụ thể áp lực, chủ yếu tham gia điều hòa huyết áp. Hai cấu trúc nằm gần nhau nhưng có chức năng khác nhau.",
-      "clinicalDetail": "Carotid bodies are peripheral chemoreceptor organs; the carotid sinus is primarily a baroreceptor region. Do not conflate carotid chemoreflex and carotid baroreflex physiology.",
+      "clinicalDetail": "Thể cảnh là cơ quan thụ thể hóa học ngoại biên (nhạy với oxy, CO2 và pH); xoang cảnh chủ yếu là vùng thụ thể áp lực điều hòa huyết áp. Cần phân biệt rõ giữa phản xạ hóa học thể cảnh và phản xạ áp lực xoang cảnh trong sinh lý học.",
       "whyItMatters": "Là mắt xích cảm nhận quan trọng kích hoạt tín hiệu gia tăng nỗ lực thở và trương lực cơ mở họng khi thông khí giảm."
     },
     {
@@ -1025,7 +1025,7 @@
       "vietnameseName": "Độ Bão Hòa Oxy Trong Máu Ngoại Vi",
       "metaphor": "Tỷ lệ xe chở đầy hàng trên cao tốc",
       "plainDefinition": "SpO₂ dưới 90% là một mốc thường được dùng trong một số chỉ số như T90, nhưng ý nghĩa của một giá trị SpO₂ cụ thể phụ thuộc vào triệu chứng, mức nền của từng người, bệnh nền, độ cao và giới hạn của thiết bị. Không nên dùng một lần đo đơn lẻ để tự chẩn đoán nguyên nhân.",
-      "clinicalDetail": "SpO₂ <90% is a commonly used threshold for metrics such as T90, but it is not a universal diagnostic or emergency threshold. Interpretation depends on baseline oxygenation, clinical context, altitude, repeated trend and device performance.",
+      "clinicalDetail": "Mức SpO₂ <90% là một ngưỡng phổ biến cho các chỉ số như T90 (thời gian dưới 90%), nhưng không phải là ngưỡng chẩn đoán hay cấp cứu cố định cho mọi đối tượng. Việc diễn giải phụ thuộc vào mức oxy nền, bối cảnh lâm sàng, độ cao địa lý, tính lặp lại của xu hướng và độ chính xác của thiết bị.",
       "whyItMatters": "Nhẫn O2Ring theo dõi chỉ số này suốt đêm để phát hiện các đợt thiếu oxy ngắt quãng."
     },
     {
@@ -1052,7 +1052,7 @@
       "vietnameseName": "Peptide Lợi Niệu Tâm Nhĩ & Tiểu Đêm",
       "metaphor": "Tín hiệu đáp ứng áp lực thành tim",
       "plainDefinition": "Một số người bị OSA có thể tiểu đêm nhiều hơn. Thay đổi áp lực trong lồng ngực và căng thành nhĩ có thể góp phần làm tăng peptide lợi niệu, nhưng tiểu đêm còn có nhiều nguyên nhân khác.",
-      "clinicalDetail": "OSA-related nocturia is multifactorial. Negative intrathoracic pressure and atrial stretch may increase atrial natriuretic peptide signaling and natriuresis/diuresis, but this is not the sole mechanism.",
+      "clinicalDetail": "Tiểu đêm liên quan đến OSA mang tính đa yếu tố. Áp lực âm lồng ngực và sự căng giãn thành tâm nhĩ có thể làm tăng tín hiệu peptide lợi niệu tâm nhĩ (ANP), thúc đẩy bài tiết natri và nước tiểu, tuy nhiên đây không phải là cơ chế đơn độc duy nhất.",
       "whyItMatters": "Giải thích mối liên quan sinh lý học có thể gặp giữa các cơn tắc nghẽn hô hấp ban đêm và tình trạng thức dậy đi tiểu nhiều lần."
     },
     {
@@ -1070,16 +1070,16 @@
       "vietnameseName": "Thời Gian Trễ Tuần Hoàn",
       "metaphor": "Độ trễ truyền tín hiệu từ nguồn",
       "plainDefinition": "SpO₂ ở ngón tay phản ứng trễ so với thay đổi hô hấp. Vì vậy, sau khi một đợt rối loạn hô hấp kết thúc và luồng khí đã phục hồi, SpO₂ ngoại vi vẫn có thể tiếp tục giảm một lúc trước khi chạm đáy rồi mới tăng trở lại. Khoảng trễ thay đổi giữa từng người và thiết bị.",
-      "clinicalDetail": "Peripheral SpO₂ is delayed relative to respiratory events because of cardiopulmonary-to-peripheral transit time and signal processing. In sleep physiology research, lung-to-finger circulation time is commonly estimated from respiratory-event termination/recovery ventilation to the subsequent SpO₂ nadir. The interval varies across individuals, cardiovascular state and measurement systems.",
+      "clinicalDetail": "Chỉ số SpO₂ ngoại vi luôn có độ trễ so với biến cố hô hấp do thời gian vận chuyển máu từ tim phổi ra đầu chi và thuật toán xử lý tín hiệu. Trong sinh lý giấc ngủ, thời gian tuần hoàn từ phổi đến ngón tay (LFCT) thường được ước tính từ lúc kết thúc biến cố/thông khí phục hồi đến điểm SpO₂ chạm đáy. Khoảng trễ dao động tùy cá thể, trạng thái tim mạch và hệ thống đo lường.",
       "whyItMatters": "Khi nhẫn của bạn báo SpO2 tụt, thực tế biến cố hô hấp ở họng đã diễn ra trước đó một khoảng thời gian."
     },
     {
       "id": "term_positional_therapy",
       "term": "Positional Therapy",
-      "vietnameseName": "Liệu Pháp Tư Thế (Positional OSA)",
+      "vietnameseName": "Liệu Pháp Tư Thế",
       "metaphor": "Điều chỉnh tư thế theo kiểu hình",
       "plainDefinition": "Tư thế ngủ có thể ảnh hưởng mức độ OSA ở một số người. Liệu pháp tư thế phù hợp nhất khi OSA rõ ràng nặng hơn ở tư thế nằm ngửa; không phải mọi người bị OSA đều đáp ứng giống nhau.",
-      "clinicalDetail": "Positional therapy is principally relevant to position-dependent OSA, where respiratory-event frequency is materially higher supine than non-supine. It should not be presented as a universal OSA treatment or a diagnostic test.",
+      "clinicalDetail": "Liệu pháp tư thế chủ yếu có ý nghĩa đối với OSA phụ thuộc tư thế (POSA) — nơi tần suất biến cố hô hấp ở tư thế nằm ngửa cao hơn rõ rệt so với nằm nghiêng. Đây không phải là phương pháp điều trị toàn năng cho mọi ca OSA và không thay thế cho xét nghiệm chẩn đoán.",
       "whyItMatters": "Là biện pháp hỗ trợ có mục tiêu cho phân nhóm OSA phụ thuộc tư thế, không phải phương pháp điều trị vạn năng cho mọi thể bệnh."
     },
     {
@@ -1088,7 +1088,7 @@
       "vietnameseName": "Chỉ Số Tưới Máu Ngoại Vi",
       "metaphor": "Áp lực nước trong đường ống",
       "plainDefinition": "Chỉ số tưới máu (Perfusion Index - PI) phản ánh cường độ tương đối của tín hiệu xung động tại vị trí cảm biến. Tưới máu ngoại vi kém có thể gây khó khăn cho việc đo của máy đo oxy xung, nhưng chỉ số PI thấp đơn thuần không chứng minh rằng số đo SpO₂ là sai. Cần tuân thủ hướng dẫn chất lượng tín hiệu của từng thiết bị cụ thể.",
-      "clinicalDetail": "Perfusion Index reflects the relative pulsatile signal at the sensor site. Low peripheral perfusion can make pulse-oximetry performance more challenging, but a low PI value alone does not prove that an SpO₂ reading is invalid. Device-specific signal-quality guidance should be followed.",
+      "clinicalDetail": "Chỉ số tưới máu (PI) phản ánh cường độ tương đối của tín hiệu mạch đập tại vị trí cảm biến. Tưới máu ngoại vi thấp có thể làm giảm độ tin cậy của máy đo oxy xung, tuy nhiên chỉ số PI thấp đơn thuần không chứng minh rằng số đo SpO₂ bị sai lệch. Cần tuân thủ chỉ dẫn về chất lượng tín hiệu của từng thiết bị cụ thể.",
       "whyItMatters": "Chỉ số PI quá thấp là một yếu tố kỹ thuật giúp nhận biết khả năng giảm tưới máu ngoại vi ảnh hưởng đến chất lượng tín hiệu đo."
     },
     {
@@ -1106,7 +1106,7 @@
       "vietnameseName": "Máy Thở Áp Lực Dương Liên Tục",
       "metaphor": "Chiếc nẹp không khí vô hình",
       "plainDefinition": "CPAP tạo áp lực dương giúp giữ đường thở trên mở trong lúc ngủ. Hiệu quả phụ thuộc chẩn đoán đúng, lựa chọn thiết bị/áp lực phù hợp và việc sử dụng đều đặn.",
-      "clinicalDetail": "CPAP pneumatically splints the upper airway and is an established PAP treatment for appropriately diagnosed OSA. PAP treatment should be based on objective sleep-apnea testing and appropriate clinical management.",
+      "clinicalDetail": "Máy thở CPAP hoạt động như một chiếc nẹp khí nâng đỡ đường thở trên và là phương pháp điều trị áp lực dương tiêu chuẩn cho bệnh nhân được chẩn đoán OSA xác định. Việc chỉ định điều trị CPAP phải dựa trên kết quả đo đa ký giấc ngủ khách quan và phác đồ chuyên khoa phù hợp.",
       "whyItMatters": "Giúp người bệnh hiểu giải pháp y khoa chính thống nếu bệnh ở mức độ cần can thiệp y tế."
     },
     {
@@ -1115,7 +1115,7 @@
       "vietnameseName": "Buồn Ngủ Ban Ngày Quá Mức",
       "metaphor": "Cơn sập nguồn của bộ não",
       "plainDefinition": "Buồn ngủ ban ngày quá mức là xu hướng dễ ngủ gật khi đáng lẽ phải tỉnh; mệt mỏi là cảm giác thiếu năng lượng và không hoàn toàn giống nhau. OSA có thể gây buồn ngủ hoặc mệt mỏi, nhưng không phải người bị OSA nào cũng có triệu chứng rõ.",
-      "clinicalDetail": "Excessive daytime sleepiness and fatigue are related but distinct constructs. Sleep fragmentation and other OSA-related physiological disturbances can contribute, but symptom burden varies substantially and does not map linearly to AHI.",
+      "clinicalDetail": "Buồn ngủ ban ngày quá mức và cảm giác mệt mỏi là hai khái niệm liên quan nhưng riêng biệt về mặt lâm sàng. Sự phân mảnh giấc ngủ và rối loạn sinh lý do OSA có thể đóng góp, tuy nhiên mức độ triệu chứng thay đổi đáng kể giữa các bệnh nhân và không tương quan tuyến tính với chỉ số AHI.",
       "whyItMatters": "Cần được phân biệt rõ với cảm giác mệt mỏi thể chất; là một triệu chứng lâm sàng cần được đánh giá y khoa phù hợp."
     }
   ]

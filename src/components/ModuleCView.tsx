@@ -455,7 +455,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
               <div data-testid="expert-mechanism-panel" className="space-y-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400 flex items-center gap-1.5">
                   <Microscope className="w-4 h-4" />
-                  <span>Cơ Chế Y Sinh Chuyên Sâu (Medical Detail):</span>
+                  <span>Cơ Chế Y Sinh Chuyên Sâu:</span>
                 </p>
                 <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                   {activeStep.physiologicalDetail}
