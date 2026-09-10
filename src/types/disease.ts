@@ -6,6 +6,14 @@ export interface MedicalSource {
   url: string;
   citation: string;
   keyFinding: string;
+  authors?: string;
+  journal?: string;
+  volumePages?: string;
+  pmid?: string;
+  pmcid?: string;
+  doi?: string;
+  evidenceType?: string;
+  supportedClaims?: string;
 }
 
 export interface CognitiveTrap {
@@ -94,7 +102,7 @@ export interface SpO2WaveformPattern {
   exclusionChecklist: string[]; // Các câu hỏi tự kiểm tra loại trừ
   actionSteps: {
     immediate: string; // Việc làm ngay tối nay (vệ sinh giấc ngủ, ngủ nghiêng)
-    monitoring: string; // Cách theo dõi 3-5 đêm tới
+    monitoring: string; // Cách theo dõi nhiều đêm tới
     clinical: string; // Khi nào đi khám & câu hỏi hỏi bác sĩ
   };
   sampleSvgWave: string; // Path SVG dạng sóng trực quan
@@ -107,19 +115,21 @@ export interface MedicalKnowledgeHub {
     laymanAnalogy: string;
     ahiStandards: {
       metric: string;
+      scoringRuleNote?: string;
       ranges: { label: string; range: string; meaning: string; severityColor: string }[];
     };
     underlyingCauses: { title: string; desc: string; icon: string }[];
   };
   symptomSection: {
-    nighttime: { symptom: string; why: string; icon: string }[];
-    daytime: { symptom: string; why: string; icon: string }[];
+    nighttime: { symptom: string; why: string; icon: string; whyPro?: string }[];
+    daytime: { symptom: string; why: string; icon: string; whyPro?: string }[];
   };
   differentialDiagnosis: {
-    disease: string;
-    mechanism: string;
-    spO2DayVsNight: string;
-    keyDistinction: string;
+    condition: string;
+    mainMechanism: string;
+    observableSpO2: string;
+    additionalDataNeeded: string;
+    doNotInfer: string;
   }[];
   ppgSensorScience: {
     howItWorks: string;

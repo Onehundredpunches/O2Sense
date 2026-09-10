@@ -19,20 +19,34 @@ import {
   Box,
   Activity,
   Lightbulb,
-  HelpCircle
+  HelpCircle,
+  Gauge
 } from 'lucide-react';
 
 interface ModuleCViewProps {
   steps: MechanismStep[];
   sources: MedicalSource[];
   onOpenGlossary: (termId?: string) => void;
+  userMode?: 'general' | 'founder';
 }
 
-export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpenGlossary }) => {
+export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpenGlossary, userMode }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [renderMode, setRenderMode] = useState<'anatomical' | '3d'>('anatomical');
-  const [explanationMode, setExplanationMode] = useState<'layman' | 'expert'>('layman');
+  const [explanationMode, setExplanationMode] = useState<'layman' | 'expert'>(
+    userMode === 'founder' ? 'expert' : 'layman'
+  );
+
+  // Sync mode whenever userMode prop changes
+  useEffect(() => {
+    if (userMode === 'founder') {
+      setExplanationMode('expert');
+    } else {
+      setExplanationMode('layman');
+    }
+  }, [userMode]);
+
   const [activeSourceModal, setActiveSourceModal] = useState<{ isOpen: boolean; sourceIds: string[]; title: string }>({
     isOpen: false,
     sourceIds: [],
@@ -66,6 +80,15 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
   const isBrainArousal = activeStep.visualState.brainArousal;
   const isSympathetic = activeStep.visualState.sympatheticSurge;
 
+  const caliberMap: Record<number, number> = {
+    1: 12.0,
+    2: 3.5,
+    3: 0.0,
+    4: 0.0,
+    5: 11.5,
+  };
+  const currentCaliber = caliberMap[activeStep.step] ?? (activeStep.visualState.airwayStatus === 'collapsed' ? 0.0 : activeStep.visualState.airwayStatus === 'narrowed' ? 3.5 : 12.0);
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 space-y-6 pb-28 md:pb-16">
       {/* Header Banner: Luminous Theme */}
@@ -80,13 +103,14 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
               Chuyện Gì Xảy Ra Trong Cơ Thể Khi Ngủ?
             </h1>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-2xl">
-              Từ thông khí phế nang → vòm họng rung ngáy → cuống lưỡi sập cơ học → chuông báo cháy não bộ vi thức giấc kéo mở đường thở.
+              Khi ngủ, đường thở trên có thể trở nên dễ hẹp/xẹp hơn. Nếu luồng khí giảm nhiều, cơ thể tăng nỗ lực hô hấp; oxy có thể giảm và CO₂ có thể tăng. Các cơ giúp mở đường thở tăng hoạt động và luồng khí được phục hồi; một vi thức giấc có thể đi kèm nhưng không phải lúc nào cũng cần thiết.
             </p>
           </div>
 
           {/* Mode Switcher: Layman vs Medical Expert */}
           <div className="bg-white/90 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-1 flex items-center flex-shrink-0 shadow-sm">
             <button
+              data-testid="explanation-mode-layman-btn"
               onClick={() => setExplanationMode('layman')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 explanationMode === 'layman'
@@ -98,6 +122,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
               <span>Dành cho người nhà</span>
             </button>
             <button
+              data-testid="explanation-mode-expert-btn"
               onClick={() => setExplanationMode('expert')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 explanationMode === 'expert'
@@ -146,61 +171,83 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
         {/* Left/Top: Interactive Animated Stage (2.5D or 3D) */}
         <div className="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 shadow-sm flex flex-col justify-between space-y-4">
           {/* Top Stage Bar: Live Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-            {/* Airflow */}
-            <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0">
-                <Wind className="w-4 h-4" />
+          <div className="space-y-1.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              {/* Airflow */}
+              <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center flex-shrink-0">
+                  <Wind className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <p className="text-[10px] text-slate-500 font-medium">Luồng khí</p>
+                    <span className="text-[8px] px-1 py-0.2 rounded bg-slate-200 dark:bg-slate-800 text-slate-500 font-mono">MÔ PHỎNG</span>
+                  </div>
+                  <p className={`text-xs font-bold ${activeStep.metrics.airflowPercent === 0 ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                    {activeStep.metrics.airflowPercent === 0 ? 'Giảm mạnh / ngừng (Mô phỏng)' : `${activeStep.metrics.airflowPercent}%`}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="text-[10px] text-slate-500 font-medium">Luồng khí</p>
-                <p className={`text-xs font-bold ${activeStep.metrics.airflowPercent === 0 ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600 dark:text-emerald-400'}`}>
-                  {activeStep.metrics.airflowPercent}% {activeStep.metrics.airflowPercent === 0 && '(TẮC)'}
-                </p>
+
+              {/* SpO2 */}
+              <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
+                  O₂
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <p className="text-[10px] text-slate-500 font-medium">SpO2 (ví dụ)</p>
+                    <span className="text-[8px] px-1 py-0.2 rounded bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 font-mono font-semibold">VÍ DỤ GIẢ LẬP</span>
+                  </div>
+                  <p className={`text-xs font-bold ${activeStep.metrics.spo2Percent < 90 ? 'text-rose-600 dark:text-rose-400 animate-pulse' : 'text-emerald-600 dark:text-emerald-400'}`}>
+                    {activeStep.metrics.spo2Percent}%
+                  </p>
+                </div>
+              </div>
+
+              {/* Heart Rate */}
+              <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                  isSympathetic ? 'bg-rose-100 text-rose-600 dark:bg-rose-950/80 dark:text-rose-400 animate-ping' : 'bg-pink-100 dark:bg-pink-950/80 text-pink-600 dark:text-pink-400'
+                }`}>
+                  <Heart className="w-4 h-4 fill-current" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <p className="text-[10px] text-slate-500 font-medium">Nhịp tim (ví dụ)</p>
+                    <span className="text-[8px] px-1 py-0.2 rounded bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-400 font-mono font-semibold">VÍ DỤ GIẢ LẬP</span>
+                  </div>
+                  <p className={`text-xs font-bold ${isSympathetic ? 'text-rose-600 dark:text-rose-400' : 'text-slate-800 dark:text-slate-200'}`}>
+                    {activeStep.metrics.heartRateBpm} bpm
+                  </p>
+                </div>
+              </div>
+
+              {/* Arousal / EEG State */}
+              <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
+                <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
+                  isBrainArousal ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/80 dark:text-amber-300' : 'bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400'
+                }`}>
+                  <Brain className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1">
+                    <p className="text-[10px] text-slate-500 font-medium">Điện não (EEG)</p>
+                    <span className="text-[8px] px-1 py-0.2 rounded bg-slate-200 dark:bg-slate-800 text-slate-500 font-mono">MÔ PHỎNG</span>
+                  </div>
+                  <p className={`text-[11px] font-bold truncate ${isBrainArousal ? 'text-amber-600 dark:text-amber-300 animate-pulse' : 'text-slate-800 dark:text-slate-200'}`}>
+                    {activeStep.metrics.arousalStatus}
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* SpO2 */}
-            <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center flex-shrink-0 font-bold text-[10px]">
-                O₂
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-500 font-medium">O2Ring SpO2</p>
-                <p className={`text-xs font-bold ${activeStep.metrics.spo2Percent < 90 ? 'text-rose-600 dark:text-rose-400 animate-pulse' : 'text-emerald-600 dark:text-emerald-400'}`}>
-                  {activeStep.metrics.spo2Percent}%
-                </p>
-              </div>
-            </div>
-
-            {/* Heart Rate */}
-            <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
-              <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                isSympathetic ? 'bg-rose-100 text-rose-600 dark:bg-rose-950/80 dark:text-rose-400 animate-ping' : 'bg-pink-100 dark:bg-pink-950/80 text-pink-600 dark:text-pink-400'
-              }`}>
-                <Heart className="w-4 h-4 fill-current" />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-500 font-medium">Nhịp tim</p>
-                <p className={`text-xs font-bold ${isSympathetic ? 'text-rose-600 dark:text-rose-400' : 'text-slate-800 dark:text-slate-200'}`}>
-                  {activeStep.metrics.heartRateBpm} bpm
-                </p>
-              </div>
-            </div>
-
-            {/* Arousal / EEG State */}
-            <div className="bg-slate-50 dark:bg-slate-950/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-2.5 flex items-center gap-2.5">
-              <div className={`w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                isBrainArousal ? 'bg-amber-100 text-amber-700 dark:bg-amber-950/80 dark:text-amber-300' : 'bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400'
-              }`}>
-                <Brain className="w-4 h-4" />
-              </div>
-              <div>
-                <p className="text-[10px] text-slate-500 font-medium">Điện não (EEG)</p>
-                <p className={`text-[11px] font-bold truncate ${isBrainArousal ? 'text-amber-600 dark:text-amber-300 animate-pulse' : 'text-slate-800 dark:text-slate-200'}`}>
-                  {activeStep.metrics.arousalStatus}
-                </p>
-              </div>
+            {/* Micro-label for simulated vs measured context (V11-P0-003) */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1 text-[10px] text-slate-500">
+              <span>* Các giá trị trên màn hình này dùng để minh họa cơ chế và không phải dữ liệu đo từ một người dùng cụ thể. Thông số có thể được thiết bị phù hợp ghi nhận.</span>
+              {activeStep.step === 5 && (
+                <span className="text-teal-600 dark:text-teal-400 font-medium whitespace-nowrap">SpO₂ ở ngón tay phản ứng trễ so với thay đổi luồng khí.</span>
+              )}
             </div>
           </div>
 
@@ -257,6 +304,61 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
                 isSympathetic={isSympathetic}
               />
             )}
+          </div>
+
+          {/* DEDICATED AIRWAY CALIBER STRIP (0 Overlap on Anatomy Visualizer) */}
+          <div 
+            data-testid="airway-caliber-gauge"
+            className="airway-caliber-bar bg-slate-900/95 dark:bg-slate-950 border border-slate-700/80 dark:border-slate-800 rounded-2xl p-3 shadow-xl"
+          >
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+              {/* Left: Gauge + Caliber Metric + Status Badge */}
+              <div className="flex items-center gap-2.5 flex-shrink-0">
+                <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
+                  <Gauge className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[11px] uppercase font-bold text-slate-300">
+                      {renderMode === 'anatomical' ? 'Khẩu kính hình học (Mặt cắt 2.5D)' : 'Khẩu kính 3D (Không gian giải phẫu)'}
+                    </span>
+                    <span className={`text-[9px] font-black px-1.5 py-0.5 rounded ${
+                      currentCaliber === 0 ? 'bg-rose-950 text-rose-300 border border-rose-800' :
+                      currentCaliber < 5 ? 'bg-amber-950 text-amber-300 border border-amber-800' :
+                      currentCaliber > 11 ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' :
+                      'bg-emerald-950 text-emerald-300 border border-emerald-800'
+                    }`}>
+                      {currentCaliber === 0 ? 'TẮC NGHẼN CHỨC NĂNG' : currentCaliber < 5 ? 'HẸP / GIỚI HẠN LUỒNG KHÍ' : currentCaliber > 11 ? 'THÔNG KHÍ / HỒI PHỤC' : 'THÔNG THOÁNG'}
+                    </span>
+                  </div>
+                  <div className="flex items-baseline gap-1 mt-0.5">
+                    <span className={`text-base sm:text-lg font-black tracking-tight ${
+                      currentCaliber === 0 ? 'text-rose-400 animate-pulse' :
+                      currentCaliber < 5 ? 'text-amber-400' : 'text-emerald-400'
+                    }`}>
+                      {currentCaliber.toFixed(1)}
+                    </span>
+                    <span className="text-xs font-semibold text-slate-400">mm</span>
+                    <span className="text-[10px] text-slate-400 ml-1">
+                      (Mô phỏng minh họa)
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Medical Disclaimer & Phenotype Note */}
+              <div className="text-left md:text-right border-t md:border-t-0 pt-2 md:pt-0 border-slate-800/80 space-y-0.5">
+                <p className="text-[10px] text-slate-400 font-medium leading-tight">
+                  Giá trị hình học mô phỏng — không phải số đo giải phẫu hay ngưỡng chẩn đoán.
+                </p>
+                <p className="text-[9px] text-slate-500 leading-tight">
+                  {renderMode === 'anatomical'
+                    ? '* Mô hình minh họa một kiểu tắc nghẽn; OSA có thể xảy ra tại nhiều mức đường thở trên và khác nhau giữa từng người.'
+                    : '* Mô hình giải phẫu 3D mang tính minh họa sư phạm cho kiểu hình hẹp hầu họng thường gặp; giải phẫu và vị trí xẹp thực tế thay đổi theo từng người bệnh.'
+                  }
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Controls: Play/Pause, Step navigation */}
@@ -340,7 +442,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
             </div>
 
             {explanationMode === 'layman' ? (
-              <div className="space-y-3">
+              <div data-testid="layman-mechanism-panel" className="space-y-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400 flex items-center gap-1.5">
                   <UserCheck className="w-4 h-4" />
                   <span>Cách Giải Thích Cho Người Nhà (Không Chuyên Môn):</span>
@@ -350,7 +452,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
                 </p>
               </div>
             ) : (
-              <div className="space-y-3">
+              <div data-testid="expert-mechanism-panel" className="space-y-3">
                 <p className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400 flex items-center gap-1.5">
                   <Microscope className="w-4 h-4" />
                   <span>Cơ Chế Y Sinh Chuyên Sâu (Medical Detail):</span>

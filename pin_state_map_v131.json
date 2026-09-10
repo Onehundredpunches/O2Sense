@@ -1,0 +1,44 @@
+[
+  {
+    "pin_id": "nose",
+    "visible_popup_title": "Khoang mũi (Đường khí vào)",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 97px",
+    "screenshot": "app_screenshots_v131/pin_3d_nose.png"
+  },
+  {
+    "pin_id": "palate",
+    "visible_popup_title": "Khẩu cái mềm & Lưỡi gà",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 117px",
+    "screenshot": "app_screenshots_v131/pin_3d_palate.png"
+  },
+  {
+    "pin_id": "tongue",
+    "visible_popup_title": "Gốc lưỡi & Cơ cằm-lưỡi",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 117px",
+    "screenshot": "app_screenshots_v131/pin_3d_tongue.png"
+  },
+  {
+    "pin_id": "mandible",
+    "visible_popup_title": "Xương hàm dưới & Cằm",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 97px",
+    "screenshot": "app_screenshots_v131/pin_3d_mandible.png"
+  },
+  {
+    "pin_id": "airway",
+    "visible_popup_title": "Vùng bít tắc hầu họng",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 97px",
+    "screenshot": "app_screenshots_v131/pin_3d_airway.png"
+  },
+  {
+    "pin_id": "trachea",
+    "visible_popup_title": "Khí quản & Vòng sụn",
+    "visibility_state": true,
+    "non_zero_bounding_box": "width: 566px, height: 97px",
+    "screenshot": "app_screenshots_v131/pin_3d_trachea.png"
+  }
+]

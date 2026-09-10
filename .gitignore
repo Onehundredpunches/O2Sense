@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 .vercel
+
+# Temporary audit screenshots and zip archives
+*.zip
+app_screenshots*/
+HINH_ANH_TOAN_BO_APP_O2SENSE/

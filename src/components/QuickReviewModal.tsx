@@ -16,6 +16,7 @@ interface QuickReviewModalProps {
   traps: CognitiveTrap[];
   scenarios: RoleplayScenario[];
   onCompleteReview: () => void;
+  deterministic?: boolean;
 }
 
 export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
@@ -24,6 +25,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
   traps,
   scenarios,
   onCompleteReview,
+  deterministic = false,
 }) => {
   const [selectedTraps, setSelectedTraps] = useState<CognitiveTrap[]>([]);
   const [selectedScenario, setSelectedScenario] = useState<RoleplayScenario | null>(null);
@@ -32,24 +34,29 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
   const [pickedOptionId, setPickedOptionId] = useState<string | null>(null);
   const [isDone, setIsDone] = useState<boolean>(false);
 
-  // Initialize randomized review set whenever modal opens
+  // Initialize review set whenever modal opens
   useEffect(() => {
     if (isOpen) {
-      // Pick 4 random traps
-      const shuffledTraps = [...traps].sort(() => 0.5 - Math.random());
-      const pickedTraps = shuffledTraps.slice(0, 4);
-      setSelectedTraps(pickedTraps);
+      if (deterministic || (typeof window !== 'undefined' && (window as any).__DETERMINISTIC_REVIEW__)) {
+        setSelectedTraps(traps.slice(0, 4));
+        setSelectedScenario(scenarios[0] || null);
+      } else {
+        // Pick 4 random traps
+        const shuffledTraps = [...traps].sort(() => 0.5 - Math.random());
+        const pickedTraps = shuffledTraps.slice(0, 4);
+        setSelectedTraps(pickedTraps);
 
-      // Pick 1 random scenario
-      const randomScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
-      setSelectedScenario(randomScenario);
+        // Pick 1 random scenario
+        const randomScenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+        setSelectedScenario(randomScenario);
+      }
 
       setCurrentIndex(0);
       setIsFlipped(false);
       setPickedOptionId(null);
       setIsDone(false);
     }
-  }, [isOpen, traps, scenarios]);
+  }, [isOpen, traps, scenarios, deterministic]);
 
   if (!isOpen) return null;
 
@@ -98,6 +105,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
             </div>
           </div>
           <button
+            data-testid="quick-review-close-btn"
             onClick={onClose}
             className="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
           >
@@ -125,6 +133,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                       Thẻ {currentIndex + 1} / 4: Bẫy suy diễn
                     </span>
                     <button
+                      data-testid="quick-review-flip-btn"
                       onClick={() => setIsFlipped(!isFlipped)}
                       className="text-xs text-sky-400 hover:text-sky-300 flex items-center gap-1 font-medium"
                     >
@@ -134,6 +143,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                   </div>
 
                   <div
+                    data-testid="quick-review-card"
                     onClick={() => setIsFlipped(!isFlipped)}
                     className="p-5 bg-slate-800/60 hover:bg-slate-800 border border-slate-700/80 rounded-2xl cursor-pointer min-h-[220px] flex flex-col justify-between transition-all"
                   >
@@ -142,7 +152,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                         <span className="text-[11px] font-bold text-emerald-400 uppercase tracking-wider">
                           Điều quan sát được:
                         </span>
-                        <p className="text-sm sm:text-base font-medium text-slate-100 leading-relaxed">
+                        <p data-testid="quick-review-front-text" className="text-sm sm:text-base font-medium text-slate-100 leading-relaxed">
                           "{currentTrap.observation}"
                         </p>
                         <div className="pt-2 text-center text-xs text-sky-400 font-medium">
@@ -155,7 +165,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                           <span className="text-[10px] font-bold text-rose-400 uppercase">
                             ❌ KHÔNG ĐƯỢC KẾT LUẬN:
                           </span>
-                          <p className="text-xs font-semibold text-rose-100 mt-0.5">
+                          <p data-testid="quick-review-back-fallacy" className="text-xs font-semibold text-rose-100 mt-0.5">
                             {currentTrap.fallacy}
                           </p>
                         </div>
@@ -164,7 +174,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                           <span className="text-[10px] font-bold text-amber-400 uppercase">
                             💡 BẢN CHẤT & CÂU HỎI AN TOÀN:
                           </span>
-                          <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                          <p data-testid="quick-review-back-why" className="text-xs text-slate-300 mt-1 leading-relaxed">
                             {currentTrap.why}
                           </p>
                           <div className="mt-2 text-xs text-sky-200 bg-sky-950/40 p-2.5 rounded-lg border border-sky-800/40 italic">
@@ -201,6 +211,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                       return (
                         <div
                           key={opt.id}
+                          data-testid={`quick-review-opt-${opt.id}`}
                           onClick={() => setPickedOptionId(opt.id)}
                           className={`p-3 rounded-xl border text-xs cursor-pointer transition-all ${
                             isSelected
@@ -213,8 +224,8 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
                           <p className="font-medium">"{opt.text}"</p>
                           {isSelected && (
                             <div className="mt-2 pt-2 border-t border-slate-700/50 text-[11px]">
-                              <p className="font-bold">{opt.feedback}</p>
-                              <p className="text-slate-200 mt-1">{opt.explanation}</p>
+                              <p data-testid="quick-review-opt-feedback" className="font-bold">{opt.feedback}</p>
+                              <p data-testid="quick-review-opt-explanation" className="text-slate-200 mt-1">{opt.explanation}</p>
                             </div>
                           )}
                         </div>
@@ -252,6 +263,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
         {!isDone && (
           <div className="px-5 py-3 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between">
             <button
+              data-testid="quick-review-prev-btn"
               onClick={handlePrev}
               disabled={currentIndex === 0}
               className="flex items-center gap-1 px-3 py-1.5 text-xs text-slate-400 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
@@ -265,6 +277,7 @@ export const QuickReviewModal: React.FC<QuickReviewModalProps> = ({
             </span>
 
             <button
+              data-testid="quick-review-next-btn"
               onClick={handleNext}
               className="flex items-center gap-1 px-4 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-md active:scale-95 transition-all"
             >

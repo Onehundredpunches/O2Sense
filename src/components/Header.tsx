@@ -183,6 +183,7 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Quick 5-Minute Review Button */}
               <button
+                data-testid="quick-review-header-btn"
                 onClick={onStartQuickReview}
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-slate-950 font-bold text-xs shadow-md shadow-amber-500/20 active:scale-95 transition-all"
                 title="Ôn tập nhanh 5 phút trước phỏng vấn"

@@ -1,0 +1,1152 @@
+[
+  {
+    "state_id": "home_banner_disclaimer",
+    "module": "Home",
+    "mode": "general",
+    "action": "View top persistent educational disclaimer",
+    "expected_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế",
+    "screenshot": "app_screenshots_v131_full/home_banner_disclaimer.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "home_pillar1_identification",
+    "module": "Home",
+    "mode": "general",
+    "action": "Scroll to Home Pillar 1 card",
+    "expected_visible_content": "Trực giác hóa cơ chế OSA qua giải phẫu 2.5D/3D",
+    "observed_visible_content": "Verified visible in viewport",
+    "screenshot": "app_screenshots_v131_full/home_pillar1_identification.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "home_pillar2_pathophysiology",
+    "module": "Home",
+    "mode": "general",
+    "action": "Scroll to Home Pillar 2 card",
+    "expected_visible_content": "5 bước cơ chế bệnh sinh",
+    "observed_visible_content": "Verified visible in viewport",
+    "screenshot": "app_screenshots_v131_full/home_pillar2_pathophysiology.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "home_pillar3_aasm_guidance",
+    "module": "Home",
+    "mode": "general",
+    "action": "Scroll to Home Pillar 3 card",
+    "expected_visible_content": "Định nghĩa theo hướng dẫn AASM, thước đo AHI",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ để tự chẩn đoán hoặc loại trừ ngưng thở khi ngủ.\nO\n2\nSense\nĐẠI CHÚNG\nTổng quan\n1 Đêm Thở Nghẽn (3D)\nGiải Mã SpO2 Đêm\nBách Khoa Y Học\nHiểu Lầm & Tình Huống\nCẩm Nang\nMode: Đại chúng\nÔn nhanh 5p\nNền tảng Thấu Hiểu Giấc Ngủ & Tín Hiệu SpO2\nThấu Hiểu Từng Nhịp Thở\n\nMỗi nhịp thở trong đêm đều kể một câu chuyện sức khỏe. O2Sense giúp bạn thấu hiểu cơ thể dễ dàng hơn bao giờ hết — vì giấc ngủ an lành của bạn và những người thân yêu.\n\nKhám phá 1 Đêm Thở Nghẽn (3D)\nGiải mã Đồ thị SpO2\nÔn nhanh 5 phút\nTỰ KHÁM PHÁ BẢN THÂN\nTrắc Nghiệm Nhanh 1 Phút: Bạn Có Dấu Hiệu Tắc Nghẽn Đêm Không?\nBấm chọn các ô đúng với bạn\nBạn (hoặc người thân) có ngáy to ngắt quãng hoặc giật mình thở dốc trong đêm?\nBuổi sáng thức dậy bạn thường bị đau đầu âm ỉ hoặc khô khốc cổ họng?\nBan ngày bạn thường xuyên buồn ngủ rũ mắt khi ngồi họp, làm việc hoặc xem tivi?\nNhẫn O2Ring hoặc đồng hồ của bạn từng cảnh báo tụt SpO2 dưới 90% khi ngủ?\n\nChọn ít nhất 1 câu hỏi để xem lời khuyên giải phẫu học tương ứng.\n\n1. Hành Trình 1 Đêm Thở Nghẽn\n\nMô phỏng 3D WebGL xoay 360° tư thế nằm ngủ trên gối. Quan sát cơ chế hẹp và xẹp đường thở, biến đổi oxy - CO₂, tín hiệu tăng nỗ lực hô hấp và phục hồi luồng khí.\n\n5 pha sinh lý động • Ẩn dụ bình dân\n2. Bộ Giải Mã Đồ Thị SpO2 Đêm\n\nĐối chiếu 4 dạng sóng SpO₂: Giảm–phục hồi lặp lại, Trũng sâu kéo dài, Đường oxy ổn định / biến cố đơn lẻ, và Dao động chu kỳ. Hiểu rõ nguyên lý Pattern ≠ Diagnosis.\n\nChống hoang mang • Câu hỏi bỏ túi gặp bác sĩ\n3. Bách Khoa Tri Thức & Tra Cứu\n\nĐịnh nghĩa theo hướng dẫn AASM, thước đo AHI, bảng phân biệt triệu chứng Ngày & Đêm (đau đầu sáng, tiểu đêm), và nguyên lý cảm biến quang học PPG.\n\nChuẩn y văn quốc tế • Từ điển 15 thuật ngữ 1-chạm\n4. Phá Giải 8 Hiểu Lầm & Kịch Bản\n\n8 thẻ bài lật phá bỏ các hiểu lầm kinh điển (ngáy to = ngủ say?, đo 1 đêm là đủ?) và 6 tình huống hội thoại thực tế giúp luyện hỏi đúng, không mớm cung.\n\nChế độ Người thân & Founder • Tự đúc kết\nTiến Độ Làm Chủ Kiến Thức Của Bạn\n\nĐã hiểu 0 / 8 thẻ hiểu lầm • Đã đúc kết 0 / 6 tình huống thực tế\n\nMở Từ Điển Ẩn Dụ\nÔn Nhanh 5 Phút",
+    "screenshot": "app_screenshots_v131_full/home_pillar3_aasm_guidance.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "public_step1",
+    "module": "ModuleC",
+    "mode": "general",
+    "action": "Click Step 1 in Public Mode",
+    "expected_visible_content": "Đường thở mở hoàn toàn, không khí lưu thông êm ái",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/public_step1.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "public_step2",
+    "module": "ModuleC",
+    "mode": "general",
+    "action": "Click Step 2 in Public Mode",
+    "expected_visible_content": "Mô mềm họng rung lên tạo tiếng ngáy",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/public_step2.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "public_step3",
+    "module": "ModuleC",
+    "mode": "general",
+    "action": "Click Step 3 in Public Mode",
+    "expected_visible_content": "Đường thở đóng kín hoàn toàn, luồng khí ngừng trệ",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/public_step3.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "public_step4",
+    "module": "ModuleC",
+    "mode": "general",
+    "action": "Click Step 4 in Public Mode",
+    "expected_visible_content": "Oxy máu tụt dốc, cơ thể thiếu oxy",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/public_step4.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "public_step5",
+    "module": "ModuleC",
+    "mode": "general",
+    "action": "Click Step 5 in Public Mode",
+    "expected_visible_content": "Não bộ báo động, bật mở đường thở",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/public_step5.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "founder_pro_step1",
+    "module": "ModuleC",
+    "mode": "founder",
+    "action": "Click Step 1 in Founder Pro Mode",
+    "expected_visible_content": "Cơ hoành co bóp tạo áp lực âm trong lồng ngực",
+    "observed_visible_content": "CƠ CHẾ Y SINH CHUYÊN SÂU (MEDICAL DETAIL):\n\nCơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc ng",
+    "screenshot": "app_screenshots_v131_full/founder_pro_step1.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "founder_pro_step2",
+    "module": "ModuleC",
+    "mode": "founder",
+    "action": "Click Step 2 in Founder Pro Mode",
+    "expected_visible_content": "Sự giảm trương lực cơ giãn hầu họng lúc ngủ",
+    "observed_visible_content": "CƠ CHẾ Y SINH CHUYÊN SÂU (MEDICAL DETAIL):\n\nCơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc ng",
+    "screenshot": "app_screenshots_v131_full/founder_pro_step2.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "founder_pro_step3",
+    "module": "ModuleC",
+    "mode": "founder",
+    "action": "Click Step 3 in Founder Pro Mode",
+    "expected_visible_content": "Chuyển động ngực-bụng ngược chiều có thể xuất hiện",
+    "observed_visible_content": "CƠ CHẾ Y SINH CHUYÊN SÂU (MEDICAL DETAIL):\n\nCơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc ng",
+    "screenshot": "app_screenshots_v131_full/founder_pro_step3.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "founder_pro_step4",
+    "module": "ModuleC",
+    "mode": "founder",
+    "action": "Click Step 4 in Founder Pro Mode",
+    "expected_visible_content": "Giảm thông khí trong một đợt tắc nghẽn có thể gây rối loạn khí máu thoáng qua",
+    "observed_visible_content": "CƠ CHẾ Y SINH CHUYÊN SÂU (MEDICAL DETAIL):\n\nCơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc ng",
+    "screenshot": "app_screenshots_v131_full/founder_pro_step4.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "founder_pro_step5",
+    "module": "ModuleC",
+    "mode": "founder",
+    "action": "Click Step 5 in Founder Pro Mode",
+    "expected_visible_content": "Luồng khí có thể phục hồi nhờ tăng respiratory drive và huy động các cơ giãn đường thở trên",
+    "observed_visible_content": "CƠ CHẾ Y SINH CHUYÊN SÂU (MEDICAL DETAIL):\n\nCơ hoành co bóp tạo áp lực âm trong lồng ngực giúp hút không khí vào phổi. Nỗ lực hít vào chống lại tắc ng",
+    "screenshot": "app_screenshots_v131_full/founder_pro_step5.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "anatomy_3d_overview",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "View 3D Scene Overview & Caliber Gauge",
+    "expected_visible_content": "Khẩu kính đường thở",
+    "observed_visible_content": "KHẨU KÍNH 3D (KHÔNG GIAN GIẢI PHẪU)\nTHÔNG KHÍ / HỒI PHỤC\n12.0\nmm\n(Mô phỏng minh họa)\n\nGiá trị hình học mô phỏng — không phải số đo giải phẫu hay ngưỡn",
+    "screenshot": "app_screenshots_v131_full/anatomy_3d_overview.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_nose",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-nose]",
+    "expected_visible_content": "Khoang mũi (Đường khí vào)",
+    "observed_visible_content": "Khoang mũi (Đường khí vào)\n\nCửa ngõ hít thở chính khi ngủ, làm ấm và bão hòa ẩm không khí trước khi vào vùng hầu họng.",
+    "screenshot": "app_screenshots_v131_full/pin_3d_nose.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_palate",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-palate]",
+    "expected_visible_content": "Khẩu cái mềm & Lưỡi gà",
+    "observed_visible_content": "Khẩu cái mềm & Lưỡi gà\n\nKhẩu cái mềm và lưỡi gà là các cấu trúc di động ở vùng hầu. Khi đường thở hẹp, các mô này có thể rung góp phần tạo tiếng ngáy ",
+    "screenshot": "app_screenshots_v131_full/pin_3d_palate.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_tongue",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-tongue]",
+    "expected_visible_content": "Gốc lưỡi & Cơ cằm-lưỡi",
+    "observed_visible_content": "Gốc lưỡi & Cơ cằm-lưỡi\n\nGốc lưỡi và cơ cằm-lưỡi (genioglossus) là khối cơ quan trọng nâng đỡ đường thở. Khi ngủ, hoạt động điều khiển thần kinh-cơ tha",
+    "screenshot": "app_screenshots_v131_full/pin_3d_tongue.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_mandible",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-mandible]",
+    "expected_visible_content": "Xương hàm dưới & Cằm",
+    "observed_visible_content": "Xương hàm dưới & Cằm\n\nKhung xương giữ vị trí của các cấu trúc nâng đỡ đường thở. Cấu trúc giải phẫu sọ mặt (như hàm dưới lùi hoặc vòm họng hẹp) có thể",
+    "screenshot": "app_screenshots_v131_full/pin_3d_mandible.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_airway",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-airway]",
+    "expected_visible_content": "Vùng bít tắc hầu họng",
+    "observed_visible_content": "Vùng bít tắc hầu họng\n\nVùng khẩu kính lòng hầu họng. Luồng khí bị giảm mạnh khi các thành hầu xẹp lại trong biến cố ngưng thở hoặc giảm thở do tắc ngh",
+    "screenshot": "app_screenshots_v131_full/pin_3d_airway.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "pin_3d_trachea",
+    "module": "ModuleC",
+    "mode": "3D",
+    "action": "Click 3D Landmark Pin [pin-3d-trachea]",
+    "expected_visible_content": "Khí quản & Vòng sụn",
+    "observed_visible_content": "Khí quản & Vòng sụn\n\nỐng dẫn khí chính có các vòng sụn cứng giữ lòng ống không bị xẹp, dẫn khí oxy thẳng xuống hai lá phổi.",
+    "screenshot": "app_screenshots_v131_full/pin_3d_trachea.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_pattern_sawtooth",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "Select Waveform Pattern [pattern_sawtooth]",
+    "expected_visible_content": "Răng Cưa Kinh Điển (Sawtooth Pattern)",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/waveform_pattern_sawtooth.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_pattern_sustained_plateau",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "Select Waveform Pattern [pattern_sustained_plateau]",
+    "expected_visible_content": "Đáy Dẹt Kéo Dài (Sustained Low Plateau)",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/waveform_pattern_sustained_plateau.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_pattern_isolated_spike",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "Select Waveform Pattern [pattern_isolated_spike]",
+    "expected_visible_content": "Gai Nhọn Đơn Độc (Isolated Spike / Artifact)",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/waveform_pattern_isolated_spike.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_pattern_periodic_cheyne_stokes",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "Select Waveform Pattern [pattern_periodic_cheyne_stokes]",
+    "expected_visible_content": "Chu Kỳ Đều Đặn (Periodic Breathing / Cheyne-Stokes)",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/waveform_pattern_periodic_cheyne_stokes.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_action_plan_safety",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "View Waveform Action Plan Medication Guidance",
+    "expected_visible_content": "Hạn chế rượu gần giờ ngủ. Nếu đang sử dụng thuốc ngủ",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/waveform_action_plan_safety.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "waveform_differential_cmc09",
+    "module": "Waveforms",
+    "mode": "general",
+    "action": "View Waveform CMC-09 Internal Rule Badge",
+    "expected_visible_content": "Quy tắc phân biệt hình thái SpO₂ ban đêm (Quy tắc nội bộ O2Sense CMC-09)",
+    "observed_visible_content": "Verified visible in viewport",
+    "screenshot": "app_screenshots_v131_full/waveform_differential_cmc09.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "knowledge_tab_definition",
+    "module": "KnowledgeHub",
+    "mode": "general",
+    "action": "Switch to Knowledge Hub Subtab [1. Định Nghĩa & Thước Đo AHI]",
+    "expected_visible_content": "Định Nghĩa & Thước Đo AHI",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/knowledge_tab_definition.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "knowledge_tab_symptom",
+    "module": "KnowledgeHub",
+    "mode": "general",
+    "action": "Switch to Knowledge Hub Subtab [2. Bản Đồ Triệu Chứng]",
+    "expected_visible_content": "Bản Đồ Triệu Chứng Ngày & Đêm",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/knowledge_tab_symptom.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "knowledge_tab_differential",
+    "module": "KnowledgeHub",
+    "mode": "general",
+    "action": "Switch to Knowledge Hub Subtab [3. Chẩn Đoán Phân Biệt]",
+    "expected_visible_content": "Chẩn Đoán Phân Biệt (CMC-09)",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/knowledge_tab_differential.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "knowledge_tab_ppg_sensor",
+    "module": "KnowledgeHub",
+    "mode": "general",
+    "action": "Switch to Knowledge Hub Subtab [4. Khoa Học Cảm Biến PPG]",
+    "expected_visible_content": "Khoa Học Cảm Biến PPG",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/knowledge_tab_ppg_sensor.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "knowledge_tab_cardiovascular",
+    "module": "KnowledgeHub",
+    "mode": "general",
+    "action": "Switch to Knowledge Hub Subtab [5. Biến Chứng Tim Mạch]",
+    "expected_visible_content": "Biến Chứng Tim Mạch & Huyết Áp",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/knowledge_tab_cardiovascular.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap1_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 1 Front",
+    "expected_visible_content": "Người gầy không bao giờ bị ngưng thở khi ngủ?",
+    "observed_visible_content": "Verified visible in viewport",
+    "screenshot": "app_screenshots_v131_full/myth_trap1_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap1_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 1 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "Verified visible in viewport",
+    "screenshot": "app_screenshots_v131_full/myth_trap1_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap2_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 2 Front",
+    "expected_visible_content": "Chỉ người già mới mắc ngưng thở khi ngủ?",
+    "observed_visible_content": "SPO2\nĐồ thị SpO2 có nhiều vệt tụt oxy ban đêm\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"App O2Ring ghi nhận đồ thị ban đêm có nhiều đợt tụt oxy ",
+    "screenshot": "app_screenshots_v131_full/myth_trap2_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap2_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 2 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "SPO2\nĐồ thị SpO2 có nhiều vệt tụt oxy ban đêm\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"App O2Ring ghi nhận đồ thị ban đêm có nhiều đợt tụt oxy ",
+    "screenshot": "app_screenshots_v131_full/myth_trap2_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap3_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 3 Front",
+    "expected_visible_content": "Cứ ngáy to mới là bị ngưng thở khi ngủ?",
+    "observed_visible_content": "SNORING\nTiếng ngáy to 'rung nhà'\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Vợ người dùng phàn nàn chồng ngáy rất to mỗi đêm, tiếng ngáy vang dội",
+    "screenshot": "app_screenshots_v131_full/myth_trap3_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap3_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 3 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "SNORING\nTiếng ngáy to 'rung nhà'\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Vợ người dùng phàn nàn chồng ngáy rất to mỗi đêm, tiếng ngáy vang dội",
+    "screenshot": "app_screenshots_v131_full/myth_trap3_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap4_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 4 Front",
+    "expected_visible_content": "Đồng hồ thông minh báo SpO2 bình thường thì chắc chắn an toàn?",
+    "observed_visible_content": "FATIGUE\nSáng dậy mệt mỏi, người uể oải đờ đẫn\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Khách hàng chia sẻ: 'Dạo này sáng nào tôi thức dậy cũng ",
+    "screenshot": "app_screenshots_v131_full/myth_trap4_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap4_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 4 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "FATIGUE\nSáng dậy mệt mỏi, người uể oải đờ đẫn\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Khách hàng chia sẻ: 'Dạo này sáng nào tôi thức dậy cũng ",
+    "screenshot": "app_screenshots_v131_full/myth_trap4_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap5_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 5 Front",
+    "expected_visible_content": "Một đêm đo bình thường là loại trừ được bệnh?",
+    "observed_visible_content": "ASYMPTOMATIC\nUser khẳng định: 'Ban ngày tôi không hề buồn ngủ, rất tỉnh táo'\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Người dùng trả lời: 'Tôi ",
+    "screenshot": "app_screenshots_v131_full/myth_trap5_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap5_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 5 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "ASYMPTOMATIC\nUser khẳng định: 'Ban ngày tôi không hề buồn ngủ, rất tỉnh táo'\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Người dùng trả lời: 'Tôi ",
+    "screenshot": "app_screenshots_v131_full/myth_trap5_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap6_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 6 Front",
+    "expected_visible_content": "Chỉ cần đổi tư thế ngủ là khỏi hoàn toàn?",
+    "observed_visible_content": "GENDER\nPhụ nữ trung niên mất ngủ giữa đêm và đau đầu sáng\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Khách hàng nữ 45 tuổi chia sẻ: 'Tôi không ng",
+    "screenshot": "app_screenshots_v131_full/myth_trap6_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap6_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 6 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "GENDER\nPhụ nữ trung niên mất ngủ giữa đêm và đau đầu sáng\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Khách hàng nữ 45 tuổi chia sẻ: 'Tôi không ng",
+    "screenshot": "app_screenshots_v131_full/myth_trap6_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap7_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 7 Front",
+    "expected_visible_content": "Uống thuốc ngủ giúp ngủ sâu hơn và hết ngáy?",
+    "observed_visible_content": "WEARABLE\nĐeo O2Ring 1 đêm thấy SpO2 đẹp 97%, không vệt tụt oxy\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Người dùng đeo nhẫn thử nghiệm 1 đêm, s",
+    "screenshot": "app_screenshots_v131_full/myth_trap7_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap7_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 7 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "WEARABLE\nĐeo O2Ring 1 đêm thấy SpO2 đẹp 97%, không vệt tụt oxy\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Người dùng đeo nhẫn thử nghiệm 1 đêm, s",
+    "screenshot": "app_screenshots_v131_full/myth_trap7_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap8_front",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "View MythBusters Trap 8 Front",
+    "expected_visible_content": "Dùng máy thở CPAP vài tháng là khỏi hẳn không cần đeo nữa?",
+    "observed_visible_content": "HEART_RATE\nSpO2 tụt kèm theo nhịp tim đột ngột vọt lên 95 bpm\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Trên biểu đồ O2Ring, cứ mỗi khi SpO2 rơi",
+    "screenshot": "app_screenshots_v131_full/myth_trap8_front.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "myth_trap8_back",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Flip MythBusters Trap 8 to Back",
+    "expected_visible_content": "BẢN CHẤT Y SINH",
+    "observed_visible_content": "HEART_RATE\nSpO2 tụt kèm theo nhịp tim đột ngột vọt lên 95 bpm\n\nĐIỀU QUAN SÁT ĐƯỢC TỪ THIẾT BỊ / NGƯỜI DÙNG:\n\n\"Trên biểu đồ O2Ring, cứ mỗi khi SpO2 rơi",
+    "screenshot": "app_screenshots_v131_full/myth_trap8_back.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_1_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 1",
+    "expected_visible_content": "Anh Tuấn (32 tuổi, Lập trình viên)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_1_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_1_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 1 Option 1",
+    "expected_visible_content": "SAI LẦM NGHIÊM TRỌNG!",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/scenario_1_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_1_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 1 Option 2",
+    "expected_visible_content": "CÂU HỎI MỚM CUNG!",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_1_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_1_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 1 Option 3",
+    "expected_visible_content": "TUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_1_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_2_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 2",
+    "expected_visible_content": "Chị Mai (45 tuổi, Kế toán trưởng)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_2_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_2_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 2 Option 1",
+    "expected_visible_content": "BẠN ĐANG VỘI VÃ KẾT LUẬN",
+    "observed_visible_content": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:\n\nTUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "screenshot": "app_screenshots_v131_full/scenario_2_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_2_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 2 Option 2",
+    "expected_visible_content": "BẪY BỎ SÓT NGUY CƠ Ở NỮ GIỚI!",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_2_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_2_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 2 Option 3",
+    "expected_visible_content": "XUẤT SẮC! TIẾP CẬN ĐA CHIỀU",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_2_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_3_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 3",
+    "expected_visible_content": "Bác Hùng (58 tuổi, Cán bộ hưu trí)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_3_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_3_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 3 Option 1",
+    "expected_visible_content": "VI PHẠM NGUY HIỂM: CAN THIỆP ĐIỀU TRỊ THUỐC!",
+    "observed_visible_content": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:\n\nTUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "screenshot": "app_screenshots_v131_full/scenario_3_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_3_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 3 Option 2",
+    "expected_visible_content": "BỎ LỠ CƠ HỘI ĐÁNH GIÁ NGUY CƠ TIM MẠCH",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_3_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_3_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 3 Option 3",
+    "expected_visible_content": "TUYỆT ĐỐI CHUẨN XÁC! HỖ TRỢ ĐÚNG GIỚI HẠN",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_3_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_4_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 4",
+    "expected_visible_content": "Anh Long (40 tuổi, Tài xế xe tải đường dài)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_4_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_4_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 4 Option 1",
+    "expected_visible_content": "COI THƯỜNG MỐI NGUY TAI NẠN LAO ĐỘNG/GIAO THÔNG",
+    "observed_visible_content": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:\n\nTUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "screenshot": "app_screenshots_v131_full/scenario_4_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_4_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 4 Option 2",
+    "expected_visible_content": "TƯ VẤN THUỐC/CHẤT KÍCH THÍCH KHÔNG PHÙ HỢP",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_4_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_4_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 4 Option 3",
+    "expected_visible_content": "BẢO VỆ TÍNH MẠNG! KHUYẾN CÁO KHÁM CHUYÊN KHOA KỊP THỜI",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_4_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_5_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 5",
+    "expected_visible_content": "Chị Lan (52 tuổi, Giáo viên cấp 3)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_5_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_5_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 5 Option 1",
+    "expected_visible_content": "GÁN NHÃN ĐƠN NGUYÊN DO TIỀN MÃN KINH",
+    "observed_visible_content": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:\n\nTUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "screenshot": "app_screenshots_v131_full/scenario_5_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_5_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 5 Option 2",
+    "expected_visible_content": "NGUY HIỂM KHI GỢI Ý THUỐC AN THẦN/NGỦ",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_5_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_5_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 5 Option 3",
+    "expected_visible_content": "TIẾP CẬN BÀI BẢN! TÁCH BIỆT MẤT NGỦ VÀ RỐI LOẠN THỞ",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_5_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_6_question",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Clinical Scenario 6",
+    "expected_visible_content": "Bác Nam (65 tuổi, Có tiền sử COPD)",
+    "observed_visible_content": "8 Hiểu Lầm Kinh Điển (MythBusters)\n6 Tình Huống Thực Tế & Luyện Hỏi\n6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG\nTình Huống Thực Tế Ở Người Thân\n\nLuyện phản ",
+    "screenshot": "app_screenshots_v131_full/scenario_6_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_6_opt1_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 6 Option 1",
+    "expected_visible_content": "CỰC KỲ NGUY HIỂM: TỰ Ý TĂNG THỞ OXY TẠI NHÀ TRÊN BỆNH NHÂN COPD",
+    "observed_visible_content": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:\n\nTUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "screenshot": "app_screenshots_v131_full/scenario_6_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_6_opt2_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 6 Option 2",
+    "expected_visible_content": "QUÊN MẤT HỘI CHỨNG CHỒNG LẤP (OVERLAP SYNDROME)",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n❌ SAI LẦM NGHIÊM TRỌNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_6_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "scenario_6_opt3_feedback",
+    "module": "CasesAndTraps",
+    "mode": "general",
+    "action": "Select Scenario 6 Option 3",
+    "expected_visible_content": "CHUẨN MỰC CHUYÊN KHOA! CHUYỂN TUYẾN HÔ HẤP KỊP THỜI",
+    "observed_visible_content": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!\n\n⚠️ CÂU HỎI MỚM CUNG!",
+    "screenshot": "app_screenshots_v131_full/scenario_6_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_genioglossus",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_genioglossus]",
+    "expected_visible_content": "Cơ cằm-lưỡi (Genioglossus)",
+    "observed_visible_content": "Ẩn dụ: Chiếc phanh cơ học mở họng\nCơ Cằm - Lưỡi\n\nThuật ngữ y khoa: Genioglossus\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nGenioglossus là một trong các cơ quan trọng ",
+    "screenshot": "app_screenshots_v131_full/glossary_term_genioglossus.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_arousal",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_arousal]",
+    "expected_visible_content": "Vi thức giấc (Micro-arousal)",
+    "observed_visible_content": "Ẩn dụ: Chiếc phanh cơ học mở họng\nCơ Cằm - Lưỡi\n\nThuật ngữ y khoa: Genioglossus\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nGenioglossus là một trong các cơ quan trọng ",
+    "screenshot": "app_screenshots_v131_full/glossary_term_arousal.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_chemoreceptors",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_chemoreceptors]",
+    "expected_visible_content": "Thụ thể hóa học (Chemoreceptors)",
+    "observed_visible_content": "Ẩn dụ: Chuông báo thức chớp nhoáng của não\nVi Tỉnh Thức (Vi Thức Giấc)\n\nThuật ngữ y khoa: Micro-Arousal\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nVi thức giấc là một ",
+    "screenshot": "app_screenshots_v131_full/glossary_term_chemoreceptors.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_ahi",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_ahi]",
+    "expected_visible_content": "Chỉ số ngưng giảm thở (AHI)",
+    "observed_visible_content": "Ẩn dụ: Cảm biến hóa học và cảm biến áp lực\nThể Cảnh & Xoang Cảnh\n\nThuật ngữ y khoa: Carotid Body vs Carotid Sinus\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nThể cảnh (",
+    "screenshot": "app_screenshots_v131_full/glossary_term_ahi.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_spo2",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_spo2]",
+    "expected_visible_content": "Độ bão hòa oxy mao mạch ngoại vi (SpO2)",
+    "observed_visible_content": "Ẩn dụ: Thước đo tần suất biến cố hô hấp\nChỉ Số Ngưng Giảm Thở\n\nThuật ngữ y khoa: AHI\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nAHI là số lần apnea + hypopnea trung bì",
+    "screenshot": "app_screenshots_v131_full/glossary_term_spo2.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_ppg",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_ppg]",
+    "expected_visible_content": "Quang thể tích ký (PPG - Photoplethysmography)",
+    "observed_visible_content": "Ẩn dụ: Tỷ lệ xe chở đầy hàng trên cao tốc\nĐộ Bão Hòa Oxy Trong Máu Ngoại Vi\n\nThuật ngữ y khoa: SpO2\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nSpO₂ dưới 90% là một mốc",
+    "screenshot": "app_screenshots_v131_full/glossary_term_ppg.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_soft_palate",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_soft_palate]",
+    "expected_visible_content": "Khẩu cái mềm & Lưỡi gà (Soft Palate & Uvula)",
+    "observed_visible_content": "Ẩn dụ: Chiếc đèn pin soi mạch máu\nQuang Phổ Thể Tích Mạch\n\nThuật ngữ y khoa: Photoplethysmography (PPG)\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nĐo oxy xung (Pulse O",
+    "screenshot": "app_screenshots_v131_full/glossary_term_soft_palate.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_anp",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_anp]",
+    "expected_visible_content": "Peptit lợi niệu tâm nhĩ (ANP - Atrial Natriuretic Peptide)",
+    "observed_visible_content": "Ẩn dụ: Cánh buồm đón gió ở vòm họng\nKhẩu Cái Mềm & Lưỡi Gà\n\nThuật ngữ y khoa: Soft Palate & Uvula\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nKhẩu cái mềm và lưỡi gà là",
+    "screenshot": "app_screenshots_v131_full/glossary_term_anp.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_hypercapnia",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_hypercapnia]",
+    "expected_visible_content": "Tăng CO2 máu (Hypercapnia)",
+    "observed_visible_content": "Ẩn dụ: Tín hiệu đáp ứng áp lực thành tim\nPeptide Lợi Niệu Tâm Nhĩ & Tiểu Đêm\n\nThuật ngữ y khoa: ANP (Atrial Natriuretic Peptide)\n\nHIỂU BẰNG LỜI BÌNH D",
+    "screenshot": "app_screenshots_v131_full/glossary_term_hypercapnia.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_circulation_delay",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_circulation_delay]",
+    "expected_visible_content": "Độ trễ tuần hoàn Phổi - Ngón tay",
+    "observed_visible_content": "Ẩn dụ: Tích tụ CO2 trong tuần hoàn\nTăng Khí Carbonic Trong Máu\n\nThuật ngữ y khoa: Hypercapnia\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nKhí CO2 không được thải hết ra",
+    "screenshot": "app_screenshots_v131_full/glossary_term_circulation_delay.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_positional_therapy",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_positional_therapy]",
+    "expected_visible_content": "Liệu pháp tư thế ngủ (Positional Therapy)",
+    "observed_visible_content": "Ẩn dụ: Độ trễ truyền tín hiệu từ nguồn\nThời Gian Trễ Tuần Hoàn\n\nThuật ngữ y khoa: Circulation Delay\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nSpO₂ ở ngón tay phản ứng",
+    "screenshot": "app_screenshots_v131_full/glossary_term_positional_therapy.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_perfusion_index",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_perfusion_index]",
+    "expected_visible_content": "Chỉ số tưới máu (PI - Perfusion Index)",
+    "observed_visible_content": "Ẩn dụ: Điều chỉnh tư thế theo kiểu hình\nLiệu Pháp Tư Thế (Positional OSA)\n\nThuật ngữ y khoa: Positional Therapy\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nTư thế ngủ c",
+    "screenshot": "app_screenshots_v131_full/glossary_term_perfusion_index.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_psg",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_psg]",
+    "expected_visible_content": "Đo đa ký giấc ngủ (PSG - Polysomnography)",
+    "observed_visible_content": "Ẩn dụ: Áp lực nước trong đường ống\nChỉ Số Tưới Máu Ngoại Vi\n\nThuật ngữ y khoa: Perfusion Index (PI)\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nChỉ số tưới máu (Perfusi",
+    "screenshot": "app_screenshots_v131_full/glossary_term_psg.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_cpap",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_cpap]",
+    "expected_visible_content": "Thở áp lực dương liên tục (CPAP)",
+    "observed_visible_content": "Ẩn dụ: Xét nghiệm giấc ngủ tiêu chuẩn vàng\nĐa Ký Giấc Ngủ\n\nThuật ngữ y khoa: Polysomnography (PSG)\n\nHIỂU BẰNG LỜI BÌNH DÂN:\n\nXét nghiệm đo giấc ngủ to",
+    "screenshot": "app_screenshots_v131_full/glossary_term_cpap.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "glossary_term_eds",
+    "module": "GlossaryModal",
+    "mode": "general",
+    "action": "Select Glossary Term [term_eds]",
+    "expected_visible_content": "Buồn ngủ ban ngày quá mức (EDS - Excessive Daytime Sleepiness)",
+    "observed_visible_content": "Ẩn dụ: Chiếc nẹp không khí vô hình\nMáy Thở Áp Lực Dương Liên Tục\n\nThuật ngữ y khoa: CPAP (Continuous Positive Airway Pressure)\n\nHIỂU BẰNG LỜI BÌNH DÂN",
+    "screenshot": "app_screenshots_v131_full/glossary_term_eds.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_aasm_diag_2017",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [aasm_diag_2017]",
+    "expected_visible_content": "American Academy of Sleep Medicine (AASM)",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_aasm_diag_2017.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_uspstf_osa_2022",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [uspstf_osa_2022]",
+    "expected_visible_content": "US Preventive Services Task Force (USPSTF)",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_uspstf_osa_2022.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_eckert_pathophys_2008",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [eckert_pathophys_2008]",
+    "expected_visible_content": "American Thoracic Society (ATS)",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_eckert_pathophys_2008.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_nhlbi_osa_topics",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [nhlbi_osa_topics]",
+    "expected_visible_content": "National Heart, Lung, and Blood Institute (NHLBI / NIH)",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_nhlbi_osa_topics.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_mosaic_trial_2012",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [mosaic_trial_2012]",
+    "expected_visible_content": "Lancet Respiratory Medicine",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_mosaic_trial_2012.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_women_osa_2016",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [women_osa_2016]",
+    "expected_visible_content": "BioMed Research International",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_women_osa_2016.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_night_variability_2017",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [night_variability_2017]",
+    "expected_visible_content": "Annals of the American Thoracic Society",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_night_variability_2017.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_copd_overlap_2010",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [copd_overlap_2010]",
+    "expected_visible_content": "American Journal of Respiratory and Critical Care Medicine",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_copd_overlap_2010.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_somers_sympathetic_1995",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [somers_sympathetic_1995]",
+    "expected_visible_content": "American Society for Clinical Investigation",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_somers_sympathetic_1995.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "source_craniofacial_osa_2009",
+    "module": "SourceModal",
+    "mode": "general",
+    "action": "Audit Canonical Source Entry [craniofacial_osa_2009]",
+    "expected_visible_content": "Sleep",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/source_craniofacial_osa_2009.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card1_question",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "View Quick Review Flashcard 1 Question",
+    "expected_visible_content": "Thẻ 1 / 4",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card1_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card1_answer",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Flip Quick Review Flashcard 1 to Answer",
+    "expected_visible_content": "Bản chất y sinh:",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card1_answer.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card2_question",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "View Quick Review Flashcard 2 Question",
+    "expected_visible_content": "Thẻ 2 / 4",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card2_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card2_answer",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Flip Quick Review Flashcard 2 to Answer",
+    "expected_visible_content": "Bản chất y sinh:",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card2_answer.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card3_question",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "View Quick Review Flashcard 3 Question",
+    "expected_visible_content": "Thẻ 3 / 4",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card3_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card3_answer",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Flip Quick Review Flashcard 3 to Answer",
+    "expected_visible_content": "Bản chất y sinh:",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card3_answer.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card4_question",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "View Quick Review Flashcard 4 Question",
+    "expected_visible_content": "Thẻ 4 / 4",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card4_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_card4_answer",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Flip Quick Review Flashcard 4 to Answer",
+    "expected_visible_content": "Bản chất y sinh:",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_card4_answer.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_scenario_question",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "View Quick Review Clinical Scenario Question",
+    "expected_visible_content": "Thử Thách Phản Xạ Lâm Sàng",
+    "observed_visible_content": "Nguồn y khoa bước 1: Hít thở bình thường & Thông khí phế nang\nPhân cấp nguồn chứng cứ: Nguồn được ưu tiên theo loại bằng chứng: guideline/consensus từ",
+    "screenshot": "app_screenshots_v131_full/quick_review_scenario_question.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_scenario_opt1_feedback",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Select Quick Review Scenario Option 1",
+    "expected_visible_content": "SAI LẦM NGHIÊM TRỌNG!",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/quick_review_scenario_opt1_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_scenario_opt2_feedback",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Select Quick Review Scenario Option 2",
+    "expected_visible_content": "CÂU HỎI MỚM CUNG!",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/quick_review_scenario_opt2_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "quick_review_scenario_opt3_feedback",
+    "module": "QuickReviewModal",
+    "mode": "general",
+    "action": "Select Quick Review Scenario Option 3",
+    "expected_visible_content": "TUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "observed_visible_content": "Công cụ học tập cá nhân — KHÔNG dùng để chẩn đoán, KHÔNG thay thế tư vấn y tế. Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ ",
+    "screenshot": "app_screenshots_v131_full/quick_review_scenario_opt3_feedback.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_quick_start",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [quick-start]",
+    "expected_visible_content": "Bắt Đầu Nhanh",
+    "observed_visible_content": "CHUYÊN ĐỀ 1 / 6\n#Giao diện\n#Eye-Care\n#Founder Pro\n#Tiến độ học\nKhởi Động Nhanh & Cá Nhân Hóa Trải Nghiệm\n\nNắm bắt các chế độ hiển thị, chuyển đổi góc ",
+    "screenshot": "app_screenshots_v131_full/help_topic_quick_start.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_story_3d",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [module-story-3d]",
+    "expected_visible_content": "1 Đêm Thở Nghẽn (3D)",
+    "observed_visible_content": "CHUYÊN ĐỀ 1 / 6\n#Giao diện\n#Eye-Care\n#Founder Pro\n#Tiến độ học\nKhởi Động Nhanh & Cá Nhân Hóa Trải Nghiệm\n\nNắm bắt các chế độ hiển thị, chuyển đổi góc ",
+    "screenshot": "app_screenshots_v131_full/help_topic_story_3d.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_waveforms",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [module-waveforms]",
+    "expected_visible_content": "Giải Mã SpO2 Đêm",
+    "observed_visible_content": "CHUYÊN ĐỀ 2 / 6\n#WebGL 3D\n#Sinh lý học\n#Cơ chế FRC\n#Tương tác 360°\nHành Trình 1 Đêm Thở Nghẽn (3D / 2.5D)\n\nQuan sát trực quan giải phẫu đường thở và d",
+    "screenshot": "app_screenshots_v131_full/help_topic_waveforms.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_knowledge",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [module-knowledge]",
+    "expected_visible_content": "Kho Kiến Thức Y Khoa",
+    "observed_visible_content": "CHUYÊN ĐỀ 3 / 6\n#Đồ thị răng cưa\n#Tiêu chuẩn AASM\n#Chỉ số ODI\n#Chẩn đoán phân biệt\nKính Lúp Sóng Thở & Giải Mã Đồ Thị SpO2\n\nĐọc hiểu đồ thị đa ký hô h",
+    "screenshot": "app_screenshots_v131_full/help_topic_knowledge.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_cases",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [module-cases]",
+    "expected_visible_content": "Bẫy Nhận Thức & Tình Huống",
+    "observed_visible_content": "CHUYÊN ĐỀ 4 / 6\n#Bách khoa toàn thư\n#Sơ đồ nhân quả\n#Thiết bị CPAP\n#Biến chứng\nBách Khoa Y Học & Mạng Lưới Cơ Chế Sâu\n\nKhám phá mối tương tác nhân quả",
+    "screenshot": "app_screenshots_v131_full/help_topic_cases.png",
+    "status": "PASS"
+  },
+  {
+    "state_id": "help_topic_shortcuts_glossary",
+    "module": "HelpCenter",
+    "mode": "general",
+    "action": "Select Help Center Topic [shortcuts-and-glossary]",
+    "expected_visible_content": "Phím Tắt & Từ Điển Ẩn Dụ",
+    "observed_visible_content": "CHUYÊN ĐỀ 5 / 6\n#5 Ca thực tế\n#Tương tác phản xạ\n#Bẫy điều trị\n#Tự đánh giá\n5 Ca Bệnh Thử Thách & Bẫy Lâm Sàng\n\nRèn luyện phản xạ chẩn đoán qua tình h",
+    "screenshot": "app_screenshots_v131_full/help_topic_shortcuts_glossary.png",
+    "status": "PASS"
+  }
+]

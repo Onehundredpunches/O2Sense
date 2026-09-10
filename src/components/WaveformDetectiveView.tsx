@@ -3,6 +3,7 @@ import { SpO2WaveformPattern } from '../types/disease';
 import { 
   Activity, 
   ShieldCheck, 
+  ShieldAlert,
   CheckCircle2, 
   Sparkles, 
   Info,
@@ -33,7 +34,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
   };
 
   const handleCopyQuestions = () => {
-    const textToCopy = `Bác sĩ cho tôi hỏi về dữ liệu SpO2 ban đêm đo bằng nhẫn của tôi:\n1. Đồ thị của tôi có dạng: ${activePattern.name}\n2. Nguyên nhân có khả năng: ${activePattern.primaryCause}\n3. Câu hỏi: Bác sĩ cho tôi hỏi dạng sóng này có cần thực hiện đo đa ký giấc ngủ (PSG) hoặc đo chức năng hô hấp không?`;
+    const textToCopy = `Bác sĩ cho tôi hỏi về dữ liệu SpO2 ban đêm đo bằng nhẫn của tôi:\n1. Đặc điểm đồ thị quan sát: ${activePattern.name}\n2. Gợi ý tham khảo: ${activePattern.primaryCause}\n3. Câu hỏi: Dữ liệu này có cần kết hợp xét nghiệm chẩn đoán như đo đa ký giấc ngủ (PSG) hoặc đo chức năng hô hấp không?`;
     navigator.clipboard.writeText(textToCopy);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2500);
@@ -63,7 +64,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
           </h1>
 
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-            Sáng thức dậy thấy nhẫn O2Ring báo tụt SpO2? <strong className="text-teal-700 dark:text-teal-300">Khoan hoảng hốt!</strong> Tụt SpO2 đêm có nhiều thủ phạm khác nhau: từ tư thế nằm đè ngón tay (nhiễu vô hại), đến thói quen uống rượu, ngáy to, hay bệnh lý hô hấp. Hãy đối chiếu dạng sóng của bạn bên dưới để hiểu đúng và hành động tự tin.
+            Sáng thức dậy thấy nhẫn O2Ring báo tụt SpO2? <strong className="text-teal-700 dark:text-teal-300">Khoan hoảng hốt!</strong> Dữ liệu SpO₂ từ wearable có thể giúp quan sát xu hướng, nhưng không đủ để tự chẩn đoán hoặc loại trừ ngưng thở khi ngủ. Tụt SpO₂ đêm có nhiều nguyên nhân khác nhau (từ tư thế tì đè ngón tay, đến rượu bia, ngáy to hoặc bệnh hô hấp/tim mạch). Hãy hiểu đúng nguyên tắc <strong className="text-rose-600 dark:text-rose-400">Pattern ≠ Diagnosis</strong>.
           </p>
         </div>
       </div>
@@ -93,7 +94,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
                 </div>
                 {p.isArtifact && (
                   <span className="inline-block text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
-                    90% NHIỄU DO ĐÈ TAY
+                    Điểm giảm đơn lẻ — cần kiểm tra chất lượng tín hiệu
                   </span>
                 )}
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
@@ -108,6 +109,24 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
             </button>
           );
         })}
+      </div>
+
+      {/* Pattern != Diagnosis Global Callout */}
+      <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        <div className="flex items-center gap-2.5">
+          <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0" />
+          <div>
+            <span className="font-extrabold text-amber-800 dark:text-amber-300 uppercase tracking-wider">NGUYÊN TẮC Y KHOA: Pattern ≠ Diagnosis</span>
+            <p className="text-slate-600 dark:text-slate-300 text-[11px] mt-0.5">
+              Dạng sóng SpO₂ giúp quan sát hình thái dao động nhưng không đủ để xác định nguyên nhân hoặc chẩn đoán xác định bệnh lý hô hấp.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col sm:items-end gap-0.5 self-start sm:self-center flex-shrink-0">
+          <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800 font-bold">
+            Quy tắc nội bộ O2Sense CMC-09
+          </span>
+        </div>
       </div>
 
       {/* Main Interactive Detective Canvas & Analysis */}
@@ -138,23 +157,19 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
 
           {/* SVG Waveform Simulation Stage (Dedicated Non-Overlapping Layout) */}
           <div className="bg-slate-950 rounded-3xl p-4 sm:p-5 overflow-hidden shadow-inner border border-slate-800 space-y-3">
-            {/* Top SpO2 Level Indicator Legend */}
+            {/* Top SpO2 Level Indicator Legend (MED-P0-019) */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-800/80 text-[11px]">
               <span className="text-slate-400 font-mono text-[10px] sm:text-xs uppercase tracking-wider font-semibold">
-                Thang Đo SpO2 Ban Đêm:
+                Thang Đo SpO2 (Giá trị tham chiếu):
               </span>
               <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-1 text-emerald-400 font-mono text-[10px] sm:text-[11px]">
+                <span className="inline-flex items-center gap-1 text-slate-300 font-mono text-[10px] sm:text-[11px]">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>≥95% An toàn</span>
+                  <span>≥95% (Tham chiếu lúc thức)</span>
                 </span>
-                <span className="inline-flex items-center gap-1 text-amber-400 font-mono text-[10px] sm:text-[11px]">
+                <span className="inline-flex items-center gap-1 text-amber-300 font-mono text-[10px] sm:text-[11px]">
                   <span className="w-2 h-2 rounded-full bg-amber-400" />
-                  <span>90-94% Cảnh báo</span>
-                </span>
-                <span className="inline-flex items-center gap-1 text-rose-400 font-mono text-[10px] sm:text-[11px]">
-                  <span className="w-2 h-2 rounded-full bg-rose-400" />
-                  <span>&lt;90% Tụt oxy</span>
+                  <span>Đường chuẩn 90% (Quan sát T90)</span>
                 </span>
               </div>
             </div>
@@ -176,13 +191,13 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
                   {/* Grid Lines */}
                   <line x1="0" y1="20" x2="130" y2="20" stroke="#334155" strokeWidth="0.6" strokeDasharray="2,2" opacity="0.4" />
                   <line x1="0" y1="35" x2="130" y2="35" stroke="#334155" strokeWidth="0.6" strokeDasharray="2,2" opacity="0.4" />
-                  {/* 90% Threshold Warning Line */}
+                  {/* 90% Threshold Reference Line */}
                   <line x1="0" y1="50" x2="130" y2="50" stroke="#f59e0b" strokeWidth="0.8" strokeDasharray="3,2" opacity="0.8" />
                   <line x1="0" y1="65" x2="130" y2="65" stroke="#334155" strokeWidth="0.6" strokeDasharray="2,2" opacity="0.4" />
 
                   {/* 90% Threshold Pill Label */}
-                  <rect x="94" y="44" width="34" height="11" rx="3" fill="#451a03" stroke="#d97706" strokeWidth="0.6" opacity="0.9" />
-                  <text x="111" y="52" textAnchor="middle" fill="#fef3c7" fontSize="5" fontWeight="bold" fontFamily="sans-serif">Ngưỡng 90%</text>
+                  <rect x="90" y="44" width="38" height="11" rx="3" fill="#451a03" stroke="#d97706" strokeWidth="0.6" opacity="0.9" />
+                  <text x="109" y="52" textAnchor="middle" fill="#fef3c7" fontSize="4.5" fontWeight="bold" fontFamily="sans-serif">Mốc chuẩn 90%</text>
 
                   {/* Animated Glowing Waveform Path */}
                   <path
@@ -210,6 +225,11 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
               </span>
               <span className="font-mono">06:00 (Sáng dậy)</span>
             </div>
+
+            {/* Context footnote */}
+            <p className="text-[10px] text-slate-500 italic pt-1">
+              * Ý nghĩa lâm sàng của SpO₂ phụ thuộc vào đường nền cá nhân, triệu chứng, bệnh đồng mắc, độ cao và giới hạn kỹ thuật của cảm biến.
+            </p>
           </div>
 
           {/* Everyday Metaphor Box */}
@@ -329,7 +349,7 @@ export const WaveformDetectiveView: React.FC<WaveformDetectiveViewProps> = ({
                   2
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-xs">Theo dõi khoa học 3-5 đêm:</p>
+                  <p className="font-bold text-slate-900 dark:text-white text-xs">Theo dõi khoa học nhiều đêm:</p>
                   <p className="text-slate-600 dark:text-slate-300 text-xs mt-0.5 leading-relaxed">
                     {activePattern.actionSteps.monitoring}
                   </p>

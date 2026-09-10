@@ -5,7 +5,6 @@ import {
   RotateCw, 
   Eye, 
   Scissors, 
-  Gauge, 
   Video,
   Tag,
   Info,
@@ -76,22 +75,13 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
   const [show3DLabels, setShow3DLabels] = useState<boolean>(true);
   const [selectedPin, setSelectedPin] = useState<AnatomicalPin3D | null>(null);
 
-  // Live airway caliber calculation
-  const airwayCaliber = {
-    1: 12.0,
-    2: 3.2,
-    3: 0.0,
-    4: 0.0,
-    5: 11.5,
-  }[step] ?? (airwayStatus === 'collapsed' ? 0.0 : airwayStatus === 'narrowed' ? 3.5 : 12.0);
-
   // 3D Anatomical Landmark Pins with directional fanning to avoid any overlap
   const landmarkPins: (AnatomicalPin3D & { shortName: string; align: 'left' | 'right' | 'center' })[] = [
     {
       id: 'nose',
       name: 'Khoang mũi (Đường khí vào)',
       shortName: '👃 Mũi',
-      role: 'Cửa ngõ hít thở chính khi ngủ, làm ấm và bão hòa ẩm không khí trước khi vào họng.',
+      role: 'Cửa ngõ hít thở chính khi ngủ, làm ấm và bão hòa ẩm không khí trước khi vào vùng hầu họng.',
       pos: new THREE.Vector3(2.35, 5.2, 0),
       color: '#38bdf8',
       align: 'right',
@@ -100,7 +90,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'palate',
       name: 'Khẩu cái mềm & Lưỡi gà',
       shortName: '🔴 Lưỡi gà',
-      role: 'Mô mềm rủ xuống vòm miệng. Khi ngủ hẹp sẽ rung bần bật tạo tiếng ngáy; khi nghẽn sẽ bị hút dính vào thành họng.',
+      role: 'Khẩu cái mềm và lưỡi gà là các cấu trúc di động ở vùng hầu. Khi đường thở hẹp, các mô này có thể rung góp phần tạo tiếng ngáy và ở một số người có thể tham gia vào vị trí xẹp đường thở.',
       pos: new THREE.Vector3(2.5, 3.3, 0),
       color: '#f43f5e',
       align: 'right',
@@ -109,7 +99,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'tongue',
       name: 'Gốc lưỡi & Cơ cằm-lưỡi',
       shortName: '👅 Gốc lưỡi',
-      role: 'Thủ phạm chính của ngưng thở khi ngủ. Khi ngủ say mất trương lực sẽ tụt lùi ra sau đè bẹp đường thở.',
+      role: 'Gốc lưỡi và cơ cằm-lưỡi (genioglossus) là khối cơ quan trọng nâng đỡ đường thở. Khi ngủ, hoạt động điều khiển thần kinh-cơ thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ.',
       pos: new THREE.Vector3(1.6, 2.3, 0),
       color: '#fb7185',
       align: 'right',
@@ -118,7 +108,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'mandible',
       name: 'Xương hàm dưới & Cằm',
       shortName: '🦴 Xương hàm',
-      role: 'Khung xương giữ vị trí của cơ cằm lưỡi. Người có hàm dưới lùi hoặc cằm nhỏ rất dễ bị ngưng thở.',
+      role: 'Khung xương giữ vị trí của các cấu trúc nâng đỡ đường thở. Cấu trúc giải phẫu sọ mặt (như hàm dưới lùi hoặc vòm họng hẹp) có thể là một yếu tố góp phần vào nguy cơ OSA.',
       pos: new THREE.Vector3(1.25, 3.7, 0),
       color: '#e2e8f0',
       align: 'left',
@@ -127,7 +117,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'airway',
       name: 'Vùng bít tắc hầu họng',
       shortName: '💨 Vùng nghẽn',
-      role: 'Khoảng hở đường kính họng. Bình thường mở 12mm; khi ngưng thở tắc nghẽn (OSA) bị bóp nghẹt về 0.0mm.',
+      role: 'Vùng khẩu kính lòng hầu họng. Luồng khí bị giảm mạnh khi các thành hầu xẹp lại trong biến cố ngưng thở hoặc giảm thở do tắc nghẽn.',
       pos: new THREE.Vector3(0.5, 1.85, 0),
       color: '#34d399',
       align: 'left',
@@ -136,7 +126,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
       id: 'trachea',
       name: 'Khí quản & Vòng sụn',
       shortName: '🫁 Khí quản',
-      role: 'Ống dẫn khí chính có các vòng sụn cứng giữ không bị xẹp, dẫn oxy thẳng xuống hai lá phổi.',
+      role: 'Ống dẫn khí chính có các vòng sụn cứng giữ lòng ống không bị xẹp, dẫn khí oxy thẳng xuống hai lá phổi.',
       pos: new THREE.Vector3(-2.6, 1.15, 0),
       color: '#0ea5e9',
       align: 'left',
@@ -813,10 +803,10 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
                 ? 'bg-sky-600 text-white shadow-sm'
                 : 'text-slate-400 hover:text-white hover:bg-slate-800'
             }`}
-            title="Góc nhìn nội soi tai mũi họng từ trên nhìn xuống"
+            title="Góc nhìn mô phỏng theo hướng nội soi từ trên nhìn xuống"
           >
             <Video className="w-3 h-3 text-sky-400" />
-            <span>Nội soi</span>
+            <span>Mô phỏng nội soi</span>
           </button>
           <button
             onClick={() => setCameraPreset('brain')}
@@ -883,6 +873,8 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
           {landmarkPins.map((pin) => (
             <div
               key={pin.id}
+              data-pin-id={pin.id}
+              data-testid={`pin-3d-${pin.id}`}
               ref={(el) => { pinRefs.current[pin.id] = el; }}
               style={{ position: 'absolute', top: 0, left: 0, willChange: 'transform' }}
               className="pointer-events-auto cursor-pointer group"
@@ -914,17 +906,22 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
 
       {/* SELECTED 3D PIN DETAIL MODAL CARD */}
       {selectedPin && (
-        <div className="absolute bottom-3 left-3 right-3 z-30 bg-slate-900/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-teal-500/60 shadow-2xl flex items-start justify-between gap-3 animate-fadeIn pointer-events-auto">
+        <div 
+          data-testid="selected-pin-popup"
+          data-selected-pin-id={selectedPin.id}
+          className="absolute bottom-3 left-3 right-3 z-30 bg-slate-900/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-teal-500/60 shadow-2xl flex items-start justify-between gap-3 animate-fadeIn pointer-events-auto"
+        >
           <div className="space-y-1">
-            <h4 className="text-xs sm:text-sm font-bold text-teal-400 flex items-center gap-1.5">
+            <h4 data-testid="selected-pin-name" className="text-xs sm:text-sm font-bold text-teal-400 flex items-center gap-1.5">
               <Info className="w-4 h-4 text-teal-400" />
               <span>{selectedPin.name}</span>
             </h4>
-            <p className="text-xs text-slate-200 leading-relaxed">
+            <p data-testid="selected-pin-role" className="text-xs text-slate-200 leading-relaxed">
               {selectedPin.role}
             </p>
           </div>
           <button
+            data-testid="close-pin-popup-btn"
             onClick={() => setSelectedPin(null)}
             className="p-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg transition-colors flex-shrink-0"
             title="Đóng thông tin"
@@ -934,38 +931,7 @@ export const AnatomyScene3D: React.FC<AnatomyScene3DProps> = ({
         </div>
       )}
 
-      {/* BOTTOM-LEFT ZONE: Real-time 3D Airway Caliber Gauge (Z-Index 10) */}
-      <div className="absolute bottom-3 left-3 z-10 pointer-events-auto">
-        <div className="bg-slate-900/95 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2 sm:gap-2.5">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
-            <Gauge className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] uppercase font-bold text-slate-400">Khẩu kính 3D</span>
-              <span className={`text-[9px] font-black px-1.5 py-0.2 rounded ${
-                airwayCaliber === 0 ? 'bg-rose-950 text-rose-300 border border-rose-800' :
-                airwayCaliber < 5 ? 'bg-amber-950 text-amber-300 border border-amber-800' :
-                'bg-emerald-950 text-emerald-300 border border-emerald-800'
-              }`}>
-                {airwayCaliber === 0 ? 'TẮC NGHẼN' : airwayCaliber < 5 ? 'HẸP NẶNG' : 'THÔNG KHÍ'}
-              </span>
-            </div>
-            <div className="flex items-baseline gap-1 mt-0.5">
-              <span className={`text-base sm:text-lg font-black tracking-tight ${
-                airwayCaliber === 0 ? 'text-rose-400 animate-pulse' :
-                airwayCaliber < 5 ? 'text-amber-400' : 'text-emerald-400'
-              }`}>
-                {airwayCaliber.toFixed(1)}
-              </span>
-              <span className="text-xs font-semibold text-slate-400">mm</span>
-              <span className="text-[10px] text-slate-500 ml-1 hidden sm:inline">
-                (Chuẩn: 10 - 13mm)
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* BOTTOM-RIGHT ZONE: Quick Organ Focus Buttons */}
       <div className="absolute bottom-3 right-3 z-10 hidden sm:flex items-center gap-1 sm:gap-1.5 pointer-events-auto">

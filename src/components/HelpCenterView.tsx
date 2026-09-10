@@ -114,7 +114,7 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
             </div>
             <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700">
               <Layers className="w-4 h-4 text-sky-400" />
-              <span><strong>24</strong> Điểm ghim tương tác UI</span>
+              <span><strong>{HELP_TOPICS.reduce((sum, t) => sum + t.hotspots.length, 0)}</strong> Điểm ghim tương tác UI</span>
             </div>
             <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700">
               <Sparkles className="w-4 h-4 text-amber-400" />

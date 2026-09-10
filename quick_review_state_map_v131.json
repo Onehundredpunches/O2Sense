@@ -1,0 +1,29 @@
+[
+  {
+    "option_id": "opt-1a",
+    "option_text": "\"SpO2 xuống 88% là tụt oxy máu nguy hiểm rồi anh ơi. Triệu chứng đau đầu sáng sớm với đờ đẫn là dấu hiệu kinh điển của OSA đấy, anh phải đi khám gấp đi.\"",
+    "expected_feedback_id": "feedback-1a",
+    "observed_feedback_title": "❌ SAI LẦM NGHIÊM TRỌNG!",
+    "observed_explanation_snippet": "Bạn vừa đóng vai bác sĩ chẩn đoán bệnh cho user chỉ dựa trên 1 chỉ số smartwatch. Điều này gây hoang...",
+    "selected_state_visible": true,
+    "screenshot": "app_screenshots_v131/quick_review_scenario_opt1.png"
+  },
+  {
+    "option_id": "opt-1b",
+    "option_text": "\"Anh có thấy mình hay ngáy to rung nhà không? Có bao giờ nửa đêm anh giật mình thở hổn hển không?\"",
+    "expected_feedback_id": "feedback-1b",
+    "observed_feedback_title": "⚠️ CÂU HỎI MỚM CUNG!",
+    "observed_explanation_snippet": "Bạn đang áp đặt các triệu chứng kinh điển của nam giới lớn tuổi. Nếu Tuấn không ngáy to, bạn sẽ bỏ s...",
+    "selected_state_visible": true,
+    "screenshot": "app_screenshots_v131/quick_review_scenario_opt2.png"
+  },
+  {
+    "option_id": "opt-1c",
+    "option_text": "\"Cảm ơn anh Tuấn đã chia sẻ. Ngoài những hôm chạy sprint thức khuya ra, những hôm anh đi ngủ sớm đủ giấc thì cảm giác buổi sáng thức dậy có khác đi không? Và cảm giác đau đầu đó thường diễn ra như thế nào trong ngày?\"",
+    "expected_feedback_id": "feedback-1c",
+    "observed_feedback_title": "TUYỆT VỜI! CÂU HỎI MỞ CHUẨN XÁC.",
+    "observed_explanation_snippet": "Bạn đang tách bạch giữa yếu tố 'thiếu ngủ do lối sống' và 'chất lượng giấc ngủ nội tại', đồng thời đ...",
+    "selected_state_visible": true,
+    "screenshot": "app_screenshots_v131/quick_review_scenario_opt3.png"
+  }
+]

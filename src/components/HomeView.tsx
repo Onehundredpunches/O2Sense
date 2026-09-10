@@ -186,7 +186,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-              Mô phỏng 3D WebGL xoay 360° tư thế nằm ngủ trên gối. Quan sát cuống lưỡi tụt bẹp đường thở, chuông báo cháy não bộ vi thức giấc và nhịp tim tăng tốc.
+              Mô phỏng 3D WebGL xoay 360° tư thế nằm ngủ trên gối. Quan sát cơ chế hẹp và xẹp đường thở, biến đổi oxy - CO₂, tín hiệu tăng nỗ lực hô hấp và phục hồi luồng khí.
             </p>
           </div>
           <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-teal-600 dark:text-teal-400">
@@ -210,7 +210,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-              Đối chiếu 4 dạng sóng nhẫn thực tế: Răng cưa OSA, Trũng sâu phổi, Đáy nhọn do nằm đè tay (nhiễu), và Hình sin tim mạch. Loại trừ lo lắng ảo, hành động tự tin.
+              Đối chiếu 4 dạng sóng SpO₂: Giảm–phục hồi lặp lại, Trũng sâu kéo dài, Đường oxy ổn định / biến cố đơn lẻ, và Dao động chu kỳ. Hiểu rõ nguyên lý Pattern ≠ Diagnosis.
             </p>
           </div>
           <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-sky-600 dark:text-sky-400">
@@ -234,7 +234,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-              Định nghĩa chuẩn AASM/WHO, thước đo AHI, bảng phân biệt triệu chứng Ngày & Đêm (đau đầu sáng, tiểu đêm), và nguyên lý cảm biến quang học PPG 660/940nm.
+              Định nghĩa theo hướng dẫn AASM, thước đo AHI, bảng phân biệt triệu chứng Ngày & Đêm (đau đầu sáng, tiểu đêm), và nguyên lý cảm biến quang học PPG.
             </p>
           </div>
           <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400">

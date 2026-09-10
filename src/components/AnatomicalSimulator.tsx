@@ -6,7 +6,6 @@ import {
   ZoomIn,
   ZoomOut,
   Volume2,
-  Gauge,
   AlertTriangle,
   CheckCircle2
 } from 'lucide-react';
@@ -41,15 +40,6 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
   const [showLabels, setShowLabels] = useState<boolean>(true);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
 
-  // Real-time airway caliber (mm) based on physiological phase
-  const airwayCaliber = {
-    1: 12.0,
-    2: 3.2,
-    3: 0.0,
-    4: 0.0,
-    5: 11.5,
-  }[step] ?? (airwayStatus === 'collapsed' ? 0.0 : airwayStatus === 'narrowed' ? 3.5 : 12.0);
-
   // Anatomical landmark hotspots (coordinates normalized 0-1 relative to canvas)
   const labels: AnatomicalLabel[] = [
     {
@@ -69,16 +59,16 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
     {
       id: 'tongue',
       name: 'Cơ cằm-lưỡi (Genioglossus Muscle)',
-      role: 'Cơ then chốt mở đường thở. Khi ngủ say mất trương lực sẽ thụt lùi theo trọng lực gây tắc họng.',
+      role: 'Genioglossus là cơ quan trọng giúp giữ đường thở vùng hầu mở. Khi ngủ, cách điều khiển thần kinh–cơ thay đổi; ở người có đường thở dễ xẹp, khả năng bù trừ có thể không đủ trong một số thời điểm.',
       x: 0.48,
       y: 0.46,
     },
     {
       id: 'obstruction',
       name: 'Vùng tắc nghẽn hầu họng (Pharyngeal Collapse)',
-      role: 'Khẩu kính đường kính họng bị ép bẹp dí về 0.0mm trong cơn ngưng thở khi ngủ tắc nghẽn (OSA).',
+      role: 'Vị trí đường thở hầu hẹp hoặc xẹp chức năng trong cơn ngưng thở, làm giảm hoặc cắt đứt luồng khí lưu thông.',
       x: 0.43,
-      y: 0.50,
+      y: 0.49,
     },
     {
       id: 'trachea',
@@ -90,21 +80,21 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
     {
       id: 'brain',
       name: 'Vỏ não & Hệ lưới hoạt hóa ARAS',
-      role: 'Trung tâm báo động tiếp nhận kích thích thiếu O2/ứ CO2, kích hoạt vi tỉnh thức (Micro-arousal).',
+      role: 'Tiếp nhận kích thích thiếu O2/ứ CO2; vi thức giấc vỏ não (cortical arousal) có thể xuất hiện nhưng không bắt buộc ở mọi sự kiện tái mở đường thở.',
       x: 0.62,
       y: 0.25,
     },
     {
       id: 'chemoreceptor',
-      name: 'Thụ thể hóa học xoang cảnh (Carotid Body)',
-      role: 'Cảm biến nồng độ oxy và CO2 trong máu động mạch cảnh, phát xung báo động khẩn cấp lên não.',
+      name: 'Thể cảnh (Carotid body) — thụ thể hóa học ngoại biên',
+      role: 'Cảm biến nồng độ oxy và CO2 trong máu động mạch cảnh, truyền tín hiệu gia tăng điều khiển hô hấp lên não.',
       x: 0.52,
       y: 0.58,
     },
     {
       id: 'lungs',
       name: 'Phổi & Cơ hoành gắng sức (Lungs & Diaphragm)',
-      role: 'Khi họng bị tắc, ngực và cơ hoành vẫn co bóp gồng gắng sức nghịch thường tạo áp lực âm lớn.',
+      role: 'Trong ngưng thở tắc nghẽn, nỗ lực hô hấp vẫn tiếp diễn và có thể kèm chuyển động ngực–bụng nghịch thường.',
       x: 0.52,
       y: 0.78,
     },
@@ -442,7 +432,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
 
         ctx.fillStyle = '#ef4444';
         ctx.font = 'black 11px Inter, sans-serif';
-        ctx.fillText('BÍT TẮC 100% (0.0mm)', width * 0.495, height * 0.50);
+        ctx.fillText('TẮC NGHẼN CHỨC NĂNG (Mô phỏng)', width * 0.495, height * 0.50);
         ctx.restore();
       }
 
@@ -537,7 +527,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [step, airwayStatus, airflowPercent, spo2Percent, isBrainArousal, isSympathetic, zoomLevel, airwayCaliber]);
+  }, [step, airwayStatus, airflowPercent, spo2Percent, isBrainArousal, isSympathetic, zoomLevel]);
 
   return (
     <div className="relative w-full h-[450px] sm:h-[510px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl flex flex-col justify-between select-none">
@@ -582,7 +572,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
           {airwayStatus === 'collapsed' && (
             <div className="px-3 py-1.5 bg-rose-500/25 border border-rose-500/60 rounded-xl text-rose-300 text-xs font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md animate-pulse">
               <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
-              <span>BÍT TẮC HẦU HỌNG 100%</span>
+              <span>TẮC NGHẼN HẦU HỌNG (MÔ PHỎNG)</span>
             </div>
           )}
           {airwayStatus === 'narrowed' && (
@@ -594,7 +584,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
           {airwayStatus === 'reopening' && (
             <div className="px-3 py-1.5 bg-sky-500/25 border border-sky-500/60 rounded-xl text-sky-300 text-xs font-bold flex items-center gap-1.5 shadow-lg backdrop-blur-md animate-pulse">
               <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-              <span>CƠ CẰM-LƯỠI CO • BẬT MỞ (GASP)</span>
+              <span>TĂNG HOẠT ĐỘNG CƠ GIÃN ĐƯỜNG THỞ → PHỤC HỒI LUỒNG KHÍ (MÔ PHỎNG)</span>
             </div>
           )}
           {airwayStatus === 'open' && (
@@ -606,38 +596,7 @@ export const AnatomicalSimulator: React.FC<AnatomicalSimulatorProps> = ({
         </div>
       </div>
 
-      {/* LIVE AIRWAY CALIBER GAUGE (Bottom Left - Matching 3D Scene, 0 Overlaps) */}
-      <div className="absolute bottom-3 left-3 z-10 pointer-events-auto">
-        <div className="bg-slate-900/95 backdrop-blur-md p-2 sm:p-2.5 rounded-2xl border border-slate-700/80 shadow-2xl flex items-center gap-2 sm:gap-2.5">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-slate-800 flex items-center justify-center text-teal-400 flex-shrink-0 border border-slate-700">
-            <Gauge className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          </div>
-          <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-[10px] uppercase font-bold text-slate-400">Khẩu kính đường thở</span>
-              <span className={`text-[9px] font-black px-1.5 py-0.2 rounded ${
-                airwayCaliber === 0 ? 'bg-rose-950 text-rose-300 border border-rose-800' :
-                airwayCaliber < 5 ? 'bg-amber-950 text-amber-300 border border-amber-800' :
-                'bg-emerald-950 text-emerald-300 border border-emerald-800'
-              }`}>
-                {airwayCaliber === 0 ? 'TẮC NGHẼN' : airwayCaliber < 5 ? 'HẸP NẶNG' : 'THÔNG THOÁNG'}
-              </span>
-            </div>
-            <div className="flex items-baseline gap-1 mt-0.5">
-              <span className={`text-base sm:text-lg font-black tracking-tight ${
-                airwayCaliber === 0 ? 'text-rose-400 animate-pulse' :
-                airwayCaliber < 5 ? 'text-amber-400' : 'text-emerald-400'
-              }`}>
-                {airwayCaliber.toFixed(1)}
-              </span>
-              <span className="text-xs font-semibold text-slate-400">mm</span>
-              <span className="text-[10px] text-slate-500 ml-1 hidden sm:inline">
-                (Bình thường: 10 - 13mm)
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Interactive Anatomical Landmark Hotspots (when showLabels is on) */}
       {showLabels && (

@@ -15,12 +15,14 @@ interface KnowledgeHubViewProps {
   hubData: MedicalKnowledgeHub;
   glossary: GlossaryItem[];
   onOpenGlossary: (termId?: string) => void;
+  userMode?: 'general' | 'founder';
 }
 
 export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
   hubData,
   glossary,
   onOpenGlossary,
+  userMode,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<'definition' | 'symptoms' | 'differential' | 'sensor' | 'complications'>('definition');
   const [selectedAhiIndex, setSelectedAhiIndex] = useState<number>(0);
@@ -33,9 +35,16 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
       <div className="bg-gradient-to-r from-sky-50 via-teal-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border border-sky-200/80 dark:border-slate-700/80 rounded-3xl p-5 sm:p-8 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="max-w-2xl space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100/80 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 text-xs font-semibold border border-sky-200 dark:border-sky-800">
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>BÁCH KHOA TOÀN THƯ Y HỌC ĐỜI THƯỜNG</span>
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100/80 dark:bg-sky-950/80 text-sky-800 dark:text-sky-300 text-xs font-semibold border border-sky-200 dark:border-sky-800">
+                <BookOpen className="w-3.5 h-3.5" />
+                <span>BÁCH KHOA TOÀN THƯ Y HỌC ĐỜI THƯỜNG</span>
+              </div>
+              {userMode === 'founder' && (
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100/90 dark:bg-purple-950 text-purple-800 dark:text-purple-300 text-xs font-bold border border-purple-200 dark:border-purple-800">
+                  <span>Chế độ Founder Pro</span>
+                </div>
+              )}
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -43,7 +52,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Toàn bộ kiến thức bệnh học, triệu chứng Ngày & Đêm, bảng chẩn đoán phân biệt và nguyên lý cảm biến quang học PPG — biên soạn theo chuẩn AASM & WHO bằng ngôn ngữ ai cũng hiểu.
+              Toàn bộ kiến thức bệnh học, triệu chứng Ngày & Đêm, bảng chẩn đoán phân biệt và nguyên lý cảm biến quang học PPG — tham khảo hướng dẫn AASM bằng ngôn ngữ dễ hiểu.
             </p>
           </div>
 
@@ -73,6 +82,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
           </button>
 
           <button
+            data-testid="subtab-symptoms"
             onClick={() => setActiveSubTab('symptoms')}
             className={`px-3 sm:px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               activeSubTab === 'symptoms'
@@ -86,6 +96,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
           </button>
 
           <button
+            data-testid="subtab-differential"
             onClick={() => setActiveSubTab('differential')}
             className={`px-3 sm:px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               activeSubTab === 'differential'
@@ -155,7 +166,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-7 shadow-sm space-y-4">
             <div>
               <span className="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
-                TIÊU CHUẨN VÀNG AASM
+                Phân tầng AHI theo quy ước sử dụng trong y học giấc ngủ
               </span>
               <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">
                 Thước Đo AHI (Apnea-Hypopnea Index) Phân Độ Nặng
@@ -208,6 +219,18 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                 </div>
               </div>
             )}
+
+            {/* AASM Scoring Rule Note (MED-P0-023) */}
+            {hubData.definitionSection.ahiStandards.scoringRuleNote && (
+              <div className="p-3.5 rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/40 text-xs text-amber-900 dark:text-amber-300 leading-relaxed font-medium">
+                <span className="font-bold">Lưu ý chuẩn chấm điểm AASM: </span>
+                {hubData.definitionSection.ahiStandards.scoringRuleNote}
+              </div>
+            )}
+
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 italic pt-1">
+              * AHI phải được hiểu trong bối cảnh lâm sàng và phương pháp đo/chấm điểm.
+            </p>
           </div>
 
           {/* 4 Underlying Causes */}
@@ -261,9 +284,15 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                     {s.symptom}
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <strong className="text-teal-700 dark:text-teal-400">Cơ chế y học: </strong>
+                    <strong className="text-teal-700 dark:text-teal-400">Cơ chế y học & liên quan: </strong>
                     {s.why}
                   </p>
+                  {s.whyPro && (
+                    <div className="mt-2 p-2.5 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 text-[11px] text-indigo-950 dark:text-indigo-200 leading-relaxed">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Founder Pro / Chuyên sâu: </span>
+                      {s.whyPro}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -277,7 +306,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
                   Triệu Chứng Ban Ngày (Daytime)
                 </h3>
-                <p className="text-[11px] text-slate-500">Hệ quả sau một đêm thiếu oxy kéo dài</p>
+                <p className="text-[11px] text-slate-500">Biểu hiện trong ngày có thể liên quan đến rối loạn hô hấp khi ngủ</p>
               </div>
             </div>
 
@@ -291,9 +320,15 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                     {s.symptom}
                   </h4>
                   <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                    <strong className="text-sky-700 dark:text-sky-400">Cơ chế y học: </strong>
+                    <strong className="text-sky-700 dark:text-sky-400">Cơ chế y học & liên quan: </strong>
                     {s.why}
                   </p>
+                  {s.whyPro && (
+                    <div className="mt-2 p-2.5 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-200/60 dark:border-indigo-900/40 text-[11px] text-indigo-950 dark:text-indigo-200 leading-relaxed">
+                      <span className="font-semibold text-indigo-700 dark:text-indigo-400">Founder Pro / Chuyên sâu: </span>
+                      {s.whyPro}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -301,49 +336,60 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
         </div>
       )}
 
-      {/* SUBTAB 3: DIFFERENTIAL DIAGNOSIS */}
+      {/* SUBTAB 3: DIFFERENTIAL DIAGNOSIS (V11-P0-004) */}
       {activeSubTab === 'differential' && (
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-7 shadow-sm space-y-5">
           <div>
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-              Bảng So Sánh Phân Biệt Các Bệnh Lý Gây Tụt SpO2 Đêm
+              Bảng Phân Biệt Các Bệnh Lý Gây Dao Động & Hạ SpO2 Đêm
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Phân biệt rõ ràng giữa ngưng thở tắc nghẽn (OSA), ngưng thở trung ương do tim (CSA), bệnh phổi (COPD) và béo phì (OHS):
+              Phân định rõ cơ chế, SpO₂ quan sát được, dữ liệu cần thêm để phân biệt và giới hạn không được suy diễn (Quy tắc nội bộ O2Sense CMC-09):
             </p>
           </div>
 
           <div className="space-y-4">
             {hubData.differentialDiagnosis.map((item) => (
               <div
-                key={item.disease}
-                className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-2.5"
+                key={item.condition}
+                className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 space-y-3"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 pb-2 border-b border-slate-200/60 dark:border-slate-800">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-2 border-b border-slate-200/60 dark:border-slate-800">
                   <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
-                    <span>{item.disease}</span>
+                    <span className="w-2.5 h-2.5 rounded-full bg-teal-500 flex-shrink-0" />
+                    <span>{item.condition}</span>
                   </h3>
-                  <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-lg bg-teal-100/70 dark:bg-teal-950 text-teal-800 dark:text-teal-300">
-                    {item.spO2DayVsNight}
-                  </span>
+                  <div className="text-[11px] px-2.5 py-1 rounded-lg bg-rose-50 dark:bg-rose-950/50 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-900/60">
+                    <strong className="text-rose-700 dark:text-rose-400">Không được suy diễn: </strong>
+                    <span>{item.doNotInfer}</span>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-                  <div>
-                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-                      Bản Chất Cơ Chế:
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
+                  <div className="p-3 bg-white/80 dark:bg-slate-900/70 rounded-xl border border-slate-200/60 dark:border-slate-800 space-y-1">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      Cơ Chế Chính
                     </span>
-                    <p className="text-slate-700 dark:text-slate-300 mt-0.5 leading-relaxed">
-                      {item.mechanism}
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {item.mainMechanism}
                     </p>
                   </div>
-                  <div>
-                    <span className="text-[11px] font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider block">
-                      Điểm Nhận Diện Đặc Thù:
+
+                  <div className="p-3 bg-white/80 dark:bg-slate-900/70 rounded-xl border border-slate-200/60 dark:border-slate-800 space-y-1">
+                    <span className="text-[10px] font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider block">
+                      SpO2 Có Thể Quan Sát
                     </span>
-                    <p className="text-slate-700 dark:text-slate-300 mt-0.5 leading-relaxed font-medium">
-                      {item.keyDistinction}
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                      {item.observableSpO2}
+                    </p>
+                  </div>
+
+                  <div className="p-3 bg-white/80 dark:bg-slate-900/70 rounded-xl border border-slate-200/60 dark:border-slate-800 space-y-1">
+                    <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider block">
+                      Dữ Liệu Cần Thêm Để Phân Biệt
+                    </span>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                      {item.additionalDataNeeded}
                     </p>
                   </div>
                 </div>
@@ -361,7 +407,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
               KHOA HỌC THIẾT BỊ ĐO QUANG HỌC
             </span>
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-0.5">
-              Cảm Biến Nhẫn O2Ring Đo Chỉ Số SpO2 Như Thế Nào?
+              Cảm Biến Quang Học (PPG) Đo Chỉ Số SpO2 Như Thế Nào?
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-1">
               {hubData.ppgSensorScience.howItWorks}
@@ -389,18 +435,18 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
           <div className="p-4 rounded-2xl bg-amber-50/70 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-900/60 space-y-1.5">
             <div className="flex items-center gap-2 text-amber-800 dark:text-amber-300 text-xs font-bold uppercase tracking-wider">
               <Clock className="w-4 h-4" />
-              <span>Độ Trễ Tuần Hoàn Máu (Circulation Delay 15 - 30 Giây):</span>
+              <span>Độ Trễ Tuần Hoàn Máu (Circulation Delay):</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
               {hubData.ppgSensorScience.circulationDelay}
             </p>
           </div>
 
-          {/* Why Ring > Wrist */}
+          {/* Sensor comparison: Finger vs Wrist */}
           <div className="p-4 rounded-2xl bg-teal-50/70 dark:bg-teal-950/40 border border-teal-200/80 dark:border-teal-900/60 space-y-1.5">
             <div className="flex items-center gap-2 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-4 h-4" />
-              <span>Tại Sao Nhẫn Ngón Tay Nhạy Hơn Đồng Hồ Đeo Cổ Tay?</span>
+              <span>Vị Trí Cảm Biến: Ngón Tay và Cổ Tay</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">
               {hubData.ppgSensorScience.whyRingBetterThanWrist}
@@ -429,10 +475,10 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-7 shadow-sm space-y-5">
           <div>
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-              Tác Động Lâu Dài Lên Tim Mạch & Khả Năng Phục Hồi
+              Tác Động Lâu Dài Lên Tim Mạch & Ghi Nhận Lâm Sàng
             </h2>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Ngưng thở khi ngủ không chỉ là chuyện ngáy; đó là gánh nặng huyết động học kéo dài suốt nhiều năm:
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+              OSA có liên quan với tăng nguy cơ tim mạch ở nhiều nhóm người. Điều trị OSA có thể cải thiện một số triệu chứng và chỉ số sức khỏe, nhưng mức lợi ích đối với từng biến cố tim mạch phụ thuộc vào người bệnh, mức độ bệnh, bệnh đi kèm và việc tuân thủ điều trị.
             </p>
           </div>
 
@@ -453,7 +499,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                 </p>
 
                 <div className="p-3 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-900/60 text-xs text-emerald-800 dark:text-emerald-300 font-medium">
-                  <strong>Khả năng phục hồi khi can thiệp sớm: </strong>
+                  <strong>Ghi nhận đáp ứng điều trị: </strong>
                   {c.reversibleWithTreatment}
                 </div>
               </div>

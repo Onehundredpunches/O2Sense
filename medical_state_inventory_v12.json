@@ -1,0 +1,1087 @@
+{
+  "version": "v1.2",
+  "total_states": 107,
+  "generated_at": "2026-09-09T13:10:18.345Z",
+  "authority_dependencies": [
+    ".agents/rules/o2sense-medical-integrity.md",
+    "O2Sense_Medical_Corrective_Authority_v1.0/01_MEDICAL_CORRECTION_REGISTER_v1.0.md",
+    "O2Sense_Medical_Corrective_Authority_v1.0/02_CANONICAL_MEDICAL_CONTENT_v1.0.md",
+    "O2Sense_Medical_Corrective_Delta_v1.1.md",
+    "O2Sense_Medical_Corrective_Delta_v1.2.md"
+  ],
+  "states": [
+    {
+      "state_id": "home_public_light",
+      "category": "core_modes",
+      "route": "home",
+      "mode": "general",
+      "theme": "light",
+      "medical_item_id": "MED-GEN-001",
+      "medical_claim_summary": "Tuyên bố miễn trừ y tế công khai: O2Sense là công cụ giáo dục y khoa, không thay thế chẩn đoán bác sĩ.",
+      "selector": "span.font-medium.tracking-wide",
+      "expected_label": "Công cụ học tập cá nhân"
+    },
+    {
+      "state_id": "home_founder_pro",
+      "category": "core_modes",
+      "route": "home",
+      "mode": "founder",
+      "theme": "light",
+      "medical_item_id": "MED-PRO-001",
+      "medical_claim_summary": "Chế độ Founder Pro với ngôn ngữ sinh lý học thần kinh chuyên sâu.",
+      "selector": "header",
+      "expected_label": "Mode: Founder"
+    },
+    {
+      "state_id": "home_dark_mode",
+      "category": "core_modes",
+      "route": "home",
+      "mode": "general",
+      "theme": "dark",
+      "medical_item_id": "MED-GEN-002",
+      "medical_claim_summary": "Chế độ tương phản tối bảo vệ mắt và hỗ trợ quan sát biểu đồ ban đêm.",
+      "selector": "html",
+      "expected_label": "dark"
+    },
+    {
+      "state_id": "anim2d_step1_public",
+      "category": "mechanism_2d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-MECH-001",
+      "medical_claim_summary": "Bước 1: Hít thở bình thường & Thông khí phế nang",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Hít thở bình thường & Thông khí phế nang"
+    },
+    {
+      "state_id": "anim2d_step2_public",
+      "category": "mechanism_2d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-MECH-002",
+      "medical_claim_summary": "Bước 2: Hẹp đường thở & ngáy",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Hẹp đường thở & ngáy"
+    },
+    {
+      "state_id": "anim2d_step3_public",
+      "category": "mechanism_2d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "V12-P1-013",
+      "medical_claim_summary": "Bước 3: Xẹp và tắc nghẽn cơ học đường thở trên",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Xẹp và tắc nghẽn cơ học đường thở trên"
+    },
+    {
+      "state_id": "anim2d_step4_public",
+      "category": "mechanism_2d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-MECH-004",
+      "medical_claim_summary": "Bước 4: Thiếu oxy, tăng CO2 & Tăng tín hiệu điều khiển hô hấp",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Thiếu oxy, tăng CO2 & Tăng tín hiệu điều khiển hô hấp"
+    },
+    {
+      "state_id": "anim2d_step5_public",
+      "category": "mechanism_2d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-MECH-005",
+      "medical_claim_summary": "Bước 5: Tái mở đường thở & Phục hồi thông khí",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Tái mở đường thở & Phục hồi thông khí"
+    },
+    {
+      "state_id": "anim2d_step1_pro",
+      "category": "mechanism_2d_pro",
+      "route": "story",
+      "mode": "founder",
+      "medical_item_id": "MED-MECH-001P",
+      "medical_claim_summary": "Bước 1 Pro: Hít thở bình thường & Thông khí phế nang (Phân tích sinh lý học thần kinh chuyên sâu)",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Hít thở bình thường & Thông khí phế nang"
+    },
+    {
+      "state_id": "anim2d_step2_pro",
+      "category": "mechanism_2d_pro",
+      "route": "story",
+      "mode": "founder",
+      "medical_item_id": "MED-MECH-002P",
+      "medical_claim_summary": "Bước 2 Pro: Hẹp đường thở & ngáy (Phân tích sinh lý học thần kinh chuyên sâu)",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Hẹp đường thở & ngáy"
+    },
+    {
+      "state_id": "anim2d_step3_pro",
+      "category": "mechanism_2d_pro",
+      "route": "story",
+      "mode": "founder",
+      "medical_item_id": "V12-P1-013",
+      "medical_claim_summary": "Bước 3 Pro: Xẹp và tắc nghẽn cơ học đường thở trên (Phân tích sinh lý học thần kinh chuyên sâu)",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Xẹp và tắc nghẽn cơ học đường thở trên"
+    },
+    {
+      "state_id": "anim2d_step4_pro",
+      "category": "mechanism_2d_pro",
+      "route": "story",
+      "mode": "founder",
+      "medical_item_id": "MED-MECH-004P",
+      "medical_claim_summary": "Bước 4 Pro: Thiếu oxy, tăng CO2 & Tăng tín hiệu điều khiển hô hấp (Phân tích sinh lý học thần kinh chuyên sâu)",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Thiếu oxy, tăng CO2 & Tăng tín hiệu điều khiển hô hấp"
+    },
+    {
+      "state_id": "anim2d_step5_pro",
+      "category": "mechanism_2d_pro",
+      "route": "story",
+      "mode": "founder",
+      "medical_item_id": "MED-MECH-005P",
+      "medical_claim_summary": "Bước 5 Pro: Tái mở đường thở & Phục hồi thông khí (Phân tích sinh lý học thần kinh chuyên sâu)",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Tái mở đường thở & Phục hồi thông khí"
+    },
+    {
+      "state_id": "3d_step1_normal",
+      "category": "webgl_3d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-001",
+      "medical_claim_summary": "3D Nấc 1: Đường thở thông thoáng, khẩu kính bình thường ~12mm.",
+      "selector": ".airway-caliber-bar, div[data-testid=\"airway-caliber-gauge\"]",
+      "expected_label": "THÔNG KHÍ / HỒI PHỤC"
+    },
+    {
+      "state_id": "3d_step3_collapse",
+      "category": "webgl_3d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "V12-P1-013",
+      "medical_claim_summary": "3D Nấc 3: Mô phỏng tắc nghẽn hầu họng chức năng.",
+      "selector": ".airway-caliber-bar, div[data-testid=\"airway-caliber-gauge\"]",
+      "expected_label": "TẮC NGHẼN CHỨC NĂNG"
+    },
+    {
+      "state_id": "3d_step4_neural",
+      "category": "webgl_3d",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-004",
+      "medical_claim_summary": "3D Nấc 4: Kích hoạt tín hiệu hô hấp và nỗ lực co thắt cơ hầu.",
+      "selector": ".airway-caliber-bar, div[data-testid=\"airway-caliber-gauge\"]",
+      "expected_label": "TẮC NGHẼN CHỨC NĂNG"
+    },
+    {
+      "state_id": "3d_cam_airway",
+      "category": "webgl_3d_camera",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-CAM-01",
+      "medical_claim_summary": "Góc nhìn 3D: Họng & Lưỡi.",
+      "selector": "div.top-3 div.overflow-x-auto",
+      "expected_label": "Họng & Lưỡi"
+    },
+    {
+      "state_id": "3d_cam_endoscopy",
+      "category": "webgl_3d_camera",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-CAM-02",
+      "medical_claim_summary": "Góc nhìn 3D: Giả lập Nội soi lòng hầu.",
+      "selector": "div.top-3 div.overflow-x-auto",
+      "expected_label": "Mô phỏng nội soi"
+    },
+    {
+      "state_id": "3d_cam_brain",
+      "category": "webgl_3d_camera",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-CAM-03",
+      "medical_claim_summary": "Góc nhìn 3D: Não bộ & Trung tâm thức tỉnh.",
+      "selector": "div.top-3 div.overflow-x-auto",
+      "expected_label": "Não"
+    },
+    {
+      "state_id": "3d_cam_chest",
+      "category": "webgl_3d_camera",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-CAM-04",
+      "medical_claim_summary": "Góc nhìn 3D: Lồng ngực, Tim & Phổi.",
+      "selector": "div.top-3 div.overflow-x-auto",
+      "expected_label": "Phổi"
+    },
+    {
+      "state_id": "3d_view_cut",
+      "category": "webgl_3d_view",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-3D-CUT-01",
+      "medical_claim_summary": "Mặt cắt dọc Sagittal quan sát giải phẫu vòm họng và cuống lưỡi.",
+      "selector": "div.top-3 button[title*='Cắt đôi']",
+      "expected_label": "Bỏ cắt 3D"
+    },
+    {
+      "state_id": "3d_pin_palate",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-01",
+      "medical_claim_summary": "Ghim giải phẫu: Khẩu cái mềm & Lưỡi gà.",
+      "selector": "h4",
+      "expected_label": "Khẩu cái mềm & Lưỡi gà"
+    },
+    {
+      "state_id": "3d_pin_tongue",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-02",
+      "medical_claim_summary": "Ghim giải phẫu: Gốc lưỡi & Cơ cằm-lưỡi.",
+      "selector": "h4",
+      "expected_label": "Gốc lưỡi & Cơ cằm-lưỡi"
+    },
+    {
+      "state_id": "3d_pin_mandible",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-03",
+      "medical_claim_summary": "Ghim giải phẫu: Xương hàm dưới & Cằm.",
+      "selector": "h4",
+      "expected_label": "Xương hàm dưới & Cằm"
+    },
+    {
+      "state_id": "3d_pin_airway",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-04",
+      "medical_claim_summary": "Ghim giải phẫu: Vùng bít tắc hầu họng.",
+      "selector": "h4",
+      "expected_label": "Vùng bít tắc hầu họng"
+    },
+    {
+      "state_id": "3d_pin_nose",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-05",
+      "medical_claim_summary": "Ghim giải phẫu: Khoang mũi (Đường khí vào).",
+      "selector": "h4",
+      "expected_label": "Khoang mũi"
+    },
+    {
+      "state_id": "3d_pin_trachea",
+      "category": "webgl_3d_pin",
+      "route": "story",
+      "mode": "general",
+      "medical_item_id": "MED-PIN-06",
+      "medical_claim_summary": "Ghim giải phẫu: Khí quản & Vòng sụn.",
+      "selector": "h4",
+      "expected_label": "Khí quản & Vòng sụn"
+    },
+    {
+      "state_id": "wave_sawtooth",
+      "category": "waveform_patterns",
+      "route": "waveforms",
+      "mode": "general",
+      "medical_item_id": "MED-WAVE-pattern_sawtooth",
+      "medical_claim_summary": "Dạng sóng SpO2: Dạng giảm–phục hồi SpO₂ lặp lại (Repeated Desaturation–Resaturation)",
+      "selector": "h2",
+      "expected_label": "Dạng giảm–phục hồi SpO₂ lặp lại"
+    },
+    {
+      "state_id": "wave_sustained_plateau",
+      "category": "waveform_patterns",
+      "route": "waveforms",
+      "mode": "general",
+      "medical_item_id": "MED-WAVE-pattern_sustained_plateau",
+      "medical_claim_summary": "Dạng sóng SpO2: Dạng trũng sâu kéo dài (Sustained Low-Saturation Pattern)",
+      "selector": "h2",
+      "expected_label": "Dạng trũng sâu kéo dài"
+    },
+    {
+      "state_id": "wave_isolated_spike",
+      "category": "waveform_patterns",
+      "route": "waveforms",
+      "mode": "general",
+      "medical_item_id": "MED-WAVE-pattern_isolated_spike",
+      "medical_claim_summary": "Dạng sóng SpO2: Dạng đường oxy tương đối ổn định (Relatively Stable Oxygen Trace)",
+      "selector": "h2",
+      "expected_label": "Dạng đường oxy tương đối ổn định"
+    },
+    {
+      "state_id": "wave_periodic_cheyne_stokes",
+      "category": "waveform_patterns",
+      "route": "waveforms",
+      "mode": "general",
+      "medical_item_id": "MED-WAVE-pattern_periodic_cheyne_stokes",
+      "medical_claim_summary": "Dạng sóng SpO2: Dạng dao động chu kỳ (Periodic Oscillation Pattern)",
+      "selector": "h2",
+      "expected_label": "Dạng dao động chu kỳ"
+    },
+    {
+      "state_id": "khub_definition_ahi",
+      "category": "knowledge_hub",
+      "route": "knowledge",
+      "mode": "general",
+      "medical_item_id": "MED-KHUB-01",
+      "medical_claim_summary": "Định nghĩa & Phân tầng AHI chuẩn AASM.",
+      "selector": "h2",
+      "expected_label": "OSA Là Gì?"
+    },
+    {
+      "state_id": "khub_symptoms",
+      "category": "knowledge_hub",
+      "route": "knowledge",
+      "mode": "general",
+      "medical_item_id": "V12-P1-006",
+      "medical_claim_summary": "Triệu chứng ngày & đêm (Đã gỡ bỏ con số 3-15s vi thức giấc).",
+      "selector": "h3",
+      "expected_label": "Triệu Chứng Ban Đêm"
+    },
+    {
+      "state_id": "khub_differential",
+      "category": "knowledge_hub",
+      "route": "knowledge",
+      "mode": "general",
+      "medical_item_id": "MED-KHUB-03",
+      "medical_claim_summary": "Bảng chẩn đoán phân biệt tụt SpO2 ban đêm.",
+      "selector": "h2",
+      "expected_label": "Bảng Phân Biệt Các Bệnh Lý"
+    },
+    {
+      "state_id": "khub_ppg_sensor",
+      "category": "knowledge_hub",
+      "route": "knowledge",
+      "mode": "general",
+      "medical_item_id": "V12-P0-004",
+      "medical_claim_summary": "Cảm biến quang học PPG, circulation delay & so sánh vị trí đo.",
+      "selector": "div[class*='bg-amber-50']",
+      "expected_label": "Độ Trễ Tuần Hoàn Máu"
+    },
+    {
+      "state_id": "khub_complications",
+      "category": "knowledge_hub",
+      "route": "knowledge",
+      "mode": "general",
+      "medical_item_id": "MED-KHUB-05",
+      "medical_claim_summary": "4 Biến chứng tim mạch lâu dài của thiếu oxy ngắt quãng.",
+      "selector": "h2",
+      "expected_label": "Tác Động Lâu Dài Lên Tim Mạch"
+    },
+    {
+      "state_id": "myth_trap1_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-1F",
+      "medical_claim_summary": "Bẫy 1 Mặt trước: Đồ thị SpO2 có nhiều vệt tụt oxy ban đêm",
+      "selector": "h3.text-base",
+      "expected_label": "Đồ thị SpO2 có nhiều vệt tụt oxy ban đêm"
+    },
+    {
+      "state_id": "myth_trap1_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-1B",
+      "medical_claim_summary": "Bẫy 1 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap2_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-2F",
+      "medical_claim_summary": "Bẫy 2 Mặt trước: Tiếng ngáy to 'rung nhà'",
+      "selector": "h3.text-base",
+      "expected_label": "Tiếng ngáy to 'rung nhà'"
+    },
+    {
+      "state_id": "myth_trap2_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "V12-P1-011",
+      "medical_claim_summary": "Bẫy 2 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap3_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-3F",
+      "medical_claim_summary": "Bẫy 3 Mặt trước: Sáng dậy mệt mỏi, người uể oải đờ đẫn",
+      "selector": "h3.text-base",
+      "expected_label": "Sáng dậy mệt mỏi, người uể oải đờ đẫn"
+    },
+    {
+      "state_id": "myth_trap3_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-3B",
+      "medical_claim_summary": "Bẫy 3 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap4_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-4F",
+      "medical_claim_summary": "Bẫy 4 Mặt trước: User khẳng định: 'Ban ngày tôi không hề buồn ngủ, rất tỉnh táo'",
+      "selector": "h3.text-base",
+      "expected_label": "User khẳng định: 'Ban ngày tôi không hề buồn ngủ, rất tỉnh táo'"
+    },
+    {
+      "state_id": "myth_trap4_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "V12-P1-012",
+      "medical_claim_summary": "Bẫy 4 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap5_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-5F",
+      "medical_claim_summary": "Bẫy 5 Mặt trước: Phụ nữ trung niên mất ngủ giữa đêm và đau đầu sáng",
+      "selector": "h3.text-base",
+      "expected_label": "Phụ nữ trung niên mất ngủ giữa đêm và đau đầu sáng"
+    },
+    {
+      "state_id": "myth_trap5_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-5B",
+      "medical_claim_summary": "Bẫy 5 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap6_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-6F",
+      "medical_claim_summary": "Bẫy 6 Mặt trước: Đeo O2Ring 1 đêm thấy SpO2 đẹp 97%, không vệt tụt oxy",
+      "selector": "h3.text-base",
+      "expected_label": "Đeo O2Ring 1 đêm thấy SpO2 đẹp 97%, không vệt tụt oxy"
+    },
+    {
+      "state_id": "myth_trap6_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-6B",
+      "medical_claim_summary": "Bẫy 6 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap7_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-7F",
+      "medical_claim_summary": "Bẫy 7 Mặt trước: SpO2 tụt kèm theo nhịp tim đột ngột vọt lên 95 bpm",
+      "selector": "h3.text-base",
+      "expected_label": "SpO2 tụt kèm theo nhịp tim đột ngột vọt lên 95 bpm"
+    },
+    {
+      "state_id": "myth_trap7_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-7B",
+      "medical_claim_summary": "Bẫy 7 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "myth_trap8_front",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-8F",
+      "medical_claim_summary": "Bẫy 8 Mặt trước: Gymer trẻ tuổi, cơ bắp 6 múi không thể bị OSA",
+      "selector": "h3.text-base",
+      "expected_label": "Gymer trẻ tuổi, cơ bắp 6 múi không thể bị OSA"
+    },
+    {
+      "state_id": "myth_trap8_back",
+      "category": "mythbusters",
+      "route": "cases",
+      "mode": "general",
+      "medical_item_id": "MED-TRAP-8B",
+      "medical_claim_summary": "Bẫy 8 Mặt sau: Giải thích cơ chế sinh lý học.",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "BẢN CHẤT Y SINH"
+    },
+    {
+      "state_id": "scenario_1_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-01Q",
+      "medical_claim_summary": "Tình huống 1 (Tuấn): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Tuấn"
+    },
+    {
+      "state_id": "scenario_1_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-01A",
+      "medical_claim_summary": "Tình huống 1 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_1_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-01B",
+      "medical_claim_summary": "Tình huống 1 - Phản hồi Lựa chọn B: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_1_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-01C",
+      "medical_claim_summary": "Tình huống 1 - Phản hồi Lựa chọn C: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_2_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-02Q",
+      "medical_claim_summary": "Tình huống 2 (Anh Hùng): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Anh Hùng"
+    },
+    {
+      "state_id": "scenario_2_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-02A",
+      "medical_claim_summary": "Tình huống 2 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_2_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-02B",
+      "medical_claim_summary": "Tình huống 2 - Phản hồi Lựa chọn B: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_2_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-02C",
+      "medical_claim_summary": "Tình huống 2 - Phản hồi Lựa chọn C: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_3_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-03Q",
+      "medical_claim_summary": "Tình huống 3 (Chị Mai): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Chị Mai"
+    },
+    {
+      "state_id": "scenario_3_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-03A",
+      "medical_claim_summary": "Tình huống 3 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_3_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-03B",
+      "medical_claim_summary": "Tình huống 3 - Phản hồi Lựa chọn B: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_3_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-03C",
+      "medical_claim_summary": "Tình huống 3 - Phản hồi Lựa chọn C: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_4_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-04Q",
+      "medical_claim_summary": "Tình huống 4 (Hoàng): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Hoàng"
+    },
+    {
+      "state_id": "scenario_4_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-04A",
+      "medical_claim_summary": "Tình huống 4 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_4_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-04B",
+      "medical_claim_summary": "Tình huống 4 - Phản hồi Lựa chọn B: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_4_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-04C",
+      "medical_claim_summary": "Tình huống 4 - Phản hồi Lựa chọn C: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_5_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-05Q",
+      "medical_claim_summary": "Tình huống 5 (Bác Bình): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Bác Bình"
+    },
+    {
+      "state_id": "scenario_5_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-05A",
+      "medical_claim_summary": "Tình huống 5 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_5_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-05B",
+      "medical_claim_summary": "Tình huống 5 - Phản hồi Lựa chọn B: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_5_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-05C",
+      "medical_claim_summary": "Tình huống 5 - Phản hồi Lựa chọn C: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_6_question",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-06Q",
+      "medical_claim_summary": "Tình huống 6 (Lan): Câu hỏi và lựa chọn phản xạ.",
+      "selector": "h3.text-base.font-bold",
+      "expected_label": "Lan"
+    },
+    {
+      "state_id": "scenario_6_opt_a",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "V12-P1-010",
+      "medical_claim_summary": "Tình huống 6 - Phản hồi Lựa chọn A: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "scenario_6_opt_b",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-06B",
+      "medical_claim_summary": "Tình huống 6 - Phản hồi Lựa chọn B: Cách hỏi an toàn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Tuyệt vời! Cách hỏi rất khách quan & an toàn:"
+    },
+    {
+      "state_id": "scenario_6_opt_c",
+      "category": "clinical_scenarios",
+      "route": "cases_scenarios",
+      "mode": "general",
+      "medical_item_id": "MED-SCEN-06C",
+      "medical_claim_summary": "Tình huống 6 - Phản hồi Lựa chọn C: Cảnh báo bẫy phỏng vấn",
+      "selector": "div.animate-fadeIn",
+      "expected_label": "Cảnh báo: Bẫy phỏng vấn nguy hiểm!"
+    },
+    {
+      "state_id": "glossary_term_genioglossus",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-1",
+      "medical_claim_summary": "Từ điển thuật ngữ: Cơ Cằm - Lưỡi (Genioglossus)",
+      "selector": "h3",
+      "expected_label": "Cơ Cằm - Lưỡi"
+    },
+    {
+      "state_id": "glossary_term_arousal",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P1-006",
+      "medical_claim_summary": "Từ điển thuật ngữ: Vi Tỉnh Thức (Vi Thức Giấc) (Micro-Arousal)",
+      "selector": "h3",
+      "expected_label": "Vi Tỉnh Thức (Vi Thức Giấc)"
+    },
+    {
+      "state_id": "glossary_term_chemoreceptors",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P1-007",
+      "medical_claim_summary": "Từ điển thuật ngữ: Thể Cảnh & Xoang Cảnh (Carotid Body vs Carotid Sinus)",
+      "selector": "h3",
+      "expected_label": "Thể Cảnh & Xoang Cảnh"
+    },
+    {
+      "state_id": "glossary_term_ahi",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-4",
+      "medical_claim_summary": "Từ điển thuật ngữ: Chỉ Số Ngưng Giảm Thở (AHI)",
+      "selector": "h3",
+      "expected_label": "Chỉ Số Ngưng Giảm Thở"
+    },
+    {
+      "state_id": "glossary_term_spo2",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P1-005",
+      "medical_claim_summary": "Từ điển thuật ngữ: Độ Bão Hòa Oxy Trong Máu Ngoại Vi (SpO2)",
+      "selector": "h3",
+      "expected_label": "Độ Bão Hòa Oxy Trong Máu Ngoại Vi"
+    },
+    {
+      "state_id": "glossary_term_ppg",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-6",
+      "medical_claim_summary": "Từ điển thuật ngữ: Quang Phổ Thể Tích Mạch (Photoplethysmography (PPG))",
+      "selector": "h3",
+      "expected_label": "Quang Phổ Thể Tích Mạch"
+    },
+    {
+      "state_id": "glossary_term_soft_palate",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-7",
+      "medical_claim_summary": "Từ điển thuật ngữ: Khẩu Cái Mềm & Lưỡi Gà (Soft Palate & Uvula)",
+      "selector": "h3",
+      "expected_label": "Khẩu Cái Mềm & Lưỡi Gà"
+    },
+    {
+      "state_id": "glossary_term_anp",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P1-008",
+      "medical_claim_summary": "Từ điển thuật ngữ: Peptide Lợi Niệu Tâm Nhĩ & Tiểu Đêm (ANP (Atrial Natriuretic Peptide))",
+      "selector": "h3",
+      "expected_label": "Peptide Lợi Niệu Tâm Nhĩ & Tiểu Đêm"
+    },
+    {
+      "state_id": "glossary_term_hypercapnia",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-9",
+      "medical_claim_summary": "Từ điển thuật ngữ: Tăng Khí Carbonic Trong Máu (Hypercapnia)",
+      "selector": "h3",
+      "expected_label": "Tăng Khí Carbonic Trong Máu"
+    },
+    {
+      "state_id": "glossary_term_circulation_delay",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P0-004",
+      "medical_claim_summary": "Từ điển thuật ngữ: Thời Gian Trễ Tuần Hoàn (Circulation Delay)",
+      "selector": "h3",
+      "expected_label": "Thời Gian Trễ Tuần Hoàn"
+    },
+    {
+      "state_id": "glossary_term_positional_therapy",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "V12-P1-009",
+      "medical_claim_summary": "Từ điển thuật ngữ: Liệu Pháp Tư Thế (Positional OSA) (Positional Therapy)",
+      "selector": "h3",
+      "expected_label": "Liệu Pháp Tư Thế (Positional OSA)"
+    },
+    {
+      "state_id": "glossary_term_perfusion_index",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-12",
+      "medical_claim_summary": "Từ điển thuật ngữ: Chỉ Số Tưới Máu Ngoại Vi (Perfusion Index (PI))",
+      "selector": "h3",
+      "expected_label": "Chỉ Số Tưới Máu Ngoại Vi"
+    },
+    {
+      "state_id": "glossary_term_psg",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-13",
+      "medical_claim_summary": "Từ điển thuật ngữ: Đa Ký Giấc Ngủ (Polysomnography (PSG))",
+      "selector": "h3",
+      "expected_label": "Đa Ký Giấc Ngủ"
+    },
+    {
+      "state_id": "glossary_term_cpap",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-14",
+      "medical_claim_summary": "Từ điển thuật ngữ: Máy Thở Áp Lực Dương Liên Tục (CPAP (Continuous Positive Airway Pressure))",
+      "selector": "h3",
+      "expected_label": "Máy Thở Áp Lực Dương Liên Tục"
+    },
+    {
+      "state_id": "glossary_term_eds",
+      "category": "glossary",
+      "route": "glossary_modal",
+      "mode": "general",
+      "medical_item_id": "MED-GLOS-15",
+      "medical_claim_summary": "Từ điển thuật ngữ: Buồn Ngủ Ban Ngày Quá Mức (Excessive Daytime Sleepiness (EDS))",
+      "selector": "h3",
+      "expected_label": "Buồn Ngủ Ban Ngày Quá Mức"
+    },
+    {
+      "state_id": "source_aasm_diag_2017",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-AASM-DIAG-2017",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea",
+      "selector": "h3, h4, div",
+      "expected_label": "Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea"
+    },
+    {
+      "state_id": "source_uspstf_osa_2022",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-USPSTF-OSA-2022",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Screening for Obstructive Sleep Apnea in Adults: US Preventive Services Task Force Recommendation Statement",
+      "selector": "h3, h4, div",
+      "expected_label": "Screening for Obstructive Sleep Apnea in Adults: US Preventive Services Task Force Recommendation Statement"
+    },
+    {
+      "state_id": "source_eckert_pathophys_2008",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-ECKERT-PATHOPHYS-2008",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Pathophysiology of Adult Obstructive Sleep Apnea",
+      "selector": "h3, h4, div",
+      "expected_label": "Pathophysiology of Adult Obstructive Sleep Apnea"
+    },
+    {
+      "state_id": "source_nhlbi_osa_topics",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-NHLBI-OSA-TOPICS",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: What Is Sleep Apnea? Causes, Symptoms, and Diagnosis",
+      "selector": "h3, h4, div",
+      "expected_label": "What Is Sleep Apnea? Causes, Symptoms, and Diagnosis"
+    },
+    {
+      "state_id": "source_mosaic_trial_2014",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-MOSAIC-TRIAL-2014",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Continuous positive airway pressure for minimally symptomatic obstructive sleep apnea (MOSAIC): a multicentre randomised controlled trial",
+      "selector": "h3, h4, div",
+      "expected_label": "Continuous positive airway pressure for minimally symptomatic obstructive sleep apnea (MOSAIC): a multicentre randomised controlled trial"
+    },
+    {
+      "state_id": "source_women_osa_2016",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-WOMEN-OSA-2016",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Obstructive sleep apnea in women: specific issues and interventions",
+      "selector": "h3, h4, div",
+      "expected_label": "Obstructive sleep apnea in women: specific issues and interventions"
+    },
+    {
+      "state_id": "source_night_variability_2017",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-NIGHT-VARIABILITY-2017",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Night-to-Night Variability of Obstructive Sleep Apnea in a Large Clinical Cohort",
+      "selector": "h3, h4, div",
+      "expected_label": "Night-to-Night Variability of Obstructive Sleep Apnea in a Large Clinical Cohort"
+    },
+    {
+      "state_id": "source_diff_hypoxemia_2014",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-DIFF-HYPOXEMIA-2014",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Sleep-Disordered Breathing and Nocturnal Hypoxemia: Differential Diagnosis Beyond OSA",
+      "selector": "h3, h4, div",
+      "expected_label": "Sleep-Disordered Breathing and Nocturnal Hypoxemia: Differential Diagnosis Beyond OSA"
+    },
+    {
+      "state_id": "source_somers_sympathetic_1995",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-SOMERS-SYMPATHETIC-1995",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Sympathetic neural mechanisms in obstructive sleep apnea",
+      "selector": "h3, h4, div",
+      "expected_label": "Sympathetic neural mechanisms in obstructive sleep apnea"
+    },
+    {
+      "state_id": "source_craniofacial_osa_2012",
+      "category": "sources",
+      "route": "source_modal",
+      "mode": "general",
+      "medical_item_id": "SRC-CRANIOFACIAL-OSA-2012",
+      "medical_claim_summary": "Nguồn chứng cứ y khoa: Craniofacial Phenotyping in Obstructive Sleep Apnea",
+      "selector": "h3, h4, div",
+      "expected_label": "Craniofacial Phenotyping in Obstructive Sleep Apnea"
+    },
+    {
+      "state_id": "review_card_1",
+      "category": "quick_review",
+      "route": "quick_review_modal",
+      "mode": "general",
+      "medical_item_id": "MED-REV-01",
+      "medical_claim_summary": "Thẻ ôn tập nhanh số 1 (Bẫy nhận thức lâm sàng)",
+      "selector": "span.border-sky-500\\/30",
+      "expected_label": "Bẫy suy diễn"
+    },
+    {
+      "state_id": "review_card_2",
+      "category": "quick_review",
+      "route": "quick_review_modal",
+      "mode": "general",
+      "medical_item_id": "MED-REV-02",
+      "medical_claim_summary": "Thẻ ôn tập nhanh số 2 (Bẫy nhận thức lâm sàng)",
+      "selector": "span.border-sky-500\\/30",
+      "expected_label": "Bẫy suy diễn"
+    },
+    {
+      "state_id": "review_card_3",
+      "category": "quick_review",
+      "route": "quick_review_modal",
+      "mode": "general",
+      "medical_item_id": "MED-REV-03",
+      "medical_claim_summary": "Thẻ ôn tập nhanh số 3 (Bẫy nhận thức lâm sàng)",
+      "selector": "span.border-sky-500\\/30",
+      "expected_label": "Bẫy suy diễn"
+    },
+    {
+      "state_id": "review_card_4",
+      "category": "quick_review",
+      "route": "quick_review_modal",
+      "mode": "general",
+      "medical_item_id": "MED-REV-04",
+      "medical_claim_summary": "Thẻ ôn tập nhanh số 4 (Bẫy nhận thức lâm sàng)",
+      "selector": "span.border-sky-500\\/30",
+      "expected_label": "Bẫy suy diễn"
+    },
+    {
+      "state_id": "review_card_5",
+      "category": "quick_review",
+      "route": "quick_review_modal",
+      "mode": "general",
+      "medical_item_id": "MED-REV-05",
+      "medical_claim_summary": "Thẻ ôn tập nhanh số 5 (Tình huống thử thách phản xạ)",
+      "selector": "span.border-purple-500\\/30",
+      "expected_label": "Thử thách cuối"
+    },
+    {
+      "state_id": "help_handbook_overview",
+      "category": "help_center",
+      "route": "help",
+      "mode": "general",
+      "medical_item_id": "V12-P0-004",
+      "medical_claim_summary": "Trung tâm trợ giúp & Cẩm nang O2Sense: Hướng dẫn an toàn và cơ chế độ trễ SpO2.",
+      "selector": "h1",
+      "expected_label": "Cẩm Nang Vận Hành"
+    }
+  ]
+}

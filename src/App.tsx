@@ -190,6 +190,7 @@ export const App: React.FC = () => {
             steps={diseaseData.mechanismSteps}
             sources={diseaseData.sources}
             onOpenGlossary={handleOpenGlossary}
+            userMode={userMode}
           />
         )}
 
@@ -205,6 +206,7 @@ export const App: React.FC = () => {
             hubData={diseaseData.knowledgeHub}
             glossary={diseaseData.glossary || []}
             onOpenGlossary={handleOpenGlossary}
+            userMode={userMode}
           />
         )}
 
