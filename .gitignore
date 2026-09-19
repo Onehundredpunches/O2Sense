@@ -29,3 +29,7 @@ dist-ssr
 *.zip
 app_screenshots*/
 HINH_ANH_TOAN_BO_APP_O2SENSE/
+
+# Teamwork agent working directories
+.agents/
+PROJECT.md

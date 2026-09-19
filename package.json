@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "node scripts/verify_e2e_prod_dev.cjs"
   },
   "dependencies": {
     "@types/three": "^0.185.4",

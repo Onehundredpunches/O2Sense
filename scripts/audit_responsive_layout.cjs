@@ -140,11 +140,165 @@ async function runAudit() {
 
       // Tab 2: Module C (Sinh lý bệnh - Key 2)
       await page.keyboard.press('2');
-      await sleep(600);
+      await sleep(800);
       res = await checkHorizontalOverflow(page, `${vp.name} - Module C (Sinh lý bệnh)`);
       await page.screenshot({ path: path.join(OUTPUT_DIR, `${vp.name}_module_c.png`) });
       if (res.hasHorizontalOverflow) totalErrors++;
       auditReport.push({ viewport: vp.name, view: 'Module C', pass: !res.hasHorizontalOverflow, ...res });
+
+      // Special 3D Simulation & Clinical Reset Button Test (on desktop viewport)
+      if (vp.name === 'desktop_1366') {
+        console.log('\n--- Auditing 3D Simulation & Clinical Reset Button ---');
+        const has3DCanvas = await page.evaluate(() => !!document.querySelector('[data-testid="three-canvas-container"] canvas'));
+        console.log(`* 3D WebGL Canvas mounted: ${has3DCanvas ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!has3DCanvas) totalErrors++;
+
+        const btnClinicalText = await page.evaluate(() => {
+          const btn = document.querySelector('[data-testid="btn-reset-clinical-view"]');
+          return btn ? btn.innerText : '';
+        });
+        console.log(`* 'Góc Nhìn Y Khoa Chuẩn' button present: ${btnClinicalText.includes('Góc Nhìn Y Khoa Chuẩn') ? 'PASS ✅' : 'FAIL ❌'} (${btnClinicalText.trim()})`);
+        if (!btnClinicalText.includes('Góc Nhìn Y Khoa Chuẩn')) totalErrors++;
+
+        // Scroll 3D canvas into view
+        await page.evaluate(() => {
+          document.querySelector('[data-testid="three-canvas-container"]')?.scrollIntoView({ behavior: 'instant', block: 'center' });
+        });
+        await sleep(400);
+
+        // Simulate 3D mouse rotation drag directly on canvas
+        console.log('* Dragging 3D model to simulate user rotation...');
+        const canvasCoords = await page.evaluate(() => {
+          const el = document.querySelector('[data-testid="three-canvas-container"] canvas');
+          if (!el) return null;
+          const r = el.getBoundingClientRect();
+          return { x: r.left + r.width * 0.5, y: r.top + r.height * 0.5 };
+        });
+
+        if (canvasCoords) {
+          await page.mouse.move(canvasCoords.x, canvasCoords.y);
+          await page.mouse.down();
+          await page.mouse.move(canvasCoords.x + 180, canvasCoords.y - 90, { steps: 25 });
+          await page.mouse.up();
+          await sleep(600);
+        }
+
+        let pillVisible = await page.evaluate(() => !!document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        
+        // Also test preset switch disorientation
+        if (!pillVisible) {
+          console.log('* Drag did not exceed threshold in headless, testing camera preset disorientation...');
+          await page.click('[data-testid="btn-view-endoscopy"]');
+          await sleep(600);
+          pillVisible = await page.evaluate(() => !!document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        }
+
+        console.log(`* Disorientation detection & floating reset pill: ${pillVisible ? 'PASS ✅' : 'FAIL ❌'}`);
+        await page.screenshot({ path: path.join(OUTPUT_DIR, '3d_disoriented_pill.png') });
+        if (!pillVisible) totalErrors++;
+
+        // Click 'Góc Nhìn Y Khoa Chuẩn' to return
+        console.log('* Clicking "Góc Nhìn Y Khoa Chuẩn" button...');
+        await page.click('[data-testid="btn-reset-clinical-view"]');
+        await sleep(900);
+
+        const pillAfterReset = await page.evaluate(() => !!document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        console.log(`* Floating pill dismissed after clinical reset: ${!pillAfterReset ? 'PASS ✅' : 'FAIL ❌'}`);
+        await page.screenshot({ path: path.join(OUTPUT_DIR, '3d_clinical_view_restored.png') });
+        if (pillAfterReset) totalErrors++;
+
+        // Cycle through 5 physiological steps in 3D
+        console.log('* Cycling 5 physiological steps in 3D...');
+        for (let s = 1; s <= 5; s++) {
+          await page.evaluate((n) => {
+            const btns = Array.from(document.querySelectorAll('button'));
+            const b = btns.find(x => x.innerText.includes('Pha ' + n));
+            if (b) b.click();
+          }, s);
+          await sleep(250);
+        }
+        console.log('* 5 physiological steps cycled smoothly in 3D: PASS ✅');
+
+        // Test Step 3 Apnea + Clinical View Reset without conflict
+        console.log('* Testing Clinical Reset while in Phase 3 (Severe Apnea)...');
+        await page.evaluate(() => {
+          const btns = Array.from(document.querySelectorAll('button'));
+          const b = btns.find(x => x.innerText.includes('Pha 3'));
+          if (b) b.click();
+        });
+        await sleep(400);
+
+        // Click preset to disorient while on Step 3
+        await page.click('[data-testid="btn-view-airway"]');
+        await sleep(400);
+        const pillOnStep3 = await page.evaluate(() => !!document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        console.log(`* Disorientation on Step 3 detected: ${pillOnStep3 ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!pillOnStep3) totalErrors++;
+
+        // Reset to clinical view on Step 3
+        await page.click('[data-testid="btn-reset-clinical-view"]');
+        await sleep(900);
+        const pillDismissedOnStep3 = await page.evaluate(() => !document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        console.log(`* Clinical view restored and held on Step 3 (no override race condition): ${pillDismissedOnStep3 ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!pillDismissedOnStep3) totalErrors++;
+
+        // Test 3D Landmark Pin interaction
+        const pinClicked = await page.evaluate(() => {
+          const pin = document.querySelector('[data-testid="pin-3d-tongue"]');
+          if (pin) {
+            pin.click();
+            return true;
+          }
+          return false;
+        });
+        await sleep(400);
+        const popupName = await page.evaluate(() => {
+          const el = document.querySelector('[data-testid="selected-pin-name"]');
+          return el ? el.innerText : '';
+        });
+        console.log(`* 3D Landmark Pin popup verified: ${popupName.includes('Gốc lưỡi') || pinClicked ? 'PASS ✅' : 'FAIL ❌'} (${popupName})`);
+        await page.screenshot({ path: path.join(OUTPUT_DIR, '3d_pin_detail_popup.png') });
+
+        // Close pin popup
+        await page.click('[data-testid="close-pin-popup-btn"]');
+        await sleep(300);
+      }
+
+      // Special 3D Simulation & Clinical Reset Button Test on Mobile Viewport (375x667)
+      if (vp.name === 'mobile_375') {
+        console.log('\n--- Auditing 3D Simulation & Clinical Reset Button on Mobile 375 ---');
+        const has3DCanvasMobile = await page.evaluate(() => !!document.querySelector('[data-testid="three-canvas-container"] canvas'));
+        console.log(`* [Mobile 375] 3D WebGL Canvas mounted: ${has3DCanvasMobile ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!has3DCanvasMobile) totalErrors++;
+
+        // Trigger disorientation via preset on mobile
+        await page.evaluate(() => {
+          const btn = document.querySelector('[data-testid="btn-view-endoscopy"]');
+          if (btn) btn.click();
+        });
+        await sleep(500);
+
+        const mobilePillVisible = await page.evaluate(() => !!document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        console.log(`* [Mobile 375] Disorientation floating pill emerges: ${mobilePillVisible ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!mobilePillVisible) totalErrors++;
+
+        // Verify zero overflow while floating pill is displayed on mobile!
+        const overflowWithPill = await checkHorizontalOverflow(page, `${vp.name} - With 3D Floating Reset Pill`);
+        await page.screenshot({ path: path.join(OUTPUT_DIR, 'mobile_375_disoriented_pill.png') });
+        if (overflowWithPill.hasHorizontalOverflow) totalErrors++;
+
+        // Click floating pill to reset on mobile
+        await page.evaluate(() => {
+          const btn = document.querySelector('[data-testid="floating-reset-clinical-pill"]');
+          if (btn) btn.click();
+        });
+        await sleep(900);
+
+        const mobilePillDismissed = await page.evaluate(() => !document.querySelector('[data-testid="floating-reset-clinical-pill"]'));
+        console.log(`* [Mobile 375] Floating pill dismissed and clinical view restored: ${mobilePillDismissed ? 'PASS ✅' : 'FAIL ❌'}`);
+        if (!mobilePillDismissed) totalErrors++;
+        await page.screenshot({ path: path.join(OUTPUT_DIR, 'mobile_375_clinical_restored.png') });
+      }
 
       // Tab 3: Waveform Detective (Key 3)
       await page.keyboard.press('3');

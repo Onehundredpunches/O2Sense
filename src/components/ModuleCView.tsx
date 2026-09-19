@@ -33,7 +33,7 @@ interface ModuleCViewProps {
 export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpenGlossary, userMode }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [renderMode, setRenderMode] = useState<'anatomical' | '3d'>('anatomical');
+  const [renderMode, setRenderMode] = useState<'3d' | 'anatomical'>('anatomical');
   const [explanationMode, setExplanationMode] = useState<'layman' | 'expert'>(
     userMode === 'founder' ? 'expert' : 'layman'
   );
@@ -246,7 +246,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 px-1 text-[10px] text-slate-500">
               <span>* Các giá trị trên màn hình này dùng để minh họa cơ chế và không phải dữ liệu đo từ một người dùng cụ thể. Thông số có thể được thiết bị phù hợp ghi nhận.</span>
               {activeStep.step === 5 && (
-                <span className="text-teal-600 dark:text-teal-400 font-medium whitespace-nowrap">SpO₂ ở ngón tay phản ứng trễ so với thay đổi luồng khí.</span>
+                <span className="text-teal-600 dark:text-teal-400 font-medium">SpO₂ ở ngón tay phản ứng trễ so với thay đổi luồng khí.</span>
               )}
             </div>
           </div>
@@ -259,6 +259,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
             </span>
             <div className="flex items-center bg-slate-100 dark:bg-slate-950 p-1 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs w-full sm:w-auto">
               <button
+                data-testid="toggle-anatomical-view"
                 onClick={() => setRenderMode('anatomical')}
                 className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl font-bold transition-all ${
                   renderMode === 'anatomical'
@@ -267,26 +268,29 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
                 }`}
               >
                 <Activity className="w-3.5 h-3.5 text-teal-600" />
-                <span>Mặt Cắt Y Khoa 2.5D</span>
+                <span>Mặt Cắt Sagittal Y Khoa</span>
               </button>
-              <button
-                onClick={() => setRenderMode('3d')}
-                className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl font-bold transition-all ${
-                  renderMode === '3d'
-                    ? 'bg-teal-600 text-white shadow-sm'
-                    : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
-                }`}
-              >
-                <Box className="w-3.5 h-3.5" />
-                <span>3D WebGL (Xoay 360°)</span>
-              </button>
+              {import.meta.env.DEV && (
+                <button
+                  data-testid="toggle-3d-webgl"
+                  onClick={() => setRenderMode('3d')}
+                  className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl font-bold transition-all ${
+                    renderMode === '3d'
+                      ? 'bg-teal-600 text-white shadow-sm'
+                      : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  <Box className="w-3.5 h-3.5" />
+                  <span>3D WebGL (Xoay 360°)</span>
+                </button>
+              )}
             </div>
           </div>
 
           {/* Main Visualization Stage */}
           <div className="w-full">
-            {renderMode === 'anatomical' ? (
-              <AnatomicalSimulator
+            {import.meta.env.DEV && renderMode === '3d' ? (
+              <AnatomyScene3D
                 step={activeStep.step}
                 airwayStatus={activeStep.visualState.airwayStatus}
                 airflowPercent={activeStep.metrics.airflowPercent}
@@ -295,7 +299,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
                 isSympathetic={isSympathetic}
               />
             ) : (
-              <AnatomyScene3D
+              <AnatomicalSimulator
                 step={activeStep.step}
                 airwayStatus={activeStep.visualState.airwayStatus}
                 airflowPercent={activeStep.metrics.airflowPercent}
@@ -320,7 +324,7 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
                 <div>
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <span className="text-[11px] uppercase font-bold text-slate-300">
-                      {renderMode === 'anatomical' ? 'Khẩu kính hình học (Mặt cắt 2.5D)' : 'Khẩu kính 3D (Không gian giải phẫu)'}
+                      {renderMode === 'anatomical' ? 'Khẩu kính hình học (Mặt cắt Sagittal)' : 'Khẩu kính 3D (Không gian giải phẫu)'}
                     </span>
                     <span className={`text-[9px] font-black px-1.5 py-0.5 rounded ${
                       currentCaliber === 0 ? 'bg-rose-950 text-rose-300 border border-rose-800' :
@@ -366,10 +370,10 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setIsPlaying(!isPlaying)}
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
+                className="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold transition-colors"
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-                <span>{isPlaying ? 'Tạm dừng' : 'Tự động chạy'}</span>
+                <span className="hidden min-[380px]:inline">{isPlaying ? 'Tạm dừng' : 'Tự động chạy'}</span>
               </button>
 
               <button
@@ -384,23 +388,23 @@ export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpen
               </button>
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1 sm:space-x-2">
               <button
                 onClick={handlePrev}
-                className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
                 title="Bước trước"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
-              <span className="text-xs text-slate-600 dark:text-slate-400 font-bold px-2">
+              <span className="text-xs text-slate-600 dark:text-slate-400 font-bold px-1 sm:px-2 whitespace-nowrap">
                 Bước {currentStepIndex + 1} / {steps.length}
               </span>
               <button
                 onClick={handleNext}
-                className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
                 title="Bước tiếp theo"
               >
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
             </div>
           </div>
