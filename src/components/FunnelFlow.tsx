@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 type Step = 'landing' | 'assessment' | 'results';
 
-export const FunnelFlow: React.FC = () => {
+export const FunnelFlow: React.FC<{ onEnterLibrary: () => void }> = ({ onEnterLibrary }) => {
   const [currentStep, setCurrentStep] = useState<Step>('landing');
   
   // STOP-Bang Answers
@@ -164,6 +164,16 @@ export const FunnelFlow: React.FC = () => {
               >
                 Làm lại bài test
               </button>
+
+              <div className="pt-6 mt-6 border-t border-slate-100">
+                <p className="text-sm text-slate-500 mb-3">Bạn là người muốn tìm hiểu sâu về kiến thức y khoa, cơ chế sinh lý và cách đọc sóng PPG?</p>
+                <button 
+                  onClick={onEnterLibrary}
+                  className="text-teal-600 hover:text-teal-700 font-medium underline"
+                >
+                  Vào Thư Viện Kiến Thức Chuyên Sâu
+                </button>
+              </div>
             </div>
           )}
         </div>
