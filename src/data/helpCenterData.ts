@@ -97,14 +97,14 @@ export const HELP_TOPICS: HelpTopic[] = [
       {
         stepNumber: 3,
         action: 'Lần lượt trải nghiệm 5 module theo luồng sư phạm',
-        detail: 'Khởi hành từ Tổng quan ➔ Xem cơ chế 3D ➔ Tập đọc đồ thị sóng ➔ Mở rộng kiến thức chuyên sâu ➔ Thực hành với 6 tình huống thực tế.'
+        detail: 'Khởi hành từ Tổng quan ➔ Xem mô phỏng đường thở Sagittal ➔ Tập đọc đồ thị sóng ➔ Mở rộng kiến thức ➔ Thực hành với 6 tình huống thực tế.'
       }
     ],
     logicExplanations: [
       {
         title: 'Cơ chế lưu trữ trạng thái cục bộ (Client-side Persistence)',
-        content: 'Toàn bộ tùy chọn cá nhân hóa (Giao diện Sáng/Tối, Chế độ Chuyên sâu, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài quiz) được tự động mã hóa và lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
-        formulaOrCode: 'localStorage.setItem("o2sense_theme", "light");\nlocalStorage.setItem("o2sense_mode", "founder");'
+        content: 'Toàn bộ tùy chọn cá nhân hóa (Giao diện Sáng/Tối, Danh sách tình huống thực tế đã hoàn thành, Điểm số bài kiểm tra) được tự động lưu trữ tức thời trong LocalStorage của trình duyệt. Không cần tạo tài khoản mật khẩu, dữ liệu vẫn được bảo toàn nguyên vẹn.',
+        formulaOrCode: 'localStorage.setItem("o2sense_theme", "light");'
       },
       {
         title: 'Triết lý Giảm tải nhận thức (Cognitive Load Reduction)',

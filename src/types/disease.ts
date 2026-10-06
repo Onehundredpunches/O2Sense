@@ -54,7 +54,7 @@ export interface RoleplayScenario {
   userStatement: string; // Lời nói tự nhiên của người dùng ảo
   context: string;
   options: ScenarioOption[];
-  reflectionPrompt: string; // Yêu cầu Founder tự viết 2-3 câu tóm tắt
+  reflectionPrompt: string; // Yêu cầu người học tự đúc kết 2-3 câu
 }
 
 export interface MechanismStep {

@@ -27,25 +27,13 @@ interface ModuleCViewProps {
   steps: MechanismStep[];
   sources: MedicalSource[];
   onOpenGlossary: (termId?: string) => void;
-  userMode?: 'general' | 'founder';
 }
 
-export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpenGlossary, userMode }) => {
+export const ModuleCView: React.FC<ModuleCViewProps> = ({ steps, sources, onOpenGlossary }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [renderMode, setRenderMode] = useState<'3d' | 'anatomical'>('anatomical');
-  const [explanationMode, setExplanationMode] = useState<'layman' | 'expert'>(
-    userMode === 'founder' ? 'expert' : 'layman'
-  );
-
-  // Sync mode whenever userMode prop changes
-  useEffect(() => {
-    if (userMode === 'founder') {
-      setExplanationMode('expert');
-    } else {
-      setExplanationMode('layman');
-    }
-  }, [userMode]);
+  const [explanationMode, setExplanationMode] = useState<'layman' | 'expert'>('layman');
 
   const [activeSourceModal, setActiveSourceModal] = useState<{ isOpen: boolean; sourceIds: string[]; title: string }>({
     isOpen: false,

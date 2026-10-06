@@ -14,7 +14,6 @@ interface CasesAndTrapsViewProps {
   savedAnswers: Record<string, { selectedOptionId: string; reflection: string; timestamp: string }>;
   onToggleTrapStatus: (trapId: string, status: 'understood' | 'needsReview' | 'reset') => void;
   onSaveScenario: (scenarioId: string, optionId: string, reflection: string) => void;
-  userMode: 'general' | 'founder';
   onOpenGlossary: (termId?: string) => void;
 }
 
@@ -28,7 +27,6 @@ export const CasesAndTrapsView: React.FC<CasesAndTrapsViewProps> = ({
   savedAnswers,
   onToggleTrapStatus,
   onSaveScenario,
-  userMode,
   onOpenGlossary,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<'traps' | 'scenarios'>('traps');
@@ -80,7 +78,6 @@ export const CasesAndTrapsView: React.FC<CasesAndTrapsViewProps> = ({
           completedIds={completedIds}
           savedAnswers={savedAnswers}
           onSaveScenario={onSaveScenario}
-          userMode={userMode}
           onOpenGlossary={onOpenGlossary}
         />
       )}

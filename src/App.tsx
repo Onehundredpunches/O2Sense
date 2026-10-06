@@ -3,6 +3,7 @@ import rawData from './data/osa.json';
 import { DiseaseData } from './types/disease';
 import { Header, AppTab } from './components/Header';
 import { HomeView } from './components/HomeView';
+import { StopBangScreenerView } from './components/StopBangScreenerView';
 import { ModuleCView } from './components/ModuleCView';
 import { WaveformDetectiveView } from './components/WaveformDetectiveView';
 import { KnowledgeHubView } from './components/KnowledgeHubView';
@@ -10,7 +11,6 @@ import { CasesAndTrapsView } from './components/CasesAndTrapsView';
 import { HelpCenterView } from './components/HelpCenterView';
 import { QuickReviewModal } from './components/QuickReviewModal';
 import { GlossaryModal } from './components/GlossaryModal';
-import { FunnelFlow } from './components/FunnelFlow';
 import { 
   getProgress, 
   markTrapStatus, 
@@ -22,7 +22,6 @@ import {
 const diseaseData = rawData as DiseaseData;
 
 export const App: React.FC = () => {
-  const [isFunnelMode, setIsFunnelMode] = useState(true);
   const [currentTab, setCurrentTab] = useState<AppTab>('home');
   const [isQuickReviewOpen, setIsQuickReviewOpen] = useState<boolean>(false);
   const [isGlossaryOpen, setIsGlossaryOpen] = useState<boolean>(false);
@@ -43,7 +42,7 @@ export const App: React.FC = () => {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('o2sense_theme', 'light');
     }
-    // Wipe founder mode from local storage to be safe
+    // Clean up any lingering founder mode keys
     localStorage.removeItem('o2sense_mode');
   }, [isDarkMode]);
 
@@ -71,9 +70,9 @@ export const App: React.FC = () => {
     setProgress(updated);
   };
 
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (isFunnelMode) return; // disable shortcuts in funnel
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement)?.tagName)) {
         return;
       }
@@ -81,10 +80,11 @@ export const App: React.FC = () => {
       switch (e.key) {
         case '1': setCurrentTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
         case '2': setCurrentTab('story'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
-        case '3': setCurrentTab('waveforms'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
-        case '4': setCurrentTab('knowledge'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
-        case '5': setCurrentTab('cases'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
-        case '6': case 'h': case 'H': case '?': setCurrentTab('help'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
+        case '3': setCurrentTab('screener'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
+        case '4': setCurrentTab('waveforms'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
+        case '5': setCurrentTab('knowledge'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
+        case '6': setCurrentTab('cases'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
+        case '7': case 'h': case 'H': case '?': setCurrentTab('help'); window.scrollTo({ top: 0, behavior: 'smooth' }); break;
         case 'q': case 'Q': setIsQuickReviewOpen((prev) => !prev); break;
         case 'g': case 'G': setIsGlossaryOpen((prev) => !prev); break;
         case 't': case 'T': setIsDarkMode((prev) => !prev); break;
@@ -95,20 +95,13 @@ export const App: React.FC = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isFunnelMode]);
-
-  if (isFunnelMode) {
-    return (
-      <div className="font-sans min-h-screen bg-slate-50 text-slate-800 selection:bg-teal-500 selection:text-white">
-        <FunnelFlow onEnterLibrary={() => setIsFunnelMode(false)} />
-      </div>
-    );
-  }
+  }, []);
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 ${
+    <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 overflow-x-hidden w-full max-w-full ${
       isDarkMode ? 'bg-[#090d16] text-slate-100' : 'bg-[#f7f6f2] text-slate-800'
     } selection:bg-teal-500 selection:text-white`}>
+      {/* Top Header & Sticky Navigation */}
       <Header
         currentTab={currentTab}
         onSelectTab={(tab) => {
@@ -119,11 +112,10 @@ export const App: React.FC = () => {
         disclaimer={diseaseData.disclaimer}
         isDarkMode={isDarkMode}
         onToggleTheme={handleToggleTheme}
-        onToggleUserMode={() => {}} 
-        userMode="general"
         onOpenGlossary={() => handleOpenGlossary()}
       />
 
+      {/* Main Content Area */}
       <main className="flex-1">
         {currentTab === 'home' && (
           <HomeView
@@ -134,32 +126,42 @@ export const App: React.FC = () => {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onStartQuickReview={() => setIsQuickReviewOpen(true)}
-            userMode="general"
             onOpenGlossary={handleOpenGlossary}
           />
         )}
+
+        {currentTab === 'screener' && (
+          <StopBangScreenerView
+            onSelectTab={(tab) => {
+              setCurrentTab(tab);
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          />
+        )}
+
         {currentTab === 'story' && (
           <ModuleCView
             steps={diseaseData.mechanismSteps}
             sources={diseaseData.sources}
-            userMode="general"
             onOpenGlossary={handleOpenGlossary}
           />
         )}
+
         {currentTab === 'waveforms' && (
           <WaveformDetectiveView
             patterns={diseaseData.waveformPatterns || []}
             onOpenGlossary={handleOpenGlossary}
           />
         )}
+
         {currentTab === 'knowledge' && (
           <KnowledgeHubView
             hubData={diseaseData.knowledgeHub}
             glossary={diseaseData.glossary || []}
-            userMode="general"
             onOpenGlossary={handleOpenGlossary}
           />
         )}
+
         {currentTab === 'cases' && (
           <CasesAndTrapsView
             traps={diseaseData.traps}
@@ -171,23 +173,23 @@ export const App: React.FC = () => {
             savedAnswers={progress.scenarioAnswers}
             onToggleTrapStatus={handleToggleTrapStatus}
             onSaveScenario={handleSaveScenario}
-            userMode="general"
             onOpenGlossary={handleOpenGlossary}
           />
         )}
+
         {currentTab === 'help' && (
           <HelpCenterView
             onSelectTab={(tab) => {
               setCurrentTab(tab);
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            userMode="general"
             onOpenGlossary={handleOpenGlossary}
             onStartQuickReview={() => setIsQuickReviewOpen(true)}
           />
         )}
       </main>
 
+      {/* 5-Minute Quick Review Modal */}
       <QuickReviewModal
         isOpen={isQuickReviewOpen}
         onClose={() => setIsQuickReviewOpen(false)}
@@ -196,6 +198,7 @@ export const App: React.FC = () => {
         onCompleteReview={handleCompleteQuickReview}
       />
 
+      {/* 1-Touch Visual Metaphor Glossary Modal */}
       <GlossaryModal
         isOpen={isGlossaryOpen}
         onClose={() => {

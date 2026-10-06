@@ -4,14 +4,12 @@ interface BrandLogoProps {
   size?: 'sm' | 'md' | 'lg';
   showWordmark?: boolean;
   className?: string;
-  userMode?: 'general' | 'founder';
 }
 
 export const BrandLogo: React.FC<BrandLogoProps> = ({
   size = 'md',
   showWordmark = true,
   className = '',
-  userMode
 }) => {
   const iconDimensions = {
     sm: 'w-8 h-8',
@@ -86,15 +84,9 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({
               </span>
             </span>
 
-            {userMode && (
-              <span className={`hidden min-[420px]:inline-block text-[10px] uppercase font-extrabold px-2.5 py-0.5 rounded-full border transition-colors shadow-xs ${
-                userMode === 'founder'
-                  ? 'bg-purple-50 text-purple-700 dark:bg-purple-950/80 dark:text-purple-300 border-purple-200 dark:border-purple-800/80'
-                  : 'bg-teal-50 text-teal-700 dark:bg-teal-950/80 dark:text-teal-300 border-teal-200 dark:border-teal-800/80'
-              }`}>
-                {userMode === 'founder' ? 'Bản Chuyên Sâu' : 'Bản Phổ Thông'}
-              </span>
-            )}
+            <span className="hidden min-[420px]:inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 dark:bg-teal-950/80 dark:text-teal-300 border border-teal-200 dark:border-teal-800/80">
+              Giấc Ngủ & SpO2
+            </span>
           </div>
         </div>
       )}

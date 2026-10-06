@@ -16,7 +16,6 @@ interface ModuleBViewProps {
   completedIds: string[];
   savedAnswers: Record<string, { selectedOptionId: string; reflection: string; timestamp: string }>;
   onSaveScenario: (scenarioId: string, optionId: string, reflection: string) => void;
-  userMode: 'general' | 'founder';
   onOpenGlossary: (termId?: string) => void;
 }
 
@@ -25,7 +24,6 @@ export const ModuleBView: React.FC<ModuleBViewProps> = ({
   completedIds,
   savedAnswers,
   onSaveScenario,
-  userMode,
   onOpenGlossary,
 }) => {
   const [selectedScenarioId, setSelectedScenarioId] = useState<string>(scenarios[0]?.id || '');
@@ -88,7 +86,7 @@ export const ModuleBView: React.FC<ModuleBViewProps> = ({
               <span>6 TÌNH HUỐNG THỰC TẾ & LUYỆN HỎI ĐÚNG</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
-              {userMode === 'founder' ? 'Thực Hành Nhập Vai Đối Thoại Người Dùng' : 'Tình Huống Thực Tế Ở Người Thân'}
+              Tình Huống Thực Tế Ở Người Thân
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Luyện phản xạ nhận diện ngay khi câu hỏi hoặc lời tư vấn đang bị bẫy "mớm cung", gán nhãn bệnh vội vàng, hoặc tư vấn y tế trái phép.

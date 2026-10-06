@@ -421,7 +421,7 @@
           "typeLabel": "Bẫy can thiệp y khoa trái thẩm quyền",
           "isSafe": false,
           "feedback": "❌ CỰC KỲ NGUY HIỂM VỀ PHÁP LÝ & Y TẾ!",
-          "explanation": "Là founder công nghệ, bạn TUYỆT ĐỐI KHÔNG ĐƯỢC PHÉP khuyên người dùng dừng thuốc do bác sĩ điều trị kê đơn. Điều này vi phạm nghiêm trọng nguyên tắc đạo đức và an toàn."
+          "explanation": "Dù theo dõi sức khỏe bằng thiết bị thông minh, người dùng TUYỆT ĐỐI KHÔNG ĐƯỢC tự ý khuyên hoặc dừng thuốc do bác sĩ điều trị kê đơn. Điều này vi phạm nghiêm trọng nguyên tắc an toàn y tế."
         }
       ],
       "reflectionPrompt": "Nêu 2 điểm khác biệt cơ bản giữa triệu chứng OSA ở nữ giới so với nam giới mà bạn rút ra từ trường hợp chị Mai?"
@@ -543,7 +543,7 @@
           "type": "safe",
           "typeLabel": "An toàn (Kiểm tra nhiễu kỹ thuật & Giải tỏa lo âu)",
           "isSafe": true,
-          "feedback": " CHUYÊN NGHIỆP VÀ BẢN LĨNH FOUNDER!",
+          "feedback": " XỬ LÝ CHÍNH XÁC VÀ THẤU HIỂU!",
           "explanation": "Bạn xử lý khủng hoảng mẫu mực: trấn an tâm lý ngay lập tức, kiểm tra các yếu tố nhiễu vật lý (đè ép mao mạch, kích cỡ nhẫn, co mạch ngoại vi) trước khi bàn về bệnh lý."
         },
         {

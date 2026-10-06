@@ -13,8 +13,7 @@ import {
   Layers, 
   Lightbulb, 
   Maximize2, 
-  Keyboard, 
-  Microscope, 
+  Keyboard,
   RotateCcw,
   Sparkles,
   Zap,
@@ -24,7 +23,6 @@ import {
 interface HelpCenterViewProps {
   onSelectTab: (tab: AppTab) => void;
   initialTopicId?: string;
-  userMode: 'general' | 'founder';
   onOpenGlossary: (termId?: string) => void;
   onStartQuickReview: () => void;
 }
@@ -32,7 +30,6 @@ interface HelpCenterViewProps {
 export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
   onSelectTab,
   initialTopicId,
-  userMode,
   onOpenGlossary,
   onStartQuickReview,
 }) => {
@@ -121,17 +118,8 @@ export const HelpCenterView: React.FC<HelpCenterViewProps> = ({
               <span><strong>100%</strong> Trực quan thực chiến</span>
             </div>
             <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-700 text-teal-300">
-              {userMode === 'founder' ? (
-                <>
-                  <Microscope className="w-4 h-4 text-purple-400" />
-                  <span>Chế độ: <strong>Bản Chuyên Sâu</strong></span>
-                </>
-              ) : (
-                <>
-                  <UserCheck className="w-4 h-4 text-teal-400" />
-                  <span>Chế độ: <strong>Bản Phổ Thông</strong></span>
-                </>
-              )}
+              <UserCheck className="w-4 h-4 text-teal-400" />
+              <span>Dành cho: <strong>Đại chúng & Người dùng thiết bị đeo</strong></span>
             </div>
           </div>
         </div>

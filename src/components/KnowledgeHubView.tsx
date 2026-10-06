@@ -15,14 +15,12 @@ interface KnowledgeHubViewProps {
   hubData: MedicalKnowledgeHub;
   glossary: GlossaryItem[];
   onOpenGlossary: (termId?: string) => void;
-  userMode?: 'general' | 'founder';
 }
 
 export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
   hubData,
   glossary,
   onOpenGlossary,
-  userMode,
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<'definition' | 'symptoms' | 'differential' | 'sensor' | 'complications'>('definition');
   const [selectedAhiIndex, setSelectedAhiIndex] = useState<number>(0);
@@ -30,7 +28,7 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
   const activeAhiRange = hubData.definitionSection.ahiStandards.ranges[selectedAhiIndex];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 space-y-6 pb-28 md:pb-16">
+    <div className="max-w-6xl mx-auto px-4 py-6 sm:px-6 space-y-6 pb-28 md:pb-16 font-sans">
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-sky-50 via-teal-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 border border-sky-200/80 dark:border-slate-700/80 rounded-3xl p-5 sm:p-8 shadow-sm">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -40,11 +38,6 @@ export const KnowledgeHubView: React.FC<KnowledgeHubViewProps> = ({
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>BÁCH KHOA TOÀN THƯ Y HỌC ĐỜI THƯỜNG</span>
               </div>
-              {userMode === 'founder' && (
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100/90 dark:bg-purple-950 text-purple-800 dark:text-purple-300 text-xs font-bold border border-purple-200 dark:border-purple-800">
-                  <span>Chế độ: Chuyên sâu</span>
-                </div>
-              )}
             </div>
 
             <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
